@@ -1,0 +1,12 @@
+# local JS tools
+node_modules/
+
+# TOTM banners are fed to the site from the frontend. We don't need to store
+# them anymore.
+static/img/totm.png
+
+.*.swp
+.*.swo
+.swp
+.swo
+
