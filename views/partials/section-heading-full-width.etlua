@@ -1,0 +1,18 @@
+<%
+-- TODO Can it be like a template? Content to be passed into? As in application
+-- To add a link at the bottom of the component
+%>
+
+<div class="section-heading-full-width u-border-top-double">
+
+  <div class="section-heading-full-width__title">
+    <h2 class="c-heading__section-title"><%= title %></h2>
+  </div>
+
+  <% if link then %>
+    <div class="section-heading-full-width__link">
+      <% render('frontend.views.partials.button', link) %>
+    </div>
+  <% end %>
+
+</div>

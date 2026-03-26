@@ -1,0 +1,33 @@
+<header class="v-puzzles__header u-padding-x">
+    <h1 class="v-puzzles__header-heading">Puzzles</h1>
+</header>
+
+<form class="v-puzzles__form u-padding-x">
+    <div class="v-puzzles__form-input-wrapper">
+        <label for="state" class="u-visually-hidden">State</label>
+        <select id="state" name="state">
+            <option value="all">All States</option>
+            <option value="state_1">State 1</option>
+            <option value="state_2">State 2</option>
+        </select>
+    </div>
+    <div class="v-puzzles__form-input-wrapper">
+        <label for="grade" class="u-visually-hidden">Grade</label>
+        <select id="grade" name="grade">
+            <option value="all">All Grades</option>
+            <option value="grade_1">Grade 1</option>
+            <option value="grade_2">Grade 2</option>
+        </select>
+    </div>
+</form>
+
+<div class="v-puzzles__puzzles u-padding-x">
+    <div class="v-puzzles__grid">
+        <% render('frontend.views.partials.puzzles-grid', {
+            puzzles = 12
+        }) %>
+    </div>
+    <div class="v-puzzles__pagination">
+        <% render('frontend.views.partials.pagination') %>
+    </div>
+</div>

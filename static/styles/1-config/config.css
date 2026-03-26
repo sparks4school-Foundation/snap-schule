@@ -1,0 +1,138 @@
+/**
+ * Config Settings
+**/
+
+
+:root {
+
+
+  /* Colors */
+  --color-white:      #FFFFFF;
+  --color-black:      #171717;
+  --color-red:        #FF0000;
+  --color-yellow:     #FFB100;
+  --color-blue:       #006AFF;
+
+  /* Google Original Material Colors */
+  --color-grey-50:    #FAFAFA;
+  --color-grey-100:   #F5F5F5;
+  --color-grey-200:   #EEEEEE;
+  --color-grey-300:   #E0E0E0;
+  --color-grey-400:   #BDBDBD;
+  --color-grey-500:   #9E9E9E;
+  --color-grey-600:   #757575;
+  --color-grey-700:   #616161;
+  --color-grey-800:   #424242;
+  --color-grey-900:   #212121;
+
+
+
+
+
+  /* Font Families */
+  --fontFamily-sans: 'DMSans', Arial, Helvetica, sans-serif;
+  --fontFamily-mono: 'DMMono', 'Courier New', Courier, monospace;
+
+
+
+
+
+  /* Font Sizes */
+  --fontSize-12:  12px;
+  --fontSize-14:  14px;
+  --fontSize-16:  16px;
+  --fontSize-18:  18px;
+  --fontSize-20:  20px;
+  --fontSize-24:  24px;
+  --fontSize-28:  28px;
+  --fontSize-32:  32px;
+  --fontSize-40:  40px;
+  --fontSize-48:  48px;
+  --fontSize-56:  56px;
+  --fontSize-64:  64px;
+  --fontSize-80:  80px;
+  --fontSize-96:  96px;
+
+
+
+
+
+  /* Line Heigts */
+  --lineHeight-100:   1;
+  --lineHeight-120:   1.2;
+  --lineHeight-140:   1.4;
+  --lineHeight-160:   1.6;
+
+
+
+
+
+  /* Spacing */
+  --space-1:       1px;
+  --space-2:       2px;
+  --space-4:       4px;
+  --space-6:       6px;
+  --space-8:       8px;
+  --space-10:     10px;
+  --space-12:     12px;
+  --space-16:     16px;
+  --space-20:     20px;
+  --space-24:     24px;
+  --space-32:     32px;
+  --space-40:     40px;
+  --space-48:     48px;
+  --space-56:     56px;
+  --space-64:     64px;
+  --space-72:     72px;
+  --space-80:     80px;
+  --space-96:     96px;
+  --space-112:   112px;
+  --space-120:   120px;
+  --space-160:   160px;
+  --space-200:   200px;
+  --space-240:   240px;
+  --space-320:   320px;
+  --space-400:   400px;
+  --space-480:   480px;
+  --space-560:   560px;
+  --space-640:   640px;
+  --space-720:   720px;
+  --space-800:   800px;
+  --space-960:   960px;
+  --space-1200: 1200px;
+
+
+
+
+
+  /* Border Radius */
+  --borderRadius-2:     2px;
+  --borderRadius-4:     4px;
+  --borderRadius-12:   12px;
+  --borderRadius-max: 999px;
+
+  --borderRadius-default: var(--borderRadius-4);
+
+
+
+
+
+  /* Depth */
+  --zindex-under:        -1;
+  --zindex-neutral:       0;
+  --zindex-above:         1;
+  --zindex-modalBg:      90;
+  --zindex-menu:        100;
+  --zindex-menuToggle:  110;
+  --zindex-aboveMenu:   120;
+
+
+
+
+
+  /* Transition Durations */
+  --duration-200:   0.2s;
+  --duration-400:   0.4s;
+  --duration-600:   0.6s;
+  --duration-800:   0.8s;
+}

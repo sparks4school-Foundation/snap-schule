@@ -1,0 +1,265 @@
+/**
+ * Views / Class
+ */
+
+
+
+
+
+/* Header */
+/* TODO: Component or CSS classes? */
+/* TODO: Replace class names when decideed */
+
+
+.v-puzzle__header {
+  min-height: var(--space-400);
+  padding-top: var(--space-40);
+  padding-bottom: var(--space-40);
+
+  background-color: var(--color-grey-200);
+
+  @media (min-width: 768px) {
+    padding-top: var(--space-56);
+    padding-bottom: var(--space-56);
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: var(--space-72);
+    padding-bottom: var(--space-72);
+  }
+
+  @media (min-width: 1536px) {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+  }
+}
+
+
+.v-puzzle__header-contents {
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-32);
+  }
+
+  @media (min-width: 1280px) {
+    max-width: var(--space-1200);
+    margin: 0 auto;
+  }
+}
+
+
+.v-puzzle__header-image {
+  aspect-ratio: 4 / 3;
+
+  border-radius: var(--borderRadius-default);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.v-puzzle__header-text {
+  margin-top: var(--space-24);
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    height: 100%;
+    padding: var(--space-4) 0 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+.v-puzzle__header-grade {
+  font-family: var(--fontFamily-mono);
+  color: var(--color-blue);
+  text-transform: uppercase;
+}
+
+
+.v-puzzle__header-title {
+  margin-top: var(--space-4);
+
+  font-size: var(--fontSize-40);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+
+  @media (min-width: 768px) {
+    flex-grow: 1;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-8);
+
+    font-size: var(--fontSize-48);
+  }
+}
+
+
+.v-puzzle__header-intro {
+  margin-top: var(--space-32);
+
+  font-family: var(--fontFamily-mono);
+  line-height: var(--lineHeight-120);
+  text-wrap: balance;
+
+  @media (min-width: 1280px) {
+    font-size: var(--fontSize-20);
+  }
+}
+
+
+.v-puzzle__header-links {
+  margin-top: var(--space-32);
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+
+
+
+
+/* Puzzles */
+
+
+.v-class__puzzles {
+  margin-top: var(--space-72);
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-80);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: var(--space-120);
+  }
+}
+
+
+.v-class__puzzles-heading {
+  margin-top: var(--space-16);
+}
+
+
+.v-class__puzzles-grid {
+  margin-top: var(--space-40);
+}
+
+
+
+
+
+/* Options */
+
+
+.v-class__options {
+  margin-top: var(--space-64);
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-80);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: var(--space-120);
+  }
+}
+
+
+.v-class__options-heading {
+  margin-top: var(--space-16);
+
+  @media (min-width: 1280px) {
+
+    .c-heading__section-title {
+      max-width: var(--space-320);
+    }
+  }
+}
+
+
+.v-class__options-contents {
+  margin-top: var(--space-48);
+
+  @media (min-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-24);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 0;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-32);
+
+    & > div:first-child {
+      grid-column-start: 2;
+    }
+  }
+}
+
+
+.v-class__options-title {
+  margin-bottom: var(--space-24);
+
+  font-size: var(--fontSize-20);
+  font-weight: 900;
+}
+
+
+.v-class__options-students-list {
+  display: grid;
+  gap: var(--space-12);
+}
+
+
+.v-class__options-students-list-item {
+  display: flex;
+  align-items: center;
+}
+
+
+.v-class__options-students-list-name {
+  font-family: var(--fontFamily-mono);
+}
+
+
+.v-class__options-students-list-remove {
+  all: unset;
+
+  margin-left: var(--space-6);
+  width: var(--space-16);
+  height: var(--space-16);
+
+  opacity: 0.25;
+  transform: translateY(1px);
+  transition: all var(--duration-200);
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: var(--color-red);
+  }
+}
+
+
+.v-class__options-delete {
+  margin-top: var(--space-48);
+
+  @media (min-width: 640px) {
+    margin-top: 0;
+  }
+}
+
+
+.v-class__options-delete-link {
+  margin-top: var(--space-24);
+}

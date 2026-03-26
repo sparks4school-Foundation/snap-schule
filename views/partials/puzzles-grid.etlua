@@ -1,0 +1,5 @@
+<div class="c-puzzles-grid">
+  <% for i=1,puzzles do %>
+    <% render('frontend.views.partials.card-puzzle') %>
+  <% end %>
+</div>

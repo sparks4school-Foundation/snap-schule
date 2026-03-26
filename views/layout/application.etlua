@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="<%= locale.language %>">
+
   <head>
     <% render('frontend.views.layout.head') %>
   </head>
-  <body>
-    <% render('frontend.views.js.dialog') %>
-    <script>new customAlert();</script>
-    <% render('frontend.views.layout.navigation_bar') %>
-    <main class="container-lg container-fluid mx-8 py-2">
+
+  <body class="v-<%= page %>">
+    <% render('frontend.views.partials.header') %>
+    <main class="l-main">
       <% content_for('inner') %>
     </main>
-    <% render('frontend.views.layout.footer') %>
-    <% render('frontend.views.layout.delayed_scripts') %>
+    <% render('frontend.views.partials.contact') %>
+    <% render('frontend.views.partials.footer') %>
   </body>
+
 </html>

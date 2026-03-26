@@ -1,0 +1,22 @@
+/**
+ * Components / Headings
+ */
+
+
+.c-heading__section-title {
+  font-size: var(--fontSize-32);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+
+  @media (min-width: 1280px) {
+    font-size: var(--fontSize-40);
+  }
+}
+
+
+.c-heading__mono-subtitle {
+  font-family: var(--fontFamily-mono);
+  font-size: var(--fontSize-20);
+  text-transform: uppercase;
+}

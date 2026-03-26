@@ -1,0 +1,20 @@
+<%
+-- TODO: Heading 2 or Heading 3 as parameter
+local puzzle_grade = 'Grade 6'
+local puzzle_title = 'Puzzle Title';
+%>
+
+<article class="c-card-puzzle">
+
+  <div class="c-card-puzzle__image">
+    <img src="/static/images/puzzle-placeholder-01.png" alt="">
+  </div>
+
+  <div class="c-card-puzzle__text">
+    <div class="c-card-puzzle__grade"><%= puzzle_grade %></div>
+    <h3 class="c-card-puzzle__title"><%= puzzle_title %></h3>
+  </div>
+
+  <a href="/puzzle" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
+
+</article>
