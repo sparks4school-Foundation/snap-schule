@@ -42,7 +42,11 @@ local menu = {
                 <% render('frontend.static.svg.icon-user-shapes--24x24') %>
             </div>
             <div class="c-header__menu-user-links">
-                <a href="/login" class="c-header__menu-user-anchor">Login</a> / <a href="/sign_up" class="c-header__menu-user-anchor">Sign Up</a>
+                <% if current_user == nil then %>
+                    <a href="/login" class="c-header__menu-user-anchor">Login</a> / <a href="/sign_up" class="c-header__menu-user-anchor">Sign Up</a>
+                <% else %>
+                    Hi, <%= current_user.username %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
+                <% end %>
             </div>
         </div>
 

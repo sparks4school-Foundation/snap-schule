@@ -4,28 +4,31 @@
 
 <form class="v-puzzles__form u-padding-x">
     <div class="v-puzzles__form-input-wrapper">
-        <label for="state" class="u-visually-hidden">State</label>
+        <label for="state" class="u-visually-hidden"><%= locale.get('dd_title_state') %></label>
         <select id="state" name="state">
-            <option value="all">All States</option>
-            <option value="state_1">State 1</option>
-            <option value="state_2">State 2</option>
+            <option value="all"><%= locale.get('dd_all_states') %></option>
+            <option value="state_1"><%= locale.get('dd_state', 1) %></option>
+            <option value="state_2"><%= locale.get('dd_state', 2) %></option>
         </select>
     </div>
     <div class="v-puzzles__form-input-wrapper">
-        <label for="grade" class="u-visually-hidden">Grade</label>
+        <label for="grade" class="u-visually-hidden"><%= locale.get('dd_title_grade') %></label>
         <select id="grade" name="grade">
-            <option value="all">All Grades</option>
-            <option value="grade_1">Grade 1</option>
-            <option value="grade_2">Grade 2</option>
+            <option value="all"><%= locale.get('dd_all_grades') %></option>
+            <option value="grade_1"><%= locale.get('dd_grade', 1) %></option>
+            <option value="grade_2"><%= locale.get('dd_grade', 2) %></option>
         </select>
     </div>
 </form>
 
 <div class="v-puzzles__puzzles u-padding-x">
     <div class="v-puzzles__grid">
-        <% render('frontend.views.partials.puzzles-grid', {
-            puzzles = 12
-        }) %>
+        <%
+        render(
+          'frontend.views.partials.puzzles-grid',
+          { puzzles = puzzles }
+        )
+        %>
     </div>
     <div class="v-puzzles__pagination">
         <% render('frontend.views.partials.pagination') %>

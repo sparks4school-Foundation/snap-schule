@@ -1,7 +1,7 @@
 <%
 local menu = {
-  {'Puzzles', '/puzzles'},
-  {'Contact', '/#contact'},
+  {locale.get('b_puzzles'), '/puzzles'},
+  {locale.get('b_contact'), '/#contact'},
   {'Snap!', 'https://snap.berkeley.edu/'},
 }
 
@@ -33,7 +33,7 @@ local credits = {
 
     <div class="c-footer__bottom">
 
-      <p class="c-footer__credits-statement">snap.schule is brought to you by UC&nbsp;Berkeley, SAP, SPARKS</p>
+      <p class="c-footer__credits-statement"><%= locale.get('footer_credits_statement') %></p>
 
       <ul class="c-footer__credits-list">
         <% for k, item in ipairs(credits) do %>

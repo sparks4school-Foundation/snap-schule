@@ -7,52 +7,16 @@
 <div class="u-padding-x">
 
     <div class="v-index__intro">
-        With short, engaging educational games, children can learn <span class="--blue">the basics of programming</span> on their own and quickly move on to creating their own motion programs and simple games. Along the way, <span class="--red">they naturally discover key concepts</span> such as variables, loops, and conditional logic—building essential digital skills while having fun.
+    <%-
+    locale.get(
+        'index_intro',
+        '<span class="--blue">' .. locale.get('index_intro_p1') .. '</span>',
+        '<span class="--red">' .. locale.get('index_intro_p2') .. '</span>'
+    )
+    %>
     </div>
 
-    <section class="v-index__puzzles">
-
-        <div class="v-index__puzzles-heading">
-            <% render('frontend.views.partials.section-heading-full-width', {
-                title   = '5th Grade Puzzles',
-                link    = {
-                    label   = 'Grade 5 Puzzles',
-                    url     = '#',
-                    color   = 'yellow',
-                    icon    = 'arrow-right',
-                }
-            }) %>
-        </div>
-
-        <div class="v-index__puzzles-grid">
-            <% render('frontend.views.partials.puzzles-grid', {
-                puzzles = 3
-            }) %>
-        </div>
-
-    </section>
-
-    <section class="v-index__puzzles">
-
-        <div class="v-index__puzzles-heading">
-            <% render('frontend.views.partials.section-heading-full-width', {
-                title   = '6th Grade Puzzles',
-                link    = {
-                    label   = 'Grade 6 Puzzles',
-                    url     = '#',
-                    color   = 'yellow',
-                    icon    = 'arrow-right',
-                }
-            }) %>
-        </div>
-
-        <div class="v-index__puzzles-grid">
-            <% render('frontend.views.partials.puzzles-grid', {
-                puzzles = 3
-            }) %>
-        </div>
-
-    </section>
-
+<% render('frontend.views.partials.section-index-puzzles', { grade = 5 }) %>
+<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
 
 </div>

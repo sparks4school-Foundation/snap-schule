@@ -52,9 +52,8 @@ app:enable('etlua')
 app.layout = require 'frontend.views.layout.application'
 
 local static_pages = {
+    -- which ones do we actually want here?
     'about', 'contact', 'credits', 'privacy'
-    -- Disabled because this is out of date.
-    -- 'requirements',
 }
 
 local user_forms = {}
@@ -85,7 +84,6 @@ app:before_filter(function (self)
 end)
 
 app:get('index', '/', capture_errors(cached(function (self)
-    self.page = 'index'
     return { render = 'index' }
 end)))
 
@@ -119,11 +117,15 @@ app:get('/class', capture_errors(cached(function (self)
 end)))
 
 app:get('/user', capture_errors(cached(function (self)
-    self.page = 'user'
-    return { render = 'user' }
+    if self.current_user then
+        self.puzzles = ProjectController.my_projects(self)
+        return { render = 'user' }
+    else
+        return { redirect_to = self:build_url('/') }
+    end
 end)))
 
-app:get('/teacher', capture_errors(cached(function (self)
-    self.page = 'teacher'
-    return { render = 'user' }
+app:get('/logout', capture_errors(cached(function (self)
+    return UserController:logout_get()
 end)))
+
