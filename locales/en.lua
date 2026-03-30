@@ -68,6 +68,12 @@ local locale = {
 	-- =========
 	title_student_puzzles = 'Student\'s Puzzles',
 
+	-- Contact
+	-- =======
+	contact_heading = 'Have questions or feedback?@1 We\'d love to hear from you.', -- @1 turns into a newline
+	contact_text = 'Feel free to send us an email anytime—whether you need help, have suggestions, or just want to share your thoughts. Your input helps us make this website better for students like you.',
+	b_contact_us = 'Contact Us',
+
 	-- Footer
 	-- ======
 	

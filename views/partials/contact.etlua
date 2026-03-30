@@ -1,27 +1,26 @@
 <section id="contact" class="c-contact">
-  <div class="u-padding-x">
+	<div class="u-padding-x">
 
-    <div class="c-contact__bubbles">
-      <% render('frontend.static.svg.contact-speech-bubbles') %>
-    </div>
+	<div class="c-contact__bubbles">
+		<% render('frontend.static.svg.contact-speech-bubbles') %>
+	</div>
 
-    <h2 class="c-contact__heading">
-      Have questions or feedback?</br>
-      We'd love to hear from you.
-    </h2>
+	<h2 class="c-contact__heading">
+		<%- locale.get('contact_heading', '<br/>') %>
+	</h2>
 
-    <p class="c-contact__text">
-      Feel free to send us an email anytime—whether you need help, have suggestions, or just want to share your thoughts. Your input helps us make this website better for students like you.
-    </p>
+	<p class="c-contact__text">
+		<%= locale.get('contact_text') %>
+	</p>
 
-    <div class="c-contact__anchor">
-      <% render('frontend.views.partials.button', {
-        label   = 'Contact Us',
-        url     = 'mailto:TODO@bromagosa.com',
-        color   = 'black',
-        icon    = 'envelope',
-      }) %>
-    </div>
+	<div class="c-contact__anchor">
+		<% render('frontend.views.partials.button', {
+				label   = locale.get('b_contact_us'),
+				url     = 'mailto:TODO@bromagosa.com',
+				color   = 'black',
+				icon    = 'envelope',
+				}) %>
+	</div>
 
-  </div>
+	</div>
 </section>
