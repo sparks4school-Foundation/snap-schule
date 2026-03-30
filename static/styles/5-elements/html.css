@@ -1,0 +1,18 @@
+/**
+ * Elements / HTML
+**/
+
+
+html {
+  font-family: var(--fontFamily-sans);
+  color: var(--color-black);
+  line-height: var(--lineHeight-100);
+  letter-spacing: -0.025em;
+
+  scroll-behavior: smooth;
+
+  &::selection {
+    color: var(--color-blue);
+    background-color: var(--color-yellow);
+  }
+}

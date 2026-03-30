@@ -1,0 +1,22 @@
+/**
+ * Components / Section Heading
+ */
+
+
+.section-heading-full-width {
+  padding-top: var(--space-12);
+
+  @media (min-width: 640px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.section-heading-full-width__link {
+  margin-top: var(--space-24);
+
+  @media (min-width: 640px) {
+    margin-top: 0;
+  }
+}

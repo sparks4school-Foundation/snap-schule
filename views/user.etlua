@@ -1,79 +1,170 @@
-<% if current_user and current_user:has_min_role('moderator') then %>
-<link rel="stylesheet" href="/static/style/admin.css">
+<%
+local account_type, username
+account_type = current_user.is_teacher and 'teacher' or 'student'
+%>
+
+<header class="v-user__header u-padding-x">
+    <div class="v-user__header-type"><%- account_type %> Account</div>
+    <h1 class="v-user__header-name"><%- current_user.username %></h1>
+</header>
+
+<% if not current_user.is_teacher then %>
+<div class="u-padding-x">
+    <div class="v-user__puzzles">
+
+        <div class="v-user__puzzles-heading">
+            <% render('frontend.views.partials.section-heading-full-width', {
+                title   = locale.get('title_student_puzzles'),
+                link    = {
+                    label   = 'Add Puzzle',
+                    url     = '#',
+                    color   = 'yellow',
+                    icon    = 'plus',
+                }
+            }) %>
+        </div>
+
+        <div class="v-user__puzzles-grid">
+            <% render('frontend.views.partials.puzzles-grid', {
+                puzzles = 7
+            }) %>
+        </div>
+
+    </div>
+</div>
 <% end %>
 
-<% content_for('title', locale.get('public_page', username)) %>
-<h1><%= locale.get('public_page', username) %></h1>
+<% if current_user.is_teacher then %>
+<div class="u-padding-x">
 
-<%
--- PUBLIC PROJECTS
-render(
-    'frontend.views.carousel',
-    {
-        title = locale.get('latest_published_projects'),
-        items = ProjectController.user_projects({
-            params = {
-                username = username,
-                items_per_page = 24,
-                show_public = true
-            },
-            session = session,
-            req = { source = 'site' }
-        }),
-        class = 'projects',
-        items_per_row = 6,
-        show_author = false,
-        href = build_url('/user_projects/' .. queried_user.username)
-    }
-)
+    <section class="v-user__puzzles">
 
--- PUBLIC COLLECTIONS
+        <div class="v-user__puzzles-heading">
+            <% render('frontend.views.partials.section-heading-full-width', {
+                title = 'My Classes',
+            }) %>
+        </div>
 
-render(
-    'frontend.views.carousel',
-    {
-        title = locale.get('latest_published_collections'),
-        items = CollectionController.user_collections({
-            params = {
-                per_page = 24,
-                user_id = queried_user.id
-            },
-            session = session
-        }),
-        items_per_row = 6,
-        class = 'collections',
-        item_type = 'collection',
-        href = build_url('/user_collections/' .. queried_user.username)
-    }
-)
-%>
+        <div class="v-user__puzzles-grid">
+            <% render('frontend.views.partials.puzzles-grid', {
+                puzzles = 2
+            }) %>
+        </div>
 
-<% if current_user then
-    if current_user:follows(queried_user) then %>
-    <a class="btn btn-outline-primary" onclick="
-        cloud.delete('/users/<%= queried_user.username %>/follow');
-    "><%= locale.get('unfollow_user') %></a>
-<% else %>
-    <a class="btn btn-primary" onclick="
-        cloud.post('/users/<%= queried_user.username %>/follow');
-    "><%= locale.get('follow_user') %></a>
-<%
-    end
-end
-%>
+    <section>
 
-<% if current_user and current_user:has_min_role('moderator') then %>
-<!-- -- ADMIN TOOLS -->
-<div class="col">
-    <h2><%- locale.get('admin_tools') %></h2>
-<%
-    render(
-        'frontend.views.partials.profile',
-        {
-            item = queried_user,
-            show_project_count = true
-        }
-    )
-%>
+    <section class="v-user__create">
+
+        <div class="v-user__options-heading">
+            <% render('frontend.views.partials.section-heading-full-width', {
+                title = 'Create Accounts and Classes',
+            }) %>
+        </div>
+
+        <div class="v-user__options-contents">
+
+            <div class="v-user__options-column">
+                <div class="v-user__options-block">
+                    <h3 class="v-user__options-block-title">Bulk account creation</h3>
+                    <div class="v-user__options-block-contents">
+                        <p>Please, provide a CSV file with <code>username</code> and <code>password</code> columns for all your learners, plus an optional <code>email</code> column.</p>
+                        <p>If you don’t provide en email address for your learners, they will be associated with your email account. That is useful if you want to reset the passwords of your leaners</p>
+                        <p>If you also create a private collection, all these accounts will be associated to it as a class.</p>
+                        <p><b>Example:</b></p>
+                        <div class="--code">
+                            username,password<br>
+                            johndoe_240,xajglasibkasx<br>
+                            janedoe_784,hkjasd895mdas
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="v-user__options-column">
+                <div class="v-user__options-block">
+                    <h3 class="v-user__options-block-title">Upload the CSV File</h3>
+                    <div class="v-user__options-block-contents">
+                        <form>
+                            <input type="file"
+                                class="form-control csv"
+                                placeholder=""
+                                aria-label="Upload a CSV File"
+                                aria-describedby="button-addon1"
+                                name="csv"
+                            >
+                            <p><b>Alternatively, paste a CSV file contents:</b></p>
+                            <textarea id="students" name="students" rows="10" placeholder="username,password"></textarea>
+                            <label class="e-label__checkbox">
+                                <input type="checkbox" name="agree" value="1">
+                                <div class="e-label__text">Create a private collection for this group of learners</div>
+                            </label>
+                            <button type="submit">
+                                <div class="e-submit__text">Create Users</div>
+                                <div class="e-submit__icon">
+                                    <% render('frontend.static.svg.icon-arrow-right--24x24') %>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="v-user__account">
+
+        <div class="v-user__options-heading">
+            <% render('frontend.views.partials.section-heading-full-width', {
+                title = 'Account',
+            }) %>
+        </div>
+
+        <div class="v-user__options-contents">
+
+            <div class="v-user__options-column">
+                <div class="v-user__options-block">
+                    <h3 class="v-user__options-block-title">Update details</h3>
+                    <div class="v-user__options-block-contents">
+                        <form method="POST" action="/submit">
+                            <input type="text" name="field1" placeholder="e.mustermann@a-school-name.com">
+                            <input type="text" name="field2" placeholder="emustermann_teacher_332">
+                            <input type="text" name="field3" placeholder="********">
+                            <button type="submit">
+                                <div class="e-submit__text">Update Details</div>
+                                <div class="e-submit__icon">
+                                    <% render('frontend.static.svg.icon-arrow-right--24x24') %>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="v-user__options-column">
+                <div class="v-user__options-block">
+                    <h3 class="v-user__options-block-title">Delete Account</h3>
+                    <div class="v-user__options-block-contents">
+                        <p>
+                            Accounts are automatically deactivated after one year of inactivity. We do not collect or store any personal information.
+                        </p>
+                        <div class="--buttons">
+                            <% render('frontend.views.partials.button', {
+                                label   = 'Delete Class',
+                                url     = '#',
+                                color   = 'red',
+                                icon    = 'arrow-right',
+                            }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
 </div>
 <% end %>

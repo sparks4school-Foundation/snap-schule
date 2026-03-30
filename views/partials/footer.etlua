@@ -1,0 +1,51 @@
+<%
+local menu = {
+  {locale.get('b_puzzles'), '/puzzles'},
+  {locale.get('b_contact'), '/#contact'},
+  {'Snap!', 'https://snap.berkeley.edu/'},
+}
+
+local credits = {
+  {'Berkeley', 'https://www.berkeley.edu/', 'berkeley--white.png'},
+  {'SAP', 'https://www.sap.com', 'sap--white.png'},
+  {'Sparks4School', 'https://sparks4school.org/', 'sparks4school--white.png'},
+}
+%>
+
+<footer class="c-footer">
+  <div class="u-padding-x">
+
+    <div class="c-footer__top">
+
+      <a href="/" class="c-footer__logo">
+        <% render('frontend.static.svg.snap-schule--white') %>
+      </a>
+
+      <ul class="c-footer__menu">
+        <% for i, item in ipairs(menu) do %>
+        <li class="c-footer__menu-list-item">
+          <a href="<%= item[2] %>" class="c-footer__menu-anchor"><%= item[1] %></a>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+    <div class="c-footer__bottom">
+
+      <p class="c-footer__credits-statement"><%= locale.get('footer_credits_statement') %></p>
+
+      <ul class="c-footer__credits-list">
+        <% for k, item in ipairs(credits) do %>
+        <li class="c-footer__credits-list-item">
+          <a href="<%= item[2] %>" class="c-footer__credits-anchor" target="_blank">
+            <img src="/static/logos/<%= item[3] %>" alt="<%= item[1] %>">
+          </a>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  </div>
+</footer>

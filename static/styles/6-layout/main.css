@@ -1,0 +1,21 @@
+/**
+ * Layout / Main
+**/
+
+
+.l-main {
+  padding-top: var(--space-56);
+  padding-bottom: var(--space-72);
+
+  @media (min-width: 1024px) {
+    padding-bottom: var(--space-96);
+  }
+
+  @media (min-width: 1280px) {
+    padding-bottom: var(--space-120);
+  }
+
+  @media (min-width: 1536px) {
+    padding-bottom: var(--space-160);
+  }
+}

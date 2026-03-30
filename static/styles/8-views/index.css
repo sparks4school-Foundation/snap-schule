@@ -1,0 +1,71 @@
+/**
+ * Views / Index
+ */
+
+
+
+
+.v-index__hero {
+
+  img {
+    width: 100%;
+  }
+}
+
+
+
+
+
+.v-index__intro {
+  margin-top: var(--space-48);
+
+  font-family: var(--fontFamily-mono);
+  font-size: var(--space-20);
+  line-height: var(--lineHeight-120);
+  text-wrap: balance;
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-64);
+    max-width: var(--space-800);
+
+    font-size: var(--fontSize-24);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: var(--space-80);
+    max-width: var(--space-960);
+  }
+
+  @media (min-width: 1536px) {
+    margin-top: var(--space-96);
+    max-width: var(--space-1200);
+
+    font-size: var(--fontSize-32);
+  }
+
+  .--blue {
+    color: var(--color-blue);
+  }
+
+  .--red {
+    color: var(--color-red);
+  }
+}
+
+
+.v-index__puzzles {
+  margin-top: var(--space-96);
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-120);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: var(--space-160);
+  }
+}
+
+
+.v-index__puzzles-grid {
+  margin-top: var(--space-40);
+}

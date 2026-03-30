@@ -1,0 +1,23 @@
+/**
+ * Utilities / Borders
+**/
+
+
+.u-border-top-double {
+  position: relative;
+
+  border-top: 1px solid var(--color-grey-300);
+
+  &::before {
+    content: '';
+
+    display: block;
+    height: var(--space-8);
+    width: var(--space-64);
+    background-color: var(--color-blue);
+
+    position: absolute;
+    top: -8px;
+    left: 0;
+  }
+}

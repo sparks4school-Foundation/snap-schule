@@ -1,0 +1,25 @@
+<%
+-- TODO: Heading 2 or Heading 3 as parameter
+local puzzle_grade = 'Grade 6'
+local puzzle_title = 'Puzzle Title';
+%>
+
+<nav class="c-pagination">
+
+  <a href="/" class="c-pagination__button-arrow --previous --disabled" title="Previous Page">
+    <% render('frontend.static.svg.icon-arrow-right--24x24') %>
+  </a>
+
+  <div class="c-pagination__bullets">
+    <a href="/" class="c-pagination__button-bullet" title="Page <%= url %>"></a>
+    <a href="/" class="c-pagination__button-bullet --active-page" title="Page <%= url %>"></a>
+    <% for i=1,3 do %>
+      <a href="/" class="c-pagination__button-bullet" title="Page <%= url %>"></a>
+    <% end %>
+  </div>
+
+  <a href="/" class="c-pagination__button-arrow --next" title="Next Page">
+    <% render('frontend.static.svg.icon-arrow-right--24x24') %>
+  </a>
+
+</nav>

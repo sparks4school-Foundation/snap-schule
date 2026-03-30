@@ -1,0 +1,100 @@
+/**
+ * Views / Puzzles
+ */
+
+
+
+
+
+/* Header */
+
+
+.v-puzzles__header {
+  height: var(--space-200);
+  display: grid;
+  place-items: center;
+
+  background-color: var(--color-blue);
+
+  @media (min-width: 1280px) {
+    height: var(--space-240);
+  }
+
+  @media (min-width: 1536px) {
+    height: var(--space-320);
+  }
+}
+
+
+.v-puzzles__header-heading {
+  font-size: var(--fontSize-32);
+  font-weight: 900;
+  color: var(--color-white);
+
+  @media (min-width: 1280px) {
+    font-size: var(--fontSize-48);
+  }
+
+  @media (min-width: 1536px) {
+    font-size: var(--fontSize-64);
+  }
+}
+
+
+
+
+
+/* Form */
+
+
+.v-puzzles__form {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+
+  display: flex;
+  justify-content: center;
+  gap: var(--space-16);
+
+  background-color: var(--color-black);
+
+  select {
+    min-width: var(--space-120);
+  }
+}
+
+
+
+
+
+/* Puzzles list */
+
+
+.v-puzzles__puzzles {
+  margin-top: var(--space-40);
+
+  @media (min-width: 640px) {
+    margin-top: var(--space-64);
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: var(--space-72);
+  }
+
+  @media (min-width: 1536px) {
+    margin-top: var(--space-80);
+  }
+}
+
+
+.v-puzzles__pagination {
+  margin: var(--space-32) auto 0;
+  width: max-content;
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-48);
+  }
+
+  @media (min-width: 1536px) {
+    margin-top: var(--space-64);
+  }
+}

@@ -1,0 +1,40 @@
+<%
+local collection = package.loaded.Collections:find({ name = "Grade " .. grade })
+local puzzles = CollectionController.projects({
+		params = {},
+		items_per_page = 24, -- 24 projects to query from DB.
+		collection = collection,
+		cached = true
+		})
+%>
+<section class="v-index__puzzles">
+
+	<div class="v-index__puzzles-heading">
+	<%
+		render(
+			'frontend.views.partials.section-heading-full-width',
+			{
+				title   = locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
+				link    = {
+					label   = locale.get('b_grade_puzzles', grade),
+					url     = '#',
+					color   = 'yellow',
+					icon    = 'arrow-right',
+				}
+			}
+		)
+	%>
+	</div>
+
+	<div class="v-index__puzzles-grid">
+	<%
+		render(
+			'frontend.views.partials.puzzles-grid',
+			{
+				grade = grade,
+				puzzles = puzzles
+			}
+		)
+	%>
+	</div>
+</section>

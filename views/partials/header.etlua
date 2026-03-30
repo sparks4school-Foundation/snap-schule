@@ -1,0 +1,55 @@
+<%
+local menu = {
+  {'Puzzles', '/puzzles'},
+  {'Contact', '/#contact'},
+  {'Snap!', 'https://snap.berkeley.edu/'},
+}
+%>
+
+<header class="c-header u-padding-x">
+
+    <a href="/" class="c-header__logo">
+        <% render('frontend.static.svg.snap-schule--black') %>
+    </a>
+
+    <button
+        class="c-header__menu-toggle"
+        data-menu="toggle"
+        aria-controls="menu"
+        aria-expanded="false"
+        aria-label="Show Menu"
+    >
+        <div class="c-header__menu-toggle-icon --show">
+            <% render('frontend.static.svg.icon-menu--24x24') %>
+        </div>
+        <div class="c-header__menu-toggle-icon --hide">
+            <% render('frontend.static.svg.icon-cross--24x24') %>
+        </div>
+    </button>
+
+    <nav id="menu" class="c-header__menu" data-menu="menu" aria-hidden="true">
+
+        <ul class="c-header__menu-list">
+            <% for i, item in ipairs(menu) do %>
+            <li class="c-header__menu-list-item">
+                <a href="<%= item[2] %>" class="c-header__menu-anchor"><%= item[1] %></a>
+            </li>
+            <% end %>
+        </ul>
+
+        <div class="c-header__menu-user">
+            <div class="c-header__menu-user-icon">
+                <% render('frontend.static.svg.icon-user-shapes--24x24') %>
+            </div>
+            <div class="c-header__menu-user-links">
+                <% if current_user == nil then %>
+                    <a href="/login" class="c-header__menu-user-anchor">Login</a> / <a href="/sign_up" class="c-header__menu-user-anchor">Sign Up</a>
+                <% else %>
+                    Hi, <%= current_user.username %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
+                <% end %>
+            </div>
+        </div>
+
+    </nav>
+
+</header>
