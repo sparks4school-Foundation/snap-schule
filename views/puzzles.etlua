@@ -1,36 +1,73 @@
+<%
+local puzzles = CollectionController.projects({
+		params = {},
+		items_per_page = 24, -- max 24 projects to query from DB.
+		collection = collection,
+		cached = true
+	})
+%>
+
 <header class="v-puzzles__header u-padding-x">
-    <h1 class="v-puzzles__header-heading">Puzzles</h1>
+	<h1 class="v-puzzles__header-heading">Puzzles</h1>
 </header>
 
 <form class="v-puzzles__form u-padding-x">
-    <div class="v-puzzles__form-input-wrapper">
-        <label for="state" class="u-visually-hidden"><%= locale.get('dd_title_state') %></label>
-        <select id="state" name="state">
-            <option value="all"><%= locale.get('dd_all_states') %></option>
-            <option value="state_1"><%= locale.get('dd_state', 1) %></option>
-            <option value="state_2"><%= locale.get('dd_state', 2) %></option>
-        </select>
-    </div>
-    <div class="v-puzzles__form-input-wrapper">
-        <label for="grade" class="u-visually-hidden"><%= locale.get('dd_title_grade') %></label>
-        <select id="grade" name="grade">
-            <option value="all"><%= locale.get('dd_all_grades') %></option>
-            <option value="grade_1"><%= locale.get('dd_grade', 1) %></option>
-            <option value="grade_2"><%= locale.get('dd_grade', 2) %></option>
-        </select>
-    </div>
+<!--
+	NO STATE SELECTOR YET. FOR NOW WE ONLY WORK WITH BADEN-WÜRTTEMBERG
+	<div class="v-puzzles__form-input-wrapper">
+		<label for="state" class="u-visually-hidden"><%= locale.get('dd_title_state') %></label>
+		<select id="state" name="state">
+			<option value="all"><%= locale.get('dd_all_states') %></option>
+			<%
+				for i, col in
+					pairs(
+						package.loaded.Collections:select(
+						package.loaded.db.clause({
+							creator_id = jadga.id,
+							"name ilike '%state%'"
+						})
+					)) do %>
+					<option value="<%= col.name %>">
+						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
+					</option>
+			<% end %>
+		</select>
+	</div>
+-->
+	<div class="v-puzzles__form-input-wrapper">
+		<label for="grade" class="u-visually-hidden"><%= locale.get('dd_title_grade') %></label>
+		<select id="grade" name="grade" onchange="filter_grade(this.value)">
+			<option value="all"><%= locale.get('dd_all_grades') %></option>
+			<%
+				for i, col in
+					pairs(
+						package.loaded.Collections:select(
+						package.loaded.db.clause({
+							creator_id = jadga.id,
+							"name ilike '%grade%'"
+						})
+				)) do %>
+					<option value="<%= col.name %>">
+						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
+					</option>
+			<% end %>
+		</select>
+	</div>
 </form>
 
 <div class="v-puzzles__puzzles u-padding-x">
-    <div class="v-puzzles__grid">
-        <%
-        render(
-          'frontend.views.partials.puzzles-grid',
-          { puzzles = puzzles }
-        )
-        %>
-    </div>
-    <div class="v-puzzles__pagination">
-        <% render('frontend.views.partials.pagination') %>
-    </div>
+	<div class="v-puzzles__grid">
+	<%
+	render(
+		'frontend.views.partials.puzzles-grid',
+		{
+			collection = collection,
+			puzzles = puzzles
+		}
+	)
+	%>
+	</div>
+	<div class="v-puzzles__pagination">
+		<% render('frontend.views.partials.pagination') %>
+	</div>
 </div>

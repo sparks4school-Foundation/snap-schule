@@ -1,11 +1,17 @@
 <%
-local collection = package.loaded.Collections:find({ name = "Grade " .. grade })
+local collection = package.loaded.Collections:find(
+	{
+		name = "Grade " .. grade,
+		user_id = jadga.user_id,
+		published = true
+	}
+)
 local puzzles = CollectionController.projects({
 		params = {},
 		items_per_page = 24, -- max 24 projects to query from DB.
 		collection = collection,
 		cached = true
-		})
+	})
 %>
 <section class="v-index__puzzles">
 
@@ -17,7 +23,7 @@ local puzzles = CollectionController.projects({
 				title   = locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
 				link    = {
 					label   = locale.get('b_grade_puzzles', grade),
-					url     = '#',
+					url     = 'puzzles/' .. collection.id,
 					color   = 'yellow',
 					icon    = 'arrow-right',
 				}
@@ -32,7 +38,8 @@ local puzzles = CollectionController.projects({
 			'frontend.views.partials.puzzles-grid',
 			{
 				grade = grade,
-				puzzles = puzzles
+				puzzles = puzzles,
+				collection = collection
 			}
 		)
 	%>

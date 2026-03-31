@@ -11,6 +11,6 @@
 		<h3 class="c-card-puzzle__title"><%= puzzle.projectname %></h3>
 	</div>
 
-	<a href="/puzzle" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
+	<a href="<%= '/puzzle/' .. puzzle.id %>" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
 
 </article>

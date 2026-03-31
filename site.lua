@@ -27,6 +27,7 @@ local app = package.loaded.app
 local capture_errors = package.loaded.capture_errors
 local cached = package.loaded.cached
 local respond_to = package.loaded.respond_to
+local yield_error = package.loaded.yield_error
 
 local Users = package.loaded.Users
 local Projects = package.loaded.Projects
@@ -52,9 +53,9 @@ app:enable('etlua')
 app.layout = require 'frontend.views.layout.application'
 
 local static_pages = {
-    'about', 'contact', 'credits', 'privacy'
-    -- Disabled because this is out of date.
-    -- 'requirements',
+	'about', 'contact', 'credits', 'privacy'
+	-- Disabled because this is out of date.
+	-- 'requirements',
 }
 
 local user_forms = {}
@@ -70,56 +71,71 @@ user_forms['sign_up'] = 'users/sign_up'
 user_forms['delete_user'] = 'users/delete_user'
 
 app:before_filter(function (self)
-    self.cache_buster = util.cache_buster()
-    -- A front-end method to prefer opening some links (the IDE, mostly) in the same window
-    self.prefer_new_tab = false
-    if self.current_user and self.session.presist_session ~= 'true' then
-        self.prefer_new_tab = true
-    end
+	self.jadga = Users:find({ username = 'jadga' })
 
-    -- Store current page in the session so we can redirect to it after login.
-    self.session.previous_page = self.session.previous_page or self.req.path
+	self.cache_buster = util.cache_buster()
+	-- A front-end method to prefer opening some links (the IDE, mostly) in the same window
+	self.prefer_new_tab = false
+	if self.current_user and self.session.presist_session ~= 'true' then
+		self.prefer_new_tab = true
+	end
 
-    -- TODO: Set the CSP header to allow only our own domains, or CORS domains.
-    -- self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
+	-- Store current page in the session so we can redirect to it after login.
+	self.session.previous_page = self.session.previous_page or self.req.path
+
+	-- TODO: Set the CSP header to allow only our own domains, or CORS domains.
+	-- self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
 end)
 
 app:get('index', '/', capture_errors(cached(function (self)
-    local snapcloud_user = Users:find({ username = 'snapcloud' })
-    if not snapcloud_user then
-        return { render = 'fresh_install' }
-    else
-        self.snapcloud_id = Users:find({ username = 'snapcloud' }).id
-        return { render = 'index' }
-    end
+	local snapcloud_user = Users:find({ username = 'snapcloud' })
+	if not snapcloud_user then
+		return { render = 'fresh_install' }
+	else
+		self.snapcloud_id = Users:find({ username = 'snapcloud' }).id
+		return { render = 'index' }
+	end
 end)))
 
 for _, page in pairs(static_pages) do
-    app:get('/' .. page, capture_errors(cached(function (self)
-        return { render = 'static/' .. page }
-    end)))
+	app:get('/' .. page, capture_errors(cached(function (self)
+		return { render = 'static/' .. page }
+	end)))
 end
 
 for route, view_path in pairs(user_forms) do
-    app:get('/' .. route, capture_errors(cached(function (self)
-        self.csrf_token = csrf.generate_token(self)
-        self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
-        return { render = view_path }
-    end)))
+	app:get('/' .. route, capture_errors(cached(function (self)
+		self.csrf_token = csrf.generate_token(self)
+		self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
+		return { render = view_path }
+	end)))
 end
 
+-- All puzzle
 app:get('/puzzles', capture_errors(cached(function (self)
-    return { render = 'puzzles' }
+	self.collection = Collections:find({ id = 1 }) -- default to first collection
+	assert_can_view_collection(self, self.collection)
+	return { render = 'puzzles' }
 end)))
 
-app:get('/puzzle', capture_errors(cached(function (self)
-    return { render = 'puzzle' }
+app:get('/puzzles/:id', capture_errors(cached(function (self)
+	self.collection = package.loaded.Collections:find({ id = self.params.id })
+	if not self.collection then yield_error(err.nonexistent_collection) end
+	assert_can_view_collection(self, self.collection)
+	return { render = 'puzzles' }
+end)))
+
+app:get('/puzzle/:id', capture_errors(cached(function (self)
+	self.puzzle = package.loaded.Projects:find({ id = self.params.id })
+	if not self.puzzle then yield_error(err.nonexistent_project) end
+	assert_can_view_project(self, self.puzzle)
+	return { render = 'puzzle' }
 end)))
 
 app:get('/class', capture_errors(cached(function (self)
-    return { render = 'class' }
+	return { render = 'class' }
 end)))
 
 app:get('/user', capture_errors(cached(function (self)
-    return { render = 'user' }
+	return { render = 'user' }
 end)))

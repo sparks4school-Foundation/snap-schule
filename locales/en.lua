@@ -59,11 +59,18 @@ local locale = {
 	-- Dropdown filters
 	dd_title_state = "State",
 	dd_all_states = "All States",
-	dd_state = "State @1", -- @1 becomes the state number. Is this actually wanted in the final site?
+	dd_state_1 = "State 1",
 	dd_title_grade = "Grade",
 	dd_all_grades = "All Grades",
-	dd_grade = "Grade @1", -- @1 becomes the grade number. Is this actually wanted in the final site?
+	dd_grade_5 = "Grade 5",
+	dd_grade_6 = "Grade 6",
 
+	-- Puzzle Page
+	-- ===========
+	b_start_puzzle = 'Start puzzle',
+	b_share_qr = 'Share QR',
+	title_concept_resources = 'Concept and Resources',
+	title_links = 'Links:',
 	-- User Page
 	-- =========
 	title_student_puzzles = 'Student\'s Puzzles',

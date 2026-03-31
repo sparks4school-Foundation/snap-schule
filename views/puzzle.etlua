@@ -1,70 +1,101 @@
+<%
+	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
+	-- TODO move into Schule utils package?
+	local notes = puzzle.notes
+	local summary =
+		string.sub(
+			notes, string.find(notes, '--SUMMARY--') + 12,
+			string.find(notes, '--DESCRIPTION--') - 2
+		)
+	local description =
+		string.sub(
+			notes, string.find(notes, '--DESCRIPTION--') + 16,
+			string.find(notes, '--LINKS--') - 2
+		)
+	local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
+	local links = {}
+	for line in string.gmatch(links_text, "[^\r\n]+") do
+		local link = {}
+		for part, i in string.gmatch(line, "[^,]+") do
+			table.insert(link, part)
+		end
+		table.insert(links, link)
+	end
+%>
+
+<script src="/static/js/marked.umd.js"></script>
 <header class="v-puzzle__header u-padding-x">
-    <div class="v-puzzle__header-contents">
+	<div class="v-puzzle__header-contents">
 
-        <div class="v-puzzle__header-image">
-            <img src="/static/images/puzzle-placeholder-02.png" alt="">
-        </div>
+		<div class="v-puzzle__header-image">
+			<img src="/static/images/puzzle-placeholder-02.png" alt="">
+		</div>
 
-        <div class="v-puzzle__header-text">
-            <p class="v-puzzle__header-grade">Puzzle 1 - Grade 5</p>
-            <h1 class="v-puzzle__header-title">The Loop</h1>
-            <p class="v-puzzle__header-intro">
-                In this activity, you will learn about loops, which allow a program to repeat instructions automatically and efficiently.
-            </p>
-            <div class="v-puzzle__header-links">
-                <% render('frontend.views.partials.button', {
-                    label   = 'Start puzzle',
-                    url     = '#',
-                    color   = 'black',
-                    icon    = 'arrow-up-right',
-                }) %>
-                <% render('frontend.views.partials.button', {
-                    label   = 'Share QR',
-                    url     = '#',
-                    color   = 'black',
-                    icon    = 'qr-code',
-                }) %>
-            </div>
-        </div>
+		<div class="v-puzzle__header-text">
+			<p class="v-puzzle__header-grade">Puzzle 1 - Grade 5</p>
+			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
+			<p class="v-puzzle__header-intro"><%= summary %></p>
+			<div class="v-puzzle__header-links">
+				<% render('frontend.views.partials.button', {
+					label   = locale.get('b_start_puzzle'),
+					url	 = '#',
+					color   = 'black',
+					icon	= 'arrow-up-right',
+				}) %>
+				<% render('frontend.views.partials.button', {
+					label   = locale.get('b_share_qr'),
+					url	 = '#',
+					color   = 'black',
+					icon	= 'qr-code',
+				}) %>
+			</div>
+		</div>
 
-    </div>
+	</div>
 </header>
 
 <div class="u-padding-x">
-    <div class="v-puzzle__contents u-border-top-double">
+	<div class="v-puzzle__contents u-border-top-double">
 
-        <div class="v-puzzle__contents-title">
-            <h2 class="c-heading__section-title">Concept and Resources</h2>
-        </div>
+		<div class="v-puzzle__contents-title">
+			<h2 class="c-heading__section-title"><%= locale.get('title_concept_resources') %></h2>
+		</div>
 
-        <div class="v-puzzle__contents-wrapper">
+		<div class="v-puzzle__contents-wrapper">
 
-            <div class="v-puzzle__contents-text">
-                <p>Loops are a fundamental concept in programming that allow a set of instructions to be repeated automatically. Instead of writing the same code many times, a loop runs it as many times as needed.</p>
-                <p>They are commonly used when a task follows a pattern or needs to be repeated, such as counting numbers, displaying messages, or processing multiple pieces of data. Loops work by using a condition or a fixed number of repetitions. As long as the condition is true, or until the repetitions are completed, the loop continues to run.</p>
-                <p>There are different types of loops, such as loops that repeat a known number of times and loops that continue until a specific condition changes. Each type is useful in different situations.</p>
-                <p>Using loops helps make programs more efficient and easier to read. It also reduces errors, since changes only need to be made in one place instead of many. By practicing with loops, you will develop logical thinking and improve your ability to design programs that handle repetition in a clear and structured way.</p>
-            </div>
+			<div class="v-puzzle__contents-text">
+				<script>
+					// This element will commit suicide. Isn't this cool?
+					document.querySelector('.v-puzzle__contents-text').innerHTML =
+						marked.parse(`<%= description %>`);
+				</script>
+			</div>
 
-            <section class="v-puzzle__links">
-                <div class="v-puzzle__links-title">
-                    <h2 class="c-heading__mono-subtitle">Links:</h2>
-                </div>
-                <ul class="v-puzzle__links-list">
-                    <% for i=1,3 do %>
-                        <li class="v-puzzle__links-list-item">
-                            <% render('frontend.views.partials.button', {
-                                label   = 'Link to a Resource',
-                                url     = '#',
-                                color   = 'black',
-                                icon    = 'arrow-up-right',
-                            }) %>
-                        </li>
-                    <% end %>
-                </ul>
-            </section>
+			<section class="v-puzzle__links">
+				<div class="v-puzzle__links-title">
+					<h2 class="c-heading__mono-subtitle"><%= locale.get('title_links') %></h2>
+				</div>
+				<ul class="v-puzzle__links-list">
 
-        </div>
+					<% for idx, link in pairs(links) do %>
+						<li class="v-puzzle__links-list-item">
+							<%
+								render(
+									'frontend.views.partials.button',
+									{
+										label	= link[1],
+										url	 	= link[2],
+										color	= 'black',
+										icon	= 'arrow-up-right',
+									}
+								)
+							%>
+						</li>
+					<% end %>
+				</ul>
+			</section>
 
-    </div>
+		</div>
+
+	</div>
 </div>

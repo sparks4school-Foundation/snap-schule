@@ -1,22 +1,22 @@
 <header class="v-index__hero">
-    <h1 class="u-visually-hidden">Homepage</h1>
-    <img src="/static/images/index-hero-placeholder.png" alt="">
+	<h1 class="u-visually-hidden">Homepage</h1>
+	<img src="/static/images/index-hero-placeholder.png" alt="">
 </header>
 
 
 <div class="u-padding-x">
 
-    <div class="v-index__intro">
-    <%-
-    locale.get(
-        'index_intro',
-        '<span class="--blue">' .. locale.get('index_intro_p1') .. '</span>',
-        '<span class="--red">' .. locale.get('index_intro_p2') .. '</span>'
-    )
-    %>
-    </div>
+	<div class="v-index__intro">
+		<%-
+			locale.get(
+				'index_intro',
+				'<span class="--blue">' .. locale.get('index_intro_p1') .. '</span>',
+				'<span class="--red">' .. locale.get('index_intro_p2') .. '</span>'
+			)
+		%>
+	</div>
 
-<% render('frontend.views.partials.section-index-puzzles', { grade = 5 }) %>
-<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
+	<% render('frontend.views.partials.section-index-puzzles', { grade = 5 }) %>
+	<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
 
 </div>

@@ -1,3 +1,4 @@
+<% if grade == nil then grade = tonumber(string.sub(collection.name, 6)) end %>
 <div class="c-puzzles-grid">
 <%
 for idx, puzzle in pairs(puzzles) do
