@@ -2,7 +2,7 @@
 local menu = {
   {'Puzzles', '/puzzles'},
   {'Contact', '/#contact'},
-  {'Snap!', 'https://snap.berkeley.edu/'},
+  {'Snap!', '/snap'},
 }
 %>
 

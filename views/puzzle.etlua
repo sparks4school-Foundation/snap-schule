@@ -37,15 +37,15 @@
 			<p class="v-puzzle__header-intro"><%= summary %></p>
 			<div class="v-puzzle__header-links">
 				<% render('frontend.views.partials.button', {
-					label   = locale.get('b_start_puzzle'),
-					url	 = '#',
-					color   = 'black',
+					label	= locale.get('b_start_puzzle'),
+					url	 	= puzzle:url_for('open'),
+					color	= 'black',
 					icon	= 'arrow-up-right',
 				}) %>
 				<% render('frontend.views.partials.button', {
-					label   = locale.get('b_share_qr'),
-					url	 = '#',
-					color   = 'black',
+					label	= locale.get('b_share_qr'),
+					url	 	= '#',
+					color	= 'black',
 					icon	= 'qr-code',
 				}) %>
 			</div>
@@ -65,7 +65,7 @@
 
 			<div class="v-puzzle__contents-text">
 				<script>
-					// This element will commit suicide. Isn't this cool?
+					// This element will self-replace. Isn't this cool?
 					document.querySelector('.v-puzzle__contents-text').innerHTML =
 						marked.parse(`<%= description %>`);
 				</script>
