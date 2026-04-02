@@ -1,3 +1,5 @@
+<% if grade == 0 then grade = schule_utils:grade_from_project(puzzle) end %>
+
 <article class="c-card-puzzle">
 
 	<div class="c-card-puzzle__image">

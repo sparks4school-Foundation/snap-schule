@@ -52,6 +52,7 @@ local locale = {
 	nth_8 = "8th",
 	nth_9 = "9th",
 	nth_10 = "10th",
+	nth_unknown = "unknown",
 	b_grade_puzzles = "Grade @1 Puzzles", -- @1 becomes a number
 
 	-- Puzzles Page
@@ -71,8 +72,11 @@ local locale = {
 	b_share_qr = 'Share QR',
 	title_concept_resources = 'Concept and Resources',
 	title_links = 'Links:',
+
 	-- User Page
 	-- =========
+	title_student_account = 'Student Account',
+	title_teacher_account = 'Teacher Account',
 	title_student_puzzles = 'Student\'s Puzzles',
 
 	-- Contact

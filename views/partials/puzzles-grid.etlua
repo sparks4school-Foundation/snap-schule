@@ -1,6 +1,10 @@
-<% if grade == nil then grade = tonumber(string.sub(collection.name, 6)) end %>
 <div class="c-puzzles-grid">
+
 <%
+if (grade == null) then
+	grade = schule_utils:grade_from_collection(collection)
+end
+
 for idx, puzzle in pairs(puzzles) do
 	render(
 		'frontend.views.partials.card-puzzle',
@@ -11,4 +15,5 @@ for idx, puzzle in pairs(puzzles) do
 	)
 end
 %>
+
 </div>

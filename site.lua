@@ -34,13 +34,15 @@ local Projects = package.loaded.Projects
 local Remixes = package.loaded.Remixes
 local Collections = package.loaded.Collections
 local FlaggedProjects = package.loaded.FlaggedProjects
-local csrf = require("lapis.csrf")
+local csrf = require('lapis.csrf')
 local assert_exists = require('validation').assert_exists
 local db = package.loaded.db
 
-local util = require("lib.util")
+local util = require('lib.util')
 local materials = require('frontend.views.static.resources').materials
 local material_types = require('frontend.views.static.resources').types
+
+local schule_utils = require('frontend.schule_utils')
 
 require 'controllers.user'
 require 'controllers.project'
@@ -72,6 +74,8 @@ user_forms['delete_user'] = 'users/delete_user'
 
 app:before_filter(function (self)
 	self.jadga = Users:find({ username = 'jadga' })
+
+	self.schule_utils = schule_utils
 
 	self.cache_buster = util.cache_buster()
 	-- A front-end method to prefer opening some links (the IDE, mostly) in the same window
@@ -137,5 +141,9 @@ app:get('/class', capture_errors(cached(function (self)
 end)))
 
 app:get('/user', capture_errors(cached(function (self)
+	self.account_type = self.current_user.is_teacher and 'teacher' or 'student'
+	if not self.current_user.is_teacher then
+		self.my_puzzles = ProjectController.my_projects(self)
+	end
 	return { render = 'user' }
 end)))

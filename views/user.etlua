@@ -1,10 +1,5 @@
-<%
-local account_type, username
-account_type = current_user.is_teacher and 'teacher' or 'student'
-%>
-
 <header class="v-user__header u-padding-x">
-	<div class="v-user__header-type"><%- account_type %> Account</div>
+	<div class="v-user__header-type"><%= locale.get('title_' .. account_type .. '_account') %></div>
 	<h1 class="v-user__header-name"><%- current_user.username %></h1>
 </header>
 
@@ -14,11 +9,11 @@ account_type = current_user.is_teacher and 'teacher' or 'student'
 
 		<div class="v-user__puzzles-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title   = locale.get('title_student_puzzles'),
+				title	= locale.get('title_student_puzzles'),
 				link	= {
-					label   = 'Add Puzzle',
-					url	 = '#',
-					color   = 'yellow',
+					label	= 'Add Puzzle',
+					url	 	= '#',
+					color	= 'yellow',
 					icon	= 'plus',
 				}
 			}) %>
@@ -26,7 +21,7 @@ account_type = current_user.is_teacher and 'teacher' or 'student'
 
 		<div class="v-user__puzzles-grid">
 			<% render('frontend.views.partials.puzzles-grid', {
-				puzzles = 7
+				puzzles = my_puzzles
 			}) %>
 		</div>
 
@@ -46,9 +41,7 @@ account_type = current_user.is_teacher and 'teacher' or 'student'
 		</div>
 
 		<div class="v-user__puzzles-grid">
-			<% render('frontend.views.partials.puzzles-grid', {
-				puzzles = 2
-			}) %>
+		<h1>TODO: This should hold the teacher collections, not puzzles</h1>
 		</div>
 
 	<section>
@@ -151,9 +144,9 @@ account_type = current_user.is_teacher and 'teacher' or 'student'
 						</p>
 						<div class="--buttons">
 							<% render('frontend.views.partials.button', {
-								label   = 'Delete Class',
-								url	 = '#',
-								color   = 'red',
+								label	= 'Delete Class',
+								url	 	= '#',
+								color	= 'red',
 								icon	= 'arrow-right',
 							}) %>
 						</div>
