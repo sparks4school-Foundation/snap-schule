@@ -35,7 +35,7 @@ end
 
 function utils:grade_from_project(project)
 	-- TRY TO FIND A COLLECTION CONTAINING THIS PROJECT
-	collections =
+	local collections =
 		CollectionController.containing_project({
 			params = { project_id = project.id }
 		})

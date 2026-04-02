@@ -56,9 +56,18 @@
 
 <!--
 	TODO: ⚠⚠⚠ MARC FIX THIS ⚠⚠⚠
-				Look at views/partials/qr.etlua
+				Look at views/partials/qr.etlua and static/styles/7-components/qr.css
 -->
-<% render('frontend.views.partials.qr', { url = puzzle:url_for('open')}) %>
+<%
+	render(
+		'frontend.views.partials.qr',
+		{
+			url = puzzle:url_for('open'),
+			title = 'Share Puzzle',
+			subtitle = puzzle.projectname
+		}
+	)
+%>
 
 <div class="u-padding-x">
 	<div class="v-puzzle__contents u-border-top-double">

@@ -1,0 +1,41 @@
+/**
+ * Components / QR code modal
+ */
+
+.c-qr {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.75);
+
+	top: 0;
+	left: 0;
+	z-index: var(--zindex-aboveMenu);
+
+	/* LOL sorry Marc */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&&.--hidden {
+		display: none;
+	}
+}
+
+/* LOL sorry Marc */
+
+.c-qr img {
+	height: 320px;
+	width: 320px;
+	padding: 20px;
+	border: 1px solid var(--color-grey-100);
+	background-color: white;
+}
+
+.c-qr a.close {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	font-size: 1.5em;
+}
