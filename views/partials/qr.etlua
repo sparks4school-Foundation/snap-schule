@@ -1,0 +1,27 @@
+<!--
+	TODO: ⚠⚠⚠ MARC FIX THIS ⚠⚠⚠
+				1) Instead of an inline style, use a CSS class and change it from the
+				showQR() function.
+				2) Stylize this to be a modal window, I guess?
+-->
+
+<div id="qrcode" style="display:none;">
+	<script type="text/javascript" src="../static/js/qrcode.min.js"></script>
+	<script type="text/javascript">
+		let element = document.getElementById('qrcode');
+		function showQR() {
+			element.style.display = 'block';
+		};
+		new QRCode(
+			element,
+			{
+				text: '<%= url %>',
+				width: 800,
+				height: 800,
+				colorDark: '#000',
+				colorLight: '#fff',
+				useSVG: true
+			}
+		);
+	</script>
+</div>

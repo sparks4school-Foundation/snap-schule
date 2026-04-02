@@ -76,6 +76,7 @@ app:before_filter(function (self)
 	self.jadga = Users:find({ username = 'jadga' })
 
 	self.schule_utils = schule_utils
+	self.util = util
 
 	self.cache_buster = util.cache_buster()
 	-- A front-end method to prefer opening some links (the IDE, mostly) in the same window
@@ -146,4 +147,9 @@ app:get('/user', capture_errors(cached(function (self)
 		self.my_puzzles = ProjectController.my_projects(self)
 	end
 	return { render = 'user' }
+end)))
+
+app:get('/qr/:url', capture_errors(cached(function (self)
+	self.url = self.params.url
+	return { render = 'partials.qr' }
 end)))

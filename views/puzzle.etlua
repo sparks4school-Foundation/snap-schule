@@ -1,6 +1,6 @@
 <%
 	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
-	-- TODO move into Schule utils package?
+	-- TODO move into Schule utils package
 	local notes = puzzle.notes
 	local summary =
 		string.sub(
@@ -43,16 +43,22 @@
 					icon	= 'arrow-up-right',
 				}) %>
 				<% render('frontend.views.partials.button', {
-					label	= locale.get('b_share_qr'),
-					url	 	= '#',
-					color	= 'black',
-					icon	= 'qr-code',
+					label		= locale.get('b_share_qr'),
+					action	= 'showQR()',
+					color		= 'black',
+					icon		= 'qr-code',
 				}) %>
 			</div>
 		</div>
 
 	</div>
 </header>
+
+<!--
+	TODO: ⚠⚠⚠ MARC FIX THIS ⚠⚠⚠
+				Look at views/partials/qr.etlua
+-->
+<% render('frontend.views.partials.qr', { url = puzzle:url_for('open')}) %>
 
 <div class="u-padding-x">
 	<div class="v-puzzle__contents u-border-top-double">
