@@ -1,55 +1,66 @@
 <%
 local menu = {
-  {'Puzzles', '/puzzles'},
-  {'Contact', '/#contact'},
-  {'Snap!', '/snap'},
+	{locale.get('b_puzzles'), '/puzzles'},
+	{locale.get('b_contact'), '/#contact'},
+	{'Snap!', '/snap'},
 }
 %>
 
 <header class="c-header u-padding-x">
 
-    <a href="/" class="c-header__logo">
-        <% render('frontend.static.svg.snap-schule--black') %>
-    </a>
+	<a href="/" class="c-header__logo">
+		<% render('frontend.static.svg.snap-schule--black') %>
+	</a>
 
-    <button
-        class="c-header__menu-toggle"
-        data-menu="toggle"
-        aria-controls="menu"
-        aria-expanded="false"
-        aria-label="Show Menu"
-    >
-        <div class="c-header__menu-toggle-icon --show">
-            <% render('frontend.static.svg.icon-menu--24x24') %>
-        </div>
-        <div class="c-header__menu-toggle-icon --hide">
-            <% render('frontend.static.svg.icon-cross--24x24') %>
-        </div>
-    </button>
+	<button
+		class="c-header__menu-toggle"
+		data-menu="toggle"
+		aria-controls="menu"
+		aria-expanded="false"
+		aria-label="Show Menu"
+	>
+		<div class="c-header__menu-toggle-icon --show">
+			<% render('frontend.static.svg.icon-menu--24x24') %>
+		</div>
+		<div class="c-header__menu-toggle-icon --hide">
+			<% render('frontend.static.svg.icon-cross--24x24') %>
+		</div>
+	</button>
 
-    <nav id="menu" class="c-header__menu" data-menu="menu" aria-hidden="true">
+	<nav id="menu" class="c-header__menu" data-menu="menu" aria-hidden="true">
 
-        <ul class="c-header__menu-list">
-            <% for i, item in ipairs(menu) do %>
-            <li class="c-header__menu-list-item">
-                <a href="<%= item[2] %>" class="c-header__menu-anchor"><%= item[1] %></a>
-            </li>
-            <% end %>
-        </ul>
+		<ul class="c-header__menu-list">
+			<% for _, item in ipairs(menu) do %>
+			<li class="c-header__menu-list-item">
+				<a href="<%= item[2] %>" class="c-header__menu-anchor"><%= item[1] %></a>
+			</li>
+			<% end %>
+		</ul>
 
-        <div class="c-header__menu-user">
-            <div class="c-header__menu-user-icon">
-                <% render('frontend.static.svg.icon-user-shapes--24x24') %>
-            </div>
-            <div class="c-header__menu-user-links">
-                <% if current_user == nil then %>
-                    <a href="/login" class="c-header__menu-user-anchor">Login</a> / <a href="/sign_up" class="c-header__menu-user-anchor">Sign Up</a>
-                <% else %>
-                    Hi, <%= current_user.username %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
-                <% end %>
-            </div>
-        </div>
+		<% debug_print(locale.locales) %>
+		<select onchange="cloud.post('/set_locale', Cloud.redirect, { locale: this.value, redirect: location.href });">
+			<% for _, each in pairs(locale.locales) do %>
+			<option
+				value="<%- each.lang_code %>"
+				<%- locale.language == each.lang_code and 'selected' or '' %>>
+					<%- each.lang_name %>
+			</option>
+			<% end %>
+		</select>
 
-    </nav>
+		<div class="c-header__menu-user">
+			<div class="c-header__menu-user-icon">
+				<% render('frontend.static.svg.icon-user-shapes--24x24') %>
+			</div>
+			<div class="c-header__menu-user-links">
+				<% if current_user == nil then %>
+					<a href="/login" class="c-header__menu-user-anchor"><%- locale.get('b_login') %></a> / <a href="/sign_up" class="c-header__menu-user-anchor"><%- locale.get('b_join') %></a>
+				<% else %>
+					<%= locale.get('hi_user', current_user.username) %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
+				<% end %>
+			</div>
+		</div>
+
+	</nav>
 
 </header>

@@ -33,7 +33,7 @@ local credits = {
 
     <div class="c-footer__bottom">
 
-      <p class="c-footer__credits-statement"><%= locale.get('footer_credits_statement') %></p>
+      <p class="c-footer__credits-statement"><%- locale.get('footer_credits_statement') %></p>
 
       <ul class="c-footer__credits-list">
         <% for k, item in ipairs(credits) do %>
