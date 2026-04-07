@@ -48,7 +48,13 @@ function utils:grade_from_project(project)
 	-- FIND OUT WHETHER THIS PROJECT IS A REMIX
 	local remixed_from =
 		package.loaded.Remixes:find({ remixed_project_id = project.id })
-	-- TODO IF SO, FIND A GRADE COLLECTION IT MAY HAVE BELONGED TO
+	if remixed_from then
+		-- IF SO, FIND A GRADE COLLECTION IT MAY HAVE BELONGED TO
+		local origin = package.loaded.Projects:find(
+			{ id = remixed_from.original_project_id }
+		)
+		return self:grade_from_project(origin)
+	end
 	debug_print('PROJECT REMIXED FROM:', remixed_from or 'none')
 
 	-- IF ALL ELSE FAILS, WE DON'T KNOW WHAT GRADE THIS PROJECT IS
