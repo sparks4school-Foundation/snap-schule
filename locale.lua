@@ -146,7 +146,7 @@ localizer.update = function ()
     output_file:close()
 end
 
-localizer.language = 'en'
+localizer.language = 'de'
 
 localizer.read_locales()
 

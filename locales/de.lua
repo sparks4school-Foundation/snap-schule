@@ -85,11 +85,26 @@ local locale = {
 	contact_text = "Schreiben Sie uns jederzeit gerne eine E-Mail – egal, ob Sie Hilfe benötigen, Vorschläge haben oder uns einfach Ihre Meinung mitteilen möchten. Ihr Feedback hilft uns, diese Website für Lehrkräfte und Schüler*innen besser zu machen.",
 	b_contact_us = "Kontaktieren Sie uns",
 
+	-- Signup
+	-- ======
+	signup_title = ' Registrierung für Lehrkräfte',
+	placeholder_username = 'Benutzername',
+	placeholder_password = 'Passwort',
+	placeholder_password_repeat = 'Passwort (Wiederholung)',
+	placeholder_email = 'E-Mail',
+	placeholder_email_repeat = 'E-Mail (Wiederholung)',
+	placeholder_captcha = 'Bitte gib die angezeigten Ziffern ein',
+	b_signup = 'Registrieren',
+
+
 	-- Footer
 	-- ======
-	
 	footer_credits_statement = "snap.schule ist ein Projekt von UC Berkeley, SAP, SPARKS",
 
+	-- Errors and messages
+	-- ===================
+	err_unauthorized = 'Du bist nicht berechtigt, diese Aktion auszuführen',
+	msg_user_created = 'User @1 has been created. Password is @2'
 }
 
 return locale

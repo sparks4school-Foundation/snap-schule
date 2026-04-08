@@ -61,4 +61,41 @@ function utils:grade_from_project(project)
 	return 'unknown'
 end
 
-return utils
+function utils:signup_email_body(email)
+	local address = package.loaded.util.escape(email)
+	local style = [[
+<style>
+* {
+	font-family: Arial;
+}
+.button {
+	padding: .1em .5em;
+	border: 1px solid gray;
+	border-radius: 5px;
+	color: white;
+	margin-right: .5em;
+	text-decoration: none;
+	font-weight: bold;
+	&.accept { background: darkgreen; }
+	&.reject { background: darkred; }
+	&:hover {
+		cursor: pointer;
+		background: lightgray;
+		color: black;
+	}
+}
+</style>
+]]
+
+	local body = style ..
+		'<h2>User signup application</h2>' ..
+		'<p>A new user wants to be allowed into Snap!Schule:</p>' ..
+		'\n\n<strong>email</strong>: <em>' .. address .. '</em>\n\n' ..
+		'<p><a class="button accept" href="https://snap.schule/accept_request/' ..
+		address .. '">Accept</a><a class="button reject" ' ..
+		'href="https://snap.schule/reject_request/' .. address .. '">Reject</a></p>'
+		
+end
+
+
+	return utils

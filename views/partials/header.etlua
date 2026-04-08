@@ -37,7 +37,7 @@ local menu = {
 			<% end %>
 		</ul>
 
-		<% debug_print(locale.locales) %>
+		<!--
 		<select onchange="cloud.post('/set_locale', Cloud.redirect, { locale: this.value, redirect: location.href });">
 			<% for _, each in pairs(locale.locales) do %>
 			<option
@@ -47,6 +47,7 @@ local menu = {
 			</option>
 			<% end %>
 		</select>
+		-->
 
 		<div class="c-header__menu-user">
 			<div class="c-header__menu-user-icon">

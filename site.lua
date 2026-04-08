@@ -39,9 +39,8 @@ local assert_exists = require('validation').assert_exists
 local db = package.loaded.db
 
 local util = require('lib.util')
-local materials = require('frontend.views.static.resources').materials
-local material_types = require('frontend.views.static.resources').types
 
+package.loaded.base64 = require('base64')
 local schule_utils = require('frontend.schule_utils')
 
 require 'controllers.user'
@@ -69,7 +68,6 @@ user_forms['forgot_password'] = 'sessions/forgot_password'
 user_forms['forgot_username'] = 'sessions/forgot_username'
 user_forms['change_password'] = 'sessions/change_password'
 user_forms['change_email'] = 'users/change_email'
-user_forms['sign_up'] = 'users/sign_up'
 user_forms['delete_user'] = 'users/delete_user'
 
 app:before_filter(function (self)
@@ -116,7 +114,7 @@ for route, view_path in pairs(user_forms) do
 	end)))
 end
 
--- All puzzle
+-- All puzzles
 app:get('/puzzles', capture_errors(cached(function (self)
 	self.collection = Collections:find({ id = 1 }) -- default to first collection
 	assert_can_view_collection(self, self.collection)
@@ -154,3 +152,58 @@ app:get('/qr/:url', capture_errors(cached(function (self)
 	self.url = self.params.url
 	return { render = 'partials.qr' }
 end)))
+
+app:get('/sign_up', capture_errors(cached(function (self)
+	self.csrf_token = csrf.generate_token(self)
+	self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
+	local string = ''
+	for i = 1, 5 do
+		local num = math.random(9)
+		string = string .. num
+	end
+	self.session.captcha = string
+	return { render = 'users.sign_up' }
+end)))
+
+app:get('/sign_up_result', capture_errors(function (self)
+	local passed = (self.params.captcha == self.session.captcha)
+	self.session.captcha = nil
+	if passed then
+		-- send email with details and accept/reject buttons
+		send_mail(
+			self.jadga.email,
+			locale.get('email_signup_subject'),
+			schule_utils.signup_email_body(self.params.email)
+		)
+		return { render = 'users.reviewing' }
+	else
+		return 'Captcha challenge failed'
+	end
+end))
+
+app:get('/accept_request', capture_errors(function (self)
+	if self.current_user == self.jadga then
+		local salt = secure_salt()
+		local password, prehash = random_password()
+		local user = Users:create({
+			created = db.format_date(),
+			username = self.params.email,
+			salt = salt,
+			password = hash_password(prehash, salt),
+			email = self.params.email,
+			is_teacher = true,
+			verified = true,
+			role = 'standard'
+		})
+		return okayResponse(self, locale.get('msg_user_created', email, password))
+	else
+		return errorResponse(self, locale.get('err_unauthorized'), 401)
+	end
+end))
+app:get('/reject_request', capture_errors(function (self)
+	if self.current_user == self.jadga then
+		--TODO Maybe notify user? Maybe just do nothing?
+	else
+		return errorResponse(self, locale.get('err_unauthorized'), 401)
+	end
+end))
