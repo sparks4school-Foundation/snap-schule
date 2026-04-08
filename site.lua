@@ -39,6 +39,7 @@ local assert_exists = require('validation').assert_exists
 local db = package.loaded.db
 
 local util = require('lib.util')
+local locale = package.loaded.locale
 
 package.loaded.base64 = require('base64')
 local schule_utils = require('frontend.schule_utils')
@@ -175,14 +176,20 @@ app:get('/sign_up_result', capture_errors(function (self)
 			locale.get('email_signup_subject'),
 			schule_utils.signup_email_body(self.params.email)
 		)
-		return { render = 'users.reviewing' }
+		self.title = 'User creation pending review'
+		self.contents = 'Thank you for your request. We are now reviewing your ' ..
+			'application and we will get back to you very soon with details on ' ..
+			' how to access your account.'
+		return { render = 'message' }
 	else
-		return 'Captcha challenge failed'
+		self.title = 'Captcha failed'
+		self.contents = locale.get('err_captcha')
+		return { render = 'message' }
 	end
 end))
 
-app:get('/accept_request', capture_errors(function (self)
-	if self.current_user == self.jadga then
+app:get('/accept_request/:email', capture_errors(function (self)
+	if self.current_user.id == self.jadga.id then
 		local salt = secure_salt()
 		local password, prehash = random_password()
 		local user = Users:create({
@@ -195,15 +202,22 @@ app:get('/accept_request', capture_errors(function (self)
 			verified = true,
 			role = 'standard'
 		})
-		return okayResponse(self, locale.get('msg_user_created', email, password))
+		self.title = 'User created'
+		self.contents = locale.get('msg_user_created', self.params.email, password)
+		return { render = 'message' }
 	else
-		return errorResponse(self, locale.get('err_unauthorized'), 401)
+		self.title = 'Error'
+		self.contents = locale.get('err_unauthorized')
+		return { render = 'message' }
 	end
 end))
-app:get('/reject_request', capture_errors(function (self)
+
+app:get('/reject_request/:email', capture_errors(function (self)
 	if self.current_user == self.jadga then
 		--TODO Maybe notify user? Maybe just do nothing?
 	else
-		return errorResponse(self, locale.get('err_unauthorized'), 401)
+		self.title = 'Error'
+		self.contents = locale.get('err_unauthorized')
+		return { render = 'message' }
 	end
 end))

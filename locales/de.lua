@@ -87,10 +87,7 @@ local locale = {
 
 	-- Signup
 	-- ======
-	signup_title = ' Registrierung für Lehrkräfte',
-	placeholder_username = 'Benutzername',
-	placeholder_password = 'Passwort',
-	placeholder_password_repeat = 'Passwort (Wiederholung)',
+	signup_title = 'Registrierung für Lehrkräfte',
 	placeholder_email = 'E-Mail',
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
 	placeholder_captcha = 'Bitte gib die angezeigten Ziffern ein',
@@ -99,11 +96,12 @@ local locale = {
 
 	-- Footer
 	-- ======
-	footer_credits_statement = "snap.schule ist ein Projekt von UC Berkeley, SAP, SPARKS",
+	footer_credits_statement = "snap.schule ist ein Projekt von UC&nbsp;Berkeley, SAP, SPARKS",
 
 	-- Errors and messages
 	-- ===================
 	err_unauthorized = 'Du bist nicht berechtigt, diese Aktion auszuführen',
+	err_captcha = 'Captcha challenge failed',
 	msg_user_created = 'User @1 has been created. Password is @2'
 }
 

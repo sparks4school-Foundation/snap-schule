@@ -97,5 +97,4 @@ function utils:signup_email_body(email)
 		
 end
 
-
-	return utils
+return utils

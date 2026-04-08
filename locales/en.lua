@@ -85,10 +85,24 @@ local locale = {
 	contact_text = 'Feel free to send us an email anytime—whether you need help, have suggestions, or just want to share your thoughts. Your input helps us make this website better for students like you.',
 	b_contact_us = 'Contact Us',
 
+	-- Signup
+	-- ======
+	signup_title = 'Sign up',
+	placeholder_email = 'E-mail',
+	placeholder_email_repeat = 'E-mail (Repeat)',
+	placeholder_captcha = 'Enter the number above',
+	b_signup = 'Sign up',
+
 	-- Footer
 	-- ======
 	
 	footer_credits_statement = 'snap.schule is brought to you by UC&nbsp;Berkeley, SAP, SPARKS',
+
+	-- Errors and messages
+	-- ===================
+	err_unauthorized = 'You do not have permission to perform this action',
+	err_captcha = 'Captcha challenge failed',
+	msg_user_created = 'User @1 has been created. Password is @2'
 }
 
 return locale

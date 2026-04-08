@@ -67,6 +67,9 @@ end
 
 localizer.get = function (selector, ...)
     -- Fetches a locale string in the current localizer language
+		if selector == 'msg_user_created' then
+		debug_print('params', ...)
+	end
     if localizer.locales[localizer.language][selector] then
         return localizer.localize(selector, localizer.language, ...)
     else
