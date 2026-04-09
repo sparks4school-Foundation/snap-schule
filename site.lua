@@ -91,6 +91,9 @@ app:before_filter(function (self)
 	-- self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
 end)
 
+
+-- INDEX --
+
 app:get('index', '/', capture_errors(cached(function (self)
 	local snapcloud_user = Users:find({ username = 'snapcloud' })
 	if not snapcloud_user then
@@ -115,7 +118,9 @@ for route, view_path in pairs(user_forms) do
 	end)))
 end
 
--- All puzzles
+
+-- PUZZLES --
+
 app:get('/puzzles', capture_errors(cached(function (self)
 	self.collection = Collections:find({ id = 1 }) -- default to first collection
 	assert_can_view_collection(self, self.collection)
@@ -136,9 +141,24 @@ app:get('/puzzle/:id', capture_errors(cached(function (self)
 	return { render = 'puzzle' }
 end)))
 
+app:get('/qr/:url', capture_errors(cached(function (self)
+	self.url = self.params.url
+	return { render = 'partials.qr' }
+end)))
+
+app:get('/editor/:id', capture_errors(cached(function (self)
+	self.top_only = true -- do not show bottom layout (contact, footer, etc)
+	return { render = 'editor' }
+end)))
+
+-- CLASSES --
+
 app:get('/class', capture_errors(cached(function (self)
 	return { render = 'class' }
 end)))
+
+
+-- USERS --
 
 app:get('/user', capture_errors(cached(function (self)
 	if not self.current_user then return { redirect_to = '/' } end
@@ -149,10 +169,8 @@ app:get('/user', capture_errors(cached(function (self)
 	return { render = 'user' }
 end)))
 
-app:get('/qr/:url', capture_errors(cached(function (self)
-	self.url = self.params.url
-	return { render = 'partials.qr' }
-end)))
+
+-- USER SIGN UP --
 
 app:get('/sign_up', capture_errors(cached(function (self)
 	self.csrf_token = csrf.generate_token(self)

@@ -38,7 +38,7 @@
 			<div class="v-puzzle__header-links">
 				<% render('frontend.views.partials.button', {
 					label	= locale.get('b_start_puzzle'),
-					url	 	= puzzle:url_for('open'),
+					url	 	= '/editor/' .. puzzle.id,
 					color	= 'black',
 					icon	= 'arrow-up-right',
 				}) %>
@@ -62,7 +62,7 @@
 	render(
 		'frontend.views.partials.qr',
 		{
-			url = puzzle:url_for('open'),
+			url = '/editor/' .. puzzle.id,
 			title = 'Share Puzzle',
 			subtitle = puzzle.projectname
 		}

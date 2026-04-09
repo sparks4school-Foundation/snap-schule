@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="<%= locale.language %>">
 
-  <head>
-    <% render('frontend.views.layout.head') %>
-  </head>
+	<head>
+		<% render('frontend.views.layout.head') %>
+	</head>
 
-  <body class="v-<%= page %>">
-    <% render('frontend.views.partials.header') %>
-    <main class="l-main">
-      <% content_for('inner') %>
-    </main>
-    <% render('frontend.views.partials.contact') %>
-    <% render('frontend.views.partials.footer') %>
-  </body>
+	<body class="v-<%= page %>">
+		<% render('frontend.views.partials.header') %>
+		<main class="l-main">
+			<% content_for('inner') %>
+		</main>
+		<%
+			if not top_only then
+				render('frontend.views.partials.contact')
+				render('frontend.views.partials.footer')
+			end
+		%>
+	</body>
 
 </html>
