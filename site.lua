@@ -73,6 +73,7 @@ user_forms['delete_user'] = 'users/delete_user'
 
 app:before_filter(function (self)
 	self.jadga = Users:find({ username = 'jadga' })
+	if not self.session.locale then self.session.locale = 'de' end
 
 	self.schule_utils = schule_utils
 	self.util = util
