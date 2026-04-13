@@ -95,6 +95,8 @@ function utils:signup_email_body(email)
 		address .. '">Accept</a><a class="button reject" ' ..
 		'href="https://snap.schule/reject_request/' .. address .. '">Reject</a></p>'
 		
+
+	return body
 end
 
 return utils

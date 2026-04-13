@@ -41,7 +41,6 @@ local db = package.loaded.db
 local util = require('lib.util')
 local locale = package.loaded.locale
 
-package.loaded.base64 = require('base64')
 local schule_utils = require('frontend.schule_utils')
 
 require 'controllers.user'
@@ -193,7 +192,7 @@ app:get('/sign_up_result', capture_errors(function (self)
 		send_mail(
 			self.jadga.email,
 			locale.get('email_signup_subject'),
-			schule_utils.signup_email_body(self.params.email)
+			schule_utils:signup_email_body(self.params.email)
 		)
 		self.title = 'User creation pending review'
 		self.contents = 'Thank you for your request. We are now reviewing your ' ..
@@ -208,7 +207,7 @@ app:get('/sign_up_result', capture_errors(function (self)
 end))
 
 app:get('/accept_request/:email', capture_errors(function (self)
-	if self.current_user.id == self.jadga.id then
+	if self.current_user and self.current_user.id == self.jadga.id then
 		local salt = secure_salt()
 		local password, prehash = random_password()
 		local user = Users:create({
