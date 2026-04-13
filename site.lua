@@ -123,8 +123,7 @@ end
 -- PUZZLES --
 
 app:get('/puzzles', capture_errors(cached(function (self)
-	self.collection = Collections:find({ id = 1 }) -- default to first collection
-	assert_can_view_collection(self, self.collection)
+	self.collection = self.jadga:get_public_collections()[1]
 	return { render = 'puzzles' }
 end)))
 
@@ -147,10 +146,11 @@ app:get('/qr/:url', capture_errors(cached(function (self)
 	return { render = 'partials.qr' }
 end)))
 
-app:get('/editor/:id', capture_errors(cached(function (self)
+app:get('/editor(/:id)', capture_errors(cached(function (self)
 	self.top_only = true -- do not show bottom layout (contact, footer, etc)
 	return { render = 'editor' }
 end)))
+
 
 -- CLASSES --
 

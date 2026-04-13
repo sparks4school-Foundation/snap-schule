@@ -14,5 +14,12 @@ iframe {
 }
 </style>
 
-<% local url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' .. ngx.var.server_port .. '/project/' .. params.id %>
+<%
+if params.id then
+	local url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' ..
+		ngx.var.server_port .. '/project/' .. params.id
+%>
 <iframe src="/snap/snap.html#open:<%= url %>"></iframe>
+<% else %>
+<iframe src="/snap/snap.html"></iframe>
+<% end %>

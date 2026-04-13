@@ -47,7 +47,10 @@ local puzzles = CollectionController.projects({
 							"name ilike '%grade%'"
 						})
 				)) do %>
-					<option value="<%= col.name %>">
+					<option
+						value="<%= col.name %>"
+						<%- collection.name == col.name and 'selected' or '' %>
+					>
 						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
 					</option>
 			<% end %>
