@@ -18,7 +18,8 @@
 			local path = './frontend/static/captcha/captcha_' .. session.captcha:sub(i,i) .. '.png'
 			local file = io.open(path, 'r')
 			local contents = file:read("*all")
-			local b64 = package.loaded.base64.encode(contents)
+			local encoding = require('lapis.util.encoding')
+			local b64 = encoding.encode_base64(contents)
 			file:close()
 		%>
 			<img src="data:image/png;base64,<%= b64 %>"></img>
