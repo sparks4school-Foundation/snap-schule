@@ -71,6 +71,12 @@ user_forms['change_email'] = 'users/change_email'
 user_forms['delete_user'] = 'users/delete_user'
 
 app:before_filter(function (self)
+	ngx.var.cloud_loc =
+		(ngx.var.host == 'localhost' and
+			(ngx.var.scheme ..'://' .. ngx.var.host .. ':' .. ngx.var.server_port)
+		or
+			(ngx.var.scheme ..'://' .. ngx.var.host))
+
 	self.jadga = Users:find({ username = 'jadga' })
 	if not self.session.locale then self.session.locale = 'de' end
 
