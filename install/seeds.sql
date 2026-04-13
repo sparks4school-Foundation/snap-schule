@@ -10,3 +10,13 @@ VALUES
 		(2, 'Grade 5', 100, NOW(), NOW(), 'Puzzles for grade 5', 't', NOW(), 't', NOW(), NULL, '{}'),
 		(3, 'Grade 6', 100, NOW(), NOW(), 'Puzzles for grade 6', 't', NOW(), 't', NOW(), NULL, '{}')
 	ON CONFLICT DO NOTHING;
+
+ALTER view active_projects owner to cloud
+ALTER view active_users owner to cloud
+ALTER view count_recent_projects owner to cloud
+ALTER view deleted_projects owner to cloud
+ALTER view deleted_users owner to cloud
+ALTER view pg_stat_statements owner to cloud
+ALTER view pg_stat_statements_info owner to cloud
+ALTER view recent_projects_2_days owner to cloud
+
