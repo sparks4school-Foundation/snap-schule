@@ -57,7 +57,7 @@ local menu = {
 				<% if current_user == nil then %>
 					<a href="/login" class="c-header__menu-user-anchor"><%- locale.get('b_login') %></a> / <a href="/sign_up" class="c-header__menu-user-anchor"><%- locale.get('b_join') %></a>
 				<% else %>
-					<%= locale.get('hi_user', current_user.username) %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
+					<%- locale.get('hi_user', '<a href="/user">' .. package.loaded.html.escape(current_user.username) .. '</a>' ) %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
 				<% end %>
 			</div>
 		</div>
