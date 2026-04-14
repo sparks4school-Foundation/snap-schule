@@ -16,10 +16,14 @@ iframe {
 
 <%
 if params.id then
-	local url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' ..
-		ngx.var.server_port .. '/project/' .. params.id
+	local url
+	if (ngx.var.cloud_url ~= '') then
+		url = ngx.var.cloud_url
+	else
+		url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' .. ngx.var.server_port
+	end
 %>
-<iframe src="/snap/snap.html#open:<%= url %>"></iframe>
+<iframe src="/snap/snap.html#open:<%= url .. '/project/' .. params.id %>"></iframe>
 <% else %>
 <iframe src="/snap/snap.html"></iframe>
 <% end %>
