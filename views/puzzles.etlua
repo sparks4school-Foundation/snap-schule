@@ -1,12 +1,3 @@
-<%
-local puzzles = CollectionController.projects({
-		params = {},
-		items_per_page = 24, -- max 24 projects to query from DB.
-		collection = collection,
-		cached = false
-	})
-%>
-
 <header class="v-puzzles__header u-padding-x">
 	<h1 class="v-puzzles__header-heading">Puzzles</h1>
 </header>
@@ -48,12 +39,17 @@ local puzzles = CollectionController.projects({
 						})
 				)) do %>
 					<option
-						value="<%= col.name %>"
+						value="<%= col.id %>"
 						<%- collection.name == col.name and 'selected' or '' %>
 					>
 						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
 					</option>
 			<% end %>
+			<script>
+				function filter_grade(grade) {
+					window.location = '/puzzles/' + (grade == 'all' ? '' : grade);
+				}
+			</script>
 		</select>
 	</div>
 </form>

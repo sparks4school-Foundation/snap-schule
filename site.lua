@@ -127,15 +127,22 @@ end
 
 -- PUZZLES --
 
-app:get('/puzzles', capture_errors(cached(function (self)
-	self.collection = self.jadga:get_public_collections()[1]
-	return { render = 'puzzles' }
-end)))
-
-app:get('/puzzles/:id', capture_errors(cached(function (self)
-	self.collection = package.loaded.Collections:find({ id = self.params.id })
-	if not self.collection then yield_error(err.nonexistent_collection) end
-	assert_can_view_collection(self, self.collection)
+app:get('/puzzles(/:id)', capture_errors(cached(function (self)
+	if self.params.id then
+		self.collection = package.loaded.Collections:find({ id = self.params.id })
+		if not self.collection then yield_error(err.nonexistent_collection) end
+		assert_can_view_collection(self, self.collection)
+		self.puzzles = CollectionController.projects({
+			params = {},
+			items_per_page = 24, -- max 24 projects to query from DB.
+			collection = self.collection,
+			cached = false
+		})
+	else
+		self.collection = { name = locale.get('dd_all_grades') }
+		self.params.username = 'jadga'
+		self.puzzles = ProjectController.user_projects(self)
+	end
 	return { render = 'puzzles' }
 end)))
 
