@@ -27,7 +27,7 @@ local locale = {
 	b_join = "Registrieren",
 	b_login = "Anmelden",
 	b_logout = "",
-	b_puzzles = "Rätsel",
+	b_puzzles = "Puzzle",
 	b_contact = "Kontakt",
 	hi_user = "Hallo @1!", -- @1 becomes the current user username
 
@@ -35,12 +35,12 @@ local locale = {
 	-- Index page
 	-- ==========
 	index_intro = "Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand. Snap! Schule bietet @1, die Sie direkt einsetzen können. Entwickelt von Lehrkräften, Informatiker*innen und Fachdidaktiker*innen – DSGVO-konform und kostenlos. Wir starten mit @2, weitere Bundesländer folgen!", -- @1 and @2 become the two sentences below:
-	index_intro_p1 = "lehrplangerechte Rätsel und Unterrichtsmaterialien",
+	index_intro_p1 = "lehrplangerechte Puzzle und Unterrichtsmaterialien",
 	index_intro_p2 = "Baden-Württemberg",
 
 	-- Puzzle carousels
 	-- ================
-	nth_grade_puzzles = "Rätsel für die @1 Klassenstufe", -- @1 becomes a numeral, from below:
+	nth_grade_puzzles = "Puzzle für die @1 Klassenstufe", -- @1 becomes a numeral, from below:
 	nth_grade = "@1 Klassenstufe", -- @1 becomes a numeral, form below:
 	nth_1 = "1.",
 	nth_2 = "2.",
@@ -68,9 +68,9 @@ local locale = {
 
 	-- Puzzle Page
 	-- ===========
-	b_start_puzzle = "Rätsel beginnen",
-	b_share_qr = "Rätsel beginnen",
-	title_concept_resources = "Konzept und  Materialien",
+	b_start_puzzle = "Puzzle beginnen",
+	b_share_qr = "Puzzle beginnen",
+	title_concept_resources = "Konzept und Materialien",
 	title_links = "Links",
 
 	-- User Page
