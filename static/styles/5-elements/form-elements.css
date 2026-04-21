@@ -24,17 +24,22 @@ label {
 
 
 input[type="text"],
+input[type="password"],
 textarea {
   all: unset;
   padding: var(--space-8) var(--space-10);
 
   font-family: var(--fontFamily-mono);
   letter-spacing: -0.025rem;
-
   background-color: var(--color-grey-200);
   border-radius: var(--borderRadius-default);
 
-  transition: all var(--duration-200);
+  outline: 0px solid var(--color-blue);
+  transition: all var(--duration-100);
+
+  &:focus {
+    outline: var(--space-2) solid var(--color-blue);
+  }
 }
 
 
@@ -50,10 +55,12 @@ input[type="checkbox"] {
 
   transition: all var(--duration-200);
 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 2.5l11 11M13.5 2.5l-11 11' stroke='%23006AFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0;
+
   &:checked {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 2.5l11 11M13.5 2.5l-11 11' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: var(--space-16);
   }
 

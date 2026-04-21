@@ -131,6 +131,7 @@
 
 
   /* Transition Durations */
+  --duration-100:   0.1s;
   --duration-200:   0.2s;
   --duration-400:   0.4s;
   --duration-600:   0.6s;

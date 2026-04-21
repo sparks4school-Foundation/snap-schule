@@ -14,8 +14,13 @@
 
   font-family: var(--fontFamily-mono);
   text-decoration: none;
+  border: none;
   border-radius: var(--borderRadius-default);
   transition: background-color var(--duration-200) ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
 
 
   /* Black */

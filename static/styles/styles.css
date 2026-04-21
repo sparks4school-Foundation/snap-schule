@@ -34,10 +34,12 @@
 @import '7-components/header.css';
 @import '7-components/pagination.css';
 @import '7-components/puzzles-grid.css';
-@import '7-components/section-heading.css';
 @import '7-components/qr.css';
+@import '7-components/section-heading.css';
+@import '7-components/user-form.css';
 
 
+@import '8-views/auth.css';
 @import '8-views/class.css';
 @import '8-views/index.css';
 @import '8-views/puzzle.css';

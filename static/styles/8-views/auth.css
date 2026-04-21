@@ -1,0 +1,31 @@
+/**
+ * Views / Auth
+ */
+
+
+.v-auth__title {
+  padding-top: var(--space-40);
+  padding-bottom: var(--space-40);
+
+  font-size: var(--fontSize-32);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding-top: var(--space-56);
+    padding-bottom: var(--space-56);
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: var(--space-72);
+    padding-bottom: var(--space-72);
+
+    font-size: var(--fontSize-40);
+  }
+
+  @media (min-width: 1536px) {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+  }
+}

@@ -1,35 +1,72 @@
 <% content_for('title', locale.get('signup_title')) %>
-<h1><%- locale.get('signup_title', '<em>!</em>') %></h1>
 
-<form id="form-signup" action="sign_up_result" onsubmit="formValidation(event)">
-	<input type="hidden" name="csrf_token" id="csrf_token"
-		value="<%- csrf_token %>">
+<h1 class="v-auth__title" localizable><%- locale.get('signup_title', '<em>!</em>') %></h1>
 
-		<input id="email" name="email" type="email"
-			placeholder="<%- locale.get('placeholder_email') %>"
-			aria-required=true required>
+<div class="c-user-form">
+	<form id="form-signup" action="sign_up_result" onsubmit="formValidation(event)">
 
-		<input id="email-repeat" name="email-repeat" type="email"
-				placeholder="<%- locale.get('placeholder_email_repeat') %>"
-				aria-required=true required>
+		<input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">
 
-	<div class="captcha">
-		<% for i = 1, 5 do
-			local path = './frontend/static/captcha/captcha_' .. session.captcha:sub(i,i) .. '.png'
-			local file = io.open(path, 'r')
-			local contents = file:read("*all")
-			local encoding = require('lapis.util.encoding')
-			local b64 = encoding.encode_base64(contents)
-			file:close()
-		%>
-			<img src="data:image/png;base64,<%= b64 %>"></img>
-		<% end %>
-		<input id="captcha" name="captcha" type="text" class="form-control"
-				placeholder="<%- locale.get('placeholder_captcha') %>" aria-required=true required>
-	</div>
+		<div class="c-user-form__input-wrapper">
+			<label for="email" class="u-visually-hidden"><%= locale.get('placeholder_email') %></label>
+			<input
+				id="email"
+				name="email"
+				type="text"
+				class="form-control"
+				placeholder="<%= locale.get('placeholder_email') %>"
+				required
+				aria-required="true"
+			>
+		</div>
 
-		<input type="submit" value="<%- locale.get('b_signup') %>">
-</form>
+		<div class="c-user-form__input-wrapper">
+			<label for="email-repeat" class="u-visually-hidden"><%= locale.get('placeholder_email_repeat') %></label>
+			<input
+				id="email-repeat"
+				name="email-repeat"
+				type="text"
+				class="form-control"
+				placeholder="<%= locale.get('placeholder_email_repeat') %>"
+				required
+				aria-required="true"
+			>
+		</div>
+
+		<div class="c-user-form__captcha">
+			<div class="c-user-form__captcha-nums">
+				<% for i = 1, 5 do
+					local path = './frontend/static/captcha/captcha_' .. session.captcha:sub(i,i) .. '.png'
+					local file = io.open(path, 'r')
+					local contents = file:read("*all")
+					local encoding = require('lapis.util.encoding')
+					local b64 = encoding.encode_base64(contents)
+					file:close()
+				%>
+					<img src="data:image/png;base64,<%= b64 %>"></img>
+				<% end %>
+			</div>
+			<input
+				id="captcha"
+				name="captcha"
+				type="text"
+				class="form-control"
+				placeholder="<%- locale.get('placeholder_captcha') %>"
+				aria-required="true"
+				required
+			>
+		</div>
+
+		<div class="c-user-form__submit-wrapper">
+			<button class="c-button --yellow" type="submit">
+				<div class="c-button__text"><%= locale.get('login') %></div>
+				<div class="c-button__icon"><% render('frontend.static.svg.icon-arrow-right--24x24') %></div>
+			</button>
+		</div>
+
+	</form>
+</div>
+
 
 <script type="text/javascript" src="/static/js/sha512.js"></script>
 <script>
