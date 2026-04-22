@@ -1,22 +1,44 @@
-<!--
-	TODO: ⚠⚠⚠ MARC FIX THIS ⚠⚠⚠
-				Also look at static/styles/7-components/qr.css
--->
+<div id="qr-code" class="c-qr --is-hidden" data-qr="dialogue" onclick="toggleQRDialogue()">
 
-<div class="c-qr --hidden" onclick="hideQR()">
-	<a class="close" onclick="hideQR()">X</a>
-	<h2><%= title or '' %></h2>
-	<h1><%= subtitle or '' %></h1>
-	<div id="qrcode"></div>
-	<a href="<%= url %>"><%= url %></a>
+	<div class="c-qr__contents">
+		<h2 class="c-qr__dialogue-title"><%= dialogue_title or '' %></h2>
+		<p class="c-qr__element-title"><%= element_title or '' %></p>
+		<div class="c-qr__image-wrapper" data-qr="img-wrapper"></div>
+		<a class="c-qr__anchor" href="<%= url %>"><%= url %></a>
+	</div>
+
+	<div
+		class="c-qr__hide"
+		role="button"
+		aria-label="Hide QR"
+		onclick="toggleQRDialogue()"
+	>
+		<% render('frontend.static.svg.icon-cross--24x24') %>
+	</div>
 
 	<script type="text/javascript" src="../static/js/qrcode.min.js"></script>
 	<script type="text/javascript">
-		let element = document.querySelector('.c-qr');
-		function showQR() { element.classList.remove('--hidden'); };
-		function hideQR() { element.classList.add('--hidden'); };
+		let dialogue = document.querySelector('[data-qr="dialogue"]');
+
+		function toggleQRDialogue () {
+			if (!dialogue || dialogue.classList.contains('--is-transitioning')) { return };
+
+			if (dialogue.classList.contains('--is-hidden')) {
+				dialogue.classList.remove('--is-hidden');
+				dialogue.setAttribute('aria-hidden', false);
+			} else {
+				dialogue.classList.add('--is-hidden');
+				dialogue.setAttribute('aria-hidden', true);
+			}
+
+			dialogue.classList.add('--is-transitioning');
+			dialogue.addEventListener('transitionend', (e) => {
+				dialogue.classList.remove('--is-transitioning');
+			}, { once: true });
+		};
+
 		new QRCode(
-			element.querySelector('#qrcode'),
+			dialogue.querySelector('[data-qr="img-wrapper"]'),
 			{
 				text: '<%= url %>',
 				width: 800,

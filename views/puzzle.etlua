@@ -52,7 +52,8 @@
 				}) %>
 				<% render('frontend.views.partials.button', {
 					label		= locale.get('b_share_qr'),
-					action		= 'showQR()',
+					action		= 'toggleQRDialogue()',
+					data_attribute = 'aria-controls="qr-code"',
 					color		= 'black',
 					icon		= 'qr-code',
 				}) %>
@@ -62,17 +63,13 @@
 	</div>
 </header>
 
-<!--
-	TODO: ⚠⚠⚠ MARC FIX THIS ⚠⚠⚠
-				Look at views/partials/qr.etlua and static/styles/7-components/qr.css
--->
 <%
 	render(
 		'frontend.views.partials.qr',
 		{
 			url = '/editor/' .. puzzle.id,
-			title = 'Share Puzzle',
-			subtitle = puzzle.projectname
+			dialogue_title = 'Share Puzzle',
+			element_title = puzzle.projectname
 		}
 	)
 %>
