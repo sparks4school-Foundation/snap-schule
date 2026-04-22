@@ -96,6 +96,11 @@ local locale = {
 	-- Login
 	-- =====
 	login_title = 'Log in',
+	placeholder_username = 'Username',
+	placeholder_password = 'Password',
+	c_keep_logged_in = 'Keep me logged in',
+	l_forgot_password = 'I forgot my password',
+	l_forgot_username = 'I forgot my username',
 
 	-- Footer
 	-- ======
