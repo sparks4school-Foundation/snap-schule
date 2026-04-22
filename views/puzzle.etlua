@@ -161,8 +161,6 @@
 		let buttonHide = addToCollection.querySelector('[data-puzzle-collection="hide"]');
 		let background = addToCollection.querySelector('[data-puzzle-collection="background"]');
 
-		console.log(buttonHide);
-
 		function toggleAddToCollection () {
 			if (!addToCollection || addToCollection.classList.contains('--is-transitioning')) { return };
 
