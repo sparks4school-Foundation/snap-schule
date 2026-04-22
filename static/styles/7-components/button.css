@@ -22,6 +22,13 @@
     cursor: pointer;
   }
 
+  /* Small */
+  &.--small {
+    height: var(--space-32);
+    padding: var(--space-12) var(--space-8) var(--space-12) var(--space-12);
+    gap: var(--space-10);
+  }
+
 
   /* Black */
   &.--black {
@@ -90,4 +97,9 @@
 
   line-height: 0;
   transition: color var(--duration-200) ease-in-out;
+
+  .c-button.--small & {
+    width: var(--space-20);
+    height: var(--space-20);
+  }
 }

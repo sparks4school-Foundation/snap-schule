@@ -72,7 +72,7 @@ input[type="checkbox"] {
 
 select {
   all: unset;
-  padding: var(--space-8) var(--space-10);
+  padding: var(--space-8) var(--space-40) var(--space-8) var(--space-10);
 
   font-family: var(--fontFamily-mono);
   letter-spacing: -0.025rem;
