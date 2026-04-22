@@ -2,7 +2,6 @@
 local color_class = '--' .. color
 -- TODO Best practice to pass the whole file name directly?
 local icon_path = 'frontend.static.svg.icon-' .. icon .. '--24x24'
-local data_attribute = data_attribute and (data_attribute) or ""
 %>
 
 <a
@@ -12,7 +11,7 @@ local data_attribute = data_attribute and (data_attribute) or ""
 			or ('onclick="' .. util.escape_html(action) .. '"')
 	%>
 	class="c-button <%= color_class %>"
-	<%= data_attribute %>
+	<%- data_attribute or '' %>
 >
 	<div class="c-button__text"><%= label %></div>
 	<div class="c-button__icon"><% render(icon_path) %></div>
