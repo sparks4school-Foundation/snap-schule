@@ -110,7 +110,7 @@ for route, view_path in pairs(user_forms) do
 	app:get('/' .. route, capture_errors(cached(function (self)
 		self.csrf_token = csrf.generate_token(self)
 		self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
-		return { render = view_path }
+		return { render = view_path, class = 'form' }
 	end)))
 end
 
@@ -164,6 +164,7 @@ end)))
 -- USERS --
 
 app:get('/user', capture_errors(cached(function (self)
+	--for k, v in pairs(self.session) do debug_print(k) end
 	if not self.current_user then return { redirect_to = '/' } end
 	self.account_type = self.current_user.is_teacher and 'teacher' or 'student'
 	if not self.current_user.is_teacher then
@@ -184,7 +185,7 @@ app:get('/sign_up', capture_errors(cached(function (self)
 		string = string .. num
 	end
 	self.session.captcha = string
-	return { render = 'users.sign_up' }
+	return { render = 'users.sign_up', class = 'form' }
 end)))
 
 app:get('/sign_up_result', capture_errors(function (self)

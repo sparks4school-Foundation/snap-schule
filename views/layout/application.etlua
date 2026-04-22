@@ -5,7 +5,7 @@
 		<% render('frontend.views.layout.head') %>
 	</head>
 
-	<body class="v-<%= page %>">
+	<body class="v-<%= options.class or options.render %>">
 		<% render('frontend.views.partials.header') %>
 		<main class="l-main">
 			<% content_for('inner') %>
