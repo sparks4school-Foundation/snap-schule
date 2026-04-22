@@ -46,6 +46,7 @@
 				<% render('frontend.views.partials.button', {
 					label		= 'Add to collection',
 					action		= 'toggleAddToCollection()',
+					data_attribute = 'aria-controls="add-to-collection"',
 					color		= 'black',
 					icon		= 'folder-plus',
 				}) %>
@@ -123,6 +124,7 @@
 </div>
 
 <div
+	id="add-to-collection"
 	class="v-puzzle__add-to-collection --is-hidden"
 	data-puzzle-collection="element"
 	aria-hidden="true"
