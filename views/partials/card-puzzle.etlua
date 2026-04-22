@@ -15,4 +15,11 @@
 
 	<a href="<%= '/puzzle/' .. puzzle.id %>" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
 
+	<%
+		-- TODO: Conditional showing if Jadga manages it inside a collection page
+	%>
+	<div class="c-card-puzzle__remove" role="button" aria-label="Remove from collection">
+		<% render('frontend.static.svg.icon-trash--24x24') %>
+	</div>
+
 </article>

@@ -23,7 +23,6 @@
     transition: filter var(--duration-200) ease-in-out;
 
     .c-card-puzzle:hover & {
-      /* opacity: 0.65; */
       filter: brightness(0.7);
     }
   }
@@ -78,4 +77,34 @@
 .c-card-puzzle__anchor {
   position: absolute;
   inset: 0;
+}
+
+
+.c-card-puzzle__remove {
+  position: absolute;
+  top: var(--space-12);
+  right: var(--space-12);
+
+  width: var(--space-32);
+  height: var(--space-32);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--borderRadius-max);
+  background-color: var(--color-white);
+  color: var(--color-red);
+  transition: all var(--duration-200) ease-in-out;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-grey-900);
+    cursor: pointer;
+  }
+
+  svg {
+    width: var(--space-20);
+    height: var(--space-20);
+  }
 }
