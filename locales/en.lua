@@ -93,6 +93,10 @@ local locale = {
 	placeholder_captcha = 'Enter the number above',
 	b_signup = 'Sign up',
 
+	-- Login
+	-- =====
+	login_title = 'Log in',
+
 	-- Footer
 	-- ======
 	

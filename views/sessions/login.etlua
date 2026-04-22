@@ -1,92 +1,90 @@
-<% content_for('title', locale.get('log_into_snap', '!')) %>
+<% content_for('title', locale.get('login_title')) %>
 
-<h1 class="v-auth__title" localizable><%- locale.get('log_into_snap', '<em>!</em>' ) %></h1>
+<h1 class="v-auth__title" localizable><%- locale.get('login_title') %></h1>
 
 <div class="c-user-form">
 
-  <form id="login" onsubmit="handleLoginSubmit(event)">
+	<form id="login" onsubmit="handleLoginSubmit(event)">
 
-    <input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">
+		<input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">
 
-    <div class="c-user-form__input-wrapper">
-      <label for="username" class="u-visually-hidden"><%= locale.get('username') %></label>
-      <input
-        id="username"
-        name="username"
-        type="text"
-        class="form-control"
-        placeholder="<%= locale.get('username') %>"
-        required
-        aria-required="true"
-      >
-    </div>
+		<div class="c-user-form__input-wrapper">
+			<input
+				id="username"
+				name="username"
+				type="text"
+				class="form-control"
+				placeholder="<%= locale.get('placeholder_username') %>"
+				required
+				aria-required="true"
+			>
+		</div>
 
-    <div class="c-user-form__input-wrapper">
-      <label for="password" class="u-visually-hidden"><%- locale.get('password') %></label>
-      <input
-        id="password"
-        name="password"
-        type="password"
-        class="form-control"
-        placeholder="<%- locale.get('password') %>"
-        required
-        aria-required="true"
-      >
-    </div>
+		<div class="c-user-form__input-wrapper">
+			<input
+				id="password"
+				name="password"
+				type="password"
+				class="form-control"
+				placeholder="<%- locale.get('placeholder_password') %>"
+				required
+				aria-required="true"
+			>
+		</div>
 
-    <div class="c-user-form__checkboxes">
-      <div class="c-user-form__checkbox-wrapper">
-        <input id="persist" name="persist" type="checkbox" class="form-check-input">
-        <label for="persist"><%= locale.get('keep_logged_in') %></label>
-      </div>
-    </div>
+		<div class="c-user-form__checkboxes">
+			<div class="c-user-form__checkbox-wrapper">
+				<input id="persist" name="persist" type="checkbox" class="form-check-input">
+				<label for="persist"><%= locale.get('c_keep_logged_in') %></label>
+			</div>
+		</div>
 
-    <div class="c-user-form__submit-wrapper">
-      <button onclick="handleLoginSubmit()" class="c-button --yellow" type="button">
-        <div class="c-button__text"><%= locale.get('login') %></div>
-        <div class="c-button__icon"><% render('frontend.static.svg.icon-arrow-right--24x24') %></div>
-      </button>
-    </div>
+		<div class="c-user-form__submit-wrapper">
+			<button onclick="handleLoginSubmit()" class="c-button --yellow" type="button">
+				<div class="c-button__text"><%= locale.get('b_login') %></div>
+				<div class="c-button__icon"><% render('frontend.static.svg.icon-arrow-right--24x24') %></div>
+			</button>
+		</div>
 
-  </form>
+	</form>
 
-  <div class="c-user-form__links">
-    <a href="/forgot_password"><%= locale.get('i_forgot_password') %></a>
-    <a href="/forgot_username"><%= locale.get('i_forgot_username') %></a>
-  </div>
+	<div class="c-user-form__links">
+		<a href="/forgot_password"><%= locale.get('l_forgot_password') %></a>
+		<a href="/forgot_username"><%= locale.get('l_forgot_username') %></a>
+	</div>
 
 </div>
 
 <script type="text/javascript" src="/static/js/sha512.js"></script>
 <script>
-  enableEnterSubmit();
-  function handleLoginSubmit(event) {
-    if (event && event.preventDefault) {
-      event.preventDefault();
-    }
+	enableEnterSubmit();
+	function handleLoginSubmit(event) {
+		if (event && event.preventDefault) {
+			event.preventDefault();
+		}
 
-    let form = document.querySelector('#login');
-    cloud.login(
-      form.querySelector('#username').value, // username
-      form.querySelector('#password').value,// password
-      form.querySelector('#persist').checked, // persist
-      (user, role, response) => {
-        if (response.title) {
-          alert(
-            localizer.localize(response.message),
-            { title: localizer.localize(response.title) },
-            () => { location.href = response.redirect }
-          );
-        } else {
-          location.href = '/';
-        }
-      }, // onSuccess
-      response => {
-        genericError(
-          response,
-          '<%= locale.get('err_login_failed') %>'
-        );
-      }
-    );
-  }
+		let form = document.querySelector('#login');
+		cloud.login(
+			form.querySelector('#username').value, // username
+			form.querySelector('#password').value,// password
+			form.querySelector('#persist').checked, // persist
+			(user, role, response) => {
+				if (response.title) {
+					alert(
+						localizer.localize(response.message),
+						{ title: localizer.localize(response.title) },
+						() => { location.href = response.redirect }
+					);
+				} else {
+					location.href = '/';
+				}
+			}, // onSuccess
+			response => {
+				genericError(
+					response,
+					'<%= locale.get('err_login_failed') %>'
+				);
+			}
+		);
+	}
 </script>

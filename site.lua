@@ -53,11 +53,7 @@ app:enable('etlua')
 
 app.layout = require 'frontend.views.layout.application'
 
-local static_pages = {
-	'about', 'contact', 'credits', 'privacy'
-	-- Disabled because this is out of date.
-	-- 'requirements',
-}
+local static_pages = { 'about', 'contact', 'credits', 'privacy' }
 
 local user_forms = {}
 -- Simple static pages that contain user interactions.
@@ -101,13 +97,7 @@ end)
 -- INDEX --
 
 app:get('index', '/', capture_errors(cached(function (self)
-	local snapcloud_user = Users:find({ username = 'snapcloud' })
-	if not snapcloud_user then
-		return { render = 'fresh_install' }
-	else
-		self.snapcloud_id = Users:find({ username = 'snapcloud' }).id
-		return { render = 'index' }
-	end
+	return { render = 'index' }
 end)))
 
 for _, page in pairs(static_pages) do

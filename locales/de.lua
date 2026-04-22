@@ -93,6 +93,14 @@ local locale = {
 	placeholder_captcha = 'Bitte gib die angezeigten Ziffern ein',
 	b_signup = 'Registrieren',
 
+	-- Login
+	-- =====
+	login_title = 'Anmelden',
+	placeholder_username = 'Benutzername',
+	placeholder_password = 'Passwort',
+	c_keep_logged_in = 'Eingeloggt bleiben',
+	l_forgot_password = 'Ich habe mein Passwort vergessen',
+	l_forgot_username = 'Ich habe meinen Benutzernamen vergessen',
 
 	-- Footer
 	-- ======

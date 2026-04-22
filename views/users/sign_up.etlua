@@ -59,7 +59,7 @@
 
 		<div class="c-user-form__submit-wrapper">
 			<button class="c-button --yellow" type="submit">
-				<div class="c-button__text"><%= locale.get('login') %></div>
+				<div class="c-button__text"><%= locale.get('b_signup') %></div>
 				<div class="c-button__icon"><% render('frontend.static.svg.icon-arrow-right--24x24') %></div>
 			</button>
 		</div>
