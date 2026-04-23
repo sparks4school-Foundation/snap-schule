@@ -68,6 +68,7 @@ local locale = {
 
 	-- Puzzle Page
 	-- ===========
+	nth_puzzle = "@1 Puzzle", -- @1 becomes a numeral, from above (nth_1, nth2...)
 	b_start_puzzle = 'Start puzzle',
 	b_add_to_class = 'Add to class',
 	b_share_qr = 'Share QR',
