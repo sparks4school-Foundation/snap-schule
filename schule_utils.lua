@@ -26,7 +26,7 @@
 local utils = {}
 
 function utils:grade_from_collection(collection)
-	if collection and (collection.name:find('Grade') > 0) then
+	if collection and (collection.name:find('Grade')) then
 		return tonumber(string.sub(collection.name, 6))
 	else
 		return 0
@@ -45,6 +45,7 @@ function utils:grade_from_project(project)
 			return grade
 		end
 	end
+
 	-- FIND OUT WHETHER THIS PROJECT IS A REMIX
 	local remixed_from =
 		package.loaded.Remixes:find({ remixed_project_id = project.id })
@@ -55,10 +56,26 @@ function utils:grade_from_project(project)
 		)
 		return self:grade_from_project(origin)
 	end
-	debug_print('PROJECT REMIXED FROM:', remixed_from or 'none')
 
 	-- IF ALL ELSE FAILS, WE DON'T KNOW WHAT GRADE THIS PROJECT IS
 	return 'unknown'
+end
+
+function utils:project_number(project)
+		local result = package.loaded.db.select(
+			'collection_memberships.*, row_number() ' ..
+				'OVER (ORDER BY created_at) AS num ' ..
+				'FROM collection_memberships WHERE collection_id IN ' ..
+					'(SELECT collections.id from collections, collection_memberships ' ..
+					'WHERE collection_memberships.collection_id = collections.id ' ..
+					'AND collection_memberships.project_id = ?)',
+			project.id
+		)
+		if result[1] then
+			return result[1].num
+		else
+			return 0
+		end
 end
 
 function utils:signup_email_body(email)

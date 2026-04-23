@@ -22,6 +22,15 @@
 		end
 		table.insert(links, link)
 	end
+
+	if (grade == null) then
+		grade = schule_utils:grade_from_project(puzzle)
+	end
+
+	if (puzzle_number == null) then
+		puzzle_number = schule_utils:project_number(puzzle)
+	end
+
 %>
 
 <script src="/static/js/marked.umd.js"></script>
@@ -33,7 +42,7 @@
 		</div>
 
 		<div class="v-puzzle__header-text">
-			<p class="v-puzzle__header-grade">Puzzle 1 - Grade 5</p>
+			<p class="v-puzzle__header-grade"><%= locale.get('nth_puzzle', locale.get('nth_' .. puzzle_number)) %> - <%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
 			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
 			<p class="v-puzzle__header-intro"><%= summary %></p>
 			<div class="v-puzzle__header-links">
@@ -42,15 +51,19 @@
 					url	 		= '/editor/' .. puzzle.id,
 					color		= 'black',
 					icon		= 'arrow-up-right',
-				}) %>
-				<% render('frontend.views.partials.button', {
-					label		= 'Add to collection',
-					action		= 'toggleAddToCollection()',
-					data_attribute = 'aria-controls="add-to-collection"',
-					color		= 'black',
-					icon		= 'folder-plus',
-				}) %>
-				<% render('frontend.views.partials.button', {
+				})
+
+				if current_user and current_user.id == jadga.id then
+					render('frontend.views.partials.button', {
+						label		= locale.get('b_add_to_class'),
+						action		= 'toggleAddToCollection()',
+						data_attribute = 'aria-controls="add-to-collection"',
+						color		= 'black',
+						icon		= 'folder-plus',
+					})
+				end
+
+				render('frontend.views.partials.button', {
 					label		= locale.get('b_share_qr'),
 					action		= 'toggleQRDialogue()',
 					data_attribute = 'aria-controls="qr-code"',
@@ -120,6 +133,7 @@
 	</div>
 </div>
 
+<% if current_user and current_user.id == jadga.id then %>
 <div
 	id="add-to-collection"
 	class="v-puzzle__add-to-collection --is-hidden"
@@ -131,14 +145,25 @@
 
 		<form class="v-puzzle__add-to-collection-form">
 
-			<label class="u-visually-hidden" for="collection">Add to collection</label>
+			<label class="u-visually-hidden" for="collection"><%= locale.get('title_add_to_class') %></label>
 			<select id="collection" name="collection">
-				<option value="collection-name-1">Collection Name 1</option>
-				<option value="collection-name-2">Collection Name 2</option>
+			<%
+				for i, col in
+					pairs(
+						package.loaded.Collections:select(
+						package.loaded.db.clause({
+							creator_id = jadga.id,
+							"name ilike '%grade%'"
+						})
+				)) do %>
+					<option value="<%= col.id %>">
+						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
+					</option>
+				<% end %>
 			</select>
 
 			<button class="c-button --yellow --small" type="submit">
-				<div class="c-button__text">Add to collection</div>
+				<div class="c-button__text"><%= locale.get('b_add_to_class') %></div>
 				<div class="c-button__icon"><% render('frontend.static.svg.icon-plus--24x24') %></div>
 			</button>
 
@@ -181,3 +206,4 @@
 		background.addEventListener('click', toggleAddToCollection);
 	</script>
 </div>
+<% end %>

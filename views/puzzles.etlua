@@ -1,5 +1,5 @@
 <header class="v-puzzles__header u-padding-x">
-	<h1 class="v-puzzles__header-heading">Puzzles</h1>
+	<h1 class="v-puzzles__header-heading"><%= locale.get('title_puzzles') %> </h1>
 </header>
 
 <form class="v-puzzles__form u-padding-x">
@@ -38,8 +38,7 @@
 							"name ilike '%grade%'"
 						})
 				)) do %>
-					<option
-						value="<%= col.id %>"
+					<option value="<%= col.id %>"
 						<%- collection.name == col.name and 'selected' or '' %>
 					>
 						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>

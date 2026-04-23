@@ -41,7 +41,7 @@ local locale = {
 	-- Puzzle carousels
 	-- ================
 	nth_grade_puzzles = "@1 Grade Puzzles", -- @1 becomes a numeral, from below:
-	nth_grade = "@1 Grade", -- @1 becomes a numeral, form below:
+	nth_grade = "@1 Grade", -- @1 becomes a numeral, from below:
 	nth_1 = "1st",
 	nth_2 = "2nd",
 	nth_3 = "3rd",
@@ -57,10 +57,10 @@ local locale = {
 
 	-- Puzzles Page
 	-- ============
+	title_puzzles = "Puzzles",
 	-- Dropdown filters
 	dd_title_state = "State",
 	dd_all_states = "All States",
-	dd_state_1 = "State 1",
 	dd_title_grade = "Grade",
 	dd_all_grades = "All Grades",
 	dd_grade_5 = "Grade 5",
@@ -69,9 +69,11 @@ local locale = {
 	-- Puzzle Page
 	-- ===========
 	b_start_puzzle = 'Start puzzle',
+	b_add_to_class = 'Add to class',
 	b_share_qr = 'Share QR',
 	title_concept_resources = 'Concept and Resources',
 	title_links = 'Links:',
+	title_add_to_class = 'Add to class',
 
 	-- User Page
 	-- =========
