@@ -122,6 +122,7 @@
   --zindex-under:        -1;
   --zindex-neutral:       0;
   --zindex-above:         1;
+  --zindex-behindMenu:   80;
   --zindex-modalBg:      90;
   --zindex-menu:        100;
   --zindex-menuToggle:  110;

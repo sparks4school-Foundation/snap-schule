@@ -1,0 +1,25 @@
+/**
+ * Views / Editor
+ */
+
+
+.v-editor__iframe {
+  position: fixed;
+  inset: var(--space-56) 0 0 0;
+  width: 100%; /* Strange conflict */
+  height: 100%; /* Strange conflict */
+}
+
+
+.v-editor__puzzle-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--space-320);
+  z-index: var(--zindex-behindMenu);
+  padding-top: var(--space-56);
+
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-grey-300);
+}
