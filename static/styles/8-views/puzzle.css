@@ -16,6 +16,22 @@
 
   background-color: var(--color-grey-200);
 
+  background-image:
+    url('../../images/graphic--slashes-on-grey.svg'),
+    url('../../images/graphic--pluses-on-grey.svg');
+
+  background-position:
+    top 40px left,
+    bottom 16px right 16px;
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-size:
+    20%,
+    auto;
+
   @media (min-width: 768px) {
     padding-top: var(--space-56);
     padding-bottom: var(--space-56);

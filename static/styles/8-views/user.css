@@ -18,6 +18,22 @@
 
   background-color: var(--color-black);
 
+  background-image:
+    url('../../images/graphic--slashes-vertical-on-dark.svg'),
+    url('../../images/graphic--composition-rounded-on-black.svg');
+
+  background-position:
+    top 16px left 16px,
+    top right;
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-size:
+    auto calc(100% - 32px),
+    contain;
+
   @media (min-width: 1280px) {
     height: var(--space-240);
   }
