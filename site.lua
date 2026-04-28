@@ -185,7 +185,7 @@ app:get('/sign_up', capture_errors(cached(function (self)
 		string = string .. num
 	end
 	self.session.captcha = string
-	return { render = 'users.sign_up', class = 'form' }
+	return { render = 'users.sign_up', class = 'auth' }
 end)))
 
 app:get('/sign_up_result', capture_errors(function (self)
