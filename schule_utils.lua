@@ -33,12 +33,14 @@ function utils:grade_from_collection(collection)
 	end
 end
 
-function utils:grade_from_project(project)
+function utils:collections_containing_project_with_id(id)
+	--TODO this is missing fields!!! Run a normal DB query...
+	return CollectionController.containing_project({params = {project_id = id}})
+end
+
+function utils:grade_from_project_id(id)
 	-- TRY TO FIND A COLLECTION CONTAINING THIS PROJECT
-	local collections =
-		CollectionController.containing_project({
-			params = { project_id = project.id }
-		})
+	local collections = self:collections_containing_project_with_id(id)
 	for _, collection in pairs(collections) do
 		local grade = self:grade_from_collection(collection)
 		if grade > 0 then
@@ -59,6 +61,10 @@ function utils:grade_from_project(project)
 
 	-- IF ALL ELSE FAILS, WE DON'T KNOW WHAT GRADE THIS PROJECT IS
 	return 'unknown'
+end
+
+function utils:grade_from_project(project)
+	return self:grade_from_project_id(project.id)
 end
 
 function utils:project_number(project)
