@@ -7,7 +7,7 @@
   position: fixed;
   inset: var(--space-56) 0 0 0;
   width: 100%; /* Strange conflict */
-  height: 100%; /* Strange conflict */
+  height: calc(100% - var(--space-56)); /* Strange conflict */
 }
 
 
