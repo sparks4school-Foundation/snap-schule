@@ -33,7 +33,6 @@
 
 %>
 
-<script src="/static/js/marked.umd.js"></script>
 <header class="v-puzzle__header u-padding-x">
 	<div class="v-puzzle__header-contents">
 
@@ -97,11 +96,12 @@
 		<div class="v-puzzle__contents-wrapper">
 
 			<div class="v-puzzle__contents-text">
-				<script>
-					// This element will self-replace. Isn't this cool?
-					document.querySelector('.v-puzzle__contents-text').innerHTML =
-						marked.parse(`<%= description %>`);
-				</script>
+				<% 
+					render(
+						'frontend.views.partials.markdown',
+						{ content = description }
+					)
+				%>
 			</div>
 
 			<section class="v-puzzle__links">

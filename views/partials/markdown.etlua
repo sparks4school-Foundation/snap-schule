@@ -1,0 +1,12 @@
+<% local id = 'md-' .. tostring(math.random(99999999)) %>
+<div class='<%= id %>'>
+	<script src="/static/js/marked.umd.js"></script>
+	<script>
+	// This element will self-replace. Isn't this cool?
+	document.querySelector("<%= '.' .. id %>").innerHTML =
+	marked.parse(
+		`<%= content %>`,
+		{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
+	);
+	</script>
+</div>

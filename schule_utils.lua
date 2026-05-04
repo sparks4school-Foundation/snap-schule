@@ -50,7 +50,7 @@ function utils:grade_from_project_id(id)
 
 	-- FIND OUT WHETHER THIS PROJECT IS A REMIX
 	local remixed_from =
-		package.loaded.Remixes:find({ remixed_project_id = project.id })
+		package.loaded.Remixes:find({ remixed_project_id = id })
 	if remixed_from then
 		-- IF SO, FIND A GRADE COLLECTION IT MAY HAVE BELONGED TO
 		local origin = package.loaded.Projects:find(
