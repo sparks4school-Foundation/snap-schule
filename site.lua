@@ -1,8 +1,7 @@
 -- Community site routes
 -- =====================
 --
--- Routes for all community website pages. We're in the process of starting to
--- transition the whole site to Lua.
+-- Routes for all community website pages.
 --
 -- Written by Bernat Romagosa and Michael Ball
 --
@@ -53,7 +52,7 @@ app:enable('etlua')
 
 app.layout = require 'frontend.views.layout.application'
 
-local static_pages = { 'about', 'contact', 'credits', 'privacy' }
+local static_pages = { 'why_snap' }
 
 local user_forms = {}
 -- Simple static pages that contain user interactions.

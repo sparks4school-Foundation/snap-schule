@@ -107,6 +107,7 @@ local locale = {
 
 	-- Footer
 	-- ======
+	b_whysnap = "Warum Snap!?",
 	footer_credits_statement = "snap.schule ist ein Projekt von UC&nbsp;Berkeley, SAP, SPARKS",
 
 	-- Errors and messages

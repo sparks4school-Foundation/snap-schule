@@ -107,7 +107,7 @@ local locale = {
 
 	-- Footer
 	-- ======
-	
+	b_whysnap = "Why Snap!",
 	footer_credits_statement = 'snap.schule is brought to you by UC&nbsp;Berkeley, SAP, SPARKS',
 
 	-- Errors and messages

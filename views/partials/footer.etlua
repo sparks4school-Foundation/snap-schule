@@ -2,6 +2,7 @@
 local menu = {
   {locale.get('b_puzzles'), '/puzzles'},
   {locale.get('b_contact'), '/#contact'},
+  {locale.get('b_whysnap'), '/why_snap'},
   {'Snap!', '/editor'},
 }
 
