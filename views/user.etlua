@@ -36,21 +36,21 @@
 
 		<div class="v-user__puzzles-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title = 'My Classes',
+				title = locale.get('title_my_classes')
 			}) %>
 		</div>
 
 		<div class="v-user__puzzles-grid">
-		<h1>TODO: This should hold the teacher collections, not puzzles</h1>
+		<h1>TODO: This should hold the teacher classes, not puzzles</h1>
 		</div>
 
 	<section>
 
 	<section class="v-user__create">
-
+		<script src="/static/js/papaparse.min.js"></script>
 		<div class="v-user__options-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title = 'Create Accounts and Classes',
+				title = locale.get('title_create_accounts')
 			}) %>
 		</div>
 
@@ -58,12 +58,14 @@
 
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
-					<h3 class="v-user__options-block-title">Bulk account creation</h3>
-					<div class="v-user__options-block-contents">
-						<p>Please, provide a CSV file with <code>username</code> and <code>password</code> columns for all your learners, plus an optional <code>email</code> column.</p>
-						<p>If you don’t provide en email address for your learners, they will be associated with your email account. That is useful if you want to reset the passwords of your leaners</p>
-						<p>If you also create a private collection, all these accounts will be associated to it as a class.</p>
-						<p><b>Example:</b></p>
+					<h3 class="v-user__options-block-title"><%= locale.get('title_bulk_creation') %></h3>
+					<div class="v-user__options-block-contents markdown">
+						<%
+							render(
+								'frontend.views.partials.markdown',
+								{ content = locale.get('md_provide_csv') }
+							)
+						%>
 						<div class="--code">
 							username,password<br>
 							johndoe_240,xajglasibkasx<br>
@@ -75,9 +77,9 @@
 
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
-					<h3 class="v-user__options-block-title">Upload the CSV File</h3>
+					<h3 class="v-user__options-block-title"><%= locale.get('title_upload_csv') %></h3>
 					<div class="v-user__options-block-contents">
-						<form>
+						<form method="POST" enctype="multipart/form-data">
 							<input type="file"
 								class="form-control csv"
 								placeholder=""
@@ -85,14 +87,14 @@
 								aria-describedby="button-addon1"
 								name="csv"
 							>
-							<p><b>Alternatively, paste a CSV file contents:</b></p>
+							<p><b><%= locale.get('text_paste_csv') %></b></p>
 							<textarea id="students" name="students" rows="10" placeholder="username,password"></textarea>
-							<label class="e-label__checkbox">
+							<label class="e-label__checkbox create_class">
 								<input type="checkbox" name="agree" value="1">
-								<div class="e-label__text">Create a private collection for this group of learners</div>
+								<div class="e-label__text"><%= locale.get('text_create_class') %></div>
 							</label>
 							<button type="submit">
-								<div class="e-submit__text">Create Users</div>
+								<div class="e-submit__text"><%= locale.get('b_create_users') %></div>
 								<div class="e-submit__icon">
 									<% render('frontend.static.svg.icon-arrow-right--24x24') %>
 								</div>
@@ -101,6 +103,49 @@
 					</div>
 				</div>
 			</div>
+
+			<script type="text/javascript">
+			window.onload = () => {
+				var div = document.querySelector('.v-user__create');
+				let create_learners = function() {
+					var create_collection =
+						div.querySelector('.create_class input[type="checkbox"]').checked,
+					file = div.querySelector('.csv').files[0],
+					csv_text = div.querySelector('textarea#students').value;
+
+					if (file) {
+						file.text().then(data => processCSV(data));
+					} else if (csv_text) {
+						processCSV(csv_text);
+					}
+
+					function processCSV (csv_data) {
+						if (csv_data.trim().substring(0,8) !== 'username') {
+							csv_data = 'username,password\n' + csv_data;
+						}
+						Papa.parse(
+							csv_data,
+							{
+								skipEmptyLines: true,
+								header: true,
+								complete: (results) => {
+									let post_body = {
+										users: results.data,
+										create_collection: create_collection
+									};
+									cloud.post(
+										'/users/create_learners',
+										null,
+										post_body
+									);
+								}
+							}
+						);
+					};
+				};
+				div.querySelector('button[type="submit"]').addEventListener('click', create_learners);
+			}
+			</script>
 
 		</div>
 
@@ -110,7 +155,7 @@
 
 		<div class="v-user__options-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title = 'Account',
+				title = locale.get('title_account'),
 			}) %>
 		</div>
 
@@ -118,14 +163,14 @@
 
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
-					<h3 class="v-user__options-block-title">Update details</h3>
+					<h3 class="v-user__options-block-title"><%= locale.get('title_update_details') %></h3>
 					<div class="v-user__options-block-contents">
 						<form method="POST" action="/submit">
 							<input type="text" name="field1" placeholder="e.mustermann@a-school-name.com">
 							<input type="text" name="field2" placeholder="emustermann_teacher_332">
 							<input type="text" name="field3" placeholder="********">
 							<button type="submit">
-								<div class="e-submit__text">Update Details</div>
+								<div class="e-submit__text"><%= locale.get('b_update_details') %></div>
 								<div class="e-submit__icon">
 									<% render('frontend.static.svg.icon-arrow-right--24x24') %>
 								</div>
@@ -137,14 +182,14 @@
 
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
-					<h3 class="v-user__options-block-title">Delete Account</h3>
+					<h3 class="v-user__options-block-title"><%= locale.get('title_delete_account') %></h3>
 					<div class="v-user__options-block-contents">
 						<p>
-							Accounts are automatically deactivated after one year of inactivity. We do not collect or store any personal information.
+							<%= locale.get('text_automatic_account_deletion') %>
 						</p>
 						<div class="--buttons">
 							<% render('frontend.views.partials.button', {
-								label	= 'Delete Class',
+								label	= locale.get('b_delete_account'),
 								url	 	= '#',
 								color	= 'red',
 								icon	= 'arrow-right',

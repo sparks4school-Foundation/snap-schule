@@ -96,7 +96,7 @@
 		<div class="v-puzzle__contents-wrapper">
 
 			<div class="v-puzzle__contents-text">
-				<% 
+				<%
 					render(
 						'frontend.views.partials.markdown',
 						{ content = description }

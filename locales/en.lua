@@ -82,6 +82,25 @@ local locale = {
 	title_teacher_account = 'Teacher Account',
 	title_student_puzzles = 'Student\'s Puzzles',
 
+	title_my_classes = 'My Classes',
+	title_create_accounts = 'Create Accounts and Classes',
+	md_provide_csv =
+[[Please, provide a CSV file with `username` and `password` columns for all your learners.
+If you also create a private class, all these accounts will be associated to it.
+**Example:**]],
+	title_upload_csv = 'Upload the CSV File',
+	text_paste_csv = 'Alternatively, paste the contents of a CSV file:',
+	text_create_class = 'Create a private class for this group of learners',
+	b_create_users = 'Create Users',
+	title_bulk_creation = 'Bulk account creation',
+	title_account = 'Account',
+	title_update_details = 'Update details',
+	b_update_details = 'Update details',
+	text_automatic_account_deletion = 'Accounts are automatically deactivated after one year of inactivity. We do not collect or store any personal information.',
+	title_delete_account = 'Delete Account',
+	b_delete_account = 'Delete Account',
+
+
 	-- Contact
 	-- =======
 	contact_heading = 'Have questions or feedback?@1 We\'d love to hear from you.', -- @1 turns into a newline

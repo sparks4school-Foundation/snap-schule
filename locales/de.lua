@@ -82,6 +82,21 @@ local locale = {
 	title_teacher_account = "Lehrkräfte-Account",
 	title_student_puzzles = "",
 
+	title_my_classes = "",
+	title_create_accounts = "",
+	md_provide_csv =
+[[]],
+	title_upload_csv = "",
+	text_paste_csv = "",
+	text_create_class = "",
+	b_create_users = "",
+	title_bulk_creation = "",
+	title_account = "",
+	title_update_details = "",
+	b_update_details = "",
+	text_automatic_account_deletion = "",
+	title_delete_account = "",
+	b_delete_account = "",
 	-- Contact
 	-- =======
 	contact_heading = "Haben Sie Fragen oder Feedback?@1Wir freuen uns, von Ihnen zu hören.", -- @1 turns into a newline
