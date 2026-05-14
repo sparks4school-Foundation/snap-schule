@@ -93,6 +93,11 @@
 								<input type="checkbox" name="agree" value="1">
 								<div class="e-label__text"><%= locale.get('text_create_class') %></div>
 							</label>
+							<input
+								type="text"
+								name="class-name"
+								placeholder="<%= current_user.username .. ' klass ' .. os.date('*t').year%>"
+							>
 							<button type="submit">
 								<div class="e-submit__text"><%= locale.get('b_create_users') %></div>
 								<div class="e-submit__icon">
@@ -108,8 +113,10 @@
 			window.onload = () => {
 				var div = document.querySelector('.v-user__create');
 				let create_learners = function() {
-					var create_collection =
-						div.querySelector('.create_class input[type="checkbox"]').checked,
+					var collection_name =
+						div.querySelector('input.add-collection').checked ?
+							div.querySelector('.class_name').value :
+							null,
 					file = div.querySelector('.csv').files[0],
 					csv_text = div.querySelector('textarea#students').value;
 
@@ -129,10 +136,12 @@
 								skipEmptyLines: true,
 								header: true,
 								complete: (results) => {
-									let post_body = {
-										users: results.data,
-										create_collection: create_collection
-									};
+									let post_body = { users: results.data };
+
+									if (collection_name) {
+										post_body.collection_name = collection_name;
+									}
+
 									cloud.post(
 										'/users/create_learners',
 										null,
