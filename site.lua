@@ -148,23 +148,20 @@ app:get('/qr/:url', capture_errors(cached(function (self)
 end)))
 
 app:get('/editor(/:id)', capture_errors(cached(function (self)
-	--[[
-	--TODO schule_utils:collections_containing_project_with_id returns a table
-	--with missing fields. Fix it!
 	if self.params.id then
 		local collections =
 			schule_utils:collections_containing_project_with_id(self.params.id)
-		self.collection = collections[1]
-		if not self.collection then yield_error(err.nonexistent_collection) end
-		assert_can_view_collection(self, self.collection)
-		self.puzzles = CollectionController.projects({
-			params = {},
-			items_per_page = 24, -- max 24 projects to query from DB.
-			collection = self.collection,
-			cached = false
-		})
+		if collections[1] then
+			self.collection =
+				package.loaded.Collections:find({ id = collections[1].id })
+			self.puzzles = CollectionController.projects({
+				params = {},
+				items_per_page = 24, -- max 24 projects to query from DB.
+				collection = self.collection,
+				cached = false
+			})
+		end
 	end
-	]]--
 	self.top_only = true -- do not show bottom layout (contact, footer, etc)
 	return { render = 'editor' }
 end)))

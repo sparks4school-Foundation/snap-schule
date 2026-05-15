@@ -34,8 +34,13 @@ function utils:grade_from_collection(collection)
 end
 
 function utils:collections_containing_project_with_id(id)
-	--TODO this is missing fields!!! Run a normal DB query...
-	return CollectionController.containing_project({params = {project_id = id}})
+	return package.loaded.db.select(
+		'collections.* FROM collections ' ..
+			'JOIN collection_memberships ' ..
+				'ON collections.id = collection_memberships.collection_id ' ..
+			'WHERE collection_memberships.project_id = ?',
+		id
+	)
 end
 
 function utils:grade_from_project_id(id)
