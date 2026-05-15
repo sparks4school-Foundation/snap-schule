@@ -4,7 +4,7 @@
 
 <div class="c-user-form">
 
-	<form id="login" onsubmit="handleLoginSubmit(event)">
+	<form id="login" onsubmit="submit(event)">
 
 		<input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">
 
@@ -58,7 +58,7 @@
 <script type="text/javascript" src="/static/js/sha512.js"></script>
 <script>
 	enableEnterSubmit();
-	function handleLoginSubmit(event) {
+	function submit(event) {
 		if (event && event.preventDefault) {
 			event.preventDefault();
 		}

@@ -41,7 +41,16 @@
 		</div>
 
 		<div class="v-user__puzzles-grid">
-		<h1>TODO: This should hold the teacher classes, not puzzles</h1>
+			<%
+			for i, col in
+				pairs(
+					package.loaded.Collections:select(
+					package.loaded.db.clause({ creator_id = current_user.id
+					})
+				))
+			do %>
+				<span><%= col.name %></span>
+			<% end %>
 		</div>
 
 	<section>
@@ -79,7 +88,7 @@
 				<div class="v-user__options-block">
 					<h3 class="v-user__options-block-title"><%= locale.get('title_upload_csv') %></h3>
 					<div class="v-user__options-block-contents">
-						<form method="POST" enctype="multipart/form-data">
+						<form enctype="multipart/form-data" onsubmit="return false;">
 							<input type="file"
 								class="form-control csv"
 								placeholder=""
@@ -90,7 +99,7 @@
 							<p><b><%= locale.get('text_paste_csv') %></b></p>
 							<textarea id="students" name="students" rows="10" placeholder="username,password"></textarea>
 							<label class="e-label__checkbox create_class">
-								<input type="checkbox" name="agree" value="1">
+								<input type="checkbox" name="create-class" value="1">
 								<div class="e-label__text"><%= locale.get('text_create_class') %></div>
 							</label>
 							<input
@@ -98,7 +107,7 @@
 								name="class-name"
 								placeholder="<%= current_user.username .. ' klass ' .. os.date('*t').year%>"
 							>
-							<button type="submit">
+							<button name="bulk-create" type="submit">
 								<div class="e-submit__text"><%= locale.get('b_create_users') %></div>
 								<div class="e-submit__icon">
 									<% render('frontend.static.svg.icon-arrow-right--24x24') %>
@@ -110,15 +119,16 @@
 			</div>
 
 			<script type="text/javascript">
-			window.onload = () => {
 				var div = document.querySelector('.v-user__create');
-				let create_learners = function() {
+				let create_learners = function(e) {
 					var collection_name =
-						div.querySelector('input.add-collection').checked ?
-							div.querySelector('.class_name').value :
+						div.querySelector('input[name="create-class"]').checked ?
+							div.querySelector('input[name="class-name"]').value :
 							null,
 					file = div.querySelector('.csv').files[0],
 					csv_text = div.querySelector('textarea#students').value;
+
+					e.preventDefault();
 
 					if (file) {
 						file.text().then(data => processCSV(data));
@@ -152,8 +162,10 @@
 						);
 					};
 				};
-				div.querySelector('button[type="submit"]').addEventListener('click', create_learners);
-			}
+				div.querySelector('button[name="bulk-create"]').addEventListener(
+					'click',
+					create_learners
+				);
 			</script>
 
 		</div>
