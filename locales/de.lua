@@ -2,15 +2,15 @@
 -- ----------------
 -- Translate each text string to the target language leaving intact the two
 -- double quotes.
--- Example: ""
+-- Example: "Log In" should become "Entrar"
 --
 -- If you need to use a double quote, escape it with a backslash (\")
 --
--- The "" symbol followed by a number represents a parameter that the system
+-- The "@" symbol followed by a number represents a parameter that the system
 -- will substitute by a value, for example a username.
--- Example: "" when Mary is logged in.
+-- Example: "Welcome, @1!" will become "Welcome, Mary!" when Mary is logged in.
 --
--- You need to leave "" marks intact, but you can change their order in your
+-- You need to leave "@" marks intact, but you can change their order in your
 -- translation if your language requires so.
 
 local locale = {
@@ -19,7 +19,7 @@ local locale = {
 	lang_name = "Deutsch",
 	lang_code = "de",
 	authors = "Jadga Hügle",
-	last_updated = "07/04/2026", -- YYYY/MM/DD
+	last_updated = "2026/05/15", -- YYYY/MM/DD
 
 	-- Top navigation bar
 	-- ==================
@@ -82,21 +82,25 @@ local locale = {
 	title_teacher_account = "Lehrkräfte-Account",
 	title_student_puzzles = "",
 
-	title_my_classes = "",
-	title_create_accounts = "",
+	title_my_classes = "Meine Klassen",
+	title_create_accounts = "Accounts und Klassen erstellen",
 	md_provide_csv =
-[[]],
-	title_upload_csv = "",
-	text_paste_csv = "",
-	text_create_class = "",
-	b_create_users = "",
-	title_bulk_creation = "",
-	title_account = "",
-	title_update_details = "",
-	b_update_details = "",
-	text_automatic_account_deletion = "",
-	title_delete_account = "",
-	b_delete_account = "",
+[[Bitte geben sie uns eine CSV-Datei mit Spalten für `Benutzernamen` und `Passwörtern` für alle ihre Schüler*innen.
+
+Wenn sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Accounts damit.
+
+**Beispiel:**]],
+	title_upload_csv = "die CSV-Datei hochladen",
+	text_paste_csv = "Alternativ können sie den Inhalt ihrer CSV-Datei auch direkt hier hinein kopieren:",
+	text_create_class = "Eine nichtöffentliche Klasse für diese Schüler*innen erstellen:",
+	b_create_users = "Benutzer anlegen",
+	title_bulk_creation = "Mehrere Accounts erstellen",
+	title_account = "Account",
+	title_update_details = "Details aktualisieren",
+	b_update_details = "Details aktualisieren",
+	text_automatic_account_deletion = "Accounts werden automatisch ein Jahr nach ihrer letzten Aktivität gelöscht. Wir erheben und speichern keine personenbezogenen Daten.",
+	title_delete_account = "Account löschen",
+	b_delete_account = "Account löschen",
 	-- Contact
 	-- =======
 	contact_heading = "Haben Sie Fragen oder Feedback?@1Wir freuen uns, von Ihnen zu hören.", -- @1 turns into a newline

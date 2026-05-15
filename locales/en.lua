@@ -86,7 +86,9 @@ local locale = {
 	title_create_accounts = 'Create Accounts and Classes',
 	md_provide_csv =
 [[Please, provide a CSV file with `username` and `password` columns for all your learners.
+
 If you also create a private class, all these accounts will be associated to it.
+
 **Example:**]],
 	title_upload_csv = 'Upload the CSV File',
 	text_paste_csv = 'Alternatively, paste the contents of a CSV file:',
