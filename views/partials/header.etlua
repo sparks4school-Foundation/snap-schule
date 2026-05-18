@@ -49,6 +49,19 @@ local menu = {
 		</select>
 		-->
 
+		<div
+			class="c-header__class-puzzles"
+			data-menu="class-puzzles"
+			aria-controls="editor-puzzle-list"
+			aria-expanded="false"
+			role="button"
+		>
+			<div class="c-header__class-puzzles-icon">
+				<% render('frontend.static.svg.icon-chevron-down--24x24') %>
+			</div>
+			<div class="c-header__class-puzzles-text">Class Puzzles</div>
+		</div>
+
 		<div class="c-header__menu-user">
 			<div class="c-header__menu-user-icon">
 				<% render('frontend.static.svg.icon-user-shapes--24x24') %>

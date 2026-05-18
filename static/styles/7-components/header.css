@@ -147,6 +147,54 @@
 
 
 
+/* Class Puzzles */
+
+.c-header__class-puzzles {
+  margin-top: var(--space-48);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+
+  transition: all var(--duration-200);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color-blue);
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+    gap: var(--space-4);
+  }
+}
+
+
+.c-header__class-puzzles-text {
+  font-size: var(--fontSize-20);
+
+  @media (min-width: 1024px) {
+    font-size: var(--fontSize-18);
+  }
+}
+
+
+.c-header__class-puzzles-icon {
+  width: var(--space-20);
+  height: var(--space-20);
+
+  color: var(--color-blue);
+  transition: transform var(--duration-400);
+
+  [aria-expanded=true] & {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+
 /* User */
 
 

@@ -17,9 +17,16 @@
 <link rel="icon" href="/static/img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Stylesheets and Scripts -->
+
+<!-- Swiper Slider -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+<!-- Custom Stylesheets and Scripts -->
 <link rel="stylesheet" href="/static/styles/styles.css?<%= cache_buster %>">
 <script type="module" src="/static/scripts/scripts.js?<%= cache_buster %>"></script>
+
 
 <!-- JS: Required to load the page -->
 <script type="text/javascript" src="/static/js/locale.js?<%= cache_buster %>"></script>
@@ -27,6 +34,7 @@
 <script type="text/javascript" src="/snap/src/cloud.js?<%= cache_buster %>"></script>
 <script type="text/javascript" src="/static/js/base.js?<%= cache_buster %>"></script>
 <script>cloud = new Cloud(); cloud.url = location.origin;</script>
+
 
 <!-- TODO: This is included commonly enough if should probably be in the base set. -->
 <script src="/static/js/project.js?<%= cache_buster %>"></script>

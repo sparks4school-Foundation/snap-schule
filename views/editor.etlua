@@ -13,17 +13,75 @@ if params.id then
 <% end %>
 
 <% if puzzles then %>
-	<div class="v-editor__puzzle-list">
-	<%
-		for idx, puzzle in pairs(puzzles) do
-			render(
-				'frontend.views.partials.card-puzzle',
-				{
-					grade = grade,
-					puzzle = puzzle
-				}
-			)
-		end
-	%>
+	<div id="editor-puzzle-list" class="v-editor__puzzle-list" data-editor-puzzle-list="list">
+
+		<div class="v-editor__puzzle-list-top u-padding-x">
+			<div class="v-editor__puzzle-list-title">Pforzheim 6 Grade</div>
+			<div class="v-editor__puzzle-list-tutorials --disabled" role="button">
+				<% render('frontend.static.svg.icon-check-circle--24x24') %>
+				<span class="v-editor__puzzle-list-tutorials-text">Tutorial</span>
+			</div>
+		</div>
+
+		<div class="v-editor__puzzle-list-slider" data-editor-puzzle-list="slider">
+
+			<div class="swiper-wrapper">
+				<% for i = 1, 5 do %>
+					<div class="swiper-slide v-editor__puzzle-list-slide">
+					<%
+						for idx, puzzle in pairs(puzzles) do
+							render(
+								'frontend.views.partials.card-puzzle',
+								{
+									grade = grade,
+									puzzle = puzzle
+								}
+							)
+						end
+					%>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="v-editor__puzzle-list-controls-wrapper u-padding-x">
+
+				<button
+					class="v-editor__puzzle-list-control --previous"
+					aria-label="Previous"
+					data-editor-puzzle-list="button-prev"
+				><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+				<div class="v-editor__puzzle-list-pagination" data-editor-puzzle-list="pagination"></div>
+
+				<button
+					class="v-editor__puzzle-list-control --next"
+					aria-label="Next"
+					data-editor-puzzle-list="button-next"
+				><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+			</div>
+		</div>
 	</div>
 <% end %>
+
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    ...
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
