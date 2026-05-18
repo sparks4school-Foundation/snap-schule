@@ -76,14 +76,6 @@ local locale = {
 	title_links = "Links",
 	title_add_to_class = 'Zur Klasse hinzufügen',
 
-	-- Class Page
-	-- ==========
-	title_class = 'Class',
-	b_edit_details = 'Edit details',
-	title_students_class = 'Students and Class',
-	title_delete_class = 'Delete Class',
-	text_delete_class = 'This deletes all the students and their data.',
-	b_delete_class = 'Delete Class',
 
 	-- User Page
 	-- =========
@@ -91,8 +83,9 @@ local locale = {
 	title_teacher_account = "Lehrkräfte-Account",
 	title_student_puzzles = "Schüler:innen-Puzzle",
 
-	title_my_classes = "Meine Klassen",
-	title_create_accounts = "Accounts und Klassen erstellen",
+	title_students = "Meine Schüler:innen",
+
+	title_create_accounts = "Accounts erstellen",
 	md_provide_csv =
 [[Bitte geben Sie uns eine CSV-Datei mit Spalten für `Benutzername` und `Passwort` für alle ihre Schüler:innen.
 
@@ -101,7 +94,6 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 **Beispiel:**]],
 	title_upload_csv = "die CSV-Datei hochladen",
 	text_paste_csv = "Alternativ können Sie den Inhalt Ihrer CSV-Datei auch direkt hier hinein kopieren:",
-	text_create_class = "Eine nichtöffentliche Klasse für diese Schüler:innen erstellen:",
 	b_create_users = "Account anlegen",
 	title_bulk_creation = "Mehrere Accounts erstellen",
 	title_account = "Account",

@@ -76,14 +76,6 @@ local locale = {
 	title_links = 'Links:',
 	title_add_to_class = 'Add to class',
 
-	-- Class Page
-	-- ==========
-	title_class = 'Class',
-	b_edit_details = 'Edit details',
-	title_students_class = 'Students and Class',
-	title_delete_class = 'Delete Class',
-	text_delete_class = 'This deletes all the students and their data.',
-	b_delete_class = 'Delete Class',
 
 	-- User Page
 	-- =========
@@ -91,8 +83,9 @@ local locale = {
 	title_teacher_account = 'Teacher Account',
 	title_student_puzzles = 'Student\'s Puzzles',
 
-	title_my_classes = 'My Classes',
-	title_create_accounts = 'Create Accounts and Classes',
+	title_students = 'My students',
+
+	title_create_accounts = 'Create Accounts',
 	md_provide_csv =
 [[Please, provide a CSV file with `username` and `password` columns for all your learners.
 
@@ -101,7 +94,6 @@ If you also create a private class, all these accounts will be associated to it.
 **Example:**]],
 	title_upload_csv = 'Upload the CSV File',
 	text_paste_csv = 'Alternatively, paste the contents of a CSV file:',
-	text_create_class = 'Create a private class for this group of learners',
 	b_create_users = 'Create Users',
 	title_bulk_creation = 'Bulk account creation',
 	title_account = 'Account',
@@ -144,7 +136,15 @@ If you also create a private class, all these accounts will be associated to it.
 	-- ===================
 	err_unauthorized = 'You do not have permission to perform this action',
 	err_captcha = 'Captcha challenge failed',
-	msg_user_created = 'User @1 has been created. Password is @2'
+	msg_user_created = [[
+	# User _@1_ has been created.
+
+	Your password is _@2_
+
+	Please make sure to change it as soon as you log in.
+
+	Enjoy!
+	]]
 }
 
 return locale
