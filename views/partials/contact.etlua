@@ -16,7 +16,7 @@
 	<div class="c-contact__anchor">
 		<% render('frontend.views.partials.button', {
 				label   = locale.get('b_contact_us'),
-				url     = 'mailto:TODO@bromagosa.com',
+				url     = 'mailto:ium@sparks4school.org',
 				color   = 'black',
 				icon    = 'envelope',
 				}) %>
