@@ -4,7 +4,7 @@
 
 <div class="c-user-form">
 
-	<form id="login" onsubmit="submit(event)">
+	<form id="login" onsubmit="handleSubmit(event)">
 
 		<input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">
 
@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="c-user-form__submit-wrapper">
-			<button onclick="handleLoginSubmit()" class="c-button --yellow" type="button">
+			<button onclick="handleSubmit()" class="c-button --yellow" type="button">
 				<div class="c-button__text"><%= locale.get('b_login') %></div>
 				<div class="c-button__icon"><% render('frontend.static.svg.icon-arrow-right--24x24') %></div>
 			</button>
@@ -58,7 +58,7 @@
 <script type="text/javascript" src="/static/js/sha512.js"></script>
 <script>
 	enableEnterSubmit();
-	function submit(event) {
+	function handleSubmit(event) {
 		if (event && event.preventDefault) {
 			event.preventDefault();
 		}

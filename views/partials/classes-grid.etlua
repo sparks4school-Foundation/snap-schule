@@ -1,0 +1,9 @@
+<div class="c-puzzles-grid">
+
+<%
+for idx, class in pairs(classes) do
+	render( 'frontend.views.partials.card-class', { class = class })
+end
+%>
+
+</div>

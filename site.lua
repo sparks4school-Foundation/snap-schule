@@ -109,7 +109,7 @@ for route, view_path in pairs(user_forms) do
 	app:get('/' .. route, capture_errors(cached(function (self)
 		self.csrf_token = csrf.generate_token(self)
 		self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
-		return { render = view_path, class = 'form' }
+		return { render = view_path, css_class = 'form' }
 	end)))
 end
 
@@ -169,7 +169,9 @@ end)))
 
 -- CLASSES --
 
-app:get('/class', capture_errors(cached(function (self)
+app:get('/class/:id', capture_errors(cached(function (self)
+	self.class = Collections:find({ id = self.params.id })
+	assert_can_view_collection(self, self.class)
 	return { render = 'class' }
 end)))
 
@@ -198,7 +200,7 @@ app:get('/sign_up', capture_errors(cached(function (self)
 		string = string .. num
 	end
 	self.session.captcha = string
-	return { render = 'users.sign_up', class = 'auth' }
+	return { render = 'users.sign_up', css_class = 'auth' }
 end)))
 
 app:get('/sign_up_result', capture_errors(function (self)

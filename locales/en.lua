@@ -76,6 +76,15 @@ local locale = {
 	title_links = 'Links:',
 	title_add_to_class = 'Add to class',
 
+	-- Class Page
+	-- ==========
+	title_class = 'Class',
+	b_edit_details = 'Edit details',
+	title_students_class = 'Students and Class',
+	title_delete_class = 'Delete Class',
+	text_delete_class = 'This deletes all the students and their data.',
+	b_delete_class = 'Delete Class',
+
 	-- User Page
 	-- =========
 	title_student_account = 'Student Account',

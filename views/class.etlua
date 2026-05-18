@@ -9,17 +9,17 @@
 		</div>
 
 		<div class="v-puzzle__header-text">
-			<p class="v-puzzle__header-grade">Class</p>
-			<h1 class="v-puzzle__header-title">Pforzheim 6 Grade</h1>
+			<p class="v-puzzle__header-grade"><%= locale.get('title_class') %></p>
+			<h1 class="v-puzzle__header-title"><%= class.name %></h1>
 			<div class="v-puzzle__header-links">
 				<% render('frontend.views.partials.button', {
-					label   = 'Edit details',
+					label   = locale.get('b_edit_details'),
 					url	 = '#',
 					color   = 'black',
 					icon	= 'wrench',
 				}) %>
 				<% render('frontend.views.partials.button', {
-					label   = 'Share QR',
+					label   = locale.get('b_share_qr'),
 					url	 = '#',
 					color   = 'black',
 					icon	= 'qr-code',
@@ -33,34 +33,42 @@
 <div class="u-padding-x">
 
 	<% -- Puzzles %>
+<!--
 	<div class="v-class__puzzles">
 
 		<div class="v-class__puzzles-heading">
-			<% render('frontend.views.partials.section-heading-full-width', {
-				title   = 'Student\'s Puzzles',
+			<% --[[
+			render('frontend.views.partials.section-heading-full-width', {
+				title	= 'Student\'s Puzzles',
 				link	= {
 					label   = 'Add Puzzle',
 					url	 = '#',
 					color   = 'yellow',
 					icon	= 'plus',
 				}
-			}) %>
+			})
+]]
+			%>
 		</div>
 
 		<div class="v-class__puzzles-grid">
-			<% render('frontend.views.partials.puzzles-grid', {
+			<% --[[
+			render('frontend.views.partials.puzzles-grid', {
 				puzzles = 3
-			}) %>
+			})
+]]
+			%>
 		</div>
 
 	</div>
+-->
 
 	<% -- Options %>
 	<div class="v-class__options">
 
 		<div class="v-class__options-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title   = 'Students and Class',
+				title   = locale.get('title_students_class'),
 			}) %>
 		</div>
 
@@ -69,10 +77,10 @@
 			<div class="v-class__options-students">
 				<h3 class="v-class__options-title">Students</h3>
 				<ul class="v-class__options-students-list">
-					<% for i=1,15 do %>
+					<% for _, id in pairs(class.editor_ids) do %>
 						<li class="v-class__options-students-list-item">
 							<span class="v-class__options-students-list-name">
-								student_username_pd
+								<%= package.loaded.Users:find({ id = id }).username %>
 							</span>
 							<button class="v-class__options-students-list-remove">
 								<% render('frontend.static.svg.icon-cross--24x24') %>
@@ -83,13 +91,13 @@
 			</div>
 
 			<div class="v-class__options-delete">
-				<h3 class="v-class__options-title">Delete Class</h3>
+				<h3 class="v-class__options-title"><%= locale.get('title_delete_class') %></h3>
 				<p class="v-class__options-delete-message">
-					This deletes all the students and their data.
+					<%= locale.get('text_delete_class') %>
 				</p>
 				<div class="v-class__options-delete-link">
 					<% render('frontend.views.partials.button', {
-						label   = 'Delete Class',
+						label   = locale.get('b_delete_class'),
 						url	 = '#',
 						color   = 'red',
 						icon	= 'arrow-right',

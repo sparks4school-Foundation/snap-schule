@@ -1,0 +1,13 @@
+<article class="c-card-puzzle">
+
+	<div class="c-card-puzzle__image">
+		<img src="/static/images/puzzle-placeholder-01.png" alt="">
+	</div>
+
+	<div class="c-card-puzzle__text">
+		<h3 class="c-card-puzzle__title"><%= class.name %></h3>
+	</div>
+
+	<a href="<%= '/class/' .. class.id %>" class="c-card-puzzle__anchor" title="<%= class.name %>"></a>
+
+</article>

@@ -40,18 +40,16 @@
 			}) %>
 		</div>
 
-		<div class="v-user__puzzles-grid">
-			<%
-			for i, col in
-				pairs(
-					package.loaded.Collections:select(
-					package.loaded.db.clause({ creator_id = current_user.id
-					})
-				))
-			do %>
-				<span><%= col.name %></span>
-			<% end %>
-		</div>
+		<%
+		render(
+			'frontend.views.partials.classes-grid',
+			{
+				classes = package.loaded.Collections:select(
+					package.loaded.db.clause({ creator_id = current_user.id })
+				)
+			}
+		)
+		%>
 
 	<section>
 
