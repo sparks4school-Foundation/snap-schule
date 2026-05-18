@@ -32,26 +32,8 @@
 <% if current_user.is_teacher then %>
 <div class="u-padding-x">
 
-	<section class="v-user__puzzles">
+<% render('frontend.views.partials.students-grid') %>
 
-		<div class="v-user__puzzles-heading">
-			<% render('frontend.views.partials.section-heading-full-width', {
-				title = locale.get('title_my_classes')
-			}) %>
-		</div>
-
-		<%
-		render(
-			'frontend.views.partials.classes-grid',
-			{
-				classes = package.loaded.Collections:select(
-					package.loaded.db.clause({ creator_id = current_user.id })
-				)
-			}
-		)
-		%>
-
-	<section>
 
 	<section class="v-user__create">
 		<script src="/static/js/papaparse.min.js"></script>
@@ -96,15 +78,6 @@
 							>
 							<p><b><%= locale.get('text_paste_csv') %></b></p>
 							<textarea id="students" name="students" rows="10" placeholder="username,password"></textarea>
-							<label class="e-label__checkbox create_class">
-								<input type="checkbox" name="create-class" value="1">
-								<div class="e-label__text"><%= locale.get('text_create_class') %></div>
-							</label>
-							<input
-								type="text"
-								name="class-name"
-								placeholder="<%= current_user.username .. ' klass ' .. os.date('*t').year%>"
-							>
 							<button name="bulk-create" type="submit">
 								<div class="e-submit__text"><%= locale.get('b_create_users') %></div>
 								<div class="e-submit__icon">
@@ -119,10 +92,6 @@
 			<script type="text/javascript">
 				var div = document.querySelector('.v-user__create');
 				let create_learners = function(e) {
-					var collection_name =
-						div.querySelector('input[name="create-class"]').checked ?
-							div.querySelector('input[name="class-name"]').value :
-							null,
 					file = div.querySelector('.csv').files[0],
 					csv_text = div.querySelector('textarea#students').value;
 
@@ -146,12 +115,8 @@
 								complete: (results) => {
 									let post_body = { users: results.data };
 
-									if (collection_name) {
-										post_body.collection_name = collection_name;
-									}
-
 									cloud.post(
-										'/users/create_learners',
+										'/create_students',
 										null,
 										post_body
 									);
@@ -186,7 +151,6 @@
 					<div class="v-user__options-block-contents">
 						<form method="POST" action="/submit">
 							<input type="text" name="field1" placeholder="e.mustermann@a-school-name.com">
-							<input type="text" name="field2" placeholder="emustermann_teacher_332">
 							<input type="text" name="field3" placeholder="********">
 							<button type="submit">
 								<div class="e-submit__text"><%= locale.get('b_update_details') %></div>

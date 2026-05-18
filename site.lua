@@ -239,6 +239,13 @@ app:get('/accept_request/:email', capture_errors(function (self)
 			verified = true,
 			role = 'standard'
 		})
+		local students = Collections:create({
+			created_at = db.format_date(),
+			updated_at = db.format_date(),
+			creator_id = user.id,
+			name = 'students'
+		})
+		--TODO Notify user?
 		self.title = 'User created'
 		self.contents = locale.get('msg_user_created', self.params.email, password)
 		return { render = 'message' }
@@ -257,4 +264,14 @@ app:get('/reject_request/:email', capture_errors(function (self)
 		self.contents = locale.get('err_unauthorized')
 		return { render = 'message' }
 	end
+end))
+
+app:match('/create_students', respond_to({
+	POST = package.loaded.json_params(schule_utils.create_learners)
+}))
+
+app:get('/message_test', capture_errors(function (self)
+	self.title = 'This is a message'
+	self.contents = 'How about that, huh?'
+	return { render = 'message' }
 end))

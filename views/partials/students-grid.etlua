@@ -1,0 +1,33 @@
+<% local class = package.loaded.Collections:find({ creator_id = current_user.id, name = 'students' })
+%>
+<div class="v-class__options">
+
+	<div class="v-class__options-heading">
+		<% render('frontend.views.partials.section-heading-full-width', {
+			title   = locale.get('title_students'),
+		}) %>
+	</div>
+
+	<% if class.editor_ids and #class.editor_ids > 0 then %>
+
+	<div class="v-class__options-contents">
+
+		<div class="v-class__options-students">
+			<h3 class="v-class__options-title">Students</h3>
+			<ul class="v-class__options-students-list">
+				<% for _, id in pairs(class.editor_ids) do %>
+					<li class="v-class__options-students-list-item">
+						<span class="v-class__options-students-list-name">
+							<%= package.loaded.Users:find({ id = id }).username %>
+						</span>
+						<button class="v-class__options-students-list-remove">
+							<% render('frontend.static.svg.icon-cross--24x24') %>
+						</button>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<% end %>
+
+</div>

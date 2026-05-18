@@ -1,4 +1,9 @@
-<div class="message">
-	<h1 class="title"><%- title %></h1>
-	<div class="content"><%- contents %></div>
+<div class="message u-padding-x">
+	<h1 class="title v-puzzle__header-title"><%- title %></h1>
+	<div class="content v-puzzle__header-intro"><%
+		render(
+			'frontend.views.partials.markdown',
+			{ content = contents }
+		)
+	%></div>
 </div>

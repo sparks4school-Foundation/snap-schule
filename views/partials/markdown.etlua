@@ -5,7 +5,7 @@
 	// This element will self-replace. Isn't this cool?
 	document.querySelector("<%= '.' .. id %>").innerHTML =
 	marked.parse(
-		`<%= content:gsub('`', '\\`') %>`,
+		`<%- content:gsub('`', '\\`') %>`,
 		{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
 	);
 	</script>
