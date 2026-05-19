@@ -1,8 +1,11 @@
+<div class="u-padding-x">
+<section>
+<h1 class="c-heading__section-title section-heading-full-width">Warum Snap!? - 7 Gründe</h1>
+<br>
 <%
 render(
 	'frontend.views.partials.markdown',
 	{ content = [[
-# Warum Snap!? - 7 Gründe
 
 ## Passgenau
 Aller Anfang ist leicht. Aber dann wird es kompliziert? Snap! bietet für jede
@@ -54,3 +57,6 @@ Immer.
 ]]
 })
 %>
+</section>
+</div>
+
