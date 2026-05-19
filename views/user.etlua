@@ -9,13 +9,7 @@
 
 		<div class="v-user__puzzles-heading">
 			<% render('frontend.views.partials.section-heading-full-width', {
-				title	= locale.get('title_student_puzzles'),
-				link	= {
-					label	= 'Add Puzzle',
-					url	 	= '#',
-					color	= 'yellow',
-					icon	= 'plus',
-				}
+				title	= locale.get('title_student_puzzles')
 			}) %>
 		</div>
 
@@ -48,7 +42,7 @@
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
 					<h3 class="v-user__options-block-title"><%= locale.get('title_bulk_creation') %></h3>
-					<div class="v-user__options-block-contents markdown">
+					<div class="v-user__options-block-contents">
 						<%
 							render(
 								'frontend.views.partials.markdown',
@@ -57,8 +51,8 @@
 						%>
 						<div class="--code">
 							username,password<br>
-							johndoe_240,xajglasibkasx<br>
-							janedoe_784,hkjasd895mdas
+							janedoe_784,hkjasd895mdas<br>
+							johndoe_240,xajglasibkasx
 						</div>
 					</div>
 				</div>

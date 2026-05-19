@@ -73,7 +73,10 @@ app:before_filter(function (self)
 			(ngx.var.scheme ..'://' .. ngx.var.host))
 
 	self.jadga = Users:find({ username = 'jadga' })
-	if not self.session.locale then self.session.locale = 'de' end
+	if not self.session.locale then
+		self.session.locale = 'de'
+		self:write({redirect_to = self:url_for('/')})
+	end
 
 	self.schule_utils = schule_utils
 	self.util = util
@@ -226,7 +229,7 @@ app:get('/sign_up_result', capture_errors(function (self)
 end))
 
 app:get('/accept_request/:email', capture_errors(function (self)
-	if self.current_user and self.current_user.id == self.jadga.id then
+	if self.current_user and self.current_user:isadmin() then
 		local salt = secure_salt()
 		local password, prehash = random_password()
 		local user = Users:create({
@@ -257,7 +260,7 @@ app:get('/accept_request/:email', capture_errors(function (self)
 end))
 
 app:get('/reject_request/:email', capture_errors(function (self)
-	if self.current_user == self.jadga then
+	if self.current_user and self.current_user:isadmin() then
 		--TODO Maybe notify user? Maybe just do nothing?
 	else
 		self.title = 'Error'

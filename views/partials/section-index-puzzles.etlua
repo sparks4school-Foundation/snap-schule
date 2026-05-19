@@ -1,39 +1,50 @@
+<section class="v-index__puzzles">
+
+	<div class="v-index__puzzles-heading">
+
 <%
-local collection = package.loaded.Collections:find(
-	{
-		name = "Grade " .. grade,
-		user_id = jadga.user_id,
-		published = true
-	}
-)
-local puzzles = CollectionController.projects({
+if placeholder then
+	collection = {}
+	puzzles = {}
+else
+	collection = package.loaded.Collections:find(
+		{
+			name = "Grade " .. grade,
+			user_id = jadga.user_id,
+			published = true
+		}
+	)
+	puzzles = CollectionController.projects({
 		params = {},
 		items_per_page = 24, -- max 24 projects to query from DB.
 		collection = collection,
 		cached = true
 	})
-%>
-<section class="v-index__puzzles">
 
-	<div class="v-index__puzzles-heading">
-	<%
-		render(
-			'frontend.views.partials.section-heading-full-width',
-			{
-				title   = locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
-				link    = {
-					label   = locale.get('b_grade_puzzles', grade),
-					url     = 'puzzles/' .. collection.id,
-					color   = 'yellow',
-					icon    = 'arrow-right',
-				}
-			}
-		)
-	%>
+	link = {
+		label   = locale.get('b_grade_puzzles', grade),
+		url     = 'puzzles/' .. collection.id,
+		color   = 'yellow',
+		icon    = 'arrow-right',
+	}
+end
+render(
+	'frontend.views.partials.section-heading-full-width',
+	{
+		title   = locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
+		link = link
+	}
+)
+%>
 	</div>
 
 	<div class="v-index__puzzles-grid">
 	<%
+		if placeholder then
+		%>
+			<p><%= locale.get('text_coming_soon') %></p>
+		<%
+		else
 		render(
 			'frontend.views.partials.puzzles-grid',
 			{
@@ -42,6 +53,7 @@ local puzzles = CollectionController.projects({
 				collection = collection
 			}
 		)
+		end
 	%>
 	</div>
 </section>
