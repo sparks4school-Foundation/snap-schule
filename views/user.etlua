@@ -1,5 +1,11 @@
 <header class="v-user__header u-padding-x">
-	<div class="v-user__header-type"><%= locale.get('title_' .. account_type .. '_account') %></div>
+	<div class="v-user__header-type">
+		<%= current_user:isadmin()
+			and 'admin'
+			or locale.get('title_' .. account_type .. '_account')
+		%>
+	</div>
+	
 	<h1 class="v-user__header-name"><%- current_user.username %></h1>
 </header>
 

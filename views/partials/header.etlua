@@ -49,6 +49,7 @@ local menu = {
 		</select>
 		-->
 
+		<% if options.render == 'editor' and puzzles then %>
 		<div
 			class="c-header__class-puzzles"
 			data-menu="class-puzzles"
@@ -61,6 +62,7 @@ local menu = {
 			</div>
 			<div class="c-header__class-puzzles-text">Class Puzzles</div>
 		</div>
+		<% end %>
 
 		<div class="c-header__menu-user">
 			<div class="c-header__menu-user-icon">

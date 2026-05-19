@@ -52,7 +52,7 @@
 					icon		= 'arrow-up-right',
 				})
 
-				if current_user and current_user.id == jadga.id then
+				if current_user and current_user:isadmin() then
 					render('frontend.views.partials.button', {
 						label		= locale.get('b_add_to_class'),
 						action		= 'toggleAddToCollection()',
@@ -133,7 +133,7 @@
 	</div>
 </div>
 
-<% if current_user and current_user.id == jadga.id then %>
+<% if current_user and current_user:isadmin() then %>
 <div
 	id="add-to-collection"
 	class="v-puzzle__add-to-collection --is-hidden"

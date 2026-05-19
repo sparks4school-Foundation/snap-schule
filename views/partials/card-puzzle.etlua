@@ -15,7 +15,7 @@
 
 	<a href="<%= '/puzzle/' .. puzzle.id %>" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
 
-	<% if current_user and current_user.id == jadga.id then %>
+	<% if current_user and current_user:isadmin() then %>
 	<div class="c-card-puzzle__remove" role="button" aria-label="Remove from collection">
 		<% render('frontend.static.svg.icon-trash--24x24') %>
 	</div>
