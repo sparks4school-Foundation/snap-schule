@@ -26,21 +26,19 @@ if params.id then
 		<div class="v-editor__puzzle-list-slider" data-editor-puzzle-list="slider">
 
 			<div class="swiper-wrapper">
-				<% for i = 1, 5 do %>
-					<div class="swiper-slide v-editor__puzzle-list-slide">
-					<%
-						for idx, puzzle in pairs(puzzles) do
-							render(
-								'frontend.views.partials.card-puzzle',
-								{
-									grade = grade,
-									puzzle = puzzle
-								}
-							)
-						end
-					%>
-					</div>
-				<% end %>
+				<div class="swiper-slide v-editor__puzzle-list-slide">
+				<%
+					for idx, puzzle in pairs(puzzles) do
+						render(
+							'frontend.views.partials.card-puzzle',
+							{
+								grade = grade,
+								puzzle = puzzle
+							}
+						)
+					end
+				%>
+				</div>
 			</div>
 
 			<div class="v-editor__puzzle-list-controls-wrapper u-padding-x">
@@ -63,25 +61,3 @@ if params.id then
 		</div>
 	</div>
 <% end %>
-
-
-<!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    ...
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
