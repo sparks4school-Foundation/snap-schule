@@ -18,4 +18,6 @@
 		%>
 	</body>
 
+	<% render('frontend.views.partials.modal-message') %>
+
 </html>

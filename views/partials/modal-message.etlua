@@ -1,0 +1,54 @@
+<%
+-- local color_class = '--' .. color
+%>
+
+<div
+	id="add-to-collection"
+	class="c-modal-message --is-hidden"
+	data-modal-message="element"
+	aria-hidden="true"
+>
+	<div class="c-modal-message__background" data-modal-message="background"></div>
+	<div class="c-modal-message__contents">
+
+		<div class="c-modal-message__message">
+			Students have been successfully added!
+		</div>
+
+		<div
+			class="c-modal-message__hide"
+			role="button"
+			aria-label="Hide modal"
+			data-modal-message="hide"
+		>
+			<% render('frontend.static.svg.icon-cross--24x24') %>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		let modalMessage = document.querySelector('[data-modal-message="element"]');
+		let buttonHide = modalMessage.querySelector('[data-modal-message="hide"]');
+		let background = modalMessage.querySelector('[data-modal-message="background"]');
+
+		function toggleModalMessage () {
+			if (!modalMessage || modalMessage.classList.contains('--is-transitioning')) { return };
+
+			if (modalMessage.classList.contains('--is-hidden')) {
+				modalMessage.classList.remove('--is-hidden');
+				modalMessage.setAttribute('aria-hidden', false);
+			} else {
+				modalMessage.classList.add('--is-hidden');
+				modalMessage.setAttribute('aria-hidden', true);
+			}
+
+			modalMessage.classList.add('--is-transitioning');
+			modalMessage.addEventListener('transitionend', (e) => {
+				modalMessage.classList.remove('--is-transitioning');
+			}, { once: true });
+		};
+
+		buttonHide.addEventListener('click', toggleModalMessage);
+		background.addEventListener('click', toggleModalMessage);
+	</script>
+</div>
