@@ -37,6 +37,7 @@ local locale = {
 	index_intro = "With short, engaging educational games, children can learn @1 on their own and quickly move on to creating their own motion programs and simple games. Along the way, @2 such as variables, loops, and conditional logic—building essential digital skills while having fun.", -- @1 and @2 become the two sentences below:
 	index_intro_p1 = "the basics of programming",
 	index_intro_p2 = "they naturally discover key concepts",
+	text_coming_soon = "Coming soon...",
 
 	-- Puzzle carousels
 	-- ================

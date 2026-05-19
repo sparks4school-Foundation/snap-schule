@@ -16,7 +16,7 @@
 		%>
 	</div>
 
-	<% render('frontend.views.partials.section-index-puzzles', { grade = 5 }) %>
 	<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
+	<% render('frontend.views.partials.section-index-puzzles', { grade = 7, placeholder = true }) %>
 
 </div>

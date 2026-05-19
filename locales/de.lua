@@ -37,6 +37,7 @@ local locale = {
 	index_intro = "Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand. Snap! Schule bietet @1, die Sie direkt einsetzen können. Entwickelt von Lehrkräften, Informatiker:innen und Fachdidaktiker:innen – DSGVO-konform und kostenlos. Wir starten mit @2, weitere Bundesländer folgen!", -- @1 and @2 become the two sentences below:
 	index_intro_p1 = "lehrplangerechte Puzzle und Unterrichtsmaterialien",
 	index_intro_p2 = "Baden-Württemberg",
+	text_coming_soon = "Coming soon...",
 
 	-- Puzzle carousels
 	-- ================
