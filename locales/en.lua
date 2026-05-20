@@ -187,7 +187,6 @@ If you also create a private class, all these accounts will be associated to it.
 	email_accepted_heading = 'Your account has been approved into Snap!Schule',
 	email_accepted_text = 'You can now log into your account at @1 with the following credentials:',
 	email_accepted_change_pwd = 'Please change your password immediately after logging in.'
-
 }
 
 return locale
