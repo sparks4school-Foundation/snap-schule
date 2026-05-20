@@ -9,7 +9,7 @@
 -- Copyright (C) 2026 by Bernat Romagosa
 --
 -- This file is part of Snap!Schule
----
+--
 -- Snap!Schule is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU Affero General Public License as
 -- published by the Free Software Foundation, either version 3 of
@@ -29,6 +29,30 @@ local capture_errors = package.loaded.capture_errors
 local validate = package.loaded.validate
 local assert_error = package.loaded.app_helpers.assert_error
 local db = package.loaded.db
+
+function utils:parse_notes(notes)
+	local summary =
+		string.sub(
+			notes, string.find(notes, '--SUMMARY--') + 12,
+			string.find(notes, '--DESCRIPTION--') - 2
+		)
+	local description =
+		string.sub(
+			notes, string.find(notes, '--DESCRIPTION--') + 16,
+			string.find(notes, '--LINKS--') - 2
+		)
+	local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
+	local links = {}
+	for line in string.gmatch(links_text, "[^\r\n]+") do
+		local link = {}
+		for part, i in string.gmatch(line, "[^,]+") do
+			table.insert(link, part)
+		end
+		table.insert(links, link)
+	end
+
+	return summary, description, links
+end
 
 function utils:grade_from_collection(collection)
 	if collection and (collection.name:find('Grade')) then
@@ -96,39 +120,14 @@ end
 
 function utils:signup_email_body(email)
 	local address = package.loaded.util.escape(email)
-	local style = [[
-<style>
-* {
-	font-family: Arial;
-}
-.button {
-	padding: .1em .5em;
-	border: 1px solid gray;
-	border-radius: 5px;
-	color: white;
-	margin-right: .5em;
-	text-decoration: none;
-	font-weight: bold;
-	&.accept { background: darkgreen; }
-	&.reject { background: darkred; }
-	&:hover {
-		cursor: pointer;
-		background: lightgray;
-		color: black;
-	}
-}
-</style>
-]]
-
-	local body = style ..
-		'<h2>User signup application</h2>' ..
-		'<p>A new user wants to be allowed into Snap!Schule:</p>' ..
-		'\n\n<strong>email</strong>: <em>' .. address .. '</em>\n\n' ..
-		'<p><a class="button accept" href="https://snap.schule/accept_request/' ..
-		address .. '">Accept</a><a class="button reject" ' ..
-		'href="https://snap.schule/reject_request/' .. address .. '">Reject</a></p>'
-		
-
+	local body = 
+		'<h2>' .. locale.get(email_signup_heading) .. '</h2>' ..
+		'<p>' .. locale.get(email_signup_text) .. '</p>' ..
+		'\n\n<strong>email</strong>: <em>' .. email .. '</em>\n\n' ..
+		'<p><a href="https://snap.schule/accept_request/' ..  address ..
+		'">' .. locale.get(email_signup_accept) ..
+		'</a> <a href="https://snap.schule/reject_request/' .. address ..
+		'">' .. locale.get(email_signup_reject) .. '</a></p>'
 	return body
 end
 

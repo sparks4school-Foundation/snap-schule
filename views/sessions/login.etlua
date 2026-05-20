@@ -50,7 +50,7 @@
 
 	<div class="c-user-form__links">
 		<a href="/forgot_password"><%= locale.get('l_forgot_password') %></a>
-		<a href="/forgot_username"><%= locale.get('l_forgot_username') %></a>
+		<!--<a href="/forgot_username"><%= locale.get('l_forgot_username') %></a>-->
 	</div>
 
 </div>

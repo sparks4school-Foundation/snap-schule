@@ -128,6 +128,11 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	l_forgot_password = 'Ich habe mein Passwort vergessen',
 	l_forgot_username = 'Ich habe meinen Benutzernamen vergessen',
 
+	-- Password Reset
+	-- ==============
+	title_reset_password = 'Passwort zurücksetzen',
+	button_reset_password = 'Mein Passwort zurücksetzen',
+
 	-- Footer
 	-- ======
 	b_whysnap = "Warum Snap!?",
@@ -137,7 +142,23 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	-- ===================
 	err_unauthorized = 'Du bist nicht berechtigt, diese Aktion auszuführen',
 	err_captcha = 'Captcha wurde nicht korrekt eingegeben',
-	msg_user_created = 'Benutzer:in @1 wurde erstellt. Das Passwort ist @2.'
+	msg_user_created = [[
+	# User _@1_ wurde erstellt.
+
+	Das Passwort lautet _@2_
+
+	Bitte das Passwort beim ersten Einloggen ändern.
+
+	Viel Spaß!
+	]],
+
+	-- Emails
+	-- ======
+	email_signup_subject = '[Snap!Schule] Neue Signup Anfrage',
+	email_signup_heading = 'User Signup Antrag',
+	email_signup_text = 'Ein neuer User möchte Zugang zu Snap!Schule:',
+	email_signup_accept = 'Bestätigen',
+	email_signup_reject = 'Ablehnen'
 }
 
 return locale

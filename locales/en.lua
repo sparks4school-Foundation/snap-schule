@@ -128,6 +128,11 @@ If you also create a private class, all these accounts will be associated to it.
 	l_forgot_password = 'I forgot my password',
 	l_forgot_username = 'I forgot my username',
 
+	-- Password Reset
+	-- ==============
+	title_reset_password = 'Reset Your Password',
+	button_reset_password = 'Reset my password',
+
 	-- Footer
 	-- ======
 	b_whysnap = "Why Snap!",
@@ -145,7 +150,16 @@ If you also create a private class, all these accounts will be associated to it.
 	Please make sure to change it as soon as you log in.
 
 	Enjoy!
-	]]
+	]],
+
+	-- Emails
+	-- ======
+	email_signup_subject = '[Snap!Schule] New Signup Request',
+	email_signup_heading = 'User signup application',
+	email_signup_text = 'A new user wants to be allowed into Snap!Schule:',
+	email_signup_accept = 'Accept',
+	email_signup_reject = 'Reject'
+
 }
 
 return locale

@@ -1,27 +1,7 @@
 <%
 	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
-	-- TODO move into Schule utils package
 	-- TODO add puzzle to collection action
-	local notes = puzzle.notes
-	local summary =
-		string.sub(
-			notes, string.find(notes, '--SUMMARY--') + 12,
-			string.find(notes, '--DESCRIPTION--') - 2
-		)
-	local description =
-		string.sub(
-			notes, string.find(notes, '--DESCRIPTION--') + 16,
-			string.find(notes, '--LINKS--') - 2
-		)
-	local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
-	local links = {}
-	for line in string.gmatch(links_text, "[^\r\n]+") do
-		local link = {}
-		for part, i in string.gmatch(line, "[^,]+") do
-			table.insert(link, part)
-		end
-		table.insert(links, link)
-	end
+	local summary, description, links = schule_utils:parse_notes(puzzle.notes)
 
 	if (grade == null) then
 		grade = schule_utils:grade_from_project(puzzle)
@@ -30,7 +10,6 @@
 	if (puzzle_number == null) then
 		puzzle_number = schule_utils:project_number(puzzle)
 	end
-
 %>
 
 <header class="v-puzzle__header u-padding-x">
@@ -143,7 +122,7 @@
 	<div class="v-puzzle__add-to-collection-background" data-puzzle-collection="background"></div>
 	<div class="v-puzzle__add-to-collection-contents">
 
-		<form class="v-puzzle__add-to-collection-form">
+		<form class="v-puzzle__add-to-collection-form" onsubmit="addPuzzleToGrade(this)">
 
 			<label class="u-visually-hidden" for="collection"><%= locale.get('title_add_to_class') %></label>
 			<select id="collection" name="collection">
@@ -201,6 +180,15 @@
 				addToCollection.classList.remove('--is-transitioning');
 			}, { once: true });
 		};
+
+		function addPuzzleToGrade (form) {
+			cloud.post(
+				'/collection/' +
+					form.querySelector('select[name="collection"]').value +
+					'/project/' +
+					<%= puzzle.id %>
+			);
+		}
 
 		buttonHide.addEventListener('click', toggleAddToCollection);
 		background.addEventListener('click', toggleAddToCollection);

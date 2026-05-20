@@ -17,10 +17,42 @@ if params.id then
 
 		<div class="v-editor__puzzle-list-top u-padding-x">
 			<div class="v-editor__puzzle-list-title">Pforzheim 6 Grade</div>
-			<div class="v-editor__puzzle-list-tutorials --disabled" role="button">
+			<div class="v-editor__puzzle-list-tutorials --disabled" role="button" onclick="toggleTutorial()">
 				<% render('frontend.static.svg.icon-check-circle--24x24') %>
 				<span class="v-editor__puzzle-list-tutorials-text">Tutorial</span>
 			</div>
+			<script>
+			let iframe = document.querySelector('.v-editor__iframe').contentWindow,
+				checkbox = document.querySelector('div.v-editor__puzzle-list-tutorials'),
+				ide,
+				interval = setInterval(
+					() => {
+						if (iframe.world) {
+							clearInterval(interval);
+							ide = iframe.world.children[0];
+						}
+					},
+					250
+				);
+			function detectTutorial () { return ide.tutorial !== null; }
+
+			function updateCheckbox () {
+				if (detectTutorial()) {
+					checkbox.classList.remove('--disabled');
+				} else {
+					checkbox.classList.add('--disabled');
+				}
+			}
+
+			function toggleTutorial () {
+				if (detectTutorial()) {
+					ide.escapeTutorial();
+				} else {
+					ide.launchProjectTutorial();
+				}
+				updateCheckbox();
+			}
+			</script>
 		</div>
 
 		<div class="v-editor__puzzle-list-slider" data-editor-puzzle-list="slider">
