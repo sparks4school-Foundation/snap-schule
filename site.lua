@@ -216,10 +216,12 @@ app:get('/sign_up_result', capture_errors(function (self)
 			locale.get('email_signup_subject'),
 			schule_utils:signup_email_body(self.params.email)
 		)
-		self.title = 'User creation pending review'
-		self.contents = 'Thank you for your request. We are now reviewing your ' ..
-			'application and we will get back to you very soon with details on ' ..
-			' how to access your account.'
+		self.title = locale.get('review_pending_header')
+		self.contents = locale.get(
+			'review_pending_text',
+			'[ium@sparks4school.org](mailto:ium@sparks4school.org)'
+		)
+
 		return { render = 'message' }
 	else
 		self.title = 'Captcha failed'
@@ -248,9 +250,14 @@ app:get('/accept_request/:email', capture_errors(function (self)
 			creator_id = user.id,
 			name = 'students'
 		})
-		--TODO Notify user?
-		self.title = 'User created'
-		self.contents = locale.get('msg_user_created', self.params.email, password)
+		-- Notify user
+		send_mail(
+			self.params.email,
+			locale.get('email_accepted_subject'),
+			schule_utils:signup_email_body(self.params.email, password)
+		)
+		self.title = locale.get('title_user_created')
+		self.contents = locale.get('msg_user_created', self.params.email)
 		return { render = 'message' }
 	else
 		self.title = 'Error'
@@ -262,6 +269,11 @@ end))
 app:get('/reject_request/:email', capture_errors(function (self)
 	if self.current_user and self.current_user:isadmin() then
 		--TODO Maybe notify user? Maybe just do nothing?
+		self.title = locale.get('title_user_rejected')
+		self.contents =
+			locale.get('msg_user_rejected', self.params.email) ..
+				'\n\n[Accept](/accept_request/' .. util.escape(self.params.email) .. ')'
+		return { render = 'message' }
 	else
 		self.title = 'Error'
 		self.contents = locale.get('err_unauthorized')

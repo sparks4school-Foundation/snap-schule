@@ -118,6 +118,20 @@ If you also create a private class, all these accounts will be associated to it.
 	placeholder_email_repeat = 'E-mail (Repeat)',
 	placeholder_captcha = 'Enter the number above',
 	b_signup = 'Sign up',
+	review_pending_header = 'User creation pending review',
+	review_pending_text = [[
+	# Thank you for your request.
+
+	We are now reviewing your application and we will get back to you very soon
+	with details on how to access your account.
+
+	Please regularly check your email inbox, including the spam folder.
+
+	If you don't receive any news from us within the next working day, please
+	write to us at @1.
+
+	Thank you!
+	]],
 
 	-- Login
 	-- =====
@@ -142,23 +156,37 @@ If you also create a private class, all these accounts will be associated to it.
 	-- ===================
 	err_unauthorized = 'You do not have permission to perform this action',
 	err_captcha = 'Captcha challenge failed',
+	title_user_created = 'User created',
 	msg_user_created = [[
-	# User _@1_ has been created.
+	# User _@1_ has been created
 
-	Your password is _@2_
+	An email has been sent to the user notifying them that they have been
+	approved and can now log into Snap!Schule.
+	]],
+	title_user_rejected = 'User application rejected',
+	msg_user_rejected = [[
+	# Application rejected
 
-	Please make sure to change it as soon as you log in.
+	The registration application for the user with email __@1__ has been rejected
+	by you.
 
-	Enjoy!
+	If this was a mistake you can still approve them by clicking on the link
+	below. Otherwise, you're all set.
 	]],
 
 	-- Emails
 	-- ======
+	-- User account creation request. Sent to admin.
 	email_signup_subject = '[Snap!Schule] New Signup Request',
 	email_signup_heading = 'User signup application',
 	email_signup_text = 'A new user wants to be allowed into Snap!Schule:',
 	email_signup_accept = 'Accept',
-	email_signup_reject = 'Reject'
+	email_signup_reject = 'Reject',
+	-- User account creation accepted. Sent to user.
+	email_accepted_subject = '[Snap!Schule] Your account has been approved',
+	email_accepted_heading = 'Your account has been approved into Snap!Schule',
+	email_accepted_text = 'You can now log into your account at @1 with the following credentials:',
+	email_accepted_change_pwd = 'Please change your password immediately after logging in.'
 
 }
 

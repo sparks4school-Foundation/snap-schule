@@ -142,23 +142,23 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	-- ===================
 	err_unauthorized = 'Du bist nicht berechtigt, diese Aktion auszuführen',
 	err_captcha = 'Captcha wurde nicht korrekt eingegeben',
-	msg_user_created = [[
-	# User _@1_ wurde erstellt.
-
-	Das Passwort lautet _@2_
-
-	Bitte das Passwort beim ersten Einloggen ändern.
-
-	Viel Spaß!
-	]],
-
+	title_user_created = '',
+	msg_user_created = '',
+	title_user_rejected = '',
+	msg_user_rejected = '',
 	-- Emails
 	-- ======
+	-- User account creation request. Sent to admin.
 	email_signup_subject = '[Snap!Schule] Neue Signup Anfrage',
 	email_signup_heading = 'User Signup Antrag',
 	email_signup_text = 'Ein neuer User möchte Zugang zu Snap!Schule:',
 	email_signup_accept = 'Bestätigen',
-	email_signup_reject = 'Ablehnen'
+	email_signup_reject = 'Ablehnen',
+	-- User account creation accepted. Sent to user.
+	email_accepted_subject = '',
+	email_accepted_heading = '',
+	email_accepted_text = '',
+	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.'
 }
 
 return locale
