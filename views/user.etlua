@@ -117,7 +117,7 @@
 
 									cloud.post(
 										'/create_students',
-										null,
+										() => { window.location.reload() },
 										post_body
 									);
 								}

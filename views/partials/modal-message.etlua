@@ -1,25 +1,27 @@
-<%
--- local color_class = '--' .. color
-%>
-
 <div
-	id="add-to-collection"
 	class="c-modal-message --is-hidden"
 	data-modal-message="element"
 	aria-hidden="true"
 >
-	<div class="c-modal-message__background" data-modal-message="background"></div>
+	<div
+		class="c-modal-message__background"
+		data-modal-message="background"
+		onclick="toggleModalMessage()"
+	></div>
 	<div class="c-modal-message__contents">
 
-		<div class="c-modal-message__message">
-			Students have been successfully added!
-		</div>
+		<div class="c-modal-message__message"></div>
+
+		<button class="c-button --yellow --small" onclick="okayModalMessage()">
+			<div class="c-button__text">Ok</div>
+		</button>
 
 		<div
 			class="c-modal-message__hide"
 			role="button"
 			aria-label="Hide modal"
 			data-modal-message="hide"
+			onclick="toggleModalMessage()"
 		>
 			<% render('frontend.static.svg.icon-cross--24x24') %>
 		</div>
@@ -28,8 +30,6 @@
 
 	<script type="text/javascript">
 		let modalMessage = document.querySelector('[data-modal-message="element"]');
-		let buttonHide = modalMessage.querySelector('[data-modal-message="hide"]');
-		let background = modalMessage.querySelector('[data-modal-message="background"]');
 
 		function toggleModalMessage () {
 			if (!modalMessage || modalMessage.classList.contains('--is-transitioning')) { return };
@@ -48,7 +48,15 @@
 			}, { once: true });
 		};
 
-		buttonHide.addEventListener('click', toggleModalMessage);
-		background.addEventListener('click', toggleModalMessage);
+		function okayModalMessage() { toggleModalMessage() };
+
+		function setModalMessage(content, onSuccess) {
+			modalMessage.querySelector('.c-modal-message__message').innerHTML =
+				marked.parse(
+					content,
+					{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
+				);
+			okayModalMessage = onSuccess;
+		}
 	</script>
 </div>

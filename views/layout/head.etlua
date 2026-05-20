@@ -17,6 +17,8 @@
 <link rel="icon" href="/static/img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Markdown parser -->
+<script src="/static/js/marked.umd.js"></script>
 
 <!-- Swiper Slider -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />

@@ -1,12 +1,11 @@
 <% local id = 'md-' .. tostring(math.random(99999999)) %>
 <div class='c-markdown <%= id %>'>
-	<script src="/static/js/marked.umd.js"></script>
 	<script>
 	// This element will self-replace. Isn't this cool?
 	document.querySelector("<%= '.' .. id %>").innerHTML =
-	marked.parse(
-		`<%- content:gsub('`', '\\`') %>`,
-		{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
-	);
+		marked.parse(
+			`<%- content:gsub('`', '\\`') %>`,
+			{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
+		);
 	</script>
 </div>

@@ -118,6 +118,18 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
 	placeholder_captcha = 'Bitte geben Sie die angezeigten Ziffern ein',
 	b_signup = 'Registrieren',
+	review_pending_header = 'Benutzererstellung wird überprüft',
+	review_pending_text = [[
+**Vielen Dank für Ihre Anfrage**
+
+Wir prüfen derzeit Ihren Antrag und werden uns in Kürze bei Ihnen melden – mit Details zum Zugriff auf Ihren Account.
+
+Bitte überprüfen Sie regelmäßig Ihren E-Mail-Posteingang, einschließlich des Spam-Ordners.
+
+Sollten Sie innerhalb des nächsten Werktags keine Nachricht von uns erhalten, schreiben Sie uns bitte an __@1__.
+
+Vielen Dank!
+]],
 
 	-- Login
 	-- =====
@@ -143,9 +155,24 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	err_unauthorized = 'Du bist nicht berechtigt, diese Aktion auszuführen',
 	err_captcha = 'Captcha wurde nicht korrekt eingegeben',
 	title_user_created = '',
-	msg_user_created = '',
-	title_user_rejected = '',
-	msg_user_rejected = '',
+	msg_user_created = [[
+	# Der Benutzer _@1_ wurde erstellt
+
+	Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
+	dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
+	]],
+	title_user_rejected = 'Benutzerantrag abgelehnt',
+	msg_user_rejected = [[
+	# Antrag abgelehnt
+
+	Der Registrierungsantrag des Benutzers mit der E-Mail-Adresse __@1__ wurde
+	von Ihnen abgelehnt.
+
+	Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
+	indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
+	Maßnahme erforderlich.
+	]],
+
 	-- Emails
 	-- ======
 	-- User account creation request. Sent to admin.
@@ -155,11 +182,10 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	email_signup_accept = 'Bestätigen',
 	email_signup_reject = 'Ablehnen',
 	-- User account creation accepted. Sent to user.
-	email_accepted_subject = '',
-	email_accepted_heading = '',
-	email_accepted_text = '',
+	email_accepted_subject = '[Snap!Schule] Ihr Account wurde freigeschaltet',
+	email_accepted_heading = 'Ihr Account für Snap!Schule wurde freigeschaltet',
+	email_accepted_text = 'Sie können sich nun mit den folgenden Zugangsdaten in Ihr Konto unter @1 einloggen:',
 	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.'
 }
 
 return locale
-

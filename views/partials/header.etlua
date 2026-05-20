@@ -49,7 +49,8 @@ local menu = {
 		</select>
 		-->
 
-		<% if options.render == 'editor' and puzzles then %>
+		<!-- DISABLED FOR NOW. WILL ENABLE AFTER LAUNCH WHEN IT'S PROPERLY TESTED -->
+		<% if false and options.render == 'editor' and puzzles then %>
 		<div
 			class="c-header__class-puzzles"
 			data-menu="class-puzzles"

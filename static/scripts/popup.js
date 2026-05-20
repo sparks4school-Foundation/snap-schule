@@ -2,10 +2,10 @@
  * Popups
  */
 
-function popup()
-{
+function popup() {
 	window.alert = (body, properties, onSuccess) => {
-		onSuccess.call();
+		setModalMessage(body, onSuccess);
+		toggleModalMessage();
 	}
 };
 
