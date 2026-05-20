@@ -75,7 +75,7 @@ app:before_filter(function (self)
 	self.jadga = Users:find({ username = 'jadga' })
 	if not self.session.locale then
 		self.session.locale = 'de'
-		-- self:write({redirect_to = self:url_for('/')})
+		self:write({redirect_to = '/'})
 	end
 
 	self.schule_utils = schule_utils
