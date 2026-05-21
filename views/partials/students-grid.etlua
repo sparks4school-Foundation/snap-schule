@@ -1,5 +1,4 @@
-<% local class = package.loaded.Collections:find({ creator_id = current_user.id, name = 'students' })
-%>
+<% local class = package.loaded.Collections:find({ creator_id = current_user.id, name = 'students' }) %>
 <div class="v-class__options">
 
 	<div class="v-class__options-heading">
@@ -8,7 +7,7 @@
 		}) %>
 	</div>
 
-	<% if class.editor_ids and #class.editor_ids > 0 then %>
+	<% if class and class.editor_ids and #class.editor_ids > 0 then %>
 
 	<div class="v-class__options-contents">
 
