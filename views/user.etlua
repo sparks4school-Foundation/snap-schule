@@ -29,8 +29,9 @@
 </div>
 <% end %>
 
-<% if current_user.is_teacher then %>
 <div class="u-padding-x">
+
+<% if current_user.is_teacher then %>
 
 <% render('frontend.views.partials.students-grid') %>
 
@@ -134,6 +135,8 @@
 		</div>
 
 	</section>
+<% end %>
+<% if current_user.is_teacher or current_user:isadmin() then %>
 
 	<section class="v-user__account">
 
@@ -147,13 +150,15 @@
 
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
-					<h3 class="v-user__options-block-title"><%= locale.get('title_update_details') %></h3>
+					<h3 class="v-user__options-block-title"><%= locale.get('title_change_password') %></h3>
 					<div class="v-user__options-block-contents">
-						<form method="POST" action="/submit">
-							<input type="text" name="field1" placeholder="e.mustermann@a-school-name.com">
-							<input type="text" name="field3" placeholder="********">
+						<form name="change-password" method="POST" onsubmit="handleSubmit(event)">
+							<input type="password" name="current-password" placeholder="<%= locale.get('placeholder_current_password') %>">
+							<br>
+							<input type="password" name="new-password" placeholder="<%= locale.get('placeholder_new_password') %>">
+							<input type="password" name="password-repeat" placeholder="<%= locale.get('placeholder_new_password_repeat') %>">
 							<button type="submit">
-								<div class="e-submit__text"><%= locale.get('b_update_details') %></div>
+								<div class="e-submit__text"><%= locale.get('b_change_password') %></div>
 								<div class="e-submit__icon">
 									<% render('frontend.static.svg.icon-arrow-right--24x24') %>
 								</div>
@@ -161,8 +166,41 @@
 						</form>
 					</div>
 				</div>
-			</div>
+				<script type="text/javascript" src="/static/js/sha512.js"></script>
+				<script>
+					enableEnterSubmit();
+					var handleSubmit = function (event) {
+						if (event) {
+							event.preventDefault();
+						}
 
+						var form = document.querySelector('form[name="change-password"]'),
+								old = form.querySelector('input[name="current-password"]').value,
+								new_password = form.querySelector('input[name="new-password"]').value,
+								repeated = form.querySelector('input[name="password-repeat"]').value;
+
+						if (!form.reportValidity()) {
+							return;
+						}
+						if (new_password !== repeated) {
+							genericError(
+									"<%- locale.get('err_password_mismatch', '<br>') %>",
+									"<%- locale.get('err_password_mismatch_title') %>"
+									);
+							return;
+						}
+						cloud.post(
+								'/change_my_password',
+								()=>{ window.location.reload() },
+								{
+									old_password: hex_sha512(old),
+									new_password: hex_sha512(new_password)
+								}
+						);
+				};
+			</script>
+			</div>
+<!--
 			<div class="v-user__options-column">
 				<div class="v-user__options-block">
 					<h3 class="v-user__options-block-title"><%= locale.get('title_delete_account') %></h3>
@@ -181,11 +219,10 @@
 					</div>
 				</div>
 			</div>
-
+-->
 		</div>
 
 	</section>
 
-
-</div>
 <% end %>
+</div>

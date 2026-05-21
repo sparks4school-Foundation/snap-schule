@@ -103,6 +103,11 @@ If you also create a private class, all these accounts will be associated to it.
 	text_automatic_account_deletion = 'Accounts are automatically deactivated after one year of inactivity. We do not collect or store any personal information.',
 	title_delete_account = 'Delete Account',
 	b_delete_account = 'Delete Account',
+	title_change_password = 'Change my password',
+	placeholder_current_password = 'current password',
+	placeholder_new_password = 'new password',
+	placeholder_new_password_repeat = 'new password (repeat)',
+	b_change_password = 'Change my password',
 
 
 	-- Contact

@@ -103,6 +103,11 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	text_automatic_account_deletion = "Accounts werden automatisch ein Jahr nach ihrer letzten Aktivität gelöscht. Wir erheben und speichern keine personenbezogenen Daten.",
 	title_delete_account = "Account löschen",
 	b_delete_account = "Account löschen",
+	title_change_password = 'Passwort ändern',
+	placeholder_current_password = 'Aktuelles Passwort',
+	placeholder_new_password = 'Neues Passwort',
+	placeholder_new_password_repeat = 'Neues Passwort bestätigen',
+	b_change_password = 'Passwort ändern',
 
 
 	-- Contact
