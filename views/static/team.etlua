@@ -1,0 +1,89 @@
+<div class="u-padding-x">
+<section>
+<h1 class="c-heading__section-title section-heading-full-width">Wer das Projekt trägt</h1>
+<br>
+<%
+render(
+	'frontend.views.partials.markdown',
+	{ content = [[
+snap.schule entsteht **kollegial:** Lehrkräfte, Forschende und Entwickler:innen, die seit Jahren
+an guter Informatikbildung arbeiten. Getragen von einem gemeinnützigen Unternehmen,
+einer Universität, einem Industriepartner und einem zivilgesellschaftlichen Lernort. Hier
+sind ihre Stimmen.
+
+## Jadga Hügle
+### SAP
+„ Ursprünglich Biologin, zur Informatik kam
+ich beim Bau eines automatisierten
+Gewächshäuschens. Seitdem suche ich
+kreative Zugänge: Musik, Kunst, Stickerei,
+Biologie. Bei snap.schule entwickle ich Puzzle
+und Unterrichtsmaterialien. "
+
+## Sébastien Elbracht
+### SPARKS4SCHOOL
+„ Mein Hintergrund vereint Informatik,
+Geographie, Medien- und Theaterpädagogik.
+Mich begeistert, wie informatische Konzepte
+spielerisch erlebbar wird. Bei snap.schule
+verantworte ich die Projektentwicklung. "
+
+## Jens Mönig
+### SAP
+„ Visuelles Programmieren ist meine
+Leidenschaft. Mitentwickler von Scratch am
+M.I.T. und später Snap! mit der Uni Berkeley.
+Bei snap.schule entwickle ich sowohl Puzzle
+als auch die Programmiersprache selbst
+weiter. "
+
+## Tilman Michaeli
+### TU MÜNCHEN
+„ Ich leite die Computing Education Research
+Group an der TU München. Mir geht es
+darum, jede:n zu befähigen, die digitale Welt
+aktiv mitzugestalten. snap.schule berate ich
+fachdidaktisch. "
+
+## Steffen Haschler
+### SPARKS4SCHOOL
+„ Gymnasiallehrer für Informatik und
+Mitgründer von sparks4school. Mein Fokus:
+Lernformate, die im Schulalltag wirken.
+snap.schule begleite ich aus Lehrkraftsicht. "
+
+## Marc Camprecós
+### Freelancer
+„ Ich bin freiberuflicher Webdesigner und
+Frontend-Entwickler. Im Laufe der Jahre habe
+ich mehrere Designs für das MicroBlocks-Projekt
+erstellt und bin derzeit der Hauptwebdesigner
+für Snap!Schule."
+
+## Bernat Romagosa
+### SAP
+Ich gehöre zu den Entwicklern von Snap! und
+MicroBlocks. Ich bin der Hauptentwickler der
+Snap!Schule-Plattform und verantworte sowohl
+die Backend- als auch die Frontend-Logik.
+
+## Daniel Domscheit-Berg
+### VERSTEHBAHNHOF
+„ Mich interessiert die Schnittstelle von
+Technik und Gesellschaft. Junge Menschen zu
+befähigen, die digitale Welt mitzugestalten,
+ist mir Herzenssache. snap.schule hosten wir
+in unserem Rechenzentrum am
+o Verstehbahnhof. "
+
+
+__Wir arbeiten als **[Open-Source-Projekt](https://gitlab.com/bromagosa/snapschule)**.
+Code, Inhalte und Materialien sind frei nachnutzbar. Was uns verbindet: die
+Überzeugung, dass gute Informatikbildung allen Schüler:innen offen stehen muss,
+unabhängig von Schulform, Vorerfahrung oder Budget.__
+]]
+})
+%>
+</section>
+</div>
+
