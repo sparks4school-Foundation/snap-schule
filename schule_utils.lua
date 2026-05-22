@@ -122,22 +122,22 @@ end
 function utils:signup_email_body(email)
 	local address = package.loaded.util.escape(email)
 	local body =
-		'<h2>' .. locale.get(email_signup_heading) .. '</h2>' ..
-		'<p>' .. locale.get(email_signup_text) .. '</p>' ..
+		'<h2>' .. locale.get('email_signup_heading') .. '</h2>' ..
+		'<p>' .. locale.get('email_signup_text') .. '</p>' ..
 		'\n\n<strong>email</strong>: <em>' .. email .. '</em>\n\n' ..
 		'<p><a href="https://snap.schule/accept_request/' ..  address ..
-		'">' .. locale.get(email_signup_accept) ..
+		'">' .. locale.get('email_signup_accept') ..
 		'</a> <a href="https://snap.schule/reject_request/' .. address ..
-		'">' .. locale.get(email_signup_reject) .. '</a></p>'
+		'">' .. locale.get('email_signup_reject') .. '</a></p>'
 	return body
 end
 
 function utils:accepted_email_body(email, password)
 	local address = package.loaded.util.escape(email)
 	local body =
-		'<h2>' .. locale.get(email_accepted_heading) .. '</h2><p>' ..
+		'<h2>' .. locale.get('email_accepted_heading') .. '</h2><p>' ..
 		locale.get(
-			email_signup_text,
+			'email_signup_text',
 			'<a href="https://snap.schule/login">snap.schule/login</a>'
 		) ..
 		'</p><br><p><strong>username</strong>: <em>' .. email .. '</em></p><br>' ..
