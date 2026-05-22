@@ -1,6 +1,5 @@
 <%
 	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
-	-- TODO add puzzle to collection action
 	local summary, description, links = schule_utils:parse_notes(puzzle.notes)
 
 	if (grade == null) then
@@ -33,8 +32,8 @@
 
 				if current_user and current_user:isadmin() then
 					render('frontend.views.partials.button', {
-						label		= locale.get('b_add_to_class'),
-						action		= 'toggleAddToCollection()',
+						label		= locale.get('b_add_to_grade'),
+						action		= 'toggleAddToGrade()',
 						data_attribute = 'aria-controls="add-to-collection"',
 						color		= 'black',
 						icon		= 'folder-plus',
@@ -122,9 +121,9 @@
 	<div class="v-puzzle__add-to-collection-background" data-puzzle-collection="background"></div>
 	<div class="v-puzzle__add-to-collection-contents">
 
-		<form class="v-puzzle__add-to-collection-form" onsubmit="addPuzzleToGrade(this)">
+		<form name="add_to_grade" class="v-puzzle__add-to-collection-form" onsubmit="return false;">
 
-			<label class="u-visually-hidden" for="collection"><%= locale.get('title_add_to_class') %></label>
+			<label class="u-visually-hidden" for="collection"><%= locale.get('title_add_to_grade') %></label>
 			<select id="collection" name="collection">
 			<%
 				for i, col in
@@ -141,8 +140,8 @@
 				<% end %>
 			</select>
 
-			<button class="c-button --yellow --small" type="submit">
-				<div class="c-button__text"><%= locale.get('b_add_to_class') %></div>
+			<button class="c-button --yellow --small" onclick="addPuzzleToGrade()">
+				<div class="c-button__text"><%= locale.get('b_add_to_grade') %></div>
 				<div class="c-button__icon"><% render('frontend.static.svg.icon-plus--24x24') %></div>
 			</button>
 
@@ -160,38 +159,35 @@
 	</div>
 
 	<script type="text/javascript">
-		let addToCollection = document.querySelector('[data-puzzle-collection="element"]');
-		let buttonHide = addToCollection.querySelector('[data-puzzle-collection="hide"]');
-		let background = addToCollection.querySelector('[data-puzzle-collection="background"]');
+		let addToGrade = document.querySelector('[data-puzzle-collection="element"]');
+		let buttonHide = addToGrade.querySelector('[data-puzzle-collection="hide"]');
+		let background = addToGrade.querySelector('[data-puzzle-collection="background"]');
 
-		function toggleAddToCollection () {
-			if (!addToCollection || addToCollection.classList.contains('--is-transitioning')) { return };
+		function toggleAddToGrade () {
+			if (!addToGrade || addToGrade.classList.contains('--is-transitioning')) { return };
 
-			if (addToCollection.classList.contains('--is-hidden')) {
-				addToCollection.classList.remove('--is-hidden');
-				addToCollection.setAttribute('aria-hidden', false);
+			if (addToGrade.classList.contains('--is-hidden')) {
+				addToGrade.classList.remove('--is-hidden');
+				addToGrade.setAttribute('aria-hidden', false);
 			} else {
-				addToCollection.classList.add('--is-hidden');
-				addToCollection.setAttribute('aria-hidden', true);
+				addToGrade.classList.add('--is-hidden');
+				addToGrade.setAttribute('aria-hidden', true);
 			}
 
-			addToCollection.classList.add('--is-transitioning');
-			addToCollection.addEventListener('transitionend', (e) => {
-				addToCollection.classList.remove('--is-transitioning');
+			addToGrade.classList.add('--is-transitioning');
+			addToGrade.addEventListener('transitionend', (e) => {
+				addToGrade.classList.remove('--is-transitioning');
 			}, { once: true });
 		};
 
-		function addPuzzleToGrade (form) {
-			cloud.post(
-				'/collection/' +
-					form.querySelector('select[name="collection"]').value +
-					'/project/' +
-					<%= puzzle.id %>
-			);
+		function addPuzzleToGrade () {
+			let form = document.querySelector('form[name="add_to_grade"]'),
+				grade_id = form.querySelector('select[name="collection"]').value;
+			cloud.post(`/collection/${grade_id}/project/<%= puzzle.id %>`);
 		}
 
-		buttonHide.addEventListener('click', toggleAddToCollection);
-		background.addEventListener('click', toggleAddToCollection);
+		buttonHide.addEventListener('click', toggleAddToGrade);
+		background.addEventListener('click', toggleAddToGrade);
 	</script>
 </div>
 <% end %>

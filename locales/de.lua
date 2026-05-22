@@ -72,10 +72,10 @@ local locale = {
 	nth_puzzle = "@1 Puzzle", -- @1 becomes a numeral, from above (nth_1, nth2...)
 	b_start_puzzle = "Puzzle beginnen",
 	b_share_qr = "Share QR",
-	b_add_to_class = 'Zur Klasse hinzufügen',
+	b_add_to_grade = 'Zur Klassenstufe hinzufügen',
 	title_concept_resources = "Konzept und Materialien",
 	title_links = "Links",
-	title_add_to_class = 'Zur Klasse hinzufügen',
+	title_add_to_grade = 'Zur Klassenstufe hinzufügen',
 
 
 	-- User Page

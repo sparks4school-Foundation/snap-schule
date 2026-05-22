@@ -71,11 +71,11 @@ local locale = {
 	-- ===========
 	nth_puzzle = "@1 Puzzle", -- @1 becomes a numeral, from above (nth_1, nth2...)
 	b_start_puzzle = 'Start puzzle',
-	b_add_to_class = 'Add to class',
+	b_add_to_class = 'Add to grade',
 	b_share_qr = 'Share QR',
 	title_concept_resources = 'Concept and Resources',
 	title_links = 'Links:',
-	title_add_to_class = 'Add to class',
+	title_add_to_grade = 'Add to grade',
 
 
 	-- User Page
