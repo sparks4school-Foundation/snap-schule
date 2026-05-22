@@ -25,6 +25,7 @@
 
 local utils = {}
 local util = package.loaded.util
+local locale = package.loaded.locale
 local capture_errors = package.loaded.capture_errors
 local validate = package.loaded.validate
 local assert_error = package.loaded.app_helpers.assert_error
