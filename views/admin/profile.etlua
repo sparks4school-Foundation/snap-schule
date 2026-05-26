@@ -1,6 +1,6 @@
 <%
 	local util = require 'lib.util'
-	card_classes = (item.role or '') .. ' ' .. (item.verified and '' or 'unverified')
+	card_classes = (item.role or '')
 	role_bg_color = ({
 		moderator = 'info',
 		admin = 'primary',
@@ -17,11 +17,10 @@
 			<% if not zombie then %>
 			</a>
 			<% end %>
-			<% if not item.verified then %>
-			<span class="badge rounded-pill text-bg-warning">unverified</span>
-			<% end %>
 			<% if item.role ~= 'standard' then %>
 			<span class="badge rounded-pill text-bg-<%- role_bg_color %>"><%- item.role %></span>
+			<% elseif item.is_teacher then %>
+			<span class="badge rounded-pill text-bg-info">teacher</span>
 			<% end %>
 		</div>
 		<ul class="list-group list-group-flush">
@@ -45,10 +44,6 @@
 					<%= item:get_project_count() %></span>
 			</li>
 			<% end %>
-			<li class="list-group-item">
-				<strong><%- locale.get('join_date') %> </strong>:
-				<%= string.from_sql_date(item.created) %>
-			</li>
 		<% if zombie then %>
 		<li class="list-group-item">
 			<strong><%- locale.get('delete_date') %> </strong>:
@@ -59,52 +54,6 @@
 		<li class="list-group-item">
 			<strong>Creator ID</strong>:
 			<a href="/user?user_id=<%= item.creator_id %>"><%= item.creator_id %></a>
-		</li>
-		<% end %>
-		<% if not zombie and current_user:has_min_role('moderator') then %>
-		<li class="list-group-item">
-			<div class="input-group">
-				<span class="input-group-text"><%- locale.get('role') %></span>
-				<select class="form-select form-select-sm"
-					aria-label="Select a role"
-					onchange="cloud.post(
-						'/users/<%= item.username %>/set_role',
-						null,
-						{ username: '<%= item.username %>', role: this.value }
-					);">
-					<% for role, _ in pairs(package.loaded.Users.roles) do %>
-					<option value="<%= role %>"
-						<%- role == item.role and 'selected' or '' %>
-					>
-						<%- locale.get(role) %>
-					</option>
-					<% end %>
-				</select>
-			</div>
-		</li>
-		<li class="list-group-item">
-			<div class="form-check form-switch">
-			<% label_id = "is_teacher-" .. tostring(item.id) %>
-			<strong>
-				<label for="<%- label_id %>" class="form-check-label">
-					<%- locale.get('teacher') %>
-				</label>
-			</strong>
-			<input type="checkbox"
-				name="is_teacher"
-				class="form-check-input"
-				id="<%- label_id %>"
-				<%- item.is_teacher and 'checked' or '' %>
-				onchange="
-					cloud.post(
-						'/users/<%= item.username %>/set_teacher',
-						null,
-						{
-							username: '<%= item.username %>',
-							is_teacher: this.checked
-						}
-					);"
-			>
 		</li>
 		<% end %>
 		</ul>
