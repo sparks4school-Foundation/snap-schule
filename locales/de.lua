@@ -191,7 +191,51 @@ Vielen Dank!
 	email_accepted_subject = '[Snap!Schule] Ihr Account wurde freigeschaltet',
 	email_accepted_heading = 'Ihr Account für Snap!Schule wurde freigeschaltet',
 	email_accepted_text = 'Sie können sich nun mit den folgenden Zugangsdaten in Ihr Konto unter @1 einloggen:',
-	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.'
+	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.',
+
+	-- User admin
+	-- ==========
+	user_id = "",
+	project_count = "",
+	-- Buttons
+	become = "", -- as an admin, temporarily impersonate this user
+	verify = "",
+	change_email = "",
+	reset_password = "",
+	get_reset_password_token = "",
+	confirm_reset_password = "",
+	change_username = "",
+	new_username = "",
+	send_msg = "",
+	ban = "",
+	unban = "",
+	delete_usr = "",
+	perma_delete_usr = "",
+	revive_usr = "",
+	confirm_revive = "",
+	-- New email dialog
+	new_email = "",
+	-- Send message dialog
+	compose_email = "",
+	msg_subject = "",
+	msg_body = "",
+	profile_title = "", -- @1 becomes the user's username
+	join_date = "", -- date of user creation follows
+	delete_date = "", -- date of user deletion follows
+	email = "",
+	role = "",
+	teacher = "",
+	-- User roles
+	student = "",
+	standard = "",
+	reviewer = "",
+	moderator = "",
+	admin = "",
+	banned = "",
+	-- Buttons
+	change_my_password = "",
+	change_my_email = "",
+	delete_my_user = ""
 }
 
 return locale

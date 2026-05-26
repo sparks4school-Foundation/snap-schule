@@ -191,7 +191,51 @@ If you also create a private class, all these accounts will be associated to it.
 	email_accepted_subject = '[Snap!Schule] Your account has been approved',
 	email_accepted_heading = 'Your account has been approved into Snap!Schule',
 	email_accepted_text = 'You can now log into your account at @1 with the following credentials:',
-	email_accepted_change_pwd = 'Please change your password immediately after logging in.'
+	email_accepted_change_pwd = 'Please change your password immediately after logging in.',
+
+	-- User admin
+	-- ==========
+	user_id = "ID",
+	project_count = "Project count",
+	-- Buttons
+	become = "Become", -- as an admin, temporarily impersonate this user
+	verify = "Verify",
+	change_email = "Change Email",
+	reset_password = "Reset Password",
+	get_reset_password_token = "Get Reset Password Token",
+	confirm_reset_password = "Are you sure you want to reset user @1's password?",
+	change_username = "Change Username",
+	new_username = "New username for @1?",
+	send_msg = "Send a Message",
+	ban = "Ban",
+	unban = "Unban",
+	delete_usr = "Delete",
+	perma_delete_usr = "Delete Permanently",
+	revive_usr = "Revive",
+	confirm_revive = "Are you sure you want to undelete user @1?",
+	-- New email dialog
+	new_email = "New email",
+	-- Send message dialog
+	compose_email = "Compose a message",
+	msg_subject = "Subject",
+	msg_body = "Email Body",
+	profile_title = "@1's profile", -- @1 becomes the user's username
+	join_date = "Joined", -- date of user creation follows
+	delete_date = "Deleted", -- date of user deletion follows
+	email = "Email",
+	role = "Role",
+	teacher = "Teacher",
+	-- User roles
+	student = "student",
+	standard = "standard",
+	reviewer = "reviewer",
+	moderator = "moderator",
+	admin = "admin",
+	banned = "banned",
+	-- Buttons
+	change_my_password = "Change My Password",
+	change_my_email = "Change My Email",
+	delete_my_user = "Delete my Account"
 }
 
-return locale
+	return locale
