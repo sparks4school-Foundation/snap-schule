@@ -60,7 +60,7 @@
 		'frontend.views.partials.qr',
 		{
 			url = '/editor/' .. puzzle.id,
-			dialogue_title = 'Share Puzzle',
+			dialogue_title = locale.get('title_share_puzzle'),
 			element_title = puzzle.projectname
 		}
 	)

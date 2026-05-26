@@ -116,12 +116,25 @@ for route, view_path in pairs(user_forms) do
 	end)))
 end
 
+-- LEGACY REDIRECTS --
+
+app:get('/project', capture_errors(cached(function (self)
+	if not (self.params.projectname and self.params.username) then
+		return { redirect_to = '/' }
+	else
+		local project = Projects:find({
+			username = self.params.username,
+			projectname = self.params.projectname
+		})
+		return { redirect_to = '/puzzle/' .. project.id }
+	end
+end)))
 
 -- PUZZLES --
 
 app:get('/puzzles(/:id)', capture_errors(cached(function (self)
 	if self.params.id then
-		self.collection = package.loaded.Collections:find({ id = self.params.id })
+		self.collection = Collections:find({ id = self.params.id })
 		if not self.collection then yield_error(err.nonexistent_collection) end
 		assert_can_view_collection(self, self.collection)
 		self.puzzles = CollectionController.projects({
@@ -139,7 +152,7 @@ app:get('/puzzles(/:id)', capture_errors(cached(function (self)
 end)))
 
 app:get('/puzzle/:id', capture_errors(cached(function (self)
-	self.puzzle = package.loaded.Projects:find({ id = self.params.id })
+	self.puzzle = Projects:find({ id = self.params.id })
 	if not self.puzzle then yield_error(err.nonexistent_project) end
 	schule_utils:assert_can_view_puzzle(self.current_user, self.puzzle)
 	return { render = 'puzzle' }
@@ -156,7 +169,7 @@ app:get('/editor(/:id)', capture_errors(cached(function (self)
 			schule_utils:collections_containing_project_with_id(self.params.id)
 		if collections[1] then
 			self.collection =
-				package.loaded.Collections:find({ id = collections[1].id })
+				Collections:find({ id = collections[1].id })
 			self.puzzles = CollectionController.projects({
 				params = {},
 				items_per_page = 24, -- max 24 projects to query from DB.
