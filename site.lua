@@ -298,8 +298,14 @@ app:match('/create_students', respond_to({
 	POST = package.loaded.json_params(schule_utils.create_learners)
 }))
 
-app:get('/message_test', capture_errors(function (self)
-	self.title = 'This is a message'
-	self.contents = 'How about that, huh?'
-	return { render = 'message' }
+app:get('/user_admin', capture_errors(function (self)
+	self.items_per_page = 150
+	if self.current_user then
+		assert_min_role(self, 'moderator')
+		self.items = UserController.fetch(self)
+		return { render = 'admin/user_admin' }
+	else
+		return { redirect_to = self:build_url('/') }
+	end
 end))
+
