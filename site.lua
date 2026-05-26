@@ -141,7 +141,7 @@ end)))
 app:get('/puzzle/:id', capture_errors(cached(function (self)
 	self.puzzle = package.loaded.Projects:find({ id = self.params.id })
 	if not self.puzzle then yield_error(err.nonexistent_project) end
-	assert_can_view_project(self, self.puzzle)
+	schule_utils:assert_can_view_puzzle(self.current_user, self.puzzle)
 	return { render = 'puzzle' }
 end)))
 

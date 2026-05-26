@@ -119,6 +119,17 @@ function utils:project_number(project)
 		end
 end
 
+function utils:assert_can_view_puzzle(user, puzzle)
+	if (not puzzle.ispublished and not puzzle.ispublic
+		and user.username ~= puzzle.username
+		and not ((user ~= nil) and user:isadmin())
+	) then
+		yield_error(err.nonexistent_project)
+	end
+end
+
+-- EMAILS
+
 function utils:signup_email_body(email)
 	local address = package.loaded.util.escape(email)
 	local body =

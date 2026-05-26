@@ -19,7 +19,9 @@
 		</div>
 
 		<div class="v-puzzle__header-text">
-			<p class="v-puzzle__header-grade"><%= locale.get('nth_puzzle', locale.get('nth_' .. puzzle_number)) %> - <%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
+			<p class="v-puzzle__header-grade">
+				<%= puzzle_number > 0 and (locale.get('nth_puzzle', locale.get('nth_' .. puzzle_number)) .. ' - ') or '' %>
+				<%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
 			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
 			<p class="v-puzzle__header-intro"><%= summary %></p>
 			<div class="v-puzzle__header-links">
