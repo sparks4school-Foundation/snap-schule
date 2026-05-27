@@ -224,17 +224,19 @@ app:get('/sign_up_result', capture_errors(function (self)
 	self.session.captcha = nil
 	if passed then
 		-- send email with details and accept/reject buttons
-		send_mail(
-			self.jadga.email,
-			locale.get('email_signup_subject'),
-			schule_utils:signup_email_body(self.params.email)
-		)
+		for _, admin in pairs(Users:select("where role = 'admin'")) do
+			send_mail(
+				admin.email,
+				locale.get('email_signup_subject'),
+				schule_utils:signup_email_body(self.params.email)
+			)
+		end
+
 		self.title = locale.get('review_pending_header')
 		self.contents = locale.get(
 			'review_pending_text',
 			'[ium@sparks4school.org](mailto:ium@sparks4school.org)'
 		)
-
 		return { render = 'message' }
 	else
 		self.title = locale.get('title_captcha_failed')
