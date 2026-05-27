@@ -3,41 +3,41 @@
  */
 
 .c-modal-message {
-  position: fixed;
-  inset: 0;
+	position: fixed;
+	inset: 0;
 	padding: var(--space-24);
 
-  display: grid;
-  place-items: center;
+	display: grid;
+	place-items: center;
 
-  /* Initial state */
-  /* display: none; */
-  transition: opacity var(--duration-400) ease-in-out;
+	/* Initial state */
+	/* display: none; */
+	transition: opacity var(--duration-400) ease-in-out;
 
-  &.--is-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
+	&.--is-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 
 
 .c-modal-message__background {
-  position: absolute;
-  inset: 0;
+	position: absolute;
+	inset: 0;
 
-  background-color: var(--color-black);
-  opacity: 0.5;
+	background-color: var(--color-black);
+	opacity: 0.5;
 }
 
 
 .c-modal-message__contents {
-  position: relative;
-  z-index: var(--zindex-above);
-  max-width: var(--space-400);
-  padding: var(--space-48) var(--space-32) var(--space-40);
+	position: relative;
+	z-index: var(--zindex-above);
+	max-width: var(--space-400);
+	padding: var(--space-48) var(--space-32) var(--space-40);
 
-  background-color: var(--color-white);
-  border-radius: var(--borderRadius-default);
+	background-color: var(--color-white);
+	border-radius: var(--borderRadius-default);
 
 	font-size: var(--fontSize-20);
 	font-weight: 900;
@@ -46,37 +46,41 @@
 	text-wrap: balance;
 }
 
+.c-modal-message__buttons {
+	display: flex;
+	column-gap: var(--space-8);
+}
 
 .c-modal-message__form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-  select {
-    background-color: var(--color-grey-300);
+	select {
+		background-color: var(--color-grey-300);
 
-    &:hover {
-      background-color: var(--color-grey-200);
-    }
-  }
+		&:hover {
+			background-color: var(--color-grey-200);
+		}
+	}
 }
 
 
 .c-modal-message__hide {
-  position: absolute;
+	position: absolute;
 
-  top: var(--space-8);
-  right: var(--space-8);
+	top: var(--space-8);
+	right: var(--space-8);
 
-  transition: color var(--duration-200);
+	transition: color var(--duration-200);
 
-  &:hover {
-    cursor: pointer;
-    color: var(--color-blue);
-  }
+	&:hover {
+		cursor: pointer;
+		color: var(--color-blue);
+	}
 
-  svg {
-    width: var(--space-24);
-    height: var(--space-24);
-  }
+	svg {
+		width: var(--space-24);
+		height: var(--space-24);
+	}
 }

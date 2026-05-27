@@ -10,11 +10,18 @@
 	></div>
 	<div class="c-modal-message__contents">
 
+		<h2 class="c-modal-message__title"></h2>
 		<div class="c-modal-message__message"></div>
 
-		<button class="c-button --yellow --small" onclick="okayModalMessage()">
-			<div class="c-button__text">Ok</div>
-		</button>
+		<div class="c-modal-message__buttons">
+			<button class="c-button c-button__okay --yellow --small" onclick="okayModalMessage()">
+				<div class="c-button__text"><%= locale.get('btn_ok') %></div>
+			</button>
+
+			<button class="c-button c-button__cancel --red --small" onclick="cancelModalMessage()">
+				<div class="c-button__text"><%= locale.get('btn_cancel') %></div>
+			</button>
+		</div>
 
 		<div
 			class="c-modal-message__hide"
@@ -49,14 +56,24 @@
 		};
 
 		function okayModalMessage() { toggleModalMessage() };
+		function cancelModalMessage() { toggleModalMessage() };
 
-		function setModalMessage(content, onSuccess) {
+		function setModalMessage(title, content, onSuccess, onCancel) {
+			modalMessage.querySelector('.c-modal-message__title').innerText = title;
 			modalMessage.querySelector('.c-modal-message__message').innerHTML =
 				marked.parse(
 					content,
 					{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
 				);
-			okayModalMessage = onSuccess;
+			if (onSuccess) {
+				okayModalMessage = () => { toggleModalMessage(); onSuccess.call(); window.location.reload(); };
+			}
+			if (onCancel) {
+				cancelModalMessage = () => { toggleModalMessage(); onCancel.call() };
+				modalMessage.querySelector('.c-button__cancel').style.display = 'inherit';
+			} else {
+				modalMessage.querySelector('.c-button__cancel').style.display = 'none';
+			}
 		}
 	</script>
 </div>

@@ -71,8 +71,8 @@ local locale = {
 	-- ===========
 	nth_puzzle = '@1 Puzzle', -- @1 becomes a numeral, from above (nth_1, nth2...)
 	b_start_puzzle = 'Puzzle beginnen',
-	b_share_qr = 'Share QR',
-	title_share_puzzle = 'Share Puzzle',
+	b_share_qr = 'QR-Code teilen',
+	title_share_puzzle = 'Puzzle teilen',
 	b_add_to_grade = 'Zur Klassenstufe hinzufügen',
 	title_concept_resources = 'Konzept und Materialien',
 	title_links = 'Links',
@@ -123,6 +123,7 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	placeholder_email = 'E-Mail',
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
 	placeholder_captcha = 'Bitte geben Sie die angezeigten Ziffern ein',
+	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
 	review_pending_header = 'Benutzererstellung wird überprüft',
 	review_pending_text = [[
@@ -192,6 +193,11 @@ Vielen Dank!
 	email_accepted_heading = 'Ihr Account für Snap!Schule wurde freigeschaltet',
 	email_accepted_text = 'Sie können sich nun mit den folgenden Zugangsdaten in Ihr Konto unter @1 einloggen:',
 	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.',
+
+	-- Modal window
+	-- ============
+	btn_ok = 'Ok',
+	btn_cancel = 'Abbrechen',
 
 	-- User admin
 	-- ==========

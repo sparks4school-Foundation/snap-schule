@@ -237,7 +237,7 @@ app:get('/sign_up_result', capture_errors(function (self)
 
 		return { render = 'message' }
 	else
-		self.title = 'Captcha failed'
+		self.title = locale.get('title_captcha_failed')
 		self.contents = locale.get('err_captcha')
 		return { render = 'message' }
 	end
