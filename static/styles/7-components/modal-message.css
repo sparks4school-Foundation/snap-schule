@@ -51,6 +51,10 @@
 	column-gap: var(--space-8);
 }
 
+.c-modal-message__prompt {
+	margin-bottom: var(--space-16) !important;
+}
+
 .c-modal-message__form {
 	display: flex;
 	flex-direction: column;

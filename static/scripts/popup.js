@@ -5,15 +5,16 @@
 function popup() {
 	window.alert = (body, properties, onSuccess) => {
 		setModalMessage(properties.title, body, onSuccess);
-		toggleModalMessage();
-	}
+		toggleModalMessage('alert');
+	};
 	window.confirm = (body, onSuccess) => {
-		console.log(body);
-		console.log(onSuccess);
-
 		setModalMessage('Confirmation', body, onSuccess, toggleModalMessage);
-		toggleModalMessage();
-	}
+		toggleModalMessage('confirm');
+	};
+	window.prompt = (body, onSuccess, onCancel) => {
+		setModalMessage('Input', body, onSuccess, onCancel);
+		toggleModalMessage('prompt');
+	};
 };
 
 export { popup };

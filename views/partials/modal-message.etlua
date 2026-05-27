@@ -12,6 +12,7 @@
 
 		<h2 class="c-modal-message__title"></h2>
 		<div class="c-modal-message__message"></div>
+		<input type="text" class="c-modal-message__prompt"></input>
 
 		<div class="c-modal-message__buttons">
 			<button class="c-button c-button__okay --yellow --small" onclick="okayModalMessage()">
@@ -38,7 +39,7 @@
 	<script type="text/javascript">
 		let modalMessage = document.querySelector('[data-modal-message="element"]');
 
-		function toggleModalMessage () {
+		function toggleModalMessage (which) {
 			if (!modalMessage || modalMessage.classList.contains('--is-transitioning')) { return };
 
 			if (modalMessage.classList.contains('--is-hidden')) {
@@ -53,6 +54,20 @@
 			modalMessage.addEventListener('transitionend', (e) => {
 				modalMessage.classList.remove('--is-transitioning');
 			}, { once: true });
+
+			if (which == 'confirm' || which == 'prompt') {
+				modalMessage.querySelector('.c-modal-message__title').style.display = 'none';
+				modalMessage.querySelector('.c-button__cancel').style.display = 'inherit';
+			} else {
+				modalMessage.querySelector('.c-modal-message__title').style.display = 'inherit';
+				modalMessage.querySelector('.c-button__cancel').style.display = 'none';
+			}
+
+			if (which == 'prompt') {
+				modalMessage.querySelector('input').style.display = 'inherit';
+			} else {
+				modalMessage.querySelector('input').style.display = 'none';
+			}
 		};
 
 		function okayModalMessage() { toggleModalMessage() };
@@ -66,13 +81,15 @@
 					{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
 				);
 			if (onSuccess) {
-				okayModalMessage = () => { toggleModalMessage(); onSuccess.call(); window.location.reload(); };
+				okayModalMessage = () => {
+					onSuccess.call(
+						this,
+						modalMessage.querySelector('.c-modal-message__prompt').value
+					);
+				}
 			}
 			if (onCancel) {
 				cancelModalMessage = () => { toggleModalMessage(); onCancel.call() };
-				modalMessage.querySelector('.c-button__cancel').style.display = 'inherit';
-			} else {
-				modalMessage.querySelector('.c-button__cancel').style.display = 'none';
 			}
 		}
 	</script>

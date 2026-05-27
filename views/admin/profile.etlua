@@ -143,30 +143,6 @@
 		</div>
 		<% end %>
 		<% if current_user:has_min_role('moderator') then %>
-		<div class="btn-group">
-			<a class="btn btn-sm btn-outline-info"
-				onclick="
-					dialog(
-						'<%- locale.get('compose_email') %>',
-						'<%= package.loaded.dialog('compose_email') %>',
-						() => {
-							var form =
-								document.querySelector('form.email-compose'),
-								subject = form.querySelector('input').value,
-								contents = form.querySelector('textarea').value;
-							cloud.post(
-								'/users/<%= item.username %>/send_email',
-								null,
-								{
-									subject: subject,
-									contents: contents
-								}
-							);
-						},
-						nop
-					);
-				"><%- locale.get('send_msg') %></a>
-			</div>
 			<div class="btn-group" role="group" aria-label="unsafe actions">
 				<% if not zombie then %>
 				<a class="btn btn-sm ban btn-outline-danger"
