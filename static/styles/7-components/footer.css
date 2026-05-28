@@ -71,6 +71,7 @@
 
 /* Bottom */
 
+
 .c-footer__bottom {
   margin-top: var(--space-80);
 
@@ -84,8 +85,18 @@
 
   @media (min-width: 1024px) {
     margin-top: var(--space-120);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
+
+
+
+
+
+/* Credits */
 
 
 .c-footer__credits-statement {
@@ -124,5 +135,37 @@
 
   img {
     height: var(--space-32);
+  }
+}
+
+
+
+
+
+/* Legal Pages */
+
+
+.c-footer__legal-pages {
+  margin-top: var(--space-40);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    gap: var(--space-16);
+  }
+}
+
+
+.c-footer__legal-pages-anchor {
+  text-decoration: none;
+  color: var(--color-grey-600);
+
+  transition: color var(--duration-200);
+
+  &:hover {
+    color: var(--color-yellow);
   }
 }

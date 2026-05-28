@@ -11,6 +11,11 @@ local credits = {
   {'SAP', 'https://www.sap.com', 'sap--white.png'},
   {'Sparks4School', 'https://sparks4school.org/', 'sparks4school--white.png'},
 }
+
+local legal_pages = {
+  {'Privacy Policy', '/privacy-policy'},
+  {'Imprimt', '/privacy-policy'},
+}
 %>
 
 <footer class="c-footer">
@@ -34,15 +39,26 @@ local credits = {
 
     <div class="c-footer__bottom">
 
-      <p class="c-footer__credits-statement"><%- locale.get('footer_credits_statement') %></p>
+      <div class="c-footer__credits">
+        <p class="c-footer__credits-statement"><%- locale.get('footer_credits_statement') %></p>
+        <ul class="c-footer__credits-list">
+          <% for k, item in ipairs(credits) do %>
+          <li class="c-footer__credits-list-item">
+            <a href="<%= item[2] %>" class="c-footer__credits-anchor" target="_blank">
+              <img src="/static/logos/<%= item[3] %>" alt="<%= item[1] %>">
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
 
-      <ul class="c-footer__credits-list">
-        <% for k, item in ipairs(credits) do %>
-        <li class="c-footer__credits-list-item">
-          <a href="<%= item[2] %>" class="c-footer__credits-anchor" target="_blank">
-            <img src="/static/logos/<%= item[3] %>" alt="<%= item[1] %>">
-          </a>
-        </li>
+      <ul class="c-footer__legal-pages">
+        <% for j, item in ipairs(legal_pages) do %>
+          <li class="c-footer__legal-pages-list-item">
+            <a href="<%= item[2] %>" class="c-footer__legal-pages-anchor" target="_blank">
+              <%= item[1] %>
+            </a>
+          </li>
         <% end %>
       </ul>
 
