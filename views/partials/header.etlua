@@ -32,7 +32,7 @@ local menu = {
 		<ul class="c-header__menu-list">
 			<% for _, item in ipairs(menu) do %>
 			<li class="c-header__menu-list-item">
-				<a href="<%= item[2] %>" class="c-header__menu-anchor"><%= item[1] %></a>
+				<a href="<%= item[2] %>" class="c-header__menu-anchor" onclick="document.querySelector('.c-header__menu-toggle').click()"><%= item[1] %></a>
 			</li>
 			<% end %>
 		</ul>
