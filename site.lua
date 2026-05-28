@@ -112,7 +112,7 @@ for route, view_path in pairs(user_forms) do
 	app:get('/' .. route, capture_errors(cached(function (self)
 		self.csrf_token = csrf.generate_token(self)
 		self.res.headers['Content-Security-Policy'] = "frame-src 'none'"
-		return { render = view_path, css_class = 'form' }
+		return { render = view_path, css_class = 'auth' }
 	end)))
 end
 
