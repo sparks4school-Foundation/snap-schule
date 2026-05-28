@@ -52,7 +52,7 @@ app:enable('etlua')
 
 app.layout = require 'frontend.views.layout.application'
 
-local text_pages = { 'why_snap', 'team' }
+local text_pages = { 'why_snap', 'team', 'privacy_policy' }
 
 local user_forms = {}
 -- Simple static pages that contain user interactions.
