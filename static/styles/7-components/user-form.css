@@ -35,6 +35,10 @@
 	.c-user-form__captcha-nums {
 		max-width: max-content;
 		margin: 0 auto;
+		padding: 0 var(--space-80);
+
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
 	}
 
 	input {
