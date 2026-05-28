@@ -1,7 +1,11 @@
-<div class="u-padding-x">
-<section>
-<h1 class="c-heading__section-title section-heading-full-width">7 Gründe für Snap! Schule</h1>
-<br>
+
+<div class="v-text__contents u-padding-x">
+
+	<header class="v-text__header">
+		<h1 class="c-heading__section-title">7 Gründe für Snap! Schule</h1>
+	</header>
+
+	<div class="v-text__text">
 <%
 render(
 	'frontend.views.partials.markdown',
@@ -52,6 +56,5 @@ die Materialien. Für alle. Immer.
 ]]
 })
 %>
-</section>
+	</div>
 </div>
-

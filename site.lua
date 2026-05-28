@@ -52,7 +52,7 @@ app:enable('etlua')
 
 app.layout = require 'frontend.views.layout.application'
 
-local static_pages = { 'why_snap', 'team' }
+local text_pages = { 'why_snap', 'team' }
 
 local user_forms = {}
 -- Simple static pages that contain user interactions.
@@ -102,9 +102,9 @@ app:get('index', '/', capture_errors(cached(function (self)
 	return { render = 'index' }
 end)))
 
-for _, page in pairs(static_pages) do
+for _, page in pairs(text_pages) do
 	app:get('/' .. page, capture_errors(cached(function (self)
-		return { render = 'static/' .. page }
+		return { render = 'static/' .. page, css_class = 'text' }
 	end)))
 end
 
@@ -310,4 +310,3 @@ app:get('/user_admin', capture_errors(function (self)
 		return { redirect_to = self:build_url('/') }
 	end
 end))
-

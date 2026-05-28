@@ -1,0 +1,41 @@
+/**
+ * Views / Text
+ */
+
+
+
+
+
+.v-text__contents {
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-40);
+
+  @media (min-width: 1024px) {
+    padding-top: var(--space-80);
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-64);
+  }
+}
+
+
+.v-text__header {
+
+  @media (min-width: 1280px) {
+    max-width: var(--space-400);
+  }
+}
+
+
+.v-text__text {
+  margin-top: var(--space-64);
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: var(--space-800);
+  }
+}
