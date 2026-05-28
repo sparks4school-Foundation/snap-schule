@@ -1,7 +1,6 @@
-<div class="message u-padding-x">
-	<h1 class="c-heading__section-title section-heading-full-width"><%- title %></h1>
-	<br>
-	<section>
-		<% render( 'frontend.views.partials.markdown', { content = contents }) %>
-	</section>
+<div class="v-message__content u-padding-x">
+	<h1 class="v-message__title" localizable><%- title %></h1>
+	<div class="v-message__message">
+		<% render( 'frontend.views.partials.markdown', { content = contents }) %><br>
+	</div>
 </div>
