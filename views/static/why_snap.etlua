@@ -1,6 +1,6 @@
 <div class="u-padding-x">
 <section>
-<h1 class="c-heading__section-title section-heading-full-width">Warum Snap!? - 7 Gründe</h1>
+<h1 class="c-heading__section-title section-heading-full-width">7 Gründe für Snap! Schule</h1>
 <br>
 <%
 render(
@@ -8,52 +8,47 @@ render(
 	{ content = [[
 
 ## Passgenau
-Aller Anfang ist leicht. Aber dann wird es kompliziert? Snap! bietet für jede
-Klassenstufe maßgeschneiderte “Language Levels”, die nahtlos aneinander
-anschließen und aufeinander aufbauen. Für jedes Thema im Bildungsplan werden
-die Features genau dann freigeschaltet, wenn man sie braucht. Los geht es mit ein
-paar einfachen Blöcken. Aber nach oben gibt es keine Grenze. Vom Kindergarten
-bis zur Promotion: Die Sprache wächst mit.
+Aller Anfang ist leicht. Aber dann wird es kompliziert? Snap! bietet für jede Klassenstufe
+maßgeschneiderte „Language Levels“, die nahtlos aneinander anschließen und aufeinander
+aufbauen. Für jedes Thema im Bildungsplan werden die Features genau dann freigeschaltet,
+wenn man sie braucht. Los geht es mit ein paar einfachen Blöcken. Aber nach oben gibt es
+keine Grenze. Vom Kindergarten bis zur Promotion: Die Sprache wächst mit.
 
 ## Bauen statt Tippen
-Informatik ist mehr als Programmieren. Damit es im Unterricht auf Anhieb klappt,
-werden keine Tippfehler gesucht, sondern Konzepte vermittelt. Das spart Zeit und
-Nerven, und geht im Computerraum genauso wie auf iPads. Funktionen, Schleifen,
-Daten, Bedingungen: Die Blöcke verkörpern Textbausteine, die es in jeder
-Programmiersprache gibt. Was man einmal gelernt hat, kann man später überall
-anwenden.
+Informatik ist mehr als Programmieren. Damit es im Unterricht auf Anhieb klappt, werden
+keine Tippfehler gesucht, sondern Konzepte vermittelt. Das spart Zeit und Nerven, und geht
+im Computerraum genauso wie auf iPads. Funktionen, Schleifen, Daten, Bedingungen: Die
+Blöcke verkörpern Textbausteine, die es in jeder Programmiersprache gibt. Was man einmal
+gelernt hat, kann man später überall anwenden.
 
 ## Inklusion inklusive
-Programmiersprachen werden für Menschen gemacht. Prozessoren und
-Schaltkreise verstehen kein Englisch. In Snap! können wir auf Deutsch
-programmieren. Oder auf Englisch. Oder auf Türkisch, Griechisch, Arabisch,
-Chinesisch, Ukrainisch, Spanisch, Koreanisch und in vielen anderen Sprachen.
-Was der eine in seiner Sprache schreibt, kann die andere in ihrer Sprache lesen
-und dazu beitragen. Alle können zusammenarbeiten. Alles kann angepasst werden,
-bis jeder und jede mitkommt, auch mit Seh- und Leseschwäche.
+Programmiersprachen werden für Menschen gemacht. Prozessoren und Schaltkreise verstehen
+kein Englisch. In Snap! können wir auf Deutsch programmieren. Oder auf Englisch. Oder auf
+Türkisch, Griechisch, Arabisch, Chinesisch, Ukrainisch, Spanisch, Koreanisch und in vielen
+anderen Sprachen. Was der eine in seiner Sprache schreibt, kann die andere in ihrer Sprache
+lesen und dazu beitragen. Alle können zusammenarbeiten. Alles kann angepasst werden, bis
+jeder und jede mitkommt, auch mit Seh- und Leseschwäche.
 
 ## Stand der Technik
-Programmieren mit Blöcken ist mittlerweile international didaktischer Standard.
-Snap! wird wissenschaftlich begleitet und beraten von der TU München und der Uni
-Berkeley.
+Programmieren mit Blöcken ist mittlerweile international didaktischer Standard. Snap! wird
+wissenschaftlich begleitet und beraten von der TU München und der Uni Berkeley.
 
 ## Made im Ländle von Lehrkräften
-Entwickelt von Lehrkräften in Heidelberg zusammen mit SAP-ExpertInnen in
-Walldorf und Herrenberg, im Dialog mit dem ZSL Stuttgart. Das Design kommt aus
-Spanien. Snap! lebt von Community-Beiträgen aus aller Welt.
+Entwickelt von Lehrkräften in Heidelberg zusammen mit SAP-Expert:innen in Walldorf und
+Herrenberg, im Dialog mit dem ZSL Stuttgart. Das Design kommt aus Spanien. Snap! lebt
+von Community-Beiträgen aus aller Welt.
 
 ## Sicher
-snap.schule wird gehostet in Deutschland nach deutschen Datenschutzregeln. Es
-werden keine personenbezogenen Daten erhoben. Daten von Schüler: innen
-werden zum nächsten Schuljahr wieder gelöscht.
+Snap! Schule wird gehostet in Brandenburg beim gemeinnützigen havel:lab e.V. nach
+strengen Datenschutzregeln. Es werden keine personenbezogenen Daten erhoben. Daten von
+Schüler:innen werden zum nächsten Schuljahr wieder gelöscht.
 
 ## Offen und frei
 Keine Bindung, keine Kosten, keine Werbung, keine Betriebsgeheimnisse, keine
-Hintergedanken. Wir tun das, weil wir für Informatik brennen. Freude an der
-Digitalisierung, Neugier auf die Zukunft, und begeisterndes Lernen tut unserer
-Gesellschaft gut. Deshalb ist alles hier frei, kostenlos und offen. Die
-Programmiersprache, der Code auf unseren Servern, die Materialien. Für alle.
-Immer.
+Hintergedanken. Wir tun das, weil wir für Informatik brennen. Freude an der Digitalisierung,
+Neugier auf die Zukunft, und begeisterndes Lernen tut unserer Gesellschaft gut. Deshalb ist
+alles hier frei, kostenlos und offen. Die Programmiersprache, der Code auf unseren Servern,
+die Materialien. Für alle. Immer.
 ]]
 })
 %>
