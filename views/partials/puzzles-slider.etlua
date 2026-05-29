@@ -1,0 +1,44 @@
+<div class="c-puzzles-slider" data-puzzles-slider="wrapper">
+
+	<div class="swiper-wrapper">
+
+		<%
+		if (grade == null) then
+			grade = schule_utils:grade_from_collection(collection)
+		end
+
+		for idx, puzzle in pairs(puzzles) do
+		%>
+		<div class="swiper-slide c-puzzles-slider__slide">
+			<%
+				render(
+					'frontend.views.partials.card-puzzle',
+					{
+						grade = grade,
+						puzzle = puzzle
+					}
+				)
+			%>
+		</div>
+		<% end %>
+	</div>
+
+	<div class="c-puzzles-slider__controls-wrapper">
+
+		<button
+			class="c-puzzles-slider__control --previous"
+			aria-label="Previous"
+			data-puzzles-slider="button-prev"
+		><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+		<div class="c-puzzles-slider__pagination" data-puzzles-slider="pagination"></div>
+
+		<button
+			class="c-puzzles-slider__control --next"
+			aria-label="Next"
+			data-puzzles-slider="button-next"
+		><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+	</div>
+
+</div>

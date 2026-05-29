@@ -1,0 +1,62 @@
+/**
+ * Components / Puzzles Slider
+ */
+
+
+.c-puzzles-slider {
+  padding: var(--space-12) 0;
+}
+
+
+.c-puzzles-slider__controls-wrapper {
+  margin-top: var(--space-16);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.c-puzzles-slider__pagination {
+  width: unset !important;
+
+  .swiper-pagination-bullet {
+    width: var(--space-12);
+    height: var(--space-12);
+  }
+}
+
+
+.c-puzzles-slider__control {
+  width: var(--space-40);
+  height: var(--space-40);
+  display: grid;
+  place-items: center;
+
+  border: none;
+  color: var(--color-blue);
+  background-color: var(--color-grey-300);
+  border-radius: var(--borderRadius-max);
+
+  transition: all var(--duration-200);
+
+  svg {
+    width: var(--space-24);
+    height: var(--space-24);
+  }
+
+  &.--previous {
+    transform: rotate(180deg);
+  }
+
+  &.swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+  }
+}
