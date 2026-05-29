@@ -15,7 +15,7 @@ local legal_pages = {
 	{locale.get('b_whysnap'), '/why_snap'},
 	{locale.get('b_team'), '/team'},
 	{locale.get('b_privacy'), '/privacy-policy'},
-	{locale.get('b_imprimpt'), '/imprimpt'},
+	{locale.get('b_imprint'), '/imprint'},
 }
 %>
 

@@ -157,7 +157,7 @@ Vielen Dank!
 	b_whysnap = 'Warum Snap!?',
 	b_team = "Team",
 	b_privacy = "Datenschutzerklärung",
-	b_imprimpt = "Impressum",
+	b_imprint = "Impressum",
 	footer_credits_statement = 'snap.schule ist ein Projekt von UC&nbsp;Berkeley, SAP, SPARKS',
 
 	-- Errors and messages

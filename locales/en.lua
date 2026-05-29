@@ -156,6 +156,9 @@ If you also create a private class, all these accounts will be associated to it.
 	-- Footer
 	-- ======
 	b_whysnap = "Why Snap!",
+	b_team = "Team",
+	b_privacy = "Privacy Policy",
+	b_imprint = "Imprint",
 	footer_credits_statement = 'snap.schule is brought to you by UC&nbsp;Berkeley, SAP, SPARKS',
 
 	-- Errors and messages
