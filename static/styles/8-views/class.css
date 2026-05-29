@@ -11,7 +11,7 @@
 /* TODO: Replace class names when decideed */
 
 
-.v-puzzle__header {
+/* .v-puzzle__header {
   min-height: var(--space-400);
   padding-top: var(--space-40);
   padding-bottom: var(--space-40);
@@ -122,7 +122,7 @@
   display: flex;
   gap: var(--space-12);
   flex-wrap: wrap;
-}
+} */
 
 
 
