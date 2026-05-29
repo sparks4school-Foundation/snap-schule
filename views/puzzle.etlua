@@ -78,6 +78,7 @@
 				%>
 			</div>
 
+			<% if links[0] then %>
 			<section class="v-puzzle__links">
 				<div class="v-puzzle__links-title">
 					<h2 class="c-heading__mono-subtitle"><%= locale.get('title_links') %></h2>
@@ -102,7 +103,7 @@
 					<% end %>
 				</ul>
 			</section>
-
+			<% end %>
 		</div>
 
 	</div>
