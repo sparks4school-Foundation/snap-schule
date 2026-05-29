@@ -168,7 +168,11 @@ utils.create_learners = capture_errors(function (self)
 
 	-- Assert no users exist.
 	local existing_users =
-	package.loaded.AllUsers:find_all(usernames, 'username', { fields = 'username' })
+		package.loaded.AllUsers:find_all(
+			usernames,
+			'username',
+			{ fields = 'username' }
+		)
 	if #existing_users > 0 then
 		usernames = {}
 		local msg =

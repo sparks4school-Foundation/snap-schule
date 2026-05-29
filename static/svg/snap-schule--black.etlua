@@ -1,13 +1,13 @@
 <svg viewBox="0 0 400 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 <%
-local t = 150
-for _, letter in pairs({'s','c','h','u','l','e'}) do
+	local t = 150
+	for _, letter in pairs({'s','c','h','u','l','e'}) do
 %>
-<g transform="translate(<%-t%>) scale(0.13)">
-<% render('frontend.static.svg.logo-letters.' .. letter .. math.random(4)) %>
-</g>
+	<g transform="translate(<%-t%>) scale(0.13)">
+		<% render('frontend.static.svg.logo-letters.' .. letter .. math.random(4)) %>
+	</g>
 <%
-t = t + 42
+	t = t + 42
 end
 %>
 
