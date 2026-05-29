@@ -88,6 +88,7 @@
 .c-button__text {
   text-decoration: none;
   transition: color var(--duration-200) ease-in-out;
+  font-weight: bold;
 }
 
 

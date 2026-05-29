@@ -1,8 +1,7 @@
 <%
 local menu = {
 	{locale.get('b_puzzles'), '/puzzles'},
-	{locale.get('b_contact'), '/#contact'},
-	{'Snap!', '/editor'},
+	{'Snap! Editor', '/editor'},
 }
 %>
 

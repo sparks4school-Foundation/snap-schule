@@ -1,8 +1,9 @@
 <%
 local menu = {
 	{locale.get('b_puzzles'), '/puzzles'},
+	{locale.get('b_whysnap'), '/why_snap'},
+	{locale.get('b_team'), '/team'},
 	{locale.get('b_contact'), '/#contact'},
-	{'Snap!', '/editor'},
 }
 
 local credits = {
@@ -12,8 +13,6 @@ local credits = {
 }
 
 local legal_pages = {
-	{locale.get('b_whysnap'), '/why_snap'},
-	{locale.get('b_team'), '/team'},
 	{locale.get('b_privacy'), '/privacy_policy'},
 	{locale.get('b_imprint'), '/imprint'},
 }

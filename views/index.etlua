@@ -6,15 +6,36 @@
 
 <div class="u-padding-x">
 
-	<div class="v-index__intro">
-		<%-
-			locale.get(
-				'index_intro',
-				'<span class="--blue">' .. locale.get('index_intro_p1') .. '</span>',
-				'<span class="--red">' .. locale.get('index_intro_p2') .. '</span>'
-			)
-		%>
+	<div class="v-index__top">
+
+		<div class="v-index__intro">
+			<%-
+				locale.get(
+					'index_intro',
+					'<span class="--blue">' .. locale.get('index_intro_p1') .. '</span>',
+					'<span class="--red">' .. locale.get('index_intro_p2') .. '</span>'
+				)
+			%>
+		</div>
+
+		<div class="v-index__links">
+			<% render('frontend.views.partials.button', {
+				label   = locale.get('b_whysnap'),
+				url     = '/why_snap',
+				color   = 'yellow',
+				icon    = 'light-bulb',
+			}) %>
+			<% render('frontend.views.partials.button', {
+				label   = locale.get('b_team'),
+				url     = '/team',
+				color   = 'yellow',
+				icon    = 'teacher',
+			}) %>
+		</div>
+
 	</div>
+
+
 
 	<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
 	<% render('frontend.views.partials.section-index-puzzles', { grade = 7, placeholder = true }) %>
