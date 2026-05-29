@@ -54,7 +54,7 @@ local locale = {
 	nth_9 = '9.',
 	nth_10 = '10.',
 	nth_unknown = '?',
-	b_grade_puzzles = 'Alle für Klassenstufe @1', -- @1 becomes a number
+	b_grade_puzzles = 'Alle anzeigen', -- @1 becomes a number
 
 	-- Puzzles Page
 	-- ============
