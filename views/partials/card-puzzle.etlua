@@ -13,7 +13,7 @@
 		<h3 class="c-card-puzzle__title"><%= puzzle.projectname %></h3>
 	</div>
 
-	<a href="<%= '/puzzle/' .. puzzle.id %>" class="c-card-puzzle__anchor" title="<%= puzzle_title %>"></a>
+	<a href="<%= '/puzzle/' .. puzzle.id %>" class="c-card-puzzle__anchor" title="<%= puzzle.projectname %>"></a>
 
 	<% if current_user and current_user:isadmin() then %>
 	<div class="c-card-puzzle__remove" role="button" aria-label="Remove from collection">
