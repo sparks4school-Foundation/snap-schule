@@ -19,7 +19,7 @@ local locale = {
 	lang_name = "English",
 	lang_code = "en",
 	authors = "Bernat Romagosa",
-	last_updated = "2026/03/26", -- YYYY/MM/DD
+	last_updated = "2026/05/29", -- YYYY/MM/DD
 
 	-- Top navigation bar
 	-- ==================

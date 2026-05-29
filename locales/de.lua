@@ -18,8 +18,8 @@ local locale = {
 	-- =========
 	lang_name = 'Deutsch',
 	lang_code = 'de',
-	authors = 'Jadga Hügle',
-	last_updated = '07/04/2026', -- YYYY/MM/DD
+	authors = 'Jadga Hügle, Jens Mönig',
+	last_updated = '2026/05/29', -- YYYY/MM/DD
 
 	-- Top navigation bar
 	-- ==================
