@@ -18,7 +18,7 @@
 		<div class="v-puzzle__header-text">
 			<p class="v-puzzle__header-grade"><%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
 			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
-			<p class="v-puzzle__header-intro"><%= summary %></p>
+			<p class="v-puzzle__header-intro"><%= summary or '' %></p>
 			<div class="v-puzzle__header-links">
 				<% render('frontend.views.partials.button', {
 					label		= locale.get('b_start_puzzle'),
@@ -72,14 +72,16 @@
 
 			<div class="v-puzzle__contents-text">
 				<%
-					render(
-						'frontend.views.partials.markdown',
-						{ content = description }
-					)
+					if description then
+						render(
+							'frontend.views.partials.markdown',
+							{ content = description }
+						)
+					end
 				%>
 			</div>
 
-			<% if table.getn(links) > 0 then %>
+			<% if links and table.getn(links) > 0 then %>
 			<section class="v-puzzle__links">
 				<div class="v-puzzle__links-title">
 					<h2 class="c-heading__mono-subtitle"><%= locale.get('title_links') %></h2>
