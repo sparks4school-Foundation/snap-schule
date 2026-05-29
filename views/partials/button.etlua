@@ -12,6 +12,7 @@ local icon_path = 'frontend.static.svg.icon-' .. icon .. '--24x24'
 	%>
 	class="c-button <%= color_class %>"
 	<%- data_attribute or '' %>
+	target="<%= target or '_self' %>"
 >
 	<div class="c-button__text"><%= label %></div>
 	<div class="c-button__icon"><% render(icon_path) %></div>

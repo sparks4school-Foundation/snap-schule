@@ -90,10 +90,11 @@
 								render(
 									'frontend.views.partials.button',
 									{
-										label	= link[1],
-										url	 	= link[2],
-										color	= 'black',
-										icon	= 'arrow-up-right',
+										label		= link[1],
+										url	 		= link[2],
+										color		= 'black',
+										icon		= 'arrow-up-right',
+										target	= '_blank'
 									}
 								)
 							%>
