@@ -2,7 +2,7 @@
 <div class="v-text__contents u-padding-x">
 
 	<header class="v-text__header">
-		<h1 class="c-heading__section-title">Privacy Policy</h1>
+		<h1 class="c-heading__section-title">Datenschutzerklärung</h1>
 	</header>
 
 	<div class="v-text__text">
@@ -10,80 +10,115 @@
 render(
 	'frontend.views.partials.markdown',
 	{ content = [[
+Stand: Juni 2026
 
-Your privacy and safety online are very important to us. To protect your privacy, we limit what we collect and what we publish on the website. Although, as a nonprofit educational institution, we are technically exempt from the United States Children's Online Privacy Protection Act (COPPA), we are voluntarily following its rules about data collection from children under 13. This policy also conforms to the European Union General Data Protection Regulation (GDPR), which restricts data collection from children under 16. We apply these protection policies to all users, wherever located, so 16 is our cutoff age for parental notification.
+## Verantwortlicher im Sinne der DSGVO
 
-We follow industry standards to maintain the security of our web server. However, we cannot absolutely guarantee that malicious third parties will be unable to break into our database. This privacy policy explains how our authorized staff and contractors will use your information. Our servers are located in the United States of America.
+Steffen Haschler  
+sparks4school Foundation gGmbH  
+Landfried Komplex - Gebäude C  
+Bergheimer Straße 147  
+69115 Heidelberg  
+E-Mail: <ium@sparks4school.org>
 
-# Information We Collect
+Ihre Privatsphäre und Sicherheit im Internet sind uns sehr wichtig. Um Ihre Privatsphäre zu schützen, beschränken wir, was wir erheben und was wir auf der Website veröffentlichen.
 
-## Using our software
+## Erhobene Informationen
 
-You can [program in Snap*!*](http://snap.berkeley.edu/run) without providing us with any personally identifiable information at all. We do not record any information about the programs you write unless you choose to save projects on our cloud server. (You can instead save projects only on your own computer). You can also, without providing any information, download our example projects, libraries, and other public media.
+### Nutzung unserer Software
 
-## Creating a Snap*!* account
+Sie können in Snap! Schule programmieren, ohne uns dabei personenbezogene Daten zu übermitteln. Wir speichern keinerlei Informationen über die von Ihnen erstellten Programme, es sei denn, Sie entscheiden sich, Projekte auf unserem deutschen Cloud-Server zu speichern. (Sie können Projekte stattdessen auch ausschließlich auf Ihrem eigenen Computer speichern). Sie können außerdem, ohne jegliche Angaben zu machen, unsere öffentlichen Medien herunterladen.
 
-If you wish to save the projects you create on our cloud server, then you must create an account on this site so that your storage is separate from other people's storage. When you create an account, we collect your email address or, if you are under 13, your parent's or guardian's email address. We use your address for five purposes:
+### Erstellen eines Snap*!* Schule-Kontos
 
-- When you sign up for an account, we immediately send you a confirming email with a verification link.
-- If you ask for a new verification link, we will also send it to your email account.
-- If you forget your password, we use your address to send you a password-reset email.
-- If your account is suspended for violation of our [Terms of Service](tos), we will notify you by email.
-- If you ask for instant deletion of your account under the GDPR, we will send you an email asking for confirmation.
+Konten werden ausschließlich von Lehrkräften für ihre Klassen angelegt. Die Lehrkraft gibt dabei ihre eigene E-Mail-Adresse an; Schülerinnen und Schüler erhalten anonyme Accounts, die ihnen von der Lehrkraft zugewiesen werden. Beim Anlegen eines Lehrkraft-Kontos erheben wir die E-Mail-Adresse der Lehrkraft. Wir verwenden diese Adresse für vier Zwecke:
 
-We do not use your address for any other purpose. You will never receive marketing emails of any kind through this site, neither from us nor from third parties.
+- Wenn eine Lehrkraft ein Konto registriert, senden wir ihr sofort eine Bestätigungs-E-Mail. Und erneut, wenn das Konto freigeschaltet wurde.
+- Wenn die Lehrkraft ihr Passwort vergessen hat, nutzen wir ihre Adresse, um ihr eine E-Mail zum Zurücksetzen des Passworts zu senden.
+- Wenn das Konto einer Lehrkraft wegen eines Verstoßes gegen unsere Nutzungsbedingungen gesperrt wird, benachrichtigen wir sie per E-Mail.
+- Wenn eine Lehrkraft gemäß der DSGVO die sofortige Löschung ihres Kontos beantragt, senden wir ihr eine E-Mail zur Bestätigung.
 
-We do not share your address with anyone else, except for companies contracted with us to provide services to us. Any such companies agree to obey this privacy policy. The only exception is that we might be compelled by legal subpoena to provide information to police agencies or courts.
+Wir geben die E-Mail-Adresse der Lehrkraft nicht an Dritte weiter, mit Ausnahme von Unternehmen, die vertraglich mit uns verbunden sind, um uns Dienstleistungen zu erbringen. Solche Unternehmen verpflichten sich zur Einhaltung dieser Datenschutzrichtlinie. Die einzige Ausnahme besteht darin, dass wir durch einen rechtlichen Bescheid gezwungen sein könnten, Informationen an Strafverfolgungsbehörden oder Gerichte weiterzugeben.
 
-We ask for your month and year of birth when you sign up in order to decide whether to ask for your own email address or your parent's email address. But this partial birthdate information is never sent to our server; it is used only on your computer during the signup dialog.
+Als Auftragsverarbeiter für den Betrieb des Cloud-Servers für Benutzerkonten setzen wir auf havel:lab e. V. / Verstehbahnhof, Bahnhofstr. 1, 16798 Fürstenberg/Havel (E-Mail: <verein@havellab.org>). Mit diesem Dienstleister besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.
 
-## Information in your projects
+## Newsletter
 
-You can save projects on our server for your personal use, or you can explicitly choose to share a project with the other users of this site.
+Optional können Sie unseren Newsletter abonnieren. In diesem Fall wird Ihre E-Mail-Adresse genutzt, um Ihnen per E-Mail Informationen über neue Materialien und relevante Neuigkeiten zukommen zu lassen.
 
-We will never examine projects that you save privately on our site without your explicit permission (for example, if you report a bug that affects one of your projects). Again, the only exception is that we might be compelled to provide information to government agencies.
+### Double-Opt-In-Verfahren
 
-Projects that you choose to share are available for anyone to examine. We may examine shared projects for research purposes. *We urge you strongly not to include personally identifying information (PII) in your shared projects!* For example, if you post a project that says "today is my birthday" you are telling the entire world your date of birth, which is a very important piece of personally identifying information.
+Für den Newsletterversand nutzen wir das Double-Opt-In-Verfahren. Sie erhalten nach der Anmeldung eine E-Mail mit einem Bestätigungslink. Erst nach dieser Bestätigung wird Ihre Adresse in den Verteiler aufgenommen.
 
-There are two levels of public access to your project. If you **share** a project, we provide you with a URL that can be used by anyone to whom you send that URL. Anyone who knows your username and the name of the project can compute the URL; however, people in general won't even know that the project exists until you tell them. But if you **publish** a project, it appears on our web site, searchable by username and by project name. Anyone, even someone who does not have an account with us, can see the project, including its code as well as its behavior when run.
+### Zweck und Art der Datenerhebung
 
-Our users enjoy sharing their projects with other users, and we encourage you to publish **projects that don't include personally identifiable information.** Your email address (or your parent's), the only piece of PII we knowingly associate with your account, is never visible to people outside our staff. But we can't control PII that you include in a project.
+Pflichtangabe für den Versand ist allein Ihre E-Mail-Adresse. Die Daten werden ausschließlich für den Versand des Newsletters verwendet und nicht an Dritte weitergegeben.
 
-If we are notified by a third party that your shared project includes their copyrighted content (such as a musical performance), we are required by law to investigate, and may revoke the shared status of that project.
+### Newsletter-Software und Auftragsverarbeitung
 
-## Communications that you initiate
+Für den Versand unseres Newsletters nutzen wir den Dienst CleverReach der CleverReach GmbH & Co. KG, Schafjückenweg 2, 26180 Rastede, Deutschland. Die E-Mail-Adressen unserer Newsletter-Empfänger sowie die weiteren im Rahmen der Anmeldung erhobenen Daten werden auf Servern von CleverReach in Deutschland bzw. innerhalb der EU gespeichert. Mit CleverReach haben wir einen Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO geschlossen, in dem CleverReach verpflichtet wird, die Daten unserer Empfänger zu schützen und nicht an Dritte weiterzugeben. Weitere Informationen finden Sie in der Datenschutzerklärung von CleverReach unter: <https://www.cleverreach.com/de/datenschutz/>
 
-If you [contact us](contact) by email, we save your email address and whatever other information you include in your message long enough to respond to you, which might take some time if your message is a bug report. We then delete your email.
+### Speicherdauer
 
-## Server logging
+Ihre Daten werden so lange gespeichert, wie Sie unseren Newsletter abonniert haben. Nach Ihrer Abmeldung werden die Daten ausschließlich statistisch und anonym gespeichert.
 
-This site is hosted at the University of California, Berkeley, Electrical Engineering and Computer Sciences Department. This web server collects the following information: Internet Protocol (IP) address of computer being used; web pages requested; referring web page; browser used; date and time; and statistics identifying particular IP addresses from which our websites are accessed. We do not associate this data to individual user identities.
+### Widerruf und Abmeldung
 
-This information is used to improve the technical quality of the site, and may be used for investigation of deliberate attempts to deny the use of our site to others. We do not log personally identifiable information, except that your IP address may indicate your Internet service provider and your general geographic area.
+Sie können Ihre Einwilligung in den Empfang des Newsletters jederzeit mit Wirkung für die Zukunft widerrufen und den Newsletter abbestellen. Den Widerruf können Sie durch Klick auf den in jeder E-Mail bereitgestellten Abmeldelink oder durch eine Nachricht an uns (Kontaktdaten siehe Impressum) erklären. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
 
-The server for cloud storage of user accounts is maintained by us on a commercial cloud computing provider and follows the same privacy guidelines.
+## Informationen in Ihren Projekten
 
-## Google Analytics
+Sie können Projekte auf unserem Server für den persönlichen Gebrauch speichern oder ausdrücklich entscheiden, ein Projekt mit anderen Nutzerinnen und Nutzern dieser Website zu teilen.
 
-Like many other web sites, we use Google Analytics to collect statistical information about how our site is used. We get only general statistical information from Google Analytics, not personally identifiable information. *However, if you have ever used other Google services, then Google knows who you are.* We have no control over their use of information; see [Google's privacy policy](https://www.google.com/intl/en/policies/privacy/) for more information.
+Wir werden Projekte, die Sie privat auf unserer Website speichern, niemals ohne Ihre ausdrückliche Genehmigung einsehen (zum Beispiel, wenn Sie einen Fehler melden, der eines Ihrer Projekte betrifft). Auch hier gilt: Die einzige Ausnahme besteht darin, dass wir möglicherweise zur Weitergabe von Informationen an Behörden verpflichtet werden könnten.
 
-We recommend that you use [AdBlock Plus](http://adblockplus.org/), [Ghostery](http://ghostery.com/), [NoScript](http://noscript.net/), and/or [Privoxy](http://privoxy.org/) to protect your browsing privacy. The first two are really easy to install and use; the last two take a bit more effort to whitelist sites you trust. (You might also consider the tracking-free [DuckDuckGo](http://duckduckgo.com/) search engine). We have no connection with any of those services.
+Projekte, die Sie teilen möchten, sind für jedermann einsehbar. Wir können geteilte Projekte zu Forschungszwecken einsehen. Wir raten Ihnen dringend, keine personenbezogenen Daten (PBD) in Ihre geteilten Projekte aufzunehmen!
 
-## How to remove your information
+Es gibt zwei Ebenen des öffentlichen Zugriffs auf Ihr Projekt. Wenn Sie ein Projekt teilen, erhalten Sie eine URL, die von jedem genutzt werden kann, dem Sie diese URL zusenden. Jeder, der Ihren Benutzernamen und den Namen des Projekts kennt, kann die URL berechnen; die meisten Menschen werden jedoch gar nicht wissen, dass das Projekt existiert, bis Sie es ihnen mitteilen. Wenn Sie ein Projekt jedoch veröffentlichen, erscheint es auf unserer Website und ist nach Benutzername und Projektname durchsuchbar. Jede Person, auch ohne ein Konto bei uns, kann das Projekt einsehen - einschließlich des Codes und des Verhaltens beim Ausführen.
 
-If you delete your account on our site, we will delete all the information associated with that account, including your email and your saved projects. However, we routinely save your information for 30 days after your deletion request, in case it was made in error, so that you can ask us to recover the account.
+Unsere Nutzerinnen und Nutzer teilen ihre Projekte gerne mit anderen, und wir ermutigen Sie, Projekte zu veröffentlichen, die keine personenbezogenen Daten enthalten. Die E-Mail-Adresse der Lehrkraft - das einzige personenbezogene Datum, das wir wissentlich mit einem Konto verknüpfen - ist für Personen außerhalb unseres Teams niemals sichtbar. Schülerinnen und Schüler werden nur über anonyme Benutzernamen identifiziert. Wir können jedoch keine personenbezogenen Daten kontrollieren, die in einem Projekt veröffentlicht werden.
 
-Under the GDPR, you (or your parent if you are under 16) have the right to ask us to delete your account *instantly,* and we will honor such requests as soon as you click the link in an email we'll send to your registered email address to verify that it's really you making the request.
+Wenn uns ein Dritter mitteilt, dass Ihr geteiltes Projekt urheberrechtlich geschützte Inhalte enthält (z. B. eine Musikaufführung), sind wir gesetzlich verpflichtet, dies zu untersuchen, und können den Freigabestatus dieses Projekts widerrufen.
 
-If you are the parent of a child with an account on this site and would like us to remove the account, please [contact us](contact), and include in your message your child's account name, the email address associated with the account, and a way to contact you offline (to prevent forgeries).
+## Von Ihnen initiierte Kommunikation
 
-## Contact Information
+Wenn Sie uns eine E-Mail schreiben, werden Ihre Angaben gespeichert, damit eine Beantwortung möglich ist. Unser Mailprovider ist Microsoft Exchange (Server in Deutschland). Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
 
-You can contact the development team at:
+## Server-Protokollierung
 
-[contact@snap.berkeley.edu](mailto:contact@snap.berkeley.edu)
+Diese Website wird in Deutschland gehostet. Der Webserver erfasst folgende Informationen: Internet-Protokoll-(IP-)Adresse des verwendeten Computers; aufgerufene Webseiten; verweisende Webseite; verwendeter Browser; Datum und Uhrzeit; sowie Statistiken zur Identifizierung bestimmter IP-Adressen, von denen aus auf unsere Websites zugegriffen wird. Wir verknüpfen diese Daten nicht mit einzelnen Benutzeridentitäten.
 
-For bugs and suggestions related to either Snap*!*, or its community website, please refer to [the Snap*!* forum](https://forum.snap.berkeley.edu).
+Diese Informationen werden zur Verbesserung der technischen Qualität der Website verwendet und können zur Untersuchung absichtlicher Versuche genutzt werden, anderen den Zugang zu unserer Website zu verwehren. Wir protokollieren keine personenbezogenen Daten, mit der Einschränkung, dass Ihre IP-Adresse möglicherweise Ihren Internetdienstanbieter und Ihren allgemeinen geografischen Bereich erkennen lässt.
+
+### Schutz von Minderjährigen
+
+Schutz von Minderjährigen: Da Snap! Schule im schulischen Kontext genutzt wird, verarbeiten wir bewusst keine personenbezogenen Daten von Schülerinnen und Schülern. Schüler-Accounts werden ausschließlich über anonyme Benutzernamen geführt, die von der Lehrkraft vergeben werden. Dem Konto einer Lehrkraft sind zwar Schüler-Accounts zugeordnet, diese enthalten jedoch keinerlei Klarnamen, E-Mail-Adressen oder sonstige personenbezogene Daten der Schülerinnen und Schüler.
+
+### Ihre Rechte als betroffene Person
+
+Als betroffene Person stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
+
+1\. Recht auf Auskunft (Art. 15 DSGVO): Sie haben das Recht, Auskunft über die Sie betreffenden personenbezogenen Daten zu erhalten, die wir verarbeiten, einschließlich der Zwecke der Verarbeitung, der Kategorien der Daten, der Empfänger sowie der geplanten Speicherdauer.
+
+2\. Recht auf Berichtigung (Art. 16 DSGVO): Sie haben das Recht, die unverzügliche Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen.
+
+3\. Recht auf Löschung (Art. 17 DSGVO): Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Näheres finden Sie im Abschnitt "So entfernen Sie Ihre Daten".
+
+4\. Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen, wenn Sie die Richtigkeit der Daten bestreiten, die Verarbeitung unrechtmäßig ist, wir die Daten nicht mehr benötigen oder Sie Widerspruch nach Art. 21 DSGVO eingelegt haben.
+
+5\. Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten, soweit die Verarbeitung auf einer Einwilligung oder einem Vertrag beruht und mithilfe automatisierter Verfahren erfolgt.
+
+6\. Widerspruchsrecht (Art. 21 DSGVO): Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) Widerspruch einzulegen. Wir verarbeiten Ihre Daten dann nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen.
+
+7\. Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO): Wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts oder Arbeitsplatzes. Die für uns zuständige Aufsichtsbehörde ist:
+
+Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI BW), Königstraße 10a, 70173 Stuttgart, Telefon: +49 711 615541-0, E-Mail: <poststelle@lfdi.bwl.de>, Website: <www.baden-wuerttemberg.datenschutz.de>
+
+## So entfernen Sie Ihre Daten
+
+Wenn eine Lehrkraft ihr Konto auf unserer Website löscht, löschen wir alle mit diesem Konto verbundenen Informationen, einschließlich der E-Mail-Adresse und der gespeicherten Projekte aller zugehörigen Schüler-Accounts.
+
+Gemäß der DSGVO hat die Lehrkraft das Recht, uns zur sofortigen Löschung ihres Kontos und aller zugehörigen Schüler-Accounts aufzufordern. Wir werden solchen Anfragen nachkommen, sobald die Lehrkraft auf den Bestätigungslink in einer E-Mail klickt, die wir an die registrierte E-Mail-Adresse senden.
 ]]
 })
 %>
