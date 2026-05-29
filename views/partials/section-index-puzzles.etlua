@@ -38,7 +38,7 @@ render(
 %>
 	</div>
 
-	<div class="v-index__puzzles-grid">
+	<div class="v-index__puzzles-slider">
 	<%
 		if placeholder then
 		%>
@@ -46,7 +46,7 @@ render(
 		<%
 		else
 		render(
-			'frontend.views.partials.puzzles-grid',
+			'frontend.views.partials.puzzles-slider',
 			{
 				grade = grade,
 				puzzles = puzzles,

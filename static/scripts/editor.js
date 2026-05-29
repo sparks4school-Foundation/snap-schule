@@ -14,8 +14,6 @@ function editor()
 	const btnNext = slider.parentElement.querySelector('[data-editor-puzzle-list="button-next"]');
 	const pagination = slider.parentElement.querySelector('[data-editor-puzzle-list="pagination"]');
 
-	console.log(btnToggle);
-
 	btnToggle.addEventListener('click', toggleList);
 
 	function toggleList() {
