@@ -9,7 +9,7 @@ if params.id then
 %>
 <iframe class="v-editor__iframe" src="/snap/snap.html#open:<%= url .. '/project/' .. params.id %>"></iframe>
 <% else %>
-<iframe class="v-editor__iframe" src="/snap/snap.html"></iframe>
+<iframe class="v-editor__iframe" src="/snap/snap.html#open:/static/template.xml"></iframe>
 <% end %>
 
 <% if puzzles then %>
