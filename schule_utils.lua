@@ -147,7 +147,6 @@ end
 utils.create_learners = capture_errors(function (self)
 	-- For consistency, all users will be created or NONE will be created.
 	assert_user_can_create_accounts(self)
-	local collection = nil
 	local users = self.params.users
 	if not users then
 		yield_error('Malformed JSON Provided.')
@@ -184,11 +183,6 @@ utils.create_learners = capture_errors(function (self)
 
 	-- wrap all user creations in a transaction. No partial completions.
 	db.query('BEGIN;')
-	collection = package.loaded.Collections:find(self.current_user.id, 'students')
-	if not collection then
-		db.query('ROLLBACK;')
-		return errorResponse(self, 'Could not find students collection.')
-	end
 	local salt, password, result
 	for _, user in pairs(users) do
 		salt = secure_salt()
@@ -207,14 +201,6 @@ utils.create_learners = capture_errors(function (self)
 			return errorResponse(self,
 			'User ' .. user.username .. ' errored on creation.'
 			)
-		end
-		if collection then
-			collection:update({
-				editor_ids =
-				db.raw(db.interpolate_query(
-				'array_append(editor_ids, ?)',
-				result.id))
-			})
 		end
 	end
 	assert_error(db.query('COMMIT;'))

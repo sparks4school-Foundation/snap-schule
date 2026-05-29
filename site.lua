@@ -139,7 +139,7 @@ app:get('/puzzles(/:id)', capture_errors(cached(function (self)
 		assert_can_view_collection(self, self.collection)
 		self.puzzles = CollectionController.projects({
 			params = {},
-			items_per_page = 24, -- max 24 projects to query from DB.
+			items_per_page = 200, -- max 200 projects to query from DB.
 			collection = self.collection,
 			cached = false
 		})
@@ -172,7 +172,7 @@ app:get('/editor(/:id)', capture_errors(cached(function (self)
 				Collections:find({ id = collections[1].id })
 			self.puzzles = CollectionController.projects({
 				params = {},
-				items_per_page = 24, -- max 24 projects to query from DB.
+				items_per_page = 200, -- max 200 projects to query from DB.
 				collection = self.collection,
 				cached = false
 			})
@@ -258,12 +258,6 @@ app:get('/accept_request/:email', capture_errors(function (self)
 			is_teacher = true,
 			verified = true,
 			role = 'standard'
-		})
-		local students = Collections:create({
-			created_at = db.format_date(),
-			updated_at = db.format_date(),
-			creator_id = user.id,
-			name = 'students'
 		})
 		-- Notify user
 		send_mail(
