@@ -269,7 +269,7 @@ app:get('/accept_request/:email', capture_errors(function (self)
 		send_mail(
 			self.params.email,
 			locale.get('email_accepted_subject'),
-			schule_utils:signup_email_body(self.params.email, password)
+			schule_utils:accepted_email_body(self.params.email, password)
 		)
 		self.title = locale.get('title_user_created')
 		self.contents = locale.get('msg_user_created', self.params.email)
