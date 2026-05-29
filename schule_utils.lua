@@ -41,7 +41,7 @@ function utils:parse_notes(notes)
 	local description =
 		string.sub(
 			notes, string.find(notes, '--DESCRIPTION--') + 16,
-			(links_position and links_position - 2 or string.len(notes)
+			(links_position and links_position - 2 or string.len(notes))
 		)
 	local links = {}
 	if links_position then
