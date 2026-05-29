@@ -172,7 +172,7 @@
 							%>',
 							() => {
 								cloud.delete(
-									'/<%= zombie and 'zombies' or 'users' %>/<%= item.username %>'
+									'/perma_delete/<%= item.username %>'
 								);
 							}
 						);

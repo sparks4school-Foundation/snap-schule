@@ -304,3 +304,11 @@ app:get('/user_admin', capture_errors(function (self)
 		return { redirect_to = self:build_url('/') }
 	end
 end))
+
+app:match('/perma_delete/:username', respond_to({
+	DELETE = function (self)
+		UserController.delete(self)
+		return UserController.perma_delete(self)
+	end
+}))
+
