@@ -37,19 +37,22 @@ function utils:parse_notes(notes)
 			notes, string.find(notes, '--SUMMARY--') + 12,
 			string.find(notes, '--DESCRIPTION--') - 2
 		)
+	local links_position = string.find(notes, '--LINKS--')
 	local description =
 		string.sub(
 			notes, string.find(notes, '--DESCRIPTION--') + 16,
-			string.find(notes, '--LINKS--') - 2
+			(links_position and links_position - 2 or string.len(notes)
 		)
-	local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
 	local links = {}
-	for line in string.gmatch(links_text, "[^\r\n]+") do
-		local link = {}
-		for part, i in string.gmatch(line, "[^,]+") do
-			table.insert(link, part)
+	if links_position then
+		local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
+		for line in string.gmatch(links_text, "[^\r\n]+") do
+			local link = {}
+			for part, i in string.gmatch(line, "[^,]+") do
+				table.insert(link, part)
+			end
+			table.insert(links, link)
 		end
-		table.insert(links, link)
 	end
 
 	return summary, description, links
