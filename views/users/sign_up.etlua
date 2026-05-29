@@ -34,6 +34,9 @@
 		</div>
 
 		<div class="c-user-form__captcha">
+			<p class="c-user-form__captcha-message">
+				Sind Sie ein Roboter?<br> Bitte geben Sie die Zahlen ein!
+			</p>
 			<div class="c-user-form__captcha-nums">
 				<% for i = 1, 5 do
 					local path = './frontend/static/captcha/captcha_' .. session.captcha:sub(i,i) .. '.png'
