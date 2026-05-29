@@ -37,7 +37,7 @@ local locale = {
 	index_intro = 'Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand. Snap! Schule bietet @1, die Sie direkt einsetzen können. Entwickelt von Lehrkräften, Informatiker:innen und Fachdidaktiker:innen – DSGVO-konform und kostenlos. Wir starten mit @2, weitere Bundesländer folgen!', -- @1 and @2 become the two sentences below:
 	index_intro_p1 = 'lehrplangerechte Puzzle und Unterrichtsmaterialien',
 	index_intro_p2 = 'Baden-Württemberg',
-	text_coming_soon = 'Coming soon...',
+	text_coming_soon = "Wir arbeiten daran. Veröffentlichung am 01.09.2026",
 
 	-- Puzzle carousels
 	-- ================
@@ -155,6 +155,9 @@ Vielen Dank!
 	-- Footer
 	-- ======
 	b_whysnap = 'Warum Snap!?',
+	b_team = "Team",
+	b_privacy = "Datenschutzerklärung",
+	b_imprimpt = "Impressum",
 	footer_credits_statement = 'snap.schule ist ein Projekt von UC&nbsp;Berkeley, SAP, SPARKS',
 
 	-- Errors and messages

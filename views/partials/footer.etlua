@@ -1,68 +1,69 @@
 <%
 local menu = {
-  {locale.get('b_puzzles'), '/puzzles'},
-  {locale.get('b_contact'), '/#contact'},
-  {locale.get('b_whysnap'), '/why_snap'},
-  {'Snap!', '/editor'},
+	{locale.get('b_puzzles'), '/puzzles'},
+	{locale.get('b_contact'), '/#contact'},
+	{'Snap!', '/editor'},
 }
 
 local credits = {
-  {'Berkeley', 'https://www.berkeley.edu/', 'berkeley--white.png'},
-  {'SAP', 'https://www.sap.com', 'sap--white.png'},
-  {'Sparks4School', 'https://sparks4school.org/', 'sparks4school--white.png'},
+	{'Berkeley', 'https://www.berkeley.edu/', 'berkeley--white.png'},
+	{'SAP', 'https://www.sap.com', 'sap--white.png'},
+	{'Sparks4School', 'https://sparks4school.org/', 'sparks4school--white.png'},
 }
 
 local legal_pages = {
-  {'Privacy Policy', '/privacy-policy'},
-  {'Imprimt', '/privacy-policy'},
+	{locale.get('b_whysnap'), '/why_snap'},
+	{locale.get('b_team'), '/team'},
+	{locale.get('b_privacy'), '/privacy-policy'},
+	{locale.get('b_imprimpt'), '/imprimpt'},
 }
 %>
 
 <footer class="c-footer">
-  <div class="u-padding-x">
+	<div class="u-padding-x">
 
-    <div class="c-footer__top">
+		<div class="c-footer__top">
 
-      <a href="/" class="c-footer__logo">
-        <% render('frontend.static.svg.snap-schule--white') %>
-      </a>
+			<a href="/" class="c-footer__logo">
+				<% render('frontend.static.svg.snap-schule--white') %>
+			</a>
 
-      <ul class="c-footer__menu">
-        <% for i, item in ipairs(menu) do %>
-        <li class="c-footer__menu-list-item">
-          <a href="<%= item[2] %>" class="c-footer__menu-anchor"><%= item[1] %></a>
-        </li>
-        <% end %>
-      </ul>
+			<ul class="c-footer__menu">
+				<% for i, item in ipairs(menu) do %>
+				<li class="c-footer__menu-list-item">
+					<a href="<%= item[2] %>" class="c-footer__menu-anchor"><%= item[1] %></a>
+				</li>
+				<% end %>
+			</ul>
 
-    </div>
+		</div>
 
-    <div class="c-footer__bottom">
+		<div class="c-footer__bottom">
 
-      <div class="c-footer__credits">
-        <p class="c-footer__credits-statement"><%- locale.get('footer_credits_statement') %></p>
-        <ul class="c-footer__credits-list">
-          <% for k, item in ipairs(credits) do %>
-          <li class="c-footer__credits-list-item">
-            <a href="<%= item[2] %>" class="c-footer__credits-anchor" target="_blank">
-              <img src="/static/logos/<%= item[3] %>" alt="<%= item[1] %>">
-            </a>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+			<div class="c-footer__credits">
+				<p class="c-footer__credits-statement"><%- locale.get('footer_credits_statement') %></p>
+				<ul class="c-footer__credits-list">
+					<% for k, item in ipairs(credits) do %>
+					<li class="c-footer__credits-list-item">
+						<a href="<%= item[2] %>" class="c-footer__credits-anchor" target="_blank">
+							<img src="/static/logos/<%= item[3] %>" alt="<%= item[1] %>">
+						</a>
+					</li>
+					<% end %>
+				</ul>
+			</div>
 
-      <ul class="c-footer__legal-pages">
-        <% for j, item in ipairs(legal_pages) do %>
-          <li class="c-footer__legal-pages-list-item">
-            <a href="<%= item[2] %>" class="c-footer__legal-pages-anchor" target="_blank">
-              <%= item[1] %>
-            </a>
-          </li>
-        <% end %>
-      </ul>
+			<ul class="c-footer__legal-pages">
+				<% for j, item in ipairs(legal_pages) do %>
+					<li class="c-footer__legal-pages-list-item">
+						<a href="<%= item[2] %>" class="c-footer__legal-pages-anchor" target="_blank">
+							<%= item[1] %>
+						</a>
+					</li>
+				<% end %>
+			</ul>
 
-    </div>
+		</div>
 
-  </div>
+	</div>
 </footer>
