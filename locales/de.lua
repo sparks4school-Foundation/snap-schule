@@ -166,22 +166,22 @@ Vielen Dank!
 	err_captcha = 'Captcha wurde nicht korrekt eingegeben',
 	title_user_created = '',
 	msg_user_created = [[
-	# Der Benutzer _@1_ wurde erstellt
+# Der Benutzer _@1_ wurde erstellt
 
-	Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
-	dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
-	]],
+Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
+dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
+]],
 	title_user_rejected = 'Benutzerantrag abgelehnt',
 	msg_user_rejected = [[
-	# Antrag abgelehnt
+# Antrag abgelehnt
 
-	Der Registrierungsantrag des Benutzers mit der E-Mail-Adresse __@1__ wurde
-	von Ihnen abgelehnt.
+Der Registrierungsantrag des Benutzers mit der E-Mail-Adresse __@1__ wurde
+von Ihnen abgelehnt.
 
-	Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
-	indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
-	Maßnahme erforderlich.
-	]],
+Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
+indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
+Maßnahme erforderlich.
+]],
 
 	-- Emails
 	-- ======

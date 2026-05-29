@@ -270,7 +270,6 @@ app:get('/accept_request/:email', capture_errors(function (self)
 			self.params.email,
 			locale.get('email_accepted_subject'),
 			schule_utils:accepted_email_body(self.params.email, password)
-		)
 		self.title = locale.get('title_user_created')
 		self.contents = locale.get('msg_user_created', self.params.email)
 		return { render = 'message' }
@@ -287,7 +286,7 @@ app:get('/reject_request/:email', capture_errors(function (self)
 		self.title = locale.get('title_user_rejected')
 		self.contents =
 			locale.get('msg_user_rejected', self.params.email) ..
-				'\n\n[Accept](/accept_request/' .. util.escape(self.params.email) .. ')'
+				'\n\n[Accept](/accept_request/' .. package.loaded.util.escape(self.params.email) .. ')'
 		return { render = 'message' }
 	else
 		self.title = 'Error'
