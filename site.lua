@@ -148,7 +148,7 @@ app:get('/puzzles(/:id)', capture_errors(cached(function (self)
 		self.params.username = 'jadga'
 		self.puzzles = ProjectController.user_projects(self)
 	end
-	return { render = 'puzzles' }
+	return { render = 'puzzles', title = 'Puzzles' }
 end)))
 
 app:get('/puzzle/:id', capture_errors(cached(function (self)

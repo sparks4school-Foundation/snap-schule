@@ -1,5 +1,6 @@
+<% content_for('title', title) %>
 <div class="v-message__content u-padding-x">
-	<h1 class="v-message__title" localizable><%- title %></h1>
+	<h1 class="v-message__title"><%- title %></h1>
 	<div class="v-message__message">
 		<% render( 'frontend.views.partials.markdown', { content = contents }) %><br>
 	</div>

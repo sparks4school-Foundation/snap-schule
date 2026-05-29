@@ -1,4 +1,5 @@
 <%
+	content_for('title', puzzle.projectname)
 	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
 	local summary, description, links = schule_utils:parse_notes(puzzle.notes)
 
