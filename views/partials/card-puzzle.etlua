@@ -4,7 +4,7 @@
 
 	<div class="c-card-puzzle__image">
 		<% local card = schule_utils:card_image(puzzle) %>
-		<img src="/static/images/<%= card and (card .. '.wepb') or 'puzzle-placeholder-01.png' %>" alt="">
+		<img src="/static/images/<%= card and (card .. '.webp') or 'puzzle-placeholder-01.png' %>" alt="">
 	</div>
 
 	<div class="c-card-puzzle__text">

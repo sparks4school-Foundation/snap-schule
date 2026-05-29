@@ -12,7 +12,7 @@
 	<div class="v-puzzle__header-contents">
 
 		<div class="v-puzzle__header-image">
-			<img src="/static/images/<%= card and (card .. '.wepb') or 'puzzle-placeholder-01.png' %>" alt="">
+			<img src="/static/images/<%= card and (card .. '.webp') or 'puzzle-placeholder-01.png' %>" alt="">
 		</div>
 
 		<div class="v-puzzle__header-text">
