@@ -56,7 +56,7 @@ local legal_pages = {
 			<ul class="c-footer__legal-pages">
 				<% for j, item in ipairs(legal_pages) do %>
 					<li class="c-footer__legal-pages-list-item">
-						<a href="<%= item[2] %>" class="c-footer__legal-pages-anchor" target="_blank">
+						<a href="<%= item[2] %>" class="c-footer__legal-pages-anchor">
 							<%= item[1] %>
 						</a>
 					</li>
