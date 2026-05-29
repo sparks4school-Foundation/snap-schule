@@ -1,3 +1,12 @@
+<%
+	local qr_url
+	if (ngx.var.cloud_url ~= '') then
+		qr_url = ngx.var.cloud_url .. url
+	else
+		qr_url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' .. ngx.var.server_port .. url
+	end
+%>
+
 <div id="qr-code" class="c-qr --is-hidden" data-qr="dialogue" onclick="toggleQRDialogue()">
 
 	<div class="c-qr__contents">
@@ -40,7 +49,7 @@
 		new QRCode(
 			dialogue.querySelector('[data-qr="img-wrapper"]'),
 			{
-				text: '<%= url %>',
+				text: '<%= qr_url %>',
 				width: 800,
 				height: 800,
 				colorDark: '#000',
