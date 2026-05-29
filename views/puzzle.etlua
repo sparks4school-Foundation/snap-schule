@@ -1,7 +1,7 @@
 <%
 	content_for('title', puzzle.projectname)
 	-- PARSE PROJECT NOTES INTO SUMMARY, DESCRIPTION AND LINKS --
-	local summary, description, links = schule_utils:parse_notes(puzzle.notes)
+	local summary, description, links, card = schule_utils:parse_notes(puzzle.notes)
 
 	if (grade == null) then
 		grade = schule_utils:grade_from_project(puzzle)
@@ -12,7 +12,7 @@
 	<div class="v-puzzle__header-contents">
 
 		<div class="v-puzzle__header-image">
-			<img src="/static/images/puzzle-placeholder-02.webp" alt="">
+			<img src="/static/images/<%= card or 'puzzle-placeholder-01' %>.webp" alt="">
 		</div>
 
 		<div class="v-puzzle__header-text">

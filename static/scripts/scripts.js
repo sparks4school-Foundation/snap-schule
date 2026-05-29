@@ -12,7 +12,7 @@ function autorun() {
     touchDevice();
 
     // Components
-    editor();
+//    editor();
     menu();
     popup();
     puzzlesSliders();

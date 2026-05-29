@@ -32,20 +32,34 @@ local assert_error = package.loaded.app_helpers.assert_error
 local db = package.loaded.db
 
 function utils:parse_notes(notes)
+	local summary_position = string.find(notes, '--SUMMARY--')
+	if not summary_position then return nil, nil, nil, nil end
+
 	local summary =
 		string.sub(
-			notes, string.find(notes, '--SUMMARY--') + 12,
+			notes, summary_position + 12,
 			string.find(notes, '--DESCRIPTION--') - 2
 		)
 	local links_position = string.find(notes, '--LINKS--')
+	local card_position = string.find(notes, '--CARD--')
 	local description =
 		string.sub(
-			notes, string.find(notes, '--DESCRIPTION--') + 16,
-			(links_position and links_position - 2 or string.len(notes))
+			notes,
+			string.find(notes, '--DESCRIPTION--') + 16,
+			(links_position and links_position - 2 or
+				((card_position and card_position - 2) or
+					string.len(notes)
+				)
+			)
 		)
 	local links = {}
 	if links_position then
-		local links_text = string.sub(notes, string.find(notes, '--LINKS--') + 10)
+		local links_text =
+			string.sub(
+				notes,
+				string.find(notes, '--LINKS--') + 10,
+				card_position and card_position -2 or string.len(notes)
+			)
 		for line in string.gmatch(links_text, "[^\r\n]+") do
 			local link = {}
 			for part, i in string.gmatch(line, "[^,]+") do
@@ -55,7 +69,17 @@ function utils:parse_notes(notes)
 		end
 	end
 
-	return summary, description, links
+	local card
+	if card_position then
+		card = string.sub(notes, card_position + 9)
+	end
+
+	return summary, description, links, card
+end
+
+function utils:card_image(puzzle)
+	local _,_,_,card = self:parse_notes(puzzle.notes)
+	return card
 end
 
 function utils:grade_from_collection(collection)

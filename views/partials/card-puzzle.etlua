@@ -3,7 +3,8 @@
 <article class="c-card-puzzle">
 
 	<div class="c-card-puzzle__image">
-		<img src="/static/images/puzzle-placeholder-01.webp" alt="">
+		<% local card = schule_utils:card_image(puzzle) %>
+		<img src="/static/images/<%= card or 'puzzle-placeholder-01' %>.webp" alt="">
 	</div>
 
 	<div class="c-card-puzzle__text">

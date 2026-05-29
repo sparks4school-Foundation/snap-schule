@@ -18,7 +18,8 @@ else
 		params = {},
 		items_per_page = 200, -- max 200 projects to query from DB.
 		collection = collection,
-		cached = true
+		cached = false,
+		fields = 'notes'
 	})
 
 	link = {
