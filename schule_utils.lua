@@ -102,23 +102,6 @@ function utils:grade_from_project(project)
 	return self:grade_from_project_id(project.id)
 end
 
-function utils:project_number(project)
-		local result = db.select(
-			'collection_memberships.*, row_number() ' ..
-				'OVER (ORDER BY created_at) AS num ' ..
-				'FROM collection_memberships WHERE collection_id IN ' ..
-					'(SELECT collections.id from collections, collection_memberships ' ..
-					'WHERE collection_memberships.collection_id = collections.id ' ..
-					'AND collection_memberships.project_id = ?)',
-			project.id
-		)
-		if result[1] then
-			return result[1].num
-		else
-			return 0
-		end
-end
-
 function utils:assert_can_view_puzzle(user, puzzle)
 	if (not puzzle.ispublished and not puzzle.ispublic
 		and user.username ~= puzzle.username

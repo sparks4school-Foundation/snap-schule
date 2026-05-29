@@ -5,10 +5,6 @@
 	if (grade == null) then
 		grade = schule_utils:grade_from_project(puzzle)
 	end
-
-	if (puzzle_number == null) then
-		puzzle_number = schule_utils:project_number(puzzle)
-	end
 %>
 
 <header class="v-puzzle__header u-padding-x">
@@ -19,9 +15,7 @@
 		</div>
 
 		<div class="v-puzzle__header-text">
-			<p class="v-puzzle__header-grade">
-				<%= puzzle_number > 0 and (locale.get('nth_puzzle', locale.get('nth_' .. puzzle_number)) .. ' - ') or '' %>
-				<%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
+			<p class="v-puzzle__header-grade"><%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
 			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
 			<p class="v-puzzle__header-intro"><%= summary %></p>
 			<div class="v-puzzle__header-links">
