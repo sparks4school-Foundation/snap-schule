@@ -16,7 +16,7 @@ else
 	)
 	puzzles = CollectionController.projects({
 		params = {},
-		items_per_page = 24, -- max 24 projects to query from DB.
+		items_per_page = 200, -- max 200 projects to query from DB.
 		collection = collection,
 		cached = true
 	})

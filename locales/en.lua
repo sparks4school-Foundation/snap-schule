@@ -121,6 +121,7 @@ If you also create a private class, all these accounts will be associated to it.
 	signup_title = 'Sign up',
 	placeholder_email = 'E-mail',
 	placeholder_email_repeat = 'E-mail (Repeat)',
+	text_captcha = 'Are you a robot?@1Please enter these numbers!', -- @1 turns into a newline
 	placeholder_captcha = 'Enter the number above',
 	title_captcha_failed = 'Captcha failed',
 	b_signup = 'Sign up',
