@@ -14,7 +14,7 @@
 		or
 			(ngx.var.scheme ..'://' .. ngx.var.host)
 	%>">
-<link rel="icon" href="/static/img/favicon.ico">
+<link rel="icon" href="/static/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Markdown parser -->

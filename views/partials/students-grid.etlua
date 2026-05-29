@@ -1,4 +1,4 @@
-<% local class = package.loaded.Collections:find({ creator_id = current_user.id, name = 'students' }) %>
+<% local students = package.loaded.Users:select('where creator_id = ?', current_user.id) %>
 <div class="v-class__options">
 
 	<div class="v-class__options-heading">
@@ -7,17 +7,17 @@
 		}) %>
 	</div>
 
-	<% if class and class.editor_ids and #class.editor_ids > 0 then %>
+	<% if students and #students > 0 then %>
 
 	<div class="v-class__options-contents">
 
 		<div class="v-class__options-students">
 			<h3 class="v-class__options-title">Students</h3>
 			<ul class="v-class__options-students-list">
-				<% for _, id in pairs(class.editor_ids) do %>
+				<% for _, student in pairs(students) do %>
 					<li class="v-class__options-students-list-item">
 						<span class="v-class__options-students-list-name">
-							<%= package.loaded.Users:find({ id = id }).username %>
+							<%= student.username %>
 						</span>
 						<button class="v-class__options-students-list-remove">
 							<% render('frontend.static.svg.icon-cross--24x24') %>

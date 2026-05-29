@@ -1,3 +1,4 @@
+<% content_for('title', locale.get('title_puzzles')) %>
 <header class="v-puzzles__header u-padding-x">
 	<h1 class="v-puzzles__header-heading"><%= locale.get('title_puzzles') %> </h1>
 </header>

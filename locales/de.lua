@@ -54,7 +54,7 @@ local locale = {
 	nth_9 = '9.',
 	nth_10 = '10.',
 	nth_unknown = '?',
-	b_grade_puzzles = 'Alle für Klassenstufe @1', -- @1 becomes a number
+	b_grade_puzzles = 'Alle anzeigen', -- @1 becomes a number
 
 	-- Puzzles Page
 	-- ============
@@ -122,7 +122,7 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	signup_title = 'Registrierung für Lehrkräfte',
 	placeholder_email = 'E-Mail',
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
-	placeholder_captcha = 'Bitte geben Sie die angezeigten Ziffern ein',
+	placeholder_captcha = 'Captcha eingeben',
 	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
 	review_pending_header = 'Benutzererstellung wird überprüft',
@@ -166,22 +166,22 @@ Vielen Dank!
 	err_captcha = 'Captcha wurde nicht korrekt eingegeben',
 	title_user_created = '',
 	msg_user_created = [[
-	# Der Benutzer _@1_ wurde erstellt
+# Der Benutzer _@1_ wurde erstellt
 
-	Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
-	dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
-	]],
+Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
+dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
+]],
 	title_user_rejected = 'Benutzerantrag abgelehnt',
 	msg_user_rejected = [[
-	# Antrag abgelehnt
+# Antrag abgelehnt
 
-	Der Registrierungsantrag des Benutzers mit der E-Mail-Adresse __@1__ wurde
-	von Ihnen abgelehnt.
+Der Registrierungsantrag des Benutzers mit der E-Mail-Adresse __@1__ wurde
+von Ihnen abgelehnt.
 
-	Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
-	indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
-	Maßnahme erforderlich.
-	]],
+Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
+indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
+Maßnahme erforderlich.
+]],
 
 	-- Emails
 	-- ======

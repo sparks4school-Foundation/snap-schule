@@ -1,3 +1,4 @@
+<% content_for('title', current_user.username) %>
 <header class="v-user__header u-padding-x">
 	<div class="v-user__header-type">
 		<%= current_user:isadmin()
