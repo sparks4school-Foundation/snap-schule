@@ -122,6 +122,7 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	signup_title = 'Registrierung für Lehrkräfte',
 	placeholder_email = 'E-Mail',
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
+	text_captcha = 'Sind Sie ein Roboter?@1Bitte geben Sie die Zahlen ein!', -- @1 turns into a newline
 	placeholder_captcha = 'Captcha eingeben',
 	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
