@@ -32,6 +32,15 @@
 .c-user-form__captcha {
 	margin: var(--space-32) auto 0;
 
+	.c-user-form__captcha-message {
+		margin-bottom: var(--space-12);
+
+		font-family: var(--fontFamily-mono);
+		font-size: var(--fontSize-14);
+		color: var(--color-grey-700);
+		text-align: center;
+	}
+
 	.c-user-form__captcha-nums {
 		max-width: max-content;
 		margin: 0 auto;
@@ -39,11 +48,16 @@
 
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
+
+		img {
+			margin: 0 -1px;
+		}
 	}
 
 	input {
 		display: block;
 		margin: var(--space-12) auto 0;
+		text-align: center;
 	}
 }
 
