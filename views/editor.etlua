@@ -8,9 +8,9 @@ if params.id then
 		url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' .. ngx.var.server_port
 	end
 %>
-<iframe class="v-editor__iframe" src="/snap/snap.html#open:<%= url .. '/project/' .. params.id %>"></iframe>
+<iframe class="v-editor__iframe" src="/snap/snap.html#open:<%= url .. '/project/' .. params.id .. '&noShare' %>"></iframe>
 <% else %>
-<iframe class="v-editor__iframe" src="/snap/snap.html#open:/static/template.xml"></iframe>
+<iframe class="v-editor__iframe" src="/snap/snap.html#open:/static/template.xml&noShare"></iframe>
 <% end %>
 
 <% if puzzles then %>
