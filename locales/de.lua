@@ -87,15 +87,13 @@ local locale = {
 
 	title_students = 'Meine Schüler:innen',
 
-	title_create_accounts = 'Accounts erstellen',
+	title_create_accounts = 'So legen Sie Accounts für Ihre Schüler:innen an',
 	md_provide_csv =
-[[Bitte geben Sie uns eine CSV-Datei mit Spalten für `Benutzername` und `Passwort` für alle ihre Schüler:innen.
-
-Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Accounts damit.
-
+[[Sie erstellen für jede Schüler:in einen Benutzernamen und ein Passwort. Wichtig: Verwenden Sie keine echten Namen – denken Sie sich stattdessen neutrale Benutzernamen aus (z. B. schueler3). So bleiben Ihre Schüler:innen auf der Plattform anonym. Damit Sie selbst wissen, welcher Account zu wem gehört, sollten Sie sich eine eigene Liste anlegen. 
+Bitte geben Sie die Liste als CSV an – das ist eine einfache Tabelle mit kommagetrennten Werten, die Sie z.B. in Excel oder LibreOffice erstellen und als „CSV" speichern oder einfach von Hand schreiben können. Die erste Zeile enthält die Überschriften 'username' und 'password', darunter folgt pro Zeile ein Account.
 **Beispiel:**]],
-	title_upload_csv = 'die CSV-Datei hochladen',
-	text_paste_csv = 'Alternativ können Sie den Inhalt Ihrer CSV-Datei auch direkt hier hinein kopieren:',
+	title_upload_csv = 'CSV-Datei hochladen',
+	text_paste_csv = 'Alternativ können Sie die Tabelle auch direkt hier hinein kopieren:',
 	b_create_users = 'Account anlegen',
 	title_bulk_creation = 'Mehrere Accounts erstellen',
 	title_account = 'Account',
