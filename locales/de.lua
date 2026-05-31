@@ -113,9 +113,9 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 
 	-- Contact
 	-- =======
-	contact_heading = 'Haben Sie Fragen oder Feedback?@1Wir freuen uns, von Ihnen zu hören.', -- @1 turns into a newline
-	contact_text = 'Schreiben Sie uns jederzeit gerne eine E-Mail – egal, ob Sie Hilfe benötigen, Vorschläge haben oder uns einfach Ihre Meinung mitteilen möchten. Ihr Feedback hilft uns, diese Website für Lehrkräfte und Schüler:innen besser zu machen.',
-	b_contact_us = 'Kontaktieren Sie uns',
+	contact_heading = 'Hast du Fragen oder Feedback?@1Wir freuen uns, von dir zu hören.', -- @1 turns into a newline
+	contact_text = 'Schreibe uns jederzeit gerne eine E-Mail – egal, ob du Hilfe benötigst, Vorschläge hast oder uns einfach deine Meinung mitteilen möchtest. Dein Feedback hilft uns, diese Website für Lehrkräfte und Schüler:innen besser zu machen.',
+	b_contact_us = 'Schreib uns',
 
 	-- Signup
 	-- ======
