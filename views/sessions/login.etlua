@@ -32,12 +32,14 @@
 			>
 		</div>
 
+		<!--
 		<div class="c-user-form__checkboxes">
 			<div class="c-user-form__checkbox-wrapper">
 				<input id="persist" name="persist" type="checkbox" class="form-check-input">
 				<label for="persist"><%= locale.get('c_keep_logged_in') %></label>
 			</div>
 		</div>
+		-->
 
 		<div class="c-user-form__submit-wrapper">
 			<button onclick="handleSubmit()" class="c-button --yellow" type="button">
@@ -67,7 +69,7 @@
 		cloud.login(
 			form.querySelector('#username').value, // username
 			form.querySelector('#password').value,// password
-			form.querySelector('#persist').checked, // persist
+			true, //form.querySelector('#persist').checked, // persist
 			(user, role, response) => {
 				if (response.title) {
 					alert(
