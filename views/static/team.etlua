@@ -14,55 +14,6 @@ an guter Informatikbildung arbeiten. Getragen von einem gemeinnützigen Unterneh
 einer Universität, einem Industriepartner und einem zivilgesellschaftlichen Lernort. Hier
 sind ihre Stimmen.
 
-## Jadga Hügle
-### SAP
-„ Ursprünglich Biologin, zur Informatik kam
-ich beim Bau eines automatisierten
-Gewächshäuschens. Seitdem suche ich
-kreative Zugänge: Musik, Kunst, Stickerei,
-Biologie. Bei snap.schule entwickle ich Puzzle
-und Unterrichtsmaterialien. "
-
-## Sébastien Elbracht
-### SPARKS4SCHOOL
-„ Mein Hintergrund vereint Informatik,
-Geographie, Medien- und Theaterpädagogik.
-Mich begeistert, wie informatische Konzepte
-spielerisch erlebbar wird. Bei snap.schule
-verantworte ich die Projektentwicklung. "
-
-## Jens Mönig
-### SAP
-„ Visuelles Programmieren ist meine
-Leidenschaft. Mitentwickler von Scratch am
-M.I.T. und später Snap! mit der Uni Berkeley.
-Bei snap.schule entwickle ich sowohl Puzzle
-als auch die Programmiersprache selbst
-weiter. "
-
-## Tilman Michaeli
-### TU MÜNCHEN
-„ Ich leite die Computing Education Research
-Group an der TU München. Mir geht es
-darum, jede:n zu befähigen, die digitale Welt
-aktiv mitzugestalten. snap.schule berate ich
-fachdidaktisch. "
-
-## Steffen Haschler
-### SPARKS4SCHOOL
-„ Gymnasiallehrer für Informatik und
-Mitgründer von sparks4school. Mein Fokus:
-Lernformate, die im Schulalltag wirken.
-snap.schule begleite ich aus Lehrkraftsicht. "
-
-## Marc Camprecós
-### Freelancer
-„ Ich bin freiberuflicher Webdesigner und
-Frontend-Entwickler. Im Laufe der Jahre habe
-ich mehrere Designs für das MicroBlocks-Projekt
-erstellt und bin derzeit der Hauptwebdesigner
-für Snap!Schule. "
-
 ## Bernat Romagosa
 ### SAP
 „ Ich gehöre zu den Entwicklern von Snap! und
@@ -79,6 +30,54 @@ ist mir Herzenssache. snap.schule hosten wir
 in unserem Rechenzentrum am
 o Verstehbahnhof. "
 
+## Jadga Hügle
+### SAP
+„ Ursprünglich Biologin, zur Informatik kam
+ich beim Bau eines automatisierten
+Gewächshäuschens. Seitdem suche ich
+kreative Zugänge: Musik, Kunst, Stickerei,
+Biologie. Bei snap.schule entwickle ich Puzzle
+und Unterrichtsmaterialien. "
+
+## Jens Mönig
+### SAP
+„ Visuelles Programmieren ist meine
+Leidenschaft. Mitentwickler von Scratch am
+M.I.T. und später Snap! mit der Uni Berkeley.
+Bei snap.schule entwickle ich sowohl Puzzle
+als auch die Programmiersprache selbst
+weiter. "
+
+## Marc Camprecós
+### Freelancer
+„ Ich bin freiberuflicher Webdesigner und
+Frontend-Entwickler. Im Laufe der Jahre habe
+ich mehrere Designs für das MicroBlocks-Projekt
+erstellt und bin derzeit der Hauptwebdesigner
+für Snap!Schule. "
+
+## Sébastien Elbracht
+### SPARKS4SCHOOL
+„ Mein Hintergrund vereint Informatik,
+Geographie, Medien- und Theaterpädagogik.
+Mich begeistert, wie informatische Konzepte
+spielerisch erlebbar wird. Bei snap.schule
+verantworte ich die Projektentwicklung. "
+
+## Steffen Haschler
+### SPARKS4SCHOOL
+„ Gymnasiallehrer für Informatik und
+Mitgründer von sparks4school. Mein Fokus:
+Lernformate, die im Schulalltag wirken.
+snap.schule begleite ich aus Lehrkraftsicht. "
+
+## Tilman Michaeli
+### TU MÜNCHEN
+„ Ich leite die Computing Education Research
+Group an der TU München. Mir geht es
+darum, jede:n zu befähigen, die digitale Welt
+aktiv mitzugestalten. snap.schule berate ich
+fachdidaktisch. "
 
 _Wir arbeiten als **[Open-Source-Projekt](https://gitlab.com/bromagosa/snapschule)**.
 Code, Inhalte und Materialien sind frei nachnutzbar. Was uns verbindet: die
