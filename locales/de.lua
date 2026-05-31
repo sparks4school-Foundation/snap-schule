@@ -126,11 +126,11 @@ Wenn Sie dazu eine nichtöffentliche Klasse erstellen, verknüpfen wir diese Acc
 	placeholder_captcha = 'Captcha eingeben',
 	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
-	review_pending_header = 'Benutzererstellung wird überprüft',
+	review_pending_header = 'Accounterstellung für Snap!Schule wird überprüft',
 	review_pending_text = [[
-**Vielen Dank für Ihre Anfrage**
+**Vielen Dank für Ihre Anfrage eines kostenlosen Snap!Schule Accounts**
 
-Wir prüfen derzeit Ihren Antrag und werden uns in Kürze bei Ihnen melden – mit Details zum Zugriff auf Ihren Account.
+Wir prüfen Ihren Antrag und werden uns in Kürze bei Ihnen melden. 
 
 Bitte überprüfen Sie regelmäßig Ihren E-Mail-Posteingang, einschließlich des Spam-Ordners.
 
