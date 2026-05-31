@@ -73,10 +73,6 @@ app:before_filter(function (self)
 			(ngx.var.scheme ..'://' .. ngx.var.host))
 
 	self.jadga = Users:find({ username = 'jadga' })
-	if not self.session.locale then
-		self.session.locale = 'de'
-		self:write({redirect_to = '/'})
-	end
 
 	self.schule_utils = schule_utils
 	self.util = util
