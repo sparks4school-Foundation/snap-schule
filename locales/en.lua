@@ -84,7 +84,7 @@ local locale = {
 	title_teacher_account = 'Teacher Account',
 	title_student_puzzles = 'Student\'s Puzzles',
 
-	title_students = 'My students',
+	title_students = 'Students',
 
 	title_create_accounts = 'Create Accounts',
 	md_provide_csv =

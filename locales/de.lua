@@ -85,7 +85,7 @@ local locale = {
 	title_teacher_account = 'Lehrkräfte-Account',
 	title_student_puzzles = 'Schüler:innen-Puzzle',
 
-	title_students = 'Meine Schüler:innen',
+	title_students = 'Schüler:innen',
 
 	title_create_accounts = 'So legen Sie Accounts für Ihre Schüler:innen an',
 	md_provide_csv =
@@ -96,7 +96,7 @@ Bitte geben Sie die Liste als CSV an – das ist eine einfache Tabelle mit komma
 	text_paste_csv = 'Alternativ können Sie die Tabelle auch direkt hier hinein kopieren:',
 	b_create_users = 'Account anlegen',
 	title_bulk_creation = 'Mehrere Accounts erstellen',
-	title_account = 'Lehrer:innen Account',
+	title_account = 'Account',
 	title_update_details = 'Details aktualisieren',
 	b_update_details = 'Details aktualisieren',
 	text_automatic_account_deletion = 'Accounts werden automatisch ein Jahr nach ihrer letzten Aktivität gelöscht. Wir erheben und speichern keine personenbezogenen Daten.',
