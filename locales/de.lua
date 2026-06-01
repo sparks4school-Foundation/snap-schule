@@ -34,7 +34,7 @@ local locale = {
 
 	-- Index page
 	-- ==========
-	index_intro = 'Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand. Snap! Schule bietet @1, die Sie direkt einsetzen können. Entwickelt von Lehrkräften, Informatiker:innen und Fachdidaktiker:innen – DSGVO-konform und kostenlos. Wir starten mit @2, weitere Bundesländer folgen!', -- @1 and @2 become the two sentences below:
+	index_intro = 'Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand. Snap! Schule bietet @1, die du direkt einsetzen kannst. Entwickelt von Lehrkräften, Informatiker:innen und Fachdidaktiker:innen – DSGVO-konform und kostenlos. Wir starten mit @2, weitere Bundesländer folgen!', -- @1 and @2 become the two sentences below:
 	index_intro_p1 = 'lehrplangerechte Puzzle und Unterrichtsmaterialien',
 	index_intro_p2 = 'Baden-Württemberg',
 	text_coming_soon = "Wir arbeiten daran. Veröffentlichung am 01.09.2026",
@@ -87,15 +87,15 @@ local locale = {
 
 	title_students = 'Schüler:innen',
 
-	title_create_accounts = 'So legen Sie Accounts für Ihre Schüler:innen an',
+	title_create_accounts = 'Accounts anlegen',
 	md_provide_csv =
-[[Sie erstellen für jede Schüler:in einen Benutzernamen und ein Passwort. Wichtig: Verwenden Sie keine echten Namen – denken Sie sich stattdessen neutrale Benutzernamen aus (z. B. schueler3). So bleiben Ihre Schüler:innen auf der Plattform anonym. Damit Sie selbst wissen, welcher Account zu wem gehört, sollten Sie sich eine eigene Liste anlegen. 
-Bitte geben Sie die Liste als CSV an – das ist eine einfache Tabelle mit kommagetrennten Werten, die Sie z.B. in Excel oder LibreOffice erstellen und als „CSV" speichern oder einfach von Hand schreiben können. Die erste Zeile enthält die Überschriften 'username' und 'password', darunter folgt pro Zeile ein Account.
+[[Du erstellst für jede Schüler:in einen Benutzernamen und ein Passwort. Wichtig: Verwende keine echten Namen – denk dir stattdessen neutrale Benutzernamen aus (z. B. schueler3). So bleiben deine Schüler:innen auf der Plattform anonym. Damit du selbst weißt, welcher Account zu wem gehört, solltest du dir eine eigene Liste anlegen. 
+Bitte gib die Benutzernamen und Passwörter als CSV an – das ist eine einfache Tabelle mit kommagetrennten Werten, die du z.B. in Excel oder LibreOffice erstellen und als „CSV" speichern oder einfach von Hand schreiben kannst. Die erste Zeile enthält die Überschriften `username` und `password`, darunter folgt pro Zeile ein Account.
 **Beispiel:**]],
 	title_upload_csv = 'CSV-Datei hochladen',
-	text_paste_csv = 'Alternativ können Sie die Tabelle auch direkt hier hinein kopieren:',
+	text_paste_csv = 'Alternativ kannst du die Tabelle auch direkt hier hinein kopieren:',
 	b_create_users = 'Account anlegen',
-	title_bulk_creation = 'Mehrere Accounts erstellen',
+	title_bulk_creation = 'So legst du Accounts für deine Schüler:innen an',
 	title_account = 'Account',
 	title_update_details = 'Details aktualisieren',
 	b_update_details = 'Details aktualisieren',
@@ -120,19 +120,19 @@ Bitte geben Sie die Liste als CSV an – das ist eine einfache Tabelle mit komma
 	signup_title = 'Registrierung für Lehrkräfte',
 	placeholder_email = 'E-Mail',
 	placeholder_email_repeat = 'E-Mail (Wiederholung)',
-	text_captcha = 'Sind Sie ein Roboter?@1Bitte geben Sie die Zahlen ein!', -- @1 turns into a newline
+	text_captcha = 'Bist du ein Roboter?@1Bitte gib die Zahlen ein!', -- @1 turns into a newline
 	placeholder_captcha = 'Captcha eingeben',
 	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
 	review_pending_header = 'Accounterstellung für Snap!Schule wird überprüft',
 	review_pending_text = [[
-**Vielen Dank für Ihre Anfrage eines kostenlosen Snap!Schule Accounts**
+**Vielen Dank für deine Anfrage eines kostenlosen Snap! Schule Accounts**
 
-Wir prüfen Ihren Antrag und werden uns in Kürze bei Ihnen melden. 
+Wir prüfen deinen Antrag und werden uns in Kürze bei dir melden. 
 
-Bitte überprüfen Sie regelmäßig Ihren E-Mail-Posteingang, einschließlich des Spam-Ordners.
+Bitte überprüf regelmäßig deinen E-Mail-Posteingang, einschließlich des Spam-Ordners.
 
-Sollten Sie innerhalb des nächsten Werktags keine Nachricht von uns erhalten, schreiben Sie uns bitte an __@1__.
+Solltest du innerhalb des nächsten Werktags keine Nachricht von uns erhalten, schreib uns bitte an __@1__.
 
 Vielen Dank!
 ]],
@@ -193,7 +193,7 @@ Maßnahme erforderlich.
 	-- User account creation accepted. Sent to user.
 	email_accepted_subject = '[Snap!Schule] Ihr Account wurde freigeschaltet',
 	email_accepted_heading = 'Ihr Account für Snap!Schule wurde freigeschaltet',
-	email_accepted_text = 'Sie können sich nun mit den folgenden Zugangsdaten in Ihr Konto unter @1 einloggen:',
+	email_accepted_text = 'Du kannst dich nun mit den folgenden Zugangsdaten in dein Konto unter @1 einloggen:',
 	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.',
 
 	-- Modal window
