@@ -5,7 +5,7 @@
 	<title>Snap! Schule</title>
 <% end %>
 
-<meta name="description" content="The Snap! Community. Snap! is a blocks-based programming language built by UC Berkeley and used by hundreds of thousands of programmers around the world.">
+<meta name="description" content="Programmierung im Unterricht – ohne Vorkenntnisse, ohne Aufwand.">
 <meta name="author" content="Bernat Romagosa, Michael Ball, Jens Mönig, Brian Harvey, Jadge Hügle">
 <meta name="snap-cloud-domain"
 	location="<%=
