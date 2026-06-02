@@ -75,7 +75,7 @@
 					if description then
 						render(
 							'frontend.views.partials.markdown',
-							{ content = description }
+							{ content = description, heading_delta = 2 }
 						)
 					end
 				%>

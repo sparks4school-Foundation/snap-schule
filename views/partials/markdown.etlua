@@ -5,7 +5,7 @@
 	document.querySelector("<%= '.' .. id %>").innerHTML =
 		marked.parse(
 			`<%- content:gsub('`', '\\`') %>`,
-			{ walkTokens: t => { if (t.type == 'heading') { t.depth += 2; } } }
+			{ walkTokens: t => { if (t.type == 'heading') { t.depth += <%- heading_delta or 0 %>; } } }
 		);
 	</script>
 </div>
