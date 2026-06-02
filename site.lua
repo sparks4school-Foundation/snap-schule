@@ -245,6 +245,12 @@ app:get('/accept_request/:email', capture_errors(function (self)
 	if self.current_user and self.current_user:isadmin() then
 		local salt = secure_salt()
 		local password, prehash = random_password()
+		if Users:find({ username = self.params.email }) then
+			self.title = 'User exists'
+			self.contents = [[This user has been approved by another administrator
+			before you.]]
+			return { render = 'message' }
+		end
 		local user = Users:create({
 			created = db.format_date(),
 			username = self.params.email,

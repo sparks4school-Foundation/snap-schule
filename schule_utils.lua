@@ -158,7 +158,7 @@ function utils:accepted_email_body(email, password)
 	local body =
 		'<h2>' .. locale.get('email_accepted_heading') .. '</h2><p>' ..
 		locale.get(
-			'email_signup_text',
+			'email_accepted_text',
 			'<a href="https://snap.schule/login">snap.schule/login</a>'
 		) ..
 		'</p><br><p><strong>username</strong>: <em>' .. email .. '</em></p><br>' ..
