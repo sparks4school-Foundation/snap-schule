@@ -34,6 +34,7 @@
   font-family: var(--fontFamily-mono);
   color: var(--color-blue);
   text-transform: uppercase;
+	text-align: center;
 }
 
 
@@ -42,6 +43,7 @@
 
   font-size: var(--fontSize-40);
   font-weight: 900;
+	text-align: center;
   letter-spacing: -0.025em;
 
   @media (min-width: 768px) {

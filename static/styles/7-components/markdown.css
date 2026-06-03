@@ -12,13 +12,35 @@
 	}
 
 
-	/* H3 */
-	h3 {
-		font-size: var(--space-24);
+	/* H2 */
+	h2 {
+		font-size: var(--fontSize-24);
 		font-weight: 600;
+		letter-spacing: -0.035em;
 
 		@media (min-width: 1024px) {
-			font-size: var(--space-32);
+			font-size: var(--fontSize-32);
+		}
+
+		* + & {
+			margin-top: var(--space-32);
+
+			@media (min-width: 1024px) {
+				margin-top: var(--space-40);
+			}
+		}
+	}
+
+
+	/* H3 */
+	h3 {
+		font-size: var(--fontSize-20);
+		font-weight: 600;
+		color: var(--color-blue);
+		letter-spacing: -0.035em;
+
+		@media (min-width: 1024px) {
+			font-size: var(--fontSize-24);
 		}
 
 		* + & {
@@ -33,12 +55,12 @@
 
 	/* H4 */
 	h4 {
-		font-size: var(--space-20);
+		font-size: var(--fontSize-16);
 		font-weight: 600;
-		color: var(--color-blue);
+		letter-spacing: -0.035em;
 
 		@media (min-width: 1024px) {
-			font-size: var(--space-24);
+			font-size: var(--fontSize-20);
 		}
 
 		* + & {
@@ -91,28 +113,65 @@
 		@media (min-width: 1536px) {
 			margin-top: var(--space-32);
 		}
+
+
+		li {
+			position: relative;
+			margin-bottom: var(--space-12);
+			padding-left: var(--space-16);
+
+			@media (min-width: 1024px) {
+				margin-bottom: var(--space-16);
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: var(--space-6);
+				height: var(--space-6);
+				top: var(--space-8);
+				left: 0;
+
+				border-radius: 999px;
+				background-color: var(--color-blue);
+
+				@media (min-width: 1024px) {
+					top: var(--space-10);
+				}
+			}
+		}
 	}
 
-	li {
-		position: relative;
-		margin-bottom: var(--space-12);
-		padding-left: var(--space-16);
+
+	ol {
+		margin-top: var(--space-16);
+
+		/* list-style: none; */
 
 		@media (min-width: 1024px) {
-			margin-bottom: var(--space-16);
+			margin-top: var(--space-24);
 		}
 
-		&::before {
-			content: '';
-			position: absolute;
-			display: block;
-			width: var(--space-6);
-			height: var(--space-6);
-			top: var(--space-10);
-			left: 0;
+		@media (min-width: 1536px) {
+			margin-top: var(--space-32);
+		}
 
-			border-radius: 999px;
-			background-color: var(--color-blue);
+
+		li {
+			position: relative;
+			margin-bottom: var(--space-12);
+			margin-left: var(--space-16);
+			padding-left: var(--space-8);
+
+			@media (min-width: 1024px) {
+				margin-bottom: var(--space-16);
+			}
+
+			&::marker {
+				color: var(--color-blue);
+			}
 		}
 	}
+
 }
