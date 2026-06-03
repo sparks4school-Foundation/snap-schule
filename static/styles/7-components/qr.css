@@ -62,6 +62,7 @@
 	margin-top: var(--space-32);
 	display: block;
 	width: 100%;
+	min-width: 0;
 	max-width: var(--space-320);
 	aspect-ratio: 1 / 1;
 	padding: var(--space-24);
