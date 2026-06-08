@@ -194,9 +194,7 @@ app:get('/user', capture_errors(cached(function (self)
 	--for k, v in pairs(self.session) do debug_print(k) end
 	if not self.current_user then return { redirect_to = '/' } end
 	self.account_type = self.current_user.is_teacher and 'teacher' or 'student'
-	if not self.current_user.is_teacher then
-		self.my_puzzles = ProjectController.my_projects(self)
-	end
+	self.my_puzzles = ProjectController.my_projects(self)
 	return { render = 'user' }
 end)))
 

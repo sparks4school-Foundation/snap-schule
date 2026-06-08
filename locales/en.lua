@@ -83,6 +83,7 @@ local locale = {
 	title_student_account = 'Student Account',
 	title_teacher_account = 'Teacher Account',
 	title_student_puzzles = 'Student\'s Puzzles',
+	title_teacher_puzzles = 'Teacher\'s Puzzles',
 
 	title_students = 'Students',
 

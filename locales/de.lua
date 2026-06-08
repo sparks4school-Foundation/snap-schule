@@ -84,6 +84,7 @@ local locale = {
 	title_student_account = 'Schüler:innen-Account',
 	title_teacher_account = 'Lehrkräfte-Account',
 	title_student_puzzles = 'Schüler:innen-Puzzle',
+	title_teacher_puzzles = 'Lehrkräfte-Puzzle',
 
 	title_students = 'Schüler:innen',
 
