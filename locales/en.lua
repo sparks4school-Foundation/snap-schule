@@ -190,6 +190,11 @@ If you also create a private class, all these accounts will be associated to it.
 	If this was a mistake you can still approve them by clicking on the link
 	below. Otherwise, you're all set.
 	]],
+	msg_users_created = '@1 users created',
+	title_users_created = 'Users created',
+	err_no_users_created =
+		'No user accounts created! @1 users already exist.<br>' ..
+		'Please provide new usernames for the following users:',
 
 	-- Emails
 	-- ======

@@ -200,9 +200,7 @@ utils.create_learners = capture_errors(function (self)
 	if #existing_users > 0 then
 		usernames = {}
 		local msg =
-		'No user accounts created! ' ..
-		#existing_users .. ' users already exist.<br>' ..
-		'Please provide new usernames for the following users:<br><br>'
+			locale.get('err_no_users_created', #existing_users) .. '<br><br>'
 		for _, user in pairs(existing_users) do
 			msg = msg .. user.username .. '<br>'
 		end
@@ -233,8 +231,8 @@ utils.create_learners = capture_errors(function (self)
 	end
 	assert_error(db.query('COMMIT;'))
 	return jsonResponse({
-		message = #usernames .. ' users created.',
-		title = 'Users created',
+		message = locale.get('msg_users_created', #usernames),
+		title = locale.get('title_users_created'),
 		redirect = self:build_url('/user')
 	})
 end)

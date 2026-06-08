@@ -188,6 +188,11 @@ Falls dies ein Versehen war, können Sie den Benutzer dennoch genehmigen,
 indem Sie auf den untenstehenden Link klicken. Andernfalls ist keine weitere
 Maßnahme erforderlich.
 ]],
+	msg_users_created = '@1 Benutzer erstellt',
+	title_users_created = 'Benutzer erstellt',
+	err_no_users_created =
+		'Keine Accounts erstellt! @1 Accounts existieren bereits.<br>' ..
+		'Bitte gib neue Benutzernamen für die folgenden Benutzer ein:',
 
 	-- Emails
 	-- ======
