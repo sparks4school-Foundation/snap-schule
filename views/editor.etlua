@@ -35,14 +35,14 @@ if params.id then
 				<span class="v-editor__puzzle-list-tutorials-text">Tutorial</span>
 			</div>
 			<script>
-			let iframe = document.querySelector('.v-editor__iframe').contentWindow,
+			let contentWindow = iframe.contentWindow,
 				checkbox = document.querySelector('div.v-editor__puzzle-list-tutorials'),
 				ide,
 				interval = setInterval(
 					() => {
-						if (iframe.world) {
+						if (contentWindow.world) {
 							clearInterval(interval);
-							ide = iframe.world.children[0];
+							ide = contentWindow.world.children[0];
 						}
 					},
 					250
