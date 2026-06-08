@@ -113,6 +113,10 @@ If you also create a private class, all these accounts will be associated to it.
 	confirm_delete_usr = 'Are you sure you want to delete user @1?',
 	warning_no_return = 'WARNING! This action cannot be undone!',
 
+	-- Student Puzzles Page
+	-- ====================
+	title_students_puzzles = '@1\'s puzzles',
+
 	-- Contact
 	-- =======
 	contact_heading = 'Have questions or feedback?@1 We\'d love to hear from you.', -- @1 turns into a newline

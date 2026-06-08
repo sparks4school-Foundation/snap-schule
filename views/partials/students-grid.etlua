@@ -17,7 +17,7 @@
 				<% for _, student in pairs(students) do %>
 					<li class="v-class__options-students-list-item">
 						<span class="v-class__options-students-list-name">
-							<%= student.username %>
+							<a href="/user/<%= student.username %>"><%= student.username %></a>
 						</span>
 						<button class="v-class__options-students-list-remove" onclick="
 							confirm(
