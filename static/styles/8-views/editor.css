@@ -8,7 +8,19 @@
   inset: var(--space-56) 0 0 0;
   width: 100%; /* Strange conflict */
   height: calc(100% - var(--space-56)); /* Strange conflict */
+
+  &.--is-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.--is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
 }
+
 
 
 .v-editor__puzzle-list {
@@ -32,6 +44,26 @@
 
 
 
+/* Loading animation */
+
+#editor-placeholder {
+	background-image: url(/static/images/alonzo.svg);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-position-x: center;
+	background-position-y: center;
+	animation: 2s linear infinite hop;
+}
+
+@keyframes hop {
+	0% {transform: rotate(0deg);}
+	10% {transform: rotate(15deg);}
+	30% {transform: translateY(-100px);}
+	50% {transform: translateY(-105px) rotate(-10deg);}
+	80% {transform: translateY(0px) rotate(0deg);}
+}
 
 
 /* Top */
