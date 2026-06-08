@@ -110,6 +110,8 @@ If you also create a private class, all these accounts will be associated to it.
 	placeholder_new_password_repeat = 'new password (repeat)',
 	b_change_password = 'Change my password',
 
+	confirm_delete_usr = 'Are you sure you want to delete user @1?',
+	warning_no_return = 'WARNING! This action cannot be undone!',
 
 	-- Contact
 	-- =======

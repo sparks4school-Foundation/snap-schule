@@ -19,7 +19,23 @@
 						<span class="v-class__options-students-list-name">
 							<%= student.username %>
 						</span>
-						<button class="v-class__options-students-list-remove">
+						<button class="v-class__options-students-list-remove" onclick="
+							confirm(
+								'<%=
+									package.loaded.dialog(
+										'delete_user',
+										{ username = student.username })
+								%>',
+								() => {
+									cloud.delete(
+										'/perma_delete/<%= student.username %>',
+										() => { window.location.reload(); }
+									);
+									setTimeout(()=>{ window.location.reload(); }, 250);
+								}
+							);
+						"
+						>
 							<% render('frontend.static.svg.icon-cross--24x24') %>
 						</button>
 					</li>

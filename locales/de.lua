@@ -109,6 +109,8 @@ Bitte gib die Benutzernamen und Passwörter als CSV an – das ist eine einfache
 	placeholder_new_password_repeat = 'Neues Passwort bestätigen',
 	b_change_password = 'Passwort ändern',
 
+	confirm_delete_usr = '',
+	warning_no_return = 'WARNUNG! Diese Aktion kann nicht rückgängig gemacht werden!',
 
 	-- Contact
 	-- =======
