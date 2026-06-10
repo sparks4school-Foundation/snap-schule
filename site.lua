@@ -197,7 +197,8 @@ app:get('/user(/:username)', capture_errors(cached(function (self)
 		self.current_user.is_teacher and
 		self.queried_user.creator_id == self.current_user.id
 	then
-		self.puzzles = ProjectController.user_projects(self)
+		self.puzzles =
+			Projects:select('where username = ?', self.queried_user.username)
 		return { render = 'user_projects' }
 	else
 		self.account_type = self.current_user.is_teacher and 'teacher' or 'student'

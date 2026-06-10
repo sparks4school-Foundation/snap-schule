@@ -134,7 +134,10 @@ function utils:assert_can_view_puzzle(user, puzzle)
 		and user.username ~= puzzle.username
 		and not ((user ~= nil) and user:isadmin())
 	) then
-		yield_error(err.nonexistent_project)
+		local puzzle_owner = package.loaded.Users:find({ username = puzzle.username })
+		if not (user.is_teacher and puzzle_owner.creator_id == user.id) then
+			yield_error(err.nonexistent_project)
+		end
 	end
 end
 
