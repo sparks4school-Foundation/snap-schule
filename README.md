@@ -1,5 +1,7 @@
 # Snap! Schule
 
+![Snap! Schule](https://snap.schule/static/images/index-hero-placeholder.webp)
+
 Die kostenlose, didaktisch durchdachte Programmierumgebung für „Informatik und Medienbildung" in Baden-Württemberg.
 
 ---
