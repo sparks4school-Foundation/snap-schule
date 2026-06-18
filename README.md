@@ -16,12 +16,12 @@ Fertige Puzzles, Begleitmaterial und ein durchdachtes Lehrerkontosystem machen d
 
 ## Für wen ist Snap! Schule?
 
-**Lehrkräfte** – auch ohne Vorkenntnisse oder Informatikstudium:
+**Lehrkräfte** auch ohne Vorkenntnisse:
 - Lehrkräfte-Account anlegen
 - Anonyme Schüler:innen-Accounts einrichten und verwalten
 - Schülerprojekte und Lösungen einsehen
 
-**Schüler:innen** – ab Klassenstufe 6:
+**Schüler:innen** aller Altersstufen:
 - Blockprogrammierung direkt im Browser
 - Lehrplangerechte Puzzles und Aufgaben
 
@@ -29,9 +29,8 @@ Fertige Puzzles, Begleitmaterial und ein durchdachtes Lehrerkontosystem machen d
 
 ## Links
 
-|---|---|
-| Website | [snap.schule](https://snap.schule) |
-| Kontakt | [ium@sparks4school.org](mailto:ium@sparks4school.org) |
+- Website: [snap.schule](https://snap.schule)
+- Kontakt: [ium@sparks4school.org](mailto:ium@sparks4school.org)
 
 ---
 
@@ -58,4 +57,4 @@ sowie weitere Mitwirkende aus Hochschule, Schule und Industrie.
 
 ---
 
-[![sparks4school](https://sparks4school.org/wp-content/uploads/2026/04/SPARKS-transparent.png)](https://sparks4school.org)&nbsp;&nbsp;&nbsp;[![SAP](https://sparks4school.org/wp-content/uploads/2026/06/sap-logo-svg.svg)](https://sap.com)&nbsp;&nbsp;&nbsp;[![UC Berkeley](https://snap.schule/static/logos/berkeley--white.png)](https://snap.berkeley.edu)
+<a href="https://sparks4school.org"><img src="https://sparks4school.org/wp-content/uploads/2026/04/SPARKS-transparent.png" height="40" alt="sparks4school" style="vertical-align:middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://sap.com"><img src="https://sparks4school.org/wp-content/uploads/2026/06/sap-logo-svg.svg" height="40" alt="SAP" style="vertical-align:middle"></a>&nbsp;&nbsp;&nbsp;<a href="https://snap.berkeley.edu"><img src="https://sparks4school.org/wp-content/uploads/2026/06/logo-variations-thumbnail-blue-white-scaled.webp" height="100" alt="UC Berkeley" style="vertical-align:middle"></a>
