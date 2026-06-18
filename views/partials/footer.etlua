@@ -7,9 +7,10 @@ local menu = {
 }
 
 local credits = {
-	{'Berkeley', 'https://www.berkeley.edu/', 'berkeley--white.png'},
-	{'SAP', 'https://www.sap.com', 'sap--white.png'},
 	{'Sparks4School', 'https://sparks4school.org/', 'sparks4school--white.png'},
+	{'SAP', 'https://www.sap.com', 'sap--white.png'},
+	{'Berkeley', 'https://www.berkeley.edu/', 'berkeley--white.png'},
+	
 }
 
 local legal_pages = {
