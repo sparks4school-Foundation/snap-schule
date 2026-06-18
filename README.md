@@ -57,4 +57,8 @@ sowie weitere Mitwirkende aus Hochschule, Schule und Industrie.
 
 ---
 
-<a href="https://sparks4school.org"><img src="https://sparks4school.org/wp-content/uploads/2026/04/SPARKS-transparent.png" height="40" alt="sparks4school" style="vertical-align:middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://sap.com"><img src="https://sparks4school.org/wp-content/uploads/2026/06/sap-logo-svg.svg" height="40" alt="SAP" style="vertical-align:middle"></a>&nbsp;&nbsp;&nbsp;<a href="https://snap.berkeley.edu"><img src="https://sparks4school.org/wp-content/uploads/2026/06/logo-variations-thumbnail-blue-white-scaled.webp" height="100" alt="UC Berkeley" style="vertical-align:middle"></a>
+<div style="display:flex;align-items:center;gap:40px">
+  <a href="https://sparks4school.org"><img src="https://sparks4school.org/wp-content/uploads/2026/04/SPARKS-transparent.png" height="40" alt="sparks4school"></a>
+  <a href="https://sap.com"><img src="https://sparks4school.org/wp-content/uploads/2026/06/sap-logo-svg.svg" height="40" alt="SAP"></a>
+  <a href="https://snap.berkeley.edu"><img src="https://sparks4school.org/wp-content/uploads/2026/06/logo-variations-thumbnail-blue-white-scaled.webp" height="100" alt="UC Berkeley"></a>
+</div>
