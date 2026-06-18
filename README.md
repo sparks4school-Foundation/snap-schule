@@ -45,14 +45,14 @@ Lizenz: [GPL-3.0](LICENSE)
 
 ## Mitwirkende
 
-- **Marc Campreciós** (selbständiger Webdesigner) – Designer von MicroBlocks, gestaltet die Webseite ansprechend für die Schule.
+- **Bernat Romagosa** (SAP)
 - **Daniel Domscheit-Berg** (Verstehbahnhof)
+- **Jadga Hügle** (SAP)
+- **Jens Mönig** (SAP)
+- **Marc Campreciós** (selbständiger Webdesigner)
+- **Prof. Dr. Tilman Michaeli** (TU München)
 - **Sébastien Elbracht** (sparks4school)
 - **Steffen Haschler** (sparks4school)
-- **Jadga Hügle** (SAP)
-- **Prof. Dr. Tilman Michaeli** (TU München)
-- **Jens Mönig** (SAP)
-- **Bernat Romagosa** (SAP) – Entwickler von Snap! und MicroBlocks, verantwortet die Webseite technisch.
 
 sowie weitere Mitwirkende aus Hochschule, Schule und Industrie.
 
