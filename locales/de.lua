@@ -131,7 +131,7 @@ Bitte gib die Benutzernamen und Passwörter als CSV an – das ist eine einfache
 	placeholder_captcha = 'Captcha eingeben',
 	title_captcha_failed = 'Captcha fehlgeschlagen',
 	b_signup = 'Registrieren',
-	review_pending_header = 'Accounterstellung für Snap!Schule wird überprüft',
+	review_pending_header = 'Accounterstellung für Snap! Schule wird überprüft',
 	review_pending_text = [[
 **Vielen Dank für deine Anfrage eines kostenlosen Snap! Schule Accounts**
 
@@ -164,7 +164,7 @@ Vielen Dank!
 	b_team = "Team",
 	b_privacy = "Datenschutzerklärung",
 	b_imprint = "Impressum",
-	footer_credits_statement = 'snap.schule ist ein Projekt von UC&nbsp;Berkeley, SAP, SPARKS',
+	footer_credits_statement = 'Snap! Schule ist ein Projekt von sparks4school Foundation, SAP, UC&nbsp;Berkeley',
 
 	-- Errors and messages
 	-- ===================
@@ -175,7 +175,7 @@ Vielen Dank!
 # Der Benutzer _@1_ wurde erstellt
 
 Es wurde eine E-Mail an den Benutzer gesendet, um ihn darüber zu informieren,
-dass er freigeschaltet wurde und sich nun bei Snap!Schule anmelden kann.
+dass er freigeschaltet wurde und sich nun bei Snap! Schule anmelden kann.
 ]],
 	title_user_rejected = 'Benutzerantrag abgelehnt',
 	msg_user_rejected = [[
@@ -197,14 +197,14 @@ Maßnahme erforderlich.
 	-- Emails
 	-- ======
 	-- User account creation request. Sent to admin.
-	email_signup_subject = '[Snap!Schule] Neue Signup Anfrage',
+	email_signup_subject = '[Snap! Schule] Neue Signup Anfrage',
 	email_signup_heading = 'User Signup Antrag',
-	email_signup_text = 'Ein neuer User möchte Zugang zu Snap!Schule:',
+	email_signup_text = 'Ein neuer User möchte Zugang zu Snap! Schule:',
 	email_signup_accept = 'Bestätigen',
 	email_signup_reject = 'Ablehnen',
 	-- User account creation accepted. Sent to user.
-	email_accepted_subject = '[Snap!Schule] Ihr Account wurde freigeschaltet',
-	email_accepted_heading = 'Ihr Account für Snap!Schule wurde freigeschaltet',
+	email_accepted_subject = '[Snap! Schule] Ihr Account wurde freigeschaltet',
+	email_accepted_heading = 'Ihr Account für Snap! Schule wurde freigeschaltet',
 	email_accepted_text = 'Du kannst dich nun mit den folgenden Zugangsdaten in dein Konto unter @1 einloggen:',
 	email_accepted_change_pwd = 'Bitte das Passwort beim ersten Einloggen ändern.',
 
