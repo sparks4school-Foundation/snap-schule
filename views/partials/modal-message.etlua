@@ -86,11 +86,32 @@
 						this,
 						modalMessage.querySelector('.c-modal-message__prompt').value
 					);
+					toggleModalMessage();
 				}
 			}
 			if (onCancel) {
 				cancelModalMessage = () => { toggleModalMessage(); onCancel.call() };
 			}
-		}
+			let link = modalMessage.querySelector('.c-button__okay'); // may be a link or a button
+			let button = document.createElement('button');
+			button.className = 'c-button c-button__okay --yellow --small';
+			button.onclick = okayModalMessage;
+			button.innerHTML = link.innerHTML;
+			link.replaceWith(button);
+		};
+
+		function externalLinkWarning(url) {
+			modalMessage.querySelector('.c-modal-message__title').innerText = 'External link';
+			modalMessage.querySelector('.c-modal-message__message').innerHTML = "<%- locale.get('warning_external_url') %>" + '<br><br>' + URL.parse(url).host + '<br><br>';
+			let button = modalMessage.querySelector('.c-button__okay');
+			let link = document.createElement('a');
+			link.className = "c-modal-message__link c-button c-button__okay --yellow --small";
+			link.target = '_blank';
+			link.innerHTML = button.innerHTML;
+			button.replaceWith(link);
+			modalMessage.querySelector('.c-modal-message__link').href = url;
+			okayModalMessage = () => {};
+			toggleModalMessage('confirm');
+		};
 	</script>
 </div>

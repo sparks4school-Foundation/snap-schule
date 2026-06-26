@@ -29,6 +29,9 @@
 	opacity: 0.5;
 }
 
+.c-modal-message__link {
+	font-size: var(--fontSize-16); /* needed because? */
+}
 
 .c-modal-message__contents {
 	position: relative;
@@ -44,6 +47,7 @@
 	line-height: var(--lineHeight-140);
 	text-align: center;
 	text-wrap: balance;
+	word-break: break-word;
 }
 
 .c-modal-message__buttons {

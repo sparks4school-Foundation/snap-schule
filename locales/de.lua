@@ -194,6 +194,10 @@ Maßnahme erforderlich.
 		'Keine Accounts erstellt! @1 Accounts existieren bereits.<br>' ..
 		'Bitte gib neue Benutzernamen für die folgenden Benutzer ein:',
 
+	err_login_failed = 'Anmeldung fehlgeschlagen',
+
+	warning_external_url = 'Sie sind im Begriff, Snap! Schule zu verlassen und einem Link von der folgenden Domain zu folgen:',
+
 	-- Emails
 	-- ======
 	-- User account creation request. Sent to admin.

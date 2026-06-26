@@ -100,7 +100,8 @@
 										url	 		= link[2],
 										color		= 'black',
 										icon		= 'arrow-up-right',
-										target	= '_blank'
+										target	= '_blank',
+										external = true
 									}
 								)
 							%>

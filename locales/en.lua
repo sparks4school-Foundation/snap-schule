@@ -133,18 +133,17 @@ If you also create a private class, all these accounts will be associated to it.
 	title_captcha_failed = 'Captcha failed',
 	b_signup = 'Sign up',
 	review_pending_header = 'User creation pending review',
-	review_pending_text = [[
-	# Thank you for your request.
+	review_pending_text = [[# Thank you for your request.
 
-	We are now reviewing your application and we will get back to you very soon
-	with details on how to access your account.
+We are now reviewing your application and we will get back to you very soon
+with details on how to access your account.
 
-	Please regularly check your email inbox, including the spam folder.
+Please regularly check your email inbox, including the spam folder.
 
-	If you don't receive any news from us within the next working day, please
-	write to us at @1.
+If you don't receive any news from us within the next working day, please
+write to us at @1.
 
-	Thank you!
+Thank you!
 	]],
 
 	-- Login
@@ -174,27 +173,29 @@ If you also create a private class, all these accounts will be associated to it.
 	err_unauthorized = 'You do not have permission to perform this action',
 	err_captcha = 'Captcha challenge failed',
 	title_user_created = 'User created',
-	msg_user_created = [[
-	# User _@1_ has been created
+	msg_user_created = [[# User _@1_ has been created
 
-	An email has been sent to the user notifying them that they have been
-	approved and can now log into Snap!Schule.
+An email has been sent to the user notifying them that they have been
+approved and can now log into Snap!Schule.
 	]],
 	title_user_rejected = 'User application rejected',
-	msg_user_rejected = [[
-	# Application rejected
+	msg_user_rejected = [[# Application rejected
 
-	The registration application for the user with email __@1__ has been rejected
-	by you.
+The registration application for the user with email __@1__ has been rejected
+by you.
 
-	If this was a mistake you can still approve them by clicking on the link
-	below. Otherwise, you're all set.
+If this was a mistake you can still approve them by clicking on the link
+below. Otherwise, you're all set.
 	]],
 	msg_users_created = '@1 users created',
 	title_users_created = 'Users created',
 	err_no_users_created =
 		'No user accounts created! @1 users already exist.<br>' ..
 		'Please provide new usernames for the following users:',
+
+	err_login_failed = 'Login failed',
+
+	warning_external_url = 'You are about to leave Snap! Schule and follow a link from the following domain:',
 
 	-- Emails
 	-- ======
