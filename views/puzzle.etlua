@@ -16,7 +16,9 @@
 		</div>
 
 		<div class="v-puzzle__header-text">
+			<% if grade ~= 'unknown' then %>
 			<p class="v-puzzle__header-grade"><%= locale.get('nth_grade', locale.get('nth_' .. grade)) %></p>
+			<% end %>
 			<h1 class="v-puzzle__header-title"><%= puzzle.projectname %></h1>
 			<p class="v-puzzle__header-intro"><%= summary or '' %></p>
 			<div class="v-puzzle__header-links">

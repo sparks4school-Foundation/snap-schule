@@ -48,7 +48,8 @@
   font-family: var(--fontFamily-mono);
   font-size: var(--fontSize-18);
   color: var(--color-yellow);
-  text-transform: lowercase;
+  /* Capitalization is not optional in German! */
+  /* text-transform: lowercase; */
 }
 
 

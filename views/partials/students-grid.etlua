@@ -11,6 +11,27 @@
 
 	<div class="v-class__options-contents">
 
+	<div class="v-user__options-column">
+		<div class="v-user__options-block">
+				<h3 class="v-user__options-block-title">So verwaltest du deine Schüler:innen</h3>
+				<div class="v-user__options-block-contents">
+					<%
+						render(
+							'frontend.views.partials.markdown',
+							{ content = [[
+Hier siehst du alle Accounts, die du angelegt hast. Klicke auf einen
+Benutzernamen, um die gespeicherten Projekte dieser Schüler:in einzusehen.
+Möchtest du einen Account entfernen, klicke einfach auf das X neben dem
+Benutzernamen. Der Account wird damit dauerhaft gelöscht.
+Accounts, die länger als 12 Monate inaktiv sind, werden automatisch gelöscht.
+							]] }
+						)
+				%>
+				</div>
+			</div>
+
+	</div>
+	<div class="v-user__options-column">
 		<div class="v-class__options-students">
 			<h3 class="v-class__options-title"><%= locale.get('title_students') %></h3>
 			<ul class="v-class__options-students-list">
@@ -44,5 +65,4 @@
 		</div>
 	</div>
 	<% end %>
-
 </div>

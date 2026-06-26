@@ -8,9 +8,11 @@
 	</div>
 
 	<div class="c-card-puzzle__text">
+		<% if grade ~= 'unknown' then %>
 		<div class="c-card-puzzle__grade">
 			<%= locale.get('nth_grade', locale.get('nth_' .. grade)) %>
 		</div>
+		<% end %>
 		<h3 class="c-card-puzzle__title"><%= puzzle.projectname %></h3>
 	</div>
 

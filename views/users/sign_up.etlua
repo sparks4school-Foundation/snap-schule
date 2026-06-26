@@ -2,7 +2,11 @@
 
 <h1 class="v-auth__title" localizable><%- locale.get('signup_title', '<em>!</em>') %></h1>
 
+
+
 <div class="c-user-form">
+	<p>Bitte verwende für die Registrierung eine dienstliche E-Mail-Adresse (@bw.schule, @beispielschule.de, ...). Falls du keine dienstliche E-Mail-Adresse hast, melde dich gerne bei uns.</p>
+	<br>
 	<form id="form-signup" action="sign_up_result" onsubmit="formValidation(event)">
 
 		<input type="hidden" name="csrf_token" id="csrf_token" value="<%- csrf_token %>">

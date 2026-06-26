@@ -13,7 +13,7 @@
 		<h2 class="c-qr__dialogue-title"><%= dialogue_title or '' %></h2>
 		<p class="c-qr__element-title"><%= element_title or '' %></p>
 		<div class="c-qr__image-wrapper" data-qr="img-wrapper"></div>
-		<a class="c-qr__anchor" href="<%= url %>"><%= url %></a>
+		<a class="c-qr__anchor" href="<%= url %>"><%= qr_url:gsub('^http.*//','') %></a>
 	</div>
 
 	<div

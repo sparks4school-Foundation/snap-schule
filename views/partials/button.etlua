@@ -2,6 +2,11 @@
 local color_class = '--' .. color
 -- TODO Best practice to pass the whole file name directly?
 local icon_path = 'frontend.static.svg.icon-' .. icon .. '--24x24'
+	if (ngx.var.cloud_url ~= '') then
+		base_url = ngx.var.cloud_url
+	else
+		base_url = ngx.var.scheme .. '://' .. ngx.var.host .. ':' .. ngx.var.server_port
+	end
 %>
 
 <a
