@@ -35,9 +35,34 @@
 
 	</div>
 
-
-
-	<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
-	<% render('frontend.views.partials.section-index-puzzles', { grade = 7, placeholder = true }) %>
+	<%
+		render(
+			'frontend.views.partials.section-index-puzzles',
+			{
+				grade = 6,
+				extra_slides = {
+					{
+						thumbnail = 'external-link-thumbnail.webp',
+						title = 'Medienbildung Material',
+						href = 'https://sparks4school.org/ium/'
+					}
+				}
+			}
+		)
+		render(
+			'frontend.views.partials.section-index-puzzles',
+			{
+				grade = 7,
+				placeholder = true,
+				extra_slides = {
+					{
+						thumbnail = 'coming-soon-thumbnail.webp',
+						title = 'Veröffentlichung am 01.09.2026',
+						href = 'https://sparks4school.org/newsletter/'
+					}
+				}
+			}
+		)
+	%>
 
 </div>

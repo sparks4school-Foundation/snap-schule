@@ -20,7 +20,24 @@
 				)
 			%>
 		</div>
-		<% end %>
+		<%
+		end
+		for idx, slide in pairs(extra_slides) do
+		%>
+		<div class="swiper-slide c-puzzles-slider__slide">
+		<%
+			render(
+				'frontend.views.partials.card-generic',
+				{
+					grade = grade,
+					title = slide.title,
+					href = slide.href,
+					thumbnail = slide.thumbnail
+				}
+			)
+		end
+		%>
+		</div>
 	</div>
 
 	<div class="c-puzzles-slider__controls-wrapper">

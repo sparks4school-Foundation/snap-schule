@@ -41,20 +41,15 @@ render(
 
 	<div class="v-index__puzzles-slider">
 	<%
-		if placeholder then
-		%>
-			<p><%= locale.get('text_coming_soon') %></p>
-		<%
-		else
 		render(
 			'frontend.views.partials.puzzles-slider',
 			{
 				grade = grade,
 				puzzles = puzzles,
-				collection = collection
+				collection = collection,
+				extra_slides = extra_slides
 			}
 		)
-		end
 	%>
 	</div>
 </section>

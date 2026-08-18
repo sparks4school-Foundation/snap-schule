@@ -1,0 +1,19 @@
+<article class="c-card-puzzle">
+
+	<div class="c-card-puzzle__image">
+		<img src="/static/images/<%= thumbnail %>" alt="">
+	</div>
+
+	<div class="c-card-puzzle__text">
+		<% if grade ~= 'unknown' then %>
+		<div class="c-card-puzzle__grade">
+			<%= locale.get('nth_grade', locale.get('nth_' .. grade)) %>
+		</div>
+		<% end %>
+		<h3 class="c-card-puzzle__title"><%= title %></h3>
+	</div>
+
+	<a href="<%= href %>" target="_blank" class="c-card-puzzle__anchor"
+		title="<%= title %>"></a>
+
+	</article>
