@@ -39,6 +39,19 @@
 		render(
 			'frontend.views.partials.section-index-puzzles',
 			{
+				grade = 5,
+				extra_slides = {
+					{
+						thumbnail = 'coming-soon-thumbnail.webp',
+						title = 'Weitere Puzzle ab dem 07.09.2026',
+						href = 'https://sparks4school.org/newsletter/'
+					}
+				}
+			}
+		)
+		render(
+			'frontend.views.partials.section-index-puzzles',
+			{
 				grade = 6,
 				extra_slides = {
 					{
@@ -56,7 +69,7 @@
 				extra_slides = {
 					{
 						thumbnail = 'coming-soon-thumbnail.webp',
-						title = 'Veröffentlichung am 01.09.2026',
+						title = 'Weitere Puzzle ab dem 07.09.2026',
 						href = 'https://sparks4school.org/newsletter/'
 					}
 				}
