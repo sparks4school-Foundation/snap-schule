@@ -66,6 +66,7 @@ local locale = {
 	dd_all_grades = "All Grades",
 	dd_grade_5 = "Grade 5",
 	dd_grade_6 = "Grade 6",
+	dd_grade_7 = "Grade 7",
 
 	-- Puzzle Page
 	-- ===========
