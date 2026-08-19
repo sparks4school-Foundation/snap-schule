@@ -14,10 +14,10 @@
 				for i, col in
 					pairs(
 						package.loaded.Collections:select(
-						package.loaded.db.clause({
-							creator_id = jadga.id,
-							"name ilike '%state%'"
-						})
+							package.loaded.db.clause({
+								creator_id = jadga.id,
+								"name ilike '%state%'"
+							})
 					)) do %>
 					<option value="<%= col.name %>">
 						<%= locale.get('dd_' .. string.lower(col.name):gsub('%s','_')) %>
@@ -32,13 +32,15 @@
 			<option value="all"><%= locale.get('dd_all_grades') %></option>
 			<%
 				for i, col in
-					pairs(
+					ipairs(
 						package.loaded.Collections:select(
-						package.loaded.db.clause({
-							creator_id = jadga.id,
-							"name ilike '%grade%'"
-						})
-				)) do %>
+							'WHERE ? ORDER BY name ASC',
+							package.loaded.db.clause({
+								creator_id = jadga.id,
+								"name ilike '%grade%'"
+							})
+					)
+				) do %>
 					<option value="<%= col.id %>"
 						<%- collection.name == col.name and 'selected' or '' %>
 					>
