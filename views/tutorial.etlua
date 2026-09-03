@@ -1,0 +1,22 @@
+<div class="v-tutorial__top u-padding-x">
+
+	<div class="v-tutorial__video-wrapper">
+		<video controls class="v-tutorial__video">
+			<source src="/static/videos/sample.mp4" type="video/mp4">
+			Your browser doesn't support video.
+		</video>
+	</div>
+
+	<header class="v-tutorial__top-text">
+		<h1 class="v-tutorial__top-title">Tutorial Name</h1>
+		<p class="v-tutorial__top-intro">A summary about the tutorial, although I'm not sure it is necessary</p>
+	</header>
+
+</div>
+
+
+<div class="u-padding-x">
+	<div class="v-tutorial__contents">
+		<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
+	</div>
+</div>

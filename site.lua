@@ -108,6 +108,10 @@ app:get('/getting_started', capture_errors(cached(function (self)
 	return { render = 'static/getting_started', css_class = 'getting-started' }
 end)))
 
+app:get('/tutorial', capture_errors(cached(function (self)
+	return { render = 'tutorial', css_class = 'tutorial' }
+end)))
+
 for route, view_path in pairs(user_forms) do
 	app:get('/' .. route, capture_errors(cached(function (self)
 		self.csrf_token = csrf.generate_token(self)
