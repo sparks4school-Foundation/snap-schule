@@ -260,7 +260,7 @@ app:get('/accept_request/:email', capture_errors(function (self)
 	if self.current_user and self.current_user:isadmin() then
 		local salt = secure_salt()
 		local password, prehash = random_password()
-		local username = util.trim(tostring(self.params.email):lower())
+		local username = package.loaded.util.trim(self.params.email):lower()
 		if Users:find({ username = username }) then
 			self.title = 'User exists'
 			self.contents = [[This user has been approved by another administrator
