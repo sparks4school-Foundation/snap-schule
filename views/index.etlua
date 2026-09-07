@@ -42,6 +42,11 @@
 				grade = 5,
 				extra_slides = {
 					{
+						thumbnail = 'external-link-thumbnail.webp',
+						title = 'Medienbildung Material',
+						href = 'https://sparks4school.org/ium/'
+					},
+					{
 						thumbnail = 'coming-soon-thumbnail.webp',
 						title = 'Weitere Puzzle ab dem 07.09.2026',
 						href = 'https://sparks4school.org/newsletter/'
@@ -67,6 +72,11 @@
 			{
 				grade = 7,
 				extra_slides = {
+					{
+						thumbnail = 'external-link-thumbnail.webp',
+						title = 'Medienbildung Material',
+						href = 'https://sparks4school.org/ium/'
+					},
 					{
 						thumbnail = 'coming-soon-thumbnail.webp',
 						title = 'Weitere Puzzle ab dem 07.09.2026',

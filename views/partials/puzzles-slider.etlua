@@ -35,9 +35,9 @@
 					thumbnail = slide.thumbnail
 				}
 			)
-		end
 		%>
 		</div>
+		<% end %>
 	</div>
 
 	<div class="c-puzzles-slider__controls-wrapper">
