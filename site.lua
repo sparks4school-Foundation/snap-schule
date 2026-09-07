@@ -260,7 +260,8 @@ app:get('/accept_request/:email', capture_errors(function (self)
 	if self.current_user and self.current_user:isadmin() then
 		local salt = secure_salt()
 		local password, prehash = random_password()
-		if Users:find({ username = self.params.email }) then
+		local username = util.trim(tostring(self.params.email):lower())
+		if Users:find({ username = username }) then
 			self.title = 'User exists'
 			self.contents = [[This user has been approved by another administrator
 			before you.]]
@@ -268,7 +269,7 @@ app:get('/accept_request/:email', capture_errors(function (self)
 		end
 		local user = Users:create({
 			created = db.format_date(),
-			username = self.params.email,
+			username = username,
 			salt = salt,
 			password = hash_password(prehash, salt),
 			email = self.params.email,
@@ -280,10 +281,10 @@ app:get('/accept_request/:email', capture_errors(function (self)
 		send_mail(
 			self.params.email,
 			locale.get('email_accepted_subject'),
-			schule_utils:accepted_email_body(self.params.email, password)
+			schule_utils:accepted_email_body(username, password)
 		)
 		self.title = locale.get('title_user_created')
-		self.contents = locale.get('msg_user_created', self.params.email)
+		self.contents = locale.get('msg_user_created', username)
 		return { render = 'message' }
 	else
 		self.title = 'Error'
