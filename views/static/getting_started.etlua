@@ -1,0 +1,199 @@
+<header class="v-getting-started__header u-padding-x">
+	<div class="v-getting-started__header-subtitle">Erste Schritte</div>
+	<h1 class="v-getting-started__header-title">In 15 Minuten startklar für deine erste Stunde</h1>
+	<ul class="v-getting-started__header-specs">
+		<li class="v-getting-started__header-specs-items">Kostenlos und werbefrei</li>
+		<li class="v-getting-started__header-specs-items">Gehostet in Deutschland</li>
+		<li class="v-getting-started__header-specs-items">DSGVO-konform</li>
+		<li class="v-getting-started__header-specs-items">Läuft im Browser, auch auf Tablets</li>
+	</ul>
+	<div class="v-getting-started__header-links">
+		<%
+			render(
+				'frontend.views.partials.button',
+				{
+					label	= 'Jetzt Kostenlos registrieren',
+					url	 	= '#',
+					color	= 'black',
+					icon	= 'arrow-up-right',
+					target	= '_blank'
+				}
+			)
+			render(
+				'frontend.views.partials.button',
+				{
+					label	= '7 Gründe für Snap! Schule',
+					url	 	= '#',
+					color	= 'black',
+					icon	= 'arrow-up-right',
+					target	= '_blank'
+				}
+			)
+		%>
+	</div>
+</header>
+
+<div class="u-padding-x">
+
+	<!-- Steps -->
+	<div class="v-getting-started__block u-border-top-double">
+
+		<div class="v-getting-started__block-title">
+			<h2 class="c-heading__section-title">In fünf Schritten zur ersten Stunde</h2>
+		</div>
+
+		<div class="v-getting-started__block-wrapper">
+			<div class="v-getting-started__block-text">
+				<%
+render(
+	'frontend.views.partials.markdown',
+	{ content = [[
+<video controls>
+  <source src="/static/videos/sample.mp4" type="video/mp4">
+  Your browser doesn't support video.
+</video>
+
+Einmal einrichten, dann immer wieder nutzen. Die Schritte 1 und 2 machst du einmal – danach beginnt jede weitere Stunde direkt bei Schritt 3.
+
+### 1. Konto anlegen.
+
+Registriere dich als Lehrkraft mit deiner E-Mail-Adresse.
+
+### 2. Klasse anlegen und Schüler-Accounts erzeugen.
+
+In deinem Konto erzeugst du so viele anonyme Schüler-Accounts, wie du brauchst: nur ein Benutzername und ein Passwort – keine Schülernamen, keine E-Mail-Adressen, keine persönlichen Daten. Die Zugangsdaten legst du als Tabelle an. Welche:r Schüler:in welchen Account hat, weißt nur du.
+
+### 3. Puzzle auswählen
+
+Die Puzzle folgen den Inhalten der jeweiligen Bildungspläne. Zu jedem Puzzle findest du eine Beschreibung, die informatischen Konzepte und Material zum Herunterladen.
+
+### 4. In der Stunde
+
+Zeig den QR-Code des Puzzles über den Beamer oder teile den Link. Deine Schüler:innen melden sich mit ihren Zugangsdaten an und legen los.
+
+### 5. Nächste Stunde
+
+Alles, was deine Klasse baut, wird im Konto gespeichert. In der nächsten Stunde geht es für die Schüler:innen nach der Anmeldung genau dort weiter.
+
+### Jederzeit: Die Ergebnisse der Schüler:innen einsehen
+
+Über deinen Lehrkraft-Account kannst du jederzeit in die gespeicherten Ergebnisse der Schüler:innen schauen und sie bei Bedarf als Datei speichern.
+]]
+})
+%>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Steps -->
+	<div class="v-getting-started__block u-border-top-double">
+
+		<div class="v-getting-started__block-title">
+			<h2 class="c-heading__section-title">Puzzle und Editor – wie ist das aufgebaut?</h2>
+		</div>
+
+		<div class="v-getting-started__block-wrapper">
+			<div class="v-getting-started__block-text">
+				<%
+render(
+	'frontend.views.partials.markdown',
+	{ content = [[
+### Was ist ein Puzzle?
+
+Ein Puzzle ist eine fertige Unterrichtseinheit für ein bis zwei Stunden mit eingebautem Tutorial und limitierten Blöcken. Es hat ein klares Ziel für die Schüler:innen und behandelt dabei didaktisch reduziert informatische Konzepte passend zum Bildungsplan. Zusätzlich gibt es für die Lehrkräfte Begleitmaterial zum Herunterladen.
+
+<img src="/static/images/getting-started--puzzle--de.webp" alt="Editor details" class="--has-border">
+
+### Was ist der Editor?
+
+Der Editor ist die Programmierumgebung. Links liegen die Blöcke, in der Mitte werden sie zu einem Skript zusammengesteckt, rechts läuft das Ergebnis sofort auf der Bühne.
+
+<img src="/static/images/getting-started--editor--de.webp" alt="Editor details">
+
+]]
+})
+%>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- FAQs -->
+	<div class="v-getting-started__block u-border-top-double">
+
+		<div class="v-getting-started__block-title">
+			<h2 class="c-heading__section-title">Häufige Fragen</h2>
+		</div>
+
+		<div class="v-getting-started__block-wrapper">
+			<div class="v-getting-started__block-text">
+				<%
+render(
+	'frontend.views.partials.markdown',
+	{ content = [[
+### Vertiefung: Eigene Puzzle umsetzen
+
+Du hast eine eigene Idee für eine Stunde? Im Editor kannst du jedes Projekt und Puzzle selbst bauen, speichern und mit deiner Klasse teilen. Eine ausführliche Anleitung für die Gestaltung von Tutorials folgt.
+
+Wir bauen Snap! Schule zusammen mit Lehrkräften. Wenn du eigene Materialien beisteuern oder mitgestalten willst: Schreib uns.
+
+### Brauchen meine Schüler:innen eine E-Mail-Adresse?
+
+Nein. Du legst die Accounts an; sie bestehen nur aus einem frei wählbaren Benutzername und Passwort.
+
+### Bin ich gebunden an die Plattform?
+
+Nein. Dateien, Snap!-Projekte und eigene Puzzle kannst du exportieren und anderswo weiterverwenden – alles in einem freien Datenformat.
+
+### Wofür brauche ich ein Konto?
+
+Aktiv verwenden kannst du Snap! Schule mit allen Puzzles auch ohne Account. Er ist aber hilfreich, denn mit einem Lehrkraft-Konto kannst du:
+
+- die gespeicherten Projekte deiner Klasse ansehen
+- anonyme Schüler-Accounts mit kostenlosem Cloud-Speicher für ihre Ergebnisse anlegen
+
+### Muss ich etwas installieren?
+
+Nein. Snap! Schule läuft im Browser – auf Schulrechnern, Laptops und Tablets gleichermaßen. Es genügt ein aktueller Browser und eine Internetverbindung.
+
+### Was kostet das?
+
+Nichts. Snap! Schule ist kostenlos und werbefrei. Die Software ist quelloffen (github.com/sparks4school-Foundation/snap-schule). Mehr über uns und warum wir das machen hier: snap.schule/team.
+
+### Ich bin mir beim Programmieren unsicher. Wie hilft mir Snap! Schule?
+
+Die Puzzle sind so gebaut, dass sie ohne Programmierkenntnisse in der Klasse durchführbar sind: Zu jedem gehören eine Beschreibung, die behandelten Konzepte und didaktisches Begleitmaterial.
+
+### Wie lange dauert es, bis mein Konto freigeschaltet ist?
+
+In der Regel nur wenige Stunden. Du bekommst eine E-Mail, sobald es so weit ist.
+
+### Was passiert am Ende des Schuljahres mit den Daten?
+
+Die Daten von inaktiven Schüler-Accounts werden zum nächsten Schuljahr gelöscht. Wenn du einzelne Projekte behalten willst, speichere sie vorher als Datei auf deinem eigenen Rechner.
+
+### Kann ich die Projekte meiner Klasse sehen?
+
+Ja. In deinem Konto siehst du die gespeicherten Projekte deiner Schüler:innen und welche Puzzle bearbeitet wurden.
+
+### Können meine Schüler:innen ihre Projekte veröffentlichen?
+
+Nein. Ein Projekt ist nur für dich und den zugehörigen Schüler-Account sichtbar. Eine Veröffentlichung nach außen über Snap! Schule gibt es nicht. Die Schüler:innen können jedoch ihre Projekte als Privatkopie herunterladen.
+
+### Wo bekomme ich Hilfe?
+
+Schreib uns an ium@sparks4school.org. Wir antworten zügig und Rückmeldungen von Lehrkräften sind der Grund, warum diese Seite besser wird.
+
+]]
+})
+%>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
