@@ -5,6 +5,8 @@ node_modules/
 # them anymore.
 static/img/totm.png
 
+static/videos
+
 .*.swp
 .*.swo
 .swp
