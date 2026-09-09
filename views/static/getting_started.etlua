@@ -13,7 +13,7 @@
 				'frontend.views.partials.button',
 				{
 					label	= 'Jetzt Kostenlos registrieren',
-					url	 	= '#',
+					url	 	= '/sign_up',
 					color	= 'black',
 					icon	= 'arrow-up-right',
 					target	= '_blank'
@@ -23,7 +23,7 @@
 				'frontend.views.partials.button',
 				{
 					label	= '7 Gründe für Snap! Schule',
-					url	 	= '#',
+					url	 	= '/why_snap',
 					color	= 'black',
 					icon	= 'arrow-up-right',
 					target	= '_blank'
