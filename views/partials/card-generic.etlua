@@ -13,7 +13,7 @@
 		<h3 class="c-card-puzzle__title"><%= title %></h3>
 	</div>
 
-	<a href="<%= href %>" target="_blank" class="c-card-puzzle__anchor"
+	<a href="<%= href %>" target="<%= self_page and '_self' or '_blank' %>" class="c-card-puzzle__anchor"
 		title="<%= title %>"></a>
 
 	</article>

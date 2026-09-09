@@ -1,15 +1,62 @@
+<%
+	local tutorials = {
+		{
+			filename = 'blocktypen',
+			title = 'BlockTypen',
+			description = ''
+		},
+		{
+			filename = 'einloggen',
+			title = 'Einloggen',
+			description = ''
+		},
+		{
+			filename = 'klangeaufnehmen',
+			title = 'Klänge Aufnehmen',
+			description = ''
+		},
+		{
+			filename = 'kostumewebcam',
+			title = 'Kostüme Webcam',
+			description = ''
+		},
+		{
+			filename = 'moduleladen',
+			title = 'Module Laden',
+			description = ''
+		},
+		{
+			filename = 'oberflache',
+			title = 'Oberfläche',
+			description = ''
+		},
+		{
+			filename = 'objekteinstellungen',
+			title = 'Objekteinstellungen',
+			description = ''
+		},
+		{
+			filename = 'visiblestepping',
+			title = 'Visible Stepping',
+			description = ''
+		}
+	}
+
+	local current = tutorials[params.num]
+%>
+
 <div class="v-tutorial__top u-padding-x">
 
 	<div class="v-tutorial__video-wrapper">
 		<video controls class="v-tutorial__video">
-			<source src="/static/videos/sample.mp4" type="video/mp4">
+			<source src="/static/videos/<%= current.filename %>.mp4" type="video/mp4">
 			Your browser doesn't support video.
 		</video>
 	</div>
 
 	<header class="v-tutorial__top-text">
-		<h1 class="v-tutorial__top-title">Tutorial Name</h1>
-		<p class="v-tutorial__top-intro">A summary about the tutorial, although I'm not sure it is necessary</p>
+		<h1 class="v-tutorial__top-title"><%= current.title %></h1>
+		<p class="v-tutorial__top-intro"><%= current.description %></p>
 	</header>
 
 </div>
@@ -17,6 +64,56 @@
 
 <div class="u-padding-x">
 	<div class="v-tutorial__contents">
-		<% render('frontend.views.partials.section-index-puzzles', { grade = 6 }) %>
+		<section class="v-index__puzzles">
+			<div class="v-index__puzzles-heading">
+				<%
+					render(
+						'frontend.views.partials.section-heading-full-width',
+						{ title = locale.get('title_other_tutorials') }
+					)
+				%>
+			</div>
+			<div class="v-index__puzzles-slider">
+				<div class="c-puzzles-slider" data-puzzles-slider="wrapper">
+					<div class="swiper-wrapper">
+					<%
+						for idx, tutorial in pairs(tutorials) do
+					%>
+						<div class="swiper-slide c-puzzles-slider__slide">
+						<%
+							render(
+								'frontend.views.partials.card-generic',
+								{
+									grade = 'unknown',
+									title = tutorial.title,
+									href = '/tutorial?num=' .. tostring(idx),
+									self_page = true,
+									thumbnail = 'tutorial-' .. tutorial.filename .. '.png'
+								}
+							)
+						%>
+						</div>
+					<% end %>
+					</div>
+					<div class="c-puzzles-slider__controls-wrapper">
+
+						<button
+							class="c-puzzles-slider__control --previous"
+							aria-label="Previous"
+							data-puzzles-slider="button-prev"
+						><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+						<div class="c-puzzles-slider__pagination" data-puzzles-slider="pagination"></div>
+
+						<button
+							class="c-puzzles-slider__control --next"
+							aria-label="Next"
+							data-puzzles-slider="button-next"
+						><% render('frontend.static.svg.icon-arrow-right--24x24') %></button>
+
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 </div>

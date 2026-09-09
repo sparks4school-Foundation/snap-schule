@@ -1,6 +1,10 @@
 <%
 local menu = {
 	{locale.get('b_puzzles'), '/puzzles'},
+	{
+		locale.get(current_user.is_teacher and 'b_get_started' or 'b_tutorials'),
+		current_user.is_teacher and '/getting_started' or '/tutorial'
+	},
 	{'Snap! Editor', '/editor'},
 }
 %>

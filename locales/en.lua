@@ -27,6 +27,8 @@ local locale = {
 	b_join = "Join",
 	b_login = "Log In",
 	b_logout = "Log Out",
+	b_tutorials = "Tutorials",
+	b_get_started = "Getting Started",
 	b_puzzles = "Puzzles",
 	b_contact = "Contact",
 	hi_user = "Hi, @1!", -- @1 becomes the current user username
@@ -55,6 +57,10 @@ local locale = {
 	nth_10 = "10th",
 	nth_unknown = "unknown",
 	b_grade_puzzles = "Grade @1 Puzzles", -- @1 becomes a number
+
+	-- Tutorial Page
+	-- =============
+	title_other_tutorials = "Other Tutorials",
 
 	-- Puzzles Page
 	-- ============

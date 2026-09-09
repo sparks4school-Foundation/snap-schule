@@ -108,7 +108,12 @@ app:get('/getting_started', capture_errors(cached(function (self)
 	return { render = 'static/getting_started', css_class = 'getting-started' }
 end)))
 
-app:get('/tutorial', capture_errors(cached(function (self)
+app:get('/tutorial(/:num)', capture_errors(cached(function (self)
+	if self.params.num then
+		self.params.num = tonumber(self.params.num)
+	else
+		self.params.num = 1
+	end
 	return { render = 'tutorial', css_class = 'tutorial' }
 end)))
 

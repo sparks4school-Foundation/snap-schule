@@ -14,20 +14,22 @@ else
 			published = true
 		}
 	)
-	puzzles = CollectionController.projects({
-		params = {},
-		items_per_page = 200, -- max 200 projects to query from DB.
-		collection = collection,
-		cached = false,
-		fields = 'notes'
-	})
+	if collection then
+		puzzles = CollectionController.projects({
+			params = {},
+			items_per_page = 200, -- max 200 projects to query from DB.
+			collection = collection,
+			cached = false,
+			fields = 'notes'
+		})
 
-	link = {
-		label   = locale.get('b_grade_puzzles', grade),
-		url     = 'puzzles/' .. collection.id,
-		color   = 'yellow',
-		icon    = 'arrow-right',
-	}
+		link = {
+			label   = locale.get('b_grade_puzzles', grade),
+			url     = 'puzzles/' .. collection.id,
+			color   = 'yellow',
+			icon    = 'arrow-right',
+		}
+	end
 end
 render(
 	'frontend.views.partials.section-heading-full-width',

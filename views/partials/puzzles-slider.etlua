@@ -7,20 +7,22 @@
 			grade = schule_utils:grade_from_collection(collection)
 		end
 
-		for idx, puzzle in pairs(puzzles) do
-		%>
-		<div class="swiper-slide c-puzzles-slider__slide">
-			<%
-				render(
-					'frontend.views.partials.card-puzzle',
-					{
-						grade = grade,
-						puzzle = puzzle
-					}
-				)
+		if puzzles then
+			for idx, puzzle in pairs(puzzles) do
 			%>
-		</div>
-		<%
+			<div class="swiper-slide c-puzzles-slider__slide">
+				<%
+					render(
+						'frontend.views.partials.card-puzzle',
+						{
+							grade = grade,
+							puzzle = puzzle
+						}
+					)
+				%>
+			</div>
+			<%
+			end
 		end
 		if extra_slides then
 			for idx, slide in pairs(extra_slides) do
