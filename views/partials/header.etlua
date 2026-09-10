@@ -1,14 +1,13 @@
 <%
-local show_getting_started = (current_user ~= nil) and current_user.is_teacher
-
 local menu = {
 	{locale.get('b_puzzles'), '/puzzles'},
-	{
-		locale.get(show_getting_started and 'b_get_started' or 'b_tutorials'),
-		show_getting_started and '/getting_started' or '/tutorial'
-	},
+	{locale.get('b_tutorials'), '/tutorial'},
 	{'Snap! Editor', '/editor'},
 }
+
+if (current_user ~= nil) and current_user.is_teacher then
+	table.insert(menu, 2, {locale.get('b_get_started'), '/getting_started'})
+end
 %>
 
 <header class="c-header u-padding-x">
