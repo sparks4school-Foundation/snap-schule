@@ -1,44 +1,70 @@
 <%
 	local tutorials = {
 		{
-			filename = 'blocktypen',
-			title = 'BlockTypen',
-			description = ''
-		},
-		{
 			filename = 'einloggen',
-			title = 'Einloggen',
-			description = ''
-		},
-		{
-			filename = 'klangeaufnehmen',
-			title = 'Klänge Aufnehmen',
-			description = ''
-		},
-		{
-			filename = 'kostumewebcam',
-			title = 'Kostüme Webcam',
-			description = ''
-		},
-		{
-			filename = 'moduleladen',
-			title = 'Module Laden',
-			description = ''
+			title = 'Einloggen: bei snap.schule anmelden',
+			description = 'So kannst du dich bei snap.schule mit deinem Benutzernamen und Passwort einloggen.'
 		},
 		{
 			filename = 'oberflache',
 			title = 'Oberfläche',
-			description = ''
+			description = 'Überblick über die Snap! Entwicklungsumgebung.'
+		},
+		{
+			filename = 'blocktypen',
+			title = 'Blocktypen in Snap!',
+			description = 'Die Blocktypen Anweisung, Ausdruck, Bedingung und Ereignis erklärt.'
+		},
+		--[[
+		{
+			filename = '',
+			title = 'Kostüme laden',
+			description = 'Kostüme aus der Kostümbibliothek und von deinem Computer oder Tablet laden.'
+		},
+		{
+			filename = '',
+			title = 'Kostüme malen',
+			description = 'Kostüme mit dem Kostüm-Editor selbst malen.'
+		},
+		]]--
+		{
+			filename = 'kostumewebcam',
+			title = 'Kostüme mit der Webcam aufnehmen',
+			description = 'Kostüme mit der Webcam aufnehmen (benötigt eine Kamera). '
 		},
 		{
 			filename = 'objekteinstellungen',
 			title = 'Objekteinstellungen',
-			description = ''
+			description = 'Die Einstellungen von Objekten verstehen und verändern.'
+		},
+		--[[
+		{
+			filename = '',
+			title = 'Klänge laden',
+			description = 'Klänge aus der Klangbibliothek und von deinem Computer oder Tablet laden.'
+		},
+		]]--
+		{
+			filename = 'klangeaufnehmen',
+			title = 'Klänge aufnehmen',
+			description = 'Klänge mit dem Sound Recorder selbst aufnehmen.'
+		},
+		--[[
+		{
+			filename = '',
+			title = 'Variablen',
+			description = 'Variablen erstellen und anwenden, um Werte in Programmen abzuspeichern und zu verändern.'
+		},
+		]]--
+		{
+			filename = 'moduleladen',
+			title = 'Module laden',
+			description = 'Module mit weiteren Blöcken zu verschiedenen Themen laden.'
 		},
 		{
 			filename = 'visiblestepping',
-			title = 'Visible Stepping',
-			description = ''
+			title = 'Programmausführung verfolgen (visible stepping)',
+			description = 'Programmausführung verfolgen, um Fehler in Programmen einfacher zu finden und zu beheben.'
 		}
 	}
 
