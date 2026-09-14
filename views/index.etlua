@@ -19,18 +19,26 @@
 		</div>
 
 		<div class="v-index__links">
-			<% render('frontend.views.partials.button', {
+			<%
+			render('frontend.views.partials.button', {
+				label   = locale.get('b_get_started'),
+				url     = '/getting_started',
+				color   = 'yellow',
+				icon    = 'light-bulb',
+			})
+			render('frontend.views.partials.button', {
 				label   = locale.get('b_whysnap'),
 				url     = '/why_snap',
 				color   = 'yellow',
 				icon    = 'light-bulb',
-			}) %>
-			<% render('frontend.views.partials.button', {
+			})
+			render('frontend.views.partials.button', {
 				label   = locale.get('b_team'),
 				url     = '/team',
 				color   = 'yellow',
 				icon    = 'teacher',
-			}) %>
+			})
+			%>
 		</div>
 
 	</div>
@@ -45,11 +53,6 @@
 						thumbnail = 'external-link-thumbnail.webp',
 						title = 'Medienbildung Material',
 						href = 'https://sparks4school.org/ium/'
-					},
-					{
-						thumbnail = 'coming-soon-thumbnail.webp',
-						title = 'Weitere Puzzle ab dem 14.09.2026',
-						href = 'https://sparks4school.org/newsletter/'
 					}
 				}
 			}
@@ -77,11 +80,13 @@
 						title = 'Medienbildung Material',
 						href = 'https://sparks4school.org/ium/'
 					},
+					--[[
 					{
 						thumbnail = 'coming-soon-thumbnail.webp',
 						title = 'Weitere Puzzle ab dem 14.09.2026',
 						href = 'https://sparks4school.org/newsletter/'
 					}
+					]]--
 				}
 			}
 		)
