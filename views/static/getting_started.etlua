@@ -48,11 +48,6 @@
 render(
 	'frontend.views.partials.markdown',
 	{ content = [[
-<video controls>
-  <source src="/static/videos/sample.mp4" type="video/mp4">
-  Your browser doesn't support video.
-</video>
-
 Einmal einrichten, dann immer wieder nutzen. Die Schritte 1 und 2 machst du einmal – danach beginnt jede weitere Stunde direkt bei Schritt 3.
 
 ### 1. Konto anlegen.
