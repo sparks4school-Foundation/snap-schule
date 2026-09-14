@@ -195,12 +195,13 @@ end)))
 
 -- CLASSES --
 
+--[[
 app:get('/class/:id', capture_errors(cached(function (self)
 	self.class = Collections:find({ id = self.params.id })
 	assert_can_view_collection(self, self.class)
 	return { render = 'class' }
 end)))
-
+]]--
 
 -- USERS --
 
@@ -328,6 +329,9 @@ app:get('/user_admin', capture_errors(function (self)
 		return { redirect_to = self:build_url('/') }
 	end
 end))
+
+
+-- API ADDITIONS --
 
 app:match('/perma_delete/:username', respond_to({
 	DELETE = function (self)
