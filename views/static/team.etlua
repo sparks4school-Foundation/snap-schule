@@ -1,3 +1,4 @@
+<% content_for('title', locale.get('b_team')) %>
 <div class="v-text__contents u-padding-x">
 
 	<header class="v-text__header">

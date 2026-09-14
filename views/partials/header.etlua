@@ -50,20 +50,27 @@ local menu = {
 		</select>
 		-->
 
-		<!-- DISABLED FOR NOW. WILL ENABLE AFTER LAUNCH WHEN IT'S PROPERLY TESTED -->
-		<% if false and options.render == 'editor' and puzzles then %>
-		<div
-			class="c-header__class-puzzles"
-			data-menu="class-puzzles"
-			aria-controls="editor-puzzle-list"
-			aria-expanded="false"
-			role="button"
-		>
-			<div class="c-header__class-puzzles-icon">
-				<% render('frontend.static.svg.icon-chevron-down--24x24') %>
+		<% if options.render == 'editor' then %>
+		<span>
+		<%= puzzle and puzzle.projectname or '' %>
+		</span>
+
+
+		<% if false and puzzles then %>
+			<!-- DISABLED FOR NOW. WILL ENABLE AFTER LAUNCH WHEN IT'S PROPERLY TESTED -->
+			<div
+				class="c-header__class-puzzles"
+				data-menu="class-puzzles"
+				aria-controls="editor-puzzle-list"
+				aria-expanded="false"
+				role="button"
+			>
+				<div class="c-header__class-puzzles-icon">
+					<% render('frontend.static.svg.icon-chevron-down--24x24') %>
+				</div>
+				<div class="c-header__class-puzzles-text">Class Puzzles</div>
 			</div>
-			<div class="c-header__class-puzzles-text">Class Puzzles</div>
-		</div>
+			<% end %>
 		<% end %>
 
 		<div class="c-header__menu-user">

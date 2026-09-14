@@ -1,3 +1,4 @@
+<% content_for('title', locale.get('b_get_started')) %>
 <header class="v-getting-started__header u-padding-x">
 	<div class="v-getting-started__header-subtitle">Erste Schritte</div>
 	<h1 class="v-getting-started__header-title">In 15 Minuten startklar für deine erste Stunde</h1>

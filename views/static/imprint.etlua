@@ -1,3 +1,4 @@
+<% content_for('title', locale.get('b_imprint')) %>
 
 <div class="v-text__contents u-padding-x">
 
