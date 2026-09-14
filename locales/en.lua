@@ -29,6 +29,7 @@ local locale = {
 	b_logout = "Log Out",
 	b_tutorials = "Tutorials",
 	b_get_started = "Getting Started",
+	b_editor = "Snap! Editor",
 	b_puzzles = "Puzzles",
 	b_contact = "Contact",
 	hi_user = "Hi, @1!", -- @1 becomes the current user username

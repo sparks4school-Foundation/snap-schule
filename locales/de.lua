@@ -30,6 +30,7 @@ local locale = {
 	b_puzzles = 'Puzzle',
 	b_tutorials = 'Erklärvideos',
 	b_get_started = 'Erste Schritte',
+	b_editor = 'Snap! Editor',
 	b_contact = 'Kontakt',
 	hi_user = 'Hallo @1!', -- @1 becomes the current user username
 

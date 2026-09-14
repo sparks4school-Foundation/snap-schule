@@ -1,13 +1,10 @@
 <%
 local menu = {
 	{locale.get('b_puzzles'), '/puzzles'},
+	{locale.get('b_get_started'), '/getting_started'}
 	{locale.get('b_tutorials'), '/tutorial'},
-	{'Snap! Editor', '/editor'},
+	{locale.get('b_editor'), '/editor'},
 }
-
-if (current_user ~= nil) and current_user.is_teacher then
-	table.insert(menu, 2, {locale.get('b_get_started'), '/getting_started'})
-end
 %>
 
 <header class="c-header u-padding-x">
