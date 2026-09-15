@@ -49,7 +49,7 @@ Accounts, die länger als 12 Monate inaktiv sind, werden automatisch gelöscht.
 								%>',
 								() => {
 									cloud.delete(
-										'/perma_delete/<%= student.username %>',
+										'/perma_delete/<%- package.loaded.util.escape(student.username) %>',
 										() => { window.location.reload(); }
 									);
 									setTimeout(()=>{ window.location.reload(); }, 250);
