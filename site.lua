@@ -334,8 +334,15 @@ end))
 -- API ADDITIONS --
 
 app:match('/perma_delete/:username', respond_to({
-	DELETE = function (self)
+	DELETE = capture_errors(function (self)
+		if self.params.username and not self.queried_user then
+			self.queried_user = Users:find({ username = self.params.username })
+		end
+		if not self.queried_user then
+			yield_error('There was an error when trying to delete your own user')
+		end
 		UserController.delete(self)
 		return UserController.perma_delete(self)
 	end
+	)
 }))
