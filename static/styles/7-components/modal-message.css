@@ -51,7 +51,10 @@
 }
 
 .c-modal-message__buttons {
+	margin-top: var(--space-24);
+
 	display: flex;
+	justify-content: center;
 	column-gap: var(--space-8);
 }
 
