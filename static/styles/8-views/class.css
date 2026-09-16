@@ -227,8 +227,15 @@
 }
 
 
-.v-class__options-students-list-name {
+.v-class__options-students-list-name a {
   font-family: var(--fontFamily-mono);
+  color: var(--color-blue);
+  text-decoration: none;
+  transition: color var(--duration-200);
+
+  &:hover {
+    color: var(--color-black);
+  }
 }
 
 
