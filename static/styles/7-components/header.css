@@ -44,7 +44,12 @@
 
   transform: translateX(var(--space-8));
 
-  @media (min-width: 1024px) {
+  &:hover {
+    cursor: pointer;
+    color: var(--color-blue);
+  }
+
+  @media (min-width: 1240px) {
     display: none;
   }
 }
@@ -58,7 +63,7 @@
   left: var(--space-4);
 
   opacity: 1;
-  transition: opacity var(--duration-200) ease-in-out;
+  transition: all var(--duration-200) ease-in-out;
 
   /* Is hidden */
   [aria-expanded=false] &.--show {
@@ -95,6 +100,7 @@
   justify-content: flex-end;
 
   background-color: var(--color-white);
+  border-left: 1px solid var(--color-grey-300);
   transition: right var(--duration-400) ease-in-out;
 
   @media (min-width: 640px) {
@@ -102,7 +108,7 @@
     width: var(--space-320);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     all: unset;
     display: flex;
     align-items: center;
@@ -119,7 +125,7 @@
   display: grid;
   gap: var(--space-8);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     display: flex;
     flex-direction: row;
     gap: var(--space-16);
@@ -128,12 +134,12 @@
 
 
 .c-header__menu-anchor {
-  font-size: var(--fontSize-48);
+  font-size: var(--fontSize-32);
   color: var(--color-black);
   text-decoration: none;
   transition: color var(--duration-200);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     font-size: var(--fontSize-18);
     font-weight: 900;
   }
@@ -163,7 +169,7 @@
     color: var(--color-blue);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     margin-top: 0;
     gap: var(--space-4);
   }
@@ -173,7 +179,7 @@
 .c-header__class-puzzles-text {
   font-size: var(--fontSize-20);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     font-size: var(--fontSize-18);
   }
 }
@@ -205,7 +211,7 @@
   align-items: center;
   gap: var(--space-12);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     margin-top: 0;
     gap: var(--space-8);
   }
@@ -213,23 +219,22 @@
 
 
 .c-header__menu-user-icon {
-  width: var(--space-24);
-  height: var(--space-24);
+  width: var(--space-20);
+  height: var(--space-20);
 
-  @media (min-width: 1024px) {
-    width: var(--space-20);
-    height: var(--space-20);
-    transform: translateY(-2px);
+  @media (min-width: 1240px) {
+    width: var(--space-16);
+    height: var(--space-16);
   }
 }
 
 
 .c-header__menu-user-links {
-  font-size: var(--fontSize-20);
+  font-size: var(--fontSize-16);
   color: var(--color-grey-400);
 
-  @media (min-width: 1024px) {
-    font-size: var(--fontSize-18);
+  @media (min-width: 1240px) {
+    /* font-size: var(--fontSize-18); */
   }
 }
 
