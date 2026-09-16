@@ -9,22 +9,29 @@ function editor()
 	if (!puzzleList) return;
 
 	const btnToggle = document.querySelector('[data-menu="class-puzzles"]');
+	const background = document.querySelector('[data-editor-puzzle-list="background"]');
 	const slider = puzzleList.querySelector('[data-editor-puzzle-list="slider"]');
 	const btnPrev = slider.parentElement.querySelector('[data-editor-puzzle-list="button-prev"]');
 	const btnNext = slider.parentElement.querySelector('[data-editor-puzzle-list="button-next"]');
 	const pagination = slider.parentElement.querySelector('[data-editor-puzzle-list="pagination"]');
 
-	btnToggle.addEventListener('click', toggleList);
 
-	function toggleList() {
+	// The list
+	btnToggle.addEventListener('click', toggleList);
+	background.addEventListener('click', toggleList);
+
+	function toggleList()
+	{
 		updateCheckbox();
 		if (puzzleList.classList.contains('--is-transitioning')) { return };
 
 		if (!puzzleList.classList.contains('--is-visible')) {
 			puzzleList.classList.add('--is-visible');
+			background.classList.add('--is-visible');
 			btnToggle.setAttribute('aria-expanded', 'true');
 		} else {
 			puzzleList.classList.remove('--is-visible');
+			background.classList.remove('--is-visible');
 			btnToggle.setAttribute('aria-expanded', 'false');
 		}
 

@@ -23,25 +23,6 @@
 
 
 
-.v-editor__puzzle-list {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: var(--zindex-behindMenu);
-  padding-top: var(--space-56);
-
-  transform: translateY(-100%);
-
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-grey-300);
-  transition: transform var(--duration-600) ease-in-out;
-
-  &.--is-visible {
-    transform: translateY(0%);
-  }
-}
-
 
 
 /* Loading animation */
@@ -66,7 +47,48 @@
 }
 
 
-/* Top */
+
+
+
+/* Puzzle List */
+
+
+.v-editor__puzzle-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--zindex-behindMenu);
+  padding-top: var(--space-56);
+
+  transform: translateY(-100%);
+
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-grey-300);
+  transition: transform var(--duration-600) ease-in-out;
+
+  &.--is-visible {
+    transform: translateY(0%);
+  }
+}
+
+
+.v-editor__puzzle-list-background {
+  position: fixed;
+  inset: 0;
+  z-index: var(--zindex-neutral);
+
+  background-color: var(--color-white);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity var(--duration-600);
+
+  &.--is-visible {
+    opacity: 0.8;
+    pointer-events: all;
+  }
+}
 
 
 .v-editor__puzzle-list-top {
@@ -121,9 +143,6 @@
   font-family: var(--fontFamily-mono);
   font-size: var(--fontSize-16);
 }
-
-
-
 
 
 /* Slider */

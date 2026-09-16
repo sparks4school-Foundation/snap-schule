@@ -55,10 +55,11 @@ local menu = {
 		<span>
 		<%= puzzle and puzzle.projectname or '' %>
 		</span>
+		<% end %>
 
 
-		<!-- DISABLED FOR NOW. REMOVE "false and " TO ENABLE -->
-		<% if false and puzzles then %>
+		<!-- Editor Puzzle List -->
+		<% if options.render == 'editor' and puzzles then %>
 			<div
 				class="c-header__class-puzzles"
 				data-menu="class-puzzles"
@@ -71,7 +72,6 @@ local menu = {
 				</div>
 				<div class="c-header__class-puzzles-text">Class Puzzles</div>
 			</div>
-			<% end %>
 		<% end %>
 
 		<div class="c-header__menu-user">
@@ -82,7 +82,7 @@ local menu = {
 				<% if current_user == nil then %>
 					<a href="/login" class="c-header__menu-user-anchor"><%- locale.get('b_login') %></a> / <a href="/sign_up" class="c-header__menu-user-anchor"><%- locale.get('b_join') %></a>
 				<% else %>
-					<%- locale.get('hi_user', '<a href="/user" class="c-header__menu-user-anchor">' .. package.loaded.html.escape(current_user.username) .. '</a>' ) %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
+					<%- locale.get('hi_user', '<a href="/user">' .. package.loaded.html.escape(current_user.username) .. '</a>' ) %> / <a href="/api/v1/logout" class="c-header__menu-user-anchor">Logout</a>
 				<% end %>
 			</div>
 		</div>

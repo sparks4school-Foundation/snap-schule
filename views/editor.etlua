@@ -26,6 +26,7 @@ if params.id then
 	);
 </script>
 <% if puzzles then %>
+	<div class="v-editor__puzzle-list-background" data-editor-puzzle-list="background"></div>
 	<div id="editor-puzzle-list" class="v-editor__puzzle-list" data-editor-puzzle-list="list">
 
 		<div class="v-editor__puzzle-list-top u-padding-x">
@@ -71,19 +72,17 @@ if params.id then
 		<div class="v-editor__puzzle-list-slider" data-editor-puzzle-list="slider">
 
 			<div class="swiper-wrapper">
-				<div class="swiper-slide v-editor__puzzle-list-slide">
-				<%
-					for idx, puzzle in pairs(puzzles) do
-						render(
+				<% for idx, puzzle in pairs(puzzles) do %>
+					<div class="swiper-slide v-editor__puzzle-list-slide">
+						<% render(
 							'frontend.views.partials.card-puzzle',
 							{
 								grade = grade,
 								puzzle = puzzle
 							}
-						)
-					end
-				%>
-				</div>
+						) %>
+					</div>
+				<% end %>
 			</div>
 
 			<div class="v-editor__puzzle-list-controls-wrapper u-padding-x">
