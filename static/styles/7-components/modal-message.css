@@ -29,9 +29,11 @@
 	opacity: 0.5;
 }
 
+
 .c-modal-message__link {
 	font-size: var(--fontSize-16); /* needed because? */
 }
+
 
 .c-modal-message__contents {
 	position: relative;
@@ -50,6 +52,7 @@
 	word-break: break-word;
 }
 
+
 .c-modal-message__buttons {
 	margin-top: var(--space-24);
 
@@ -58,9 +61,11 @@
 	column-gap: var(--space-8);
 }
 
+
 .c-modal-message__prompt {
 	margin-bottom: var(--space-16) !important;
 }
+
 
 .c-modal-message__form {
 	display: flex;
