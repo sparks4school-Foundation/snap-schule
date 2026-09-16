@@ -1,0 +1,260 @@
+/**
+ * Views / Team
+ */
+
+
+
+
+
+/* Header */
+
+
+.v-team__header {
+  min-height: var(--space-240);
+  padding-top: var(--space-40);
+  padding-bottom: var(--space-40);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-yellow);
+
+  background-image:
+    url('../../images/graphic--slashes-white-transparency.svg'),
+    url('../../images/graphic--pluses-white-transparency.svg');
+
+  background-position:
+    top 16px left,
+    bottom 16px right 16px;
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-size:
+    35%,
+    30%;
+
+  @media (min-width: 768px) {
+    padding-top: var(--space-56);
+    padding-bottom: var(--space-56);
+
+    background-size:
+      25%,
+      20%;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: var(--space-72);
+    padding-bottom: var(--space-72);
+  }
+
+  @media (min-width: 1536px) {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+  }
+}
+
+
+.v-team__header-title {
+  margin-top: var(--space-16);
+  max-width: var(--space-640);
+
+  font-size: var(--fontSize-32);
+  font-weight: 900;
+  color: var(--color-black);
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+
+  @media (min-width: 1280px) {
+    font-size: var(--fontSize-48);
+  }
+
+  @media (min-width: 1536px) {
+    font-size: var(--fontSize-64);
+    max-width: var(--space-800);
+  }
+}
+
+
+
+
+
+/* Contents */
+
+
+.v-team__contents {
+  margin-top: var(--space-80);
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-96);
+  }
+
+  @media (min-width: 1240px) {
+    margin-top: var(--space-120);
+  }
+}
+
+
+.v-team__intro {
+  font-family: var(--fontFamily-mono);
+  font-size: var(--space-20);
+  line-height: var(--lineHeight-120);
+  text-wrap: balance;
+
+  @media (min-width: 1024px) {
+    max-width: var(--space-800);
+
+    font-size: var(--fontSize-24);
+  }
+
+  @media (min-width: 1280px) {
+    max-width: var(--space-960);
+  }
+
+  @media (min-width: 1536px) {
+    max-width: var(--space-1200);
+
+    font-size: var(--fontSize-32);
+  }
+
+  .--blue {
+    color: var(--color-blue);
+  }
+
+  .--red {
+    color: var(--color-red);
+  }
+}
+
+
+.v-team__members-list {
+  margin-top: var(--space-80);
+
+  display: grid;
+  gap: var(--space-56);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-64);
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-96);
+  }
+
+  @media (min-width: 1240px) {
+    margin-top: var(--space-120);
+    max-width: var(--space-960);
+    margin-left: auto;
+
+    column-gap: var(--space-120);
+  }
+
+  @media (min-width: 1536px) {
+    max-width: var(--space-1200);
+  }
+}
+
+
+
+
+
+/* Members cards */
+
+
+.v-team__member-picture {
+  width: var(--space-200);
+  aspect-ratio: 1 / 1;
+
+  border-radius: var(--borderRadius-4);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.v-team__member-name {
+  margin-top: var(--space-20);
+
+  font-size: var(--fontSize-24);
+  font-weight: 600;
+  color: var(--color-blue);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+
+  @media (min-width: 1536px) {
+    font-size: var(--fontSize-32);
+  }
+}
+
+
+.v-team__member-role {
+  margin-top: var(--space-4);
+
+  font-family: var(--fontFamily-mono);
+  font-size: var(--fontSize-16);
+  line-height: var(--lineHeight-120);
+  text-wrap: balance;
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-8);
+    font-size: var(--fontSize-18);
+  }
+}
+
+
+.v-team__member-desc {
+  margin-top: var(--space-16);
+
+  line-height: var(--lineHeight-140);
+
+  @media (min-width: 1024px) {
+    font-size: var(--fontSize-18);
+  }
+}
+
+
+
+
+
+/* End */
+
+
+.v-team__end {
+  margin-top: var(--space-80);
+
+  font-family: var(--fontFamily-mono);
+  font-size: var(--space-20);
+  line-height: var(--lineHeight-120);
+  text-wrap: balance;
+
+  @media (min-width: 1024px) {
+    margin-top: var(--space-120);
+    max-width: var(--space-800);
+
+    font-size: var(--fontSize-24);
+  }
+
+  @media (min-width: 1240px) {
+    max-width: var(--space-960);
+  }
+
+  @media (min-width: 1536px) {
+    margin-top: var(--space-160);
+    max-width: var(--space-1200);
+
+    font-size: var(--fontSize-32);
+  }
+
+  a {
+    color: var(--color-blue);
+  }
+}

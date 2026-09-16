@@ -1,90 +1,82 @@
-<% content_for('title', locale.get('b_team')) %>
-<div class="v-text__contents u-padding-x">
-
-	<header class="v-text__header">
-		<h1 class="c-heading__section-title">Wer das Projekt trägt</h1>
-	</header>
-
-	<div class="v-text__text">
 <%
-render(
-	'frontend.views.partials.markdown',
-	{ content = [[
-Snap! Schule entsteht **kollegial:** Lehrkräfte, Forschende und Entwickler:innen, die seit Jahren
-an guter Informatikbildung arbeiten. Getragen von einem gemeinnützigen Unternehmen,
-einer Universität, einem Industriepartner und einem zivilgesellschaftlichen Lernort. Hier
-sind ihre Stimmen.
+content_for('title', locale.get('b_team'))
 
-## Bernat Romagosa
-### SAP, Spanien
-„ Ich gehöre zu den Entwickler:innen von Snap! und
-MicroBlocks. Ich bin der Hauptentwickler der
-Snap! Schule-Plattform und verantworte sowohl
-die Backend- als auch die Frontend-Logik. “
-
-## Daniel Domscheit-Berg
-### VERSTEHBAHNHOF, Brandenburg
-„ Mich interessiert die Schnittstelle von
-Technik und Gesellschaft. Junge Menschen zu
-befähigen, die digitale Welt mitzugestalten,
-ist mir Herzenssache. Snap! Schule hosten wir
-in unserem Rechenzentrum am Verstehbahnhof. “
-
-## Jadga Hügle
-### SAP, Weinheim
-„ Ursprünglich Biologin, zur Informatik kam
-ich beim Bau eines automatisierten
-Gewächshäuschens. Seitdem suche ich
-kreative Zugänge: Musik, Kunst, Stickerei,
-Biologie. Bei Snap! Schule entwickle ich Puzzle
-und Unterrichtsmaterialien. “
-
-## Jens Mönig
-### SAP, Stuttgart
-„ Visuelles Programmieren ist meine
-Leidenschaft. Mitentwickler von Scratch am
-M.I.T. und später Snap! mit der Uni Berkeley.
-Bei Snap! Schule entwickle ich sowohl Puzzle
-als auch die Programmiersprache selbst
-weiter. “
-
-## Marc Camprecós
-### FREIBERUFLER, Spanien
-„ Ich bin freiberuflicher Webdesigner und
-Frontend-Entwickler. Im Laufe der Jahre habe
-ich mehrere Designs für das MicroBlocks-Projekt
-erstellt und bin derzeit der Hauptwebdesigner
-für Snap! Schule. “
-
-## Sébastien Elbracht
-### SPARKS4SCHOOL, Heidelberg
-„ Was mich antreibt, ist die Überzeugung, dass Lernen dann wirkt, 
-wenn es erlebbar wird. Das spüre ich bei meinem Engagement für 
-Chaos macht Schule (CCC) ebenso wie in meiner Arbeit bei Snap! Schule, 
-wo ich die Projektentwicklung verantworte. “
-
-## Steffen Haschler
-### SPARKS4SCHOOL, Deutscher Lehrkräftepreis 2025
-„ Gymnasiallehrer für Informatik, Mitglied im CCC
-und Mitgründer von sparks4school. Mein Fokus sind
-Lernformate, die im Schulalltag wirken.
-Snap! Schule begleite ich aus Lehrkraftsicht. “
-
-## Prof. Dr. Tilman Michaeli
-### TU MÜNCHEN, Bayern
-„ Ich leite die Computing Education Research
-Group an der TU München. Mir geht es
-darum, jede:n zu befähigen, die digitale Welt
-aktiv mitzugestalten. Snap! Schule berate ich
-fachdidaktisch. “
-
-_Wir arbeiten als **[Open-Source-Projekt](https://github.com/sparks4school-Foundation/snap-schule)**.
-Code, Inhalte und Materialien sind frei nutzbar. Was uns verbindet: die
-Überzeugung, dass gute Informatikbildung allen Schüler:innen offen stehen muss,
-unabhängig von Schulform, Vorerfahrung oder Budget._
-]]
-})
+local team = {
+	{
+		'Bernat Romagosa',
+		'SAP, Spanien',
+		'Ich gehöre zu den Entwickler:innen von Snap! und MicroBlocks. Ich bin der Hauptentwickler der Snap! Schule-Plattform und verantworte sowohl die Backend- als auch die Frontend-Logik.',
+		'bernat-romagosa.webp'
+	},
+	{
+		'Daniel Domscheit-Berg',
+		'VERSTEHBAHNHOF, Brandenburg',
+		'Mich interessiert die Schnittstelle von Technik und Gesellschaft. Junge Menschen zu befähigen, die digitale Welt mitzugestalten, ist mir Herzenssache. Snap! Schule hosten wir in unserem Rechenzentrum am Verstehbahnhof.',
+		'daniel-domscheit-berg.webp'
+	},
+	{
+		'Jadga Hügle',
+		'SAP, Weinheim',
+		'Ursprünglich Biologin, zur Informatik kam ich beim Bau eines automatisierten Gewächshäuschens. Seitdem suche ich kreative Zugänge: Musik, Kunst, Stickerei, Biologie. Bei Snap! Schule entwickle ich Puzzle und Unterrichtsmaterialien.',
+		'jadga-huegle.webp'
+	},
+	{
+		'Jens Mönig',
+		'SAP, Stuttgart',
+		'Visuelles Programmieren ist meine Leidenschaft. Mitentwickler von Scratch am M.I.T. und später Snap! mit der Uni Berkeley. Bei Snap! Schule entwickle ich sowohl Puzzle als auch die Programmiersprache selbst weiter.',
+		'jens-moenig.webp'
+	},
+	{
+		'Marc Campreciós',
+		'FREIBERUFLER, Spanien',
+		'Ich bin freiberuflicher Webdesigner und Frontend-Entwickler. Im Laufe der Jahre habe ich mehrere Designs für das MicroBlocks-Projekt erstellt und bin derzeit der Hauptwebdesigner für Snap! Schule.',
+		'marc-camprecios.webp'
+	},
+	{
+		'Sébastien Elbracht',
+		'SPARKS4SCHOOL, Heidelberg',
+		'Was mich antreibt, ist die Überzeugung, dass Lernen dann wirkt, wenn es erlebbar wird. Das spüre ich bei meinem Engagement für Chaos macht Schule (CCC) ebenso wie in meiner Arbeit bei Snap! Schule, wo ich die Projektentwicklung verantworte.',
+		'sebastien-elbracht.webp'
+	},
+	{
+		'Steffen Haschler',
+		'SPARKS4SCHOOL, Deutscher Lehrkräftepreis 2025',
+		'Gymnasiallehrer für Informatik, Mitglied im CCC und Mitgründer von sparks4school. Mein Fokus sind Lernformate, die im Schulalltag wirken. Snap! Schule begleite ich aus Lehrkraftsicht.',
+		'steffen-haschler.webp'
+	},
+	{
+		'Prof. Dr. Tilman Michaeli',
+		'TU MÜNCHEN, Bayern',
+		'Ich leite die Computing Education Research Group an der TU München. Mir geht es darum, jede:n zu befähigen, die digitale Welt aktiv mitzugestalten. Snap! Schule berate ich fachdidaktisch.',
+		'tilman-michaeli.webp'
+	},
+}
 %>
+<header class="v-team__header u-padding-x">
+	<h1 class="v-team__header-title">Wer das Projekt trägt</h1>
+</header>
 
+<div class="v-team__contents u-padding-x">
+
+	<p class="v-team__intro">
+		Snap! Schule entsteht <span class="--blue">kollegial:</span> Lehrkräfte, Forschende und Entwickler:innen, die seit Jahren an guter Informatikbildung arbeiten. Getragen von einem gemeinnützigen Unternehmen, einer Universität, einem Industriepartner und einem zivilgesellschaftlichen Lernort. Hier sind ihre Stimmen.
+	</p>
+
+	<div class="v-team__members-list">
+		<% for i, item in ipairs(team) do %>
+			<article class="v-team__member">
+				<div class="v-team__member-picture">
+					<img src="/static/images/team/<%= item[4] %>">
+				</div>
+				<h2 class="v-team__member-name"><%= item[1] %></h2>
+				<p class="v-team__member-role"><%= item[2] %></p>
+				<p class="v-team__member-desc"><%= item[3] %></p>
+			</article>
+		<% end %>
 	</div>
+
+	<p class="v-team__end">
+		Wir arbeiten als <a href="https://github.com/sparks4school-Foundation/snap-schule" target="_blank">Open-Source-Projekt</a>. Code, Inhalte und Materialien sind frei nutzbar. Was uns verbindet: die Überzeugung, dass gute Informatikbildung allen Schüler:innen offen stehen muss, unabhängig von Schulform, Vorerfahrung oder Budget.
+	</p>
+
 </div>
