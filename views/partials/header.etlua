@@ -50,16 +50,8 @@ local menu = {
 		</select>
 		-->
 
-		<!-- DISABLED FOR NOW. REMOVE "false and " TO ENABLE -->
-		<% if false and options.render == 'editor' then %>
-		<span>
-		<%= puzzle and puzzle.projectname or '' %>
-		</span>
-		<% end %>
-
-
 		<!-- Editor Puzzle List -->
-		<% if options.render == 'editor' and puzzles then %>
+		<% if options.render == 'editor' and puzzles and grade then %>
 			<div
 				class="c-header__class-puzzles"
 				data-menu="class-puzzles"
@@ -70,7 +62,7 @@ local menu = {
 				<div class="c-header__class-puzzles-icon">
 					<% render('frontend.static.svg.icon-chevron-down--24x24') %>
 				</div>
-				<div class="c-header__class-puzzles-text">Class Puzzles</div>
+				<div class="c-header__class-puzzles-text"><%- locale.get('nth_grade',locale.get('nth_' .. grade)) %></div>
 			</div>
 		<% end %>
 

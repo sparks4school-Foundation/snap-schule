@@ -186,7 +186,7 @@ app:get('/editor(/:id)', capture_errors(cached(function (self)
 				cached = false
 			})
 		end
-		self.puzzle = Projects:find({ id = self.params.id })
+		self.grade = schule_utils:grade_from_collection(self.collection)
 	end
 	self.top_only = true -- do not show bottom layout (contact, footer, etc)
 	return { render = 'editor' }

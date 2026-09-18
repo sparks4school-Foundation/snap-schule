@@ -85,6 +85,9 @@ local locale = {
 	title_links = 'Links:',
 	title_add_to_grade = 'Add to grade',
 
+	-- Editor Puzzle Slider
+	-- ====================
+	b_toggle_tutorial = 'Toggle tutorial',
 
 	-- User Page
 	-- =========

@@ -86,6 +86,9 @@ local locale = {
 	title_links = 'Links',
 	title_add_to_grade = 'Zur Klassenstufe hinzufügen',
 
+	-- Editor Puzzle Slider
+	-- ====================
+	b_toggle_tutorial = 'Tutorial anzeigen',
 
 	-- User Page
 	-- =========
