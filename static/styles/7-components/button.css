@@ -4,8 +4,8 @@
 
 
 .c-button {
-  width: max-content;
-  height: var(--space-40);
+  width: fit-content;
+  min-height: var(--space-32);
   padding: var(--space-12) var(--space-12) var(--space-12) var(--space-16);
 
   display: flex;
@@ -24,9 +24,13 @@
 
   /* Small */
   &.--small {
-    height: var(--space-32);
+    min-height: var(--space-32);
     padding: var(--space-12) var(--space-8) var(--space-12) var(--space-12);
     gap: var(--space-10);
+  }
+
+  @media (min-width: 420px) {
+    min-height: var(--space-40);
   }
 
 
@@ -86,15 +90,23 @@
 
 
 .c-button__text {
+  font-size: var(--fontSize-14);
+  line-height: var(--lineHeight-120);
   text-decoration: none;
   transition: color var(--duration-200) ease-in-out;
   font-weight: bold;
+  text-wrap: balance;
+
+  @media (min-width: 420px) {
+    font-size: var(--fontSize-16);
+  }
 }
 
 
 .c-button__icon {
   width: var(--space-24);
   height: var(--space-24);
+  flex-shrink: 0;
 
   line-height: 0;
   transition: color var(--duration-200) ease-in-out;
