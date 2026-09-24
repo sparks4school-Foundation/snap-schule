@@ -168,11 +168,11 @@
 		display: block;
 
 		* + & {
-			margin-top: var(--space-400);
+			margin-top: var(--space-32);
 
 			@media (min-width: 1024px) {
-					margin-top: var(--space-40);
-				}
+				margin-top: var(--space-40);
+			}
 
 			@media (min-width: 1536px) {
 				margin-top: var(--space-48);
@@ -192,11 +192,11 @@
 		display: block;
 
 		* + & {
-			margin-top: var(--space-400);
+			margin-top: var(--space-32);
 
 			@media (min-width: 1024px) {
-					margin-top: var(--space-40);
-				}
+				margin-top: var(--space-40);
+			}
 
 			@media (min-width: 1536px) {
 				margin-top: var(--space-48);
