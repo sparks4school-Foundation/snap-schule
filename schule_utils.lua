@@ -28,6 +28,7 @@ local util = package.loaded.util
 local locale = package.loaded.locale
 local capture_errors = package.loaded.capture_errors
 local validate = package.loaded.validate
+local yield_error = package.loaded.yield_error
 local assert_error = package.loaded.app_helpers.assert_error
 local db = package.loaded.db
 
@@ -137,7 +138,9 @@ function utils:assert_can_view_puzzle(user, puzzle)
 		)
 	) then
 		local puzzle_owner = package.loaded.Users:find({ username = puzzle.username })
-		if not (user.is_teacher and puzzle_owner.creator_id == user.id) then
+		if not ((user ~= nil) and
+			user.is_teacher and puzzle_owner.creator_id == user.id
+		) then
 			yield_error(err.nonexistent_project)
 		end
 	end
