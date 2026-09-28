@@ -131,8 +131,10 @@ end
 
 function utils:assert_can_view_puzzle(user, puzzle)
 	if (not puzzle.ispublished and not puzzle.ispublic
-		and not ((user ~= nil) and user:isadmin())
-		and user.username ~= puzzle.username
+		and not (
+			(user ~= nil) and
+			(user:isadmin() or (user.username ~= puzzle.username))
+		)
 	) then
 		local puzzle_owner = package.loaded.Users:find({ username = puzzle.username })
 		if not (user.is_teacher and puzzle_owner.creator_id == user.id) then
