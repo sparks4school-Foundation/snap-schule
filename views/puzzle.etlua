@@ -38,14 +38,16 @@
 						icon		= 'folder-plus',
 					})
 				end
-
-				render('frontend.views.partials.button', {
-					label		= locale.get('b_share_qr'),
-					action		= 'toggleQRDialogue()',
-					data_attribute = 'aria-controls="qr-code"',
-					color		= 'black',
-					icon		= 'qr-code',
-				}) %>
+				if puzzle.ispublic then
+					render('frontend.views.partials.button', {
+						label		= locale.get('b_share_qr'),
+						action		= 'toggleQRDialogue()',
+						data_attribute = 'aria-controls="qr-code"',
+						color		= 'black',
+						icon		= 'qr-code',
+					})
+				end
+				%>
 			</div>
 		</div>
 
