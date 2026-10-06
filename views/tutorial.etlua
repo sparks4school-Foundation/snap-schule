@@ -143,4 +143,23 @@
 			</div>
 		</section>
 	</div>
+
+	<div class="v-tutorial__contents">
+		<section class="v-index__puzzles">
+			<div class="v-user__puzzles-heading">
+				<% render('frontend.views.partials.section-heading-full-width', {
+					title	= "Interaktive Anleitungen"
+				}) %>
+			</div>
+
+			<div class="v-user__puzzles-grid">
+				<%
+					render('frontend.views.partials.puzzles-slider',
+						{ puzzles = puzzles }
+					)
+				%>
+			</div>
+		</section>
+	</div>
+
 </div>

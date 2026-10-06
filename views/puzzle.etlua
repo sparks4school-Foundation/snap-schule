@@ -136,8 +136,7 @@
 					pairs(
 						package.loaded.Collections:select(
 						package.loaded.db.clause({
-							creator_id = jadga.id,
-							"name ilike '%grade%'"
+							creator_id = jadga.id
 						})
 				)) do %>
 					<option value="<%= col.id %>">

@@ -4,7 +4,7 @@
 
 <%
 if placeholder then
-	collection = {}
+	collection = { name = '' }
 	puzzles = {}
 else
 	collection = package.loaded.Collections:find(
@@ -34,8 +34,8 @@ end
 render(
 	'frontend.views.partials.section-heading-full-width',
 	{
-		title   = locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
-		link = link
+		title	= title or locale.get('nth_grade_puzzles', locale.get('nth_' .. grade)),
+		link	= link
 	}
 )
 %>

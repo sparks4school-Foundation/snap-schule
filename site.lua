@@ -109,6 +109,13 @@ app:get('/getting_started', capture_errors(cached(function (self)
 end)))
 
 app:get('/tutorial(/:num)', capture_errors(cached(function (self)
+	self.puzzles = CollectionController.projects({
+		params = {},
+		items_per_page = 200, -- max 200 projects to query from DB.
+		collection =
+			Collections:find({ creator_id = self.jadga.id, name = 'Tutorials' }),
+		cached = false
+	})
 	if self.params.num then
 		self.params.num = tonumber(self.params.num)
 	else
@@ -206,11 +213,12 @@ end)))
 -- USERS --
 
 app:get('/user(/:username)', capture_errors(cached(function (self)
-	--for k, v in pairs(self.session) do debug_print(k) end
 	if not self.current_user then return { redirect_to = '/' } end
 	if self.queried_user and
-		self.current_user.is_teacher and
-		self.queried_user.creator_id == self.current_user.id
+		(self.current_user:isadmin() or
+			(self.current_user.is_teacher and
+			self.queried_user.creator_id == self.current_user.id)
+		)
 	then
 		self.puzzles =
 			Projects:select('where username = ?', self.queried_user.username)
