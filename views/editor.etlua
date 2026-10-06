@@ -30,7 +30,8 @@ if params.id then
 	<div id="editor-puzzle-list" class="v-editor__puzzle-list" data-editor-puzzle-list="list">
 
 		<div class="v-editor__puzzle-list-top u-padding-x">
-			<div class="v-editor__puzzle-list-title"><%- locale.get('nth_grade',locale.get('nth_' .. grade)) %></div>
+			<div class="v-editor__puzzle-list-title"><%- grade > 0 and
+			(locale.get('nth_grade',locale.get('nth_' .. grade))) or 'Anleitungen' %></div>
 			<div class="v-editor__puzzle-list-tutorials --disabled" role="button" onclick="toggleTutorial()">
 				<% render('frontend.static.svg.icon-check-circle--24x24') %>
 				<span class="v-editor__puzzle-list-tutorials-text"><%- locale.get('b_toggle_tutorial') %></span>

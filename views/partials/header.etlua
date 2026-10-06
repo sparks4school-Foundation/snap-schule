@@ -62,7 +62,8 @@ local menu = {
 				<div class="c-header__class-puzzles-icon">
 					<% render('frontend.static.svg.icon-chevron-down--24x24') %>
 				</div>
-				<div class="c-header__class-puzzles-text"><%- locale.get('nth_grade',locale.get('nth_' .. grade)) %></div>
+				<div class="c-header__class-puzzles-text"><%- grade > 0 and
+				(locale.get('nth_grade',locale.get('nth_' .. grade))) or 'Anleitungen' %></div>
 			</div>
 		<% end %>
 
