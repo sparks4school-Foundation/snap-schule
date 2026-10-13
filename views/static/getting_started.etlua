@@ -131,8 +131,8 @@ auf der Bühne.
 		<div class="v-getting-started__block-wrapper"> <div
 		class="v-getting-started__block-text"> <% render(
 		'frontend.views.partials.markdown', { content = [[
-### Vertiefung: Eigene
-Puzzle umsetzen
+
+### Vertiefung: Eigene Puzzle umsetzen
 
 Du hast eine eigene Idee für eine Stunde? Im Editor kannst du jedes Projekt und
 Puzzle selbst bauen, speichern und mit deiner Klasse teilen. Eine ausführliche
