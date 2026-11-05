@@ -10,8 +10,12 @@ if params.id then
 	end
 %>
 <iframe class="v-editor__iframe --is-hidden" src="/snap/snap.html#open:<%= url .. '/project/' .. params.id .. '&noShare&hideCloudMenu' %>"></iframe>
-<% else %>
-<iframe class="v-editor__iframe --is-hidden" src="/snap/snap.html#open:/static/template.xml&noShare&hideCloudMenu"></iframe>
+<% else
+	-- /editor?calliope opens the editor with the Calliope mini blocks loaded
+	-- (see snap-libraries/README.md)
+	local template = params.calliope and 'template-calliope.xml' or 'template.xml'
+%>
+<iframe class="v-editor__iframe --is-hidden" src="/snap/snap.html#open:/static/<%= template %>&noShare&hideCloudMenu"></iframe>
 <% end %>
 <script>
 	let iframe = document.querySelector('.v-editor__iframe');
