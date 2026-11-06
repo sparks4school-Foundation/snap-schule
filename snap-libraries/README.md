@@ -43,9 +43,11 @@ den Blöcken neu bauen:
 node snap-libraries/calliope/build-library.js
 ```
 
-Ohne Bibliotheksdialog geht es in reinem Snap! auch mit
-`snap.html#open:libraries/calliope_module.xml` (bzw. `calliope.html`, das
-`install.sh` in den Snap!-Ordner kopiert).
+In reinem Snap! (ohne Snap!Schule) öffnet `calliope.html`, das `install.sh`
+in den Snap!-Ordner kopiert, dieselbe Vorlage (`libraries/calliope_template.xml`)
+mit dem angepassten Look von Snap!Schule und den Calliope-mini-Blöcken.
+Die Blöcke ohne Vorlage:
+`snap.html#open:libraries/calliope_module.xml`.
 
 ## Benutzung
 

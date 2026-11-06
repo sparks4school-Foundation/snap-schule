@@ -20,7 +20,10 @@ fi
 mkdir -p "$LIB/calliope"
 cp "$HERE/calliope/calliope.js" "$LIB/calliope/calliope.js"
 cp "$HERE/calliope_module.xml" "$LIB/calliope_module.xml"
-cp "$HERE/calliope.html" "$SNAP/calliope.html"   # Snap! with the library preloaded
+# Snap!Schule editor template (look: flat & bright, German) incl. Calliope blocks,
+# opened by calliope.html
+cp "$HERE/../static/template-calliope.xml" "$LIB/calliope_template.xml"
+cp "$HERE/calliope.html" "$SNAP/calliope.html"
 
 python3 - "$LIB/LIBRARIES.json" <<'EOF'
 import json, sys
