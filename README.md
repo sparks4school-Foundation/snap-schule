@@ -4,6 +4,13 @@
 
 Die kostenlose, didaktisch durchdachte Programmierumgebung für Informatikbildung in der Schule.
 
+
+# Anpassung mit direkter Calliope mini Integration, perfekt für den Snap! Einsatz in der Schule.
+
+Mit diesem kleinen Update kann Snap! direkt mit dem Calliope mini genutzt werden.
+Der Calliope mini benötigt dazu eine besondere Hex-Datei. Mehr zu der Integration und der Hex-Datei findet sich hier:
+[/snap-libraries/README.md](README.md).
+
 ---
 
 ## Was ist Snap! Schule?
